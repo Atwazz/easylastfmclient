@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E64446E50A2ADCF133DB676 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDE6CAF2EDE3E547D686140 /* libPods-Test App Artem Agafonov.a */; };
 		8B419980241C2F84004F0195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B41997F241C2F84004F0195 /* AppDelegate.swift */; };
 		8B419982241C2F84004F0195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B419981241C2F84004F0195 /* SceneDelegate.swift */; };
 		8B419984241C2F84004F0195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B419983241C2F84004F0195 /* ViewController.swift */; };
@@ -15,6 +14,7 @@
 		8B41998A241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B419988241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld */; };
 		8B41998C241C2F85004F0195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B41998B241C2F85004F0195 /* Assets.xcassets */; };
 		8B41998F241C2F85004F0195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B41998D241C2F85004F0195 /* LaunchScreen.storyboard */; };
+		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		8B41998E241C2F85004F0195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B419990241C2F85004F0195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
-		FEDE6CAF2EDE3E547D686140 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E64446E50A2ADCF133DB676 /* libPods-Test App Artem Agafonov.a in Frameworks */,
+				BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,14 +83,13 @@
 				A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */,
 				1F9FC217262C6D537C4D1486 /* Pods-Test App Artem Agafonov.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		D3E46C3109D696E6839CACE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEDE6CAF2EDE3E547D686140 /* libPods-Test App Artem Agafonov.a */,
+				BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +103,7 @@
 			buildPhases = (
 				4FB5F0C5476FBDEDA82B4456 /* [CP] Check Pods Manifest.lock */,
 				8B419978241C2F84004F0195 /* Sources */,
+				8B066FA1241C3867007F67B5 /* SwiftLint */,
 				8B419979241C2F84004F0195 /* Frameworks */,
 				8B41997A241C2F84004F0195 /* Resources */,
 			);
@@ -184,6 +184,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8B066FA1241C3867007F67B5 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which ./Pods/SwiftLint/swiftlint >/dev/null; then\n  ./Pods/SwiftLint/swiftlint  \nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

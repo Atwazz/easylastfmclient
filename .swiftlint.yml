@@ -1,0 +1,22 @@
+line_length: 120
+
+# excluded sources
+excluded:
+  - Pods
+
+# customized rules
+disabled_rules:
+  - trailing_whitespace
+  - multiple_closures_with_trailing_closure
+
+colon:
+  apply_to_dictionaries: false
+
+identifier_name:
+  excluded:
+    - id
+    - to
+    - iv
+
+type_name:
+  allowed_symbols: "_"
