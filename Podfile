@@ -1,4 +1,4 @@
-platform: ios, '13.0'
+platform :ios, '13.0'
 use_modular_headers!
 target 'Test App Artem Agafonov' do
   pod 'AlamofireImage', '~> 4.0'
