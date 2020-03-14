@@ -7,12 +7,15 @@
 //
 
 final class ArtistsSearchRouter {
+    // MARK: - Public instance properties
+    weak var output: ArtistsSearchRouterOutput?
+    
     // MARK: - Private instance properties
-    private weak var output: ArtistsSearchRouterOutput?
+    private let viewDispatcher: ViewDispatcher
     
     // MARK: - Init
-    init(output: ArtistsSearchRouterOutput) {
-        self.output = output
+    init(viewDispatcher: ViewDispatcher) {
+        self.viewDispatcher = viewDispatcher
     }
 }
 

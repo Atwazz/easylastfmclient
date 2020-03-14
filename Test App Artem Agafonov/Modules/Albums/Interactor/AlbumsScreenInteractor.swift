@@ -7,13 +7,8 @@
 //
 
 final class AlbumsScreenInteractor {
-    // MARK: - Private instance properties
-    private weak var output: AlbumsScreenInteractorOutput?
-    
-    // MARK: - Init
-    init(output: AlbumsScreenInteractorOutput) {
-        self.output = output
-    }
+    // MARK: - Public instance properties
+    weak var output: AlbumsScreenInteractorOutput?
 }
 
 // MARK: - AlbumsScreenInteractorInput

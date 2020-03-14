@@ -7,19 +7,10 @@
 //
 
 final class AlbumsScreenPresenter {
-    // MARK: - Private instance properties
-    private let view: AlbumsScreenViewInput
-    private let interactor: AlbumsScreenInteractorInput
-    private let router: AlbumsScreenRouterInput
-    
-    // MARK: - Init
-    init(view: AlbumsScreenViewInput,
-         interactor: AlbumsScreenInteractorInput,
-         router: AlbumsScreenRouterInput) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-    }
+    // MARK: - Public instance properties
+    @DelayedImmutable var view: AlbumsScreenViewInput
+    @DelayedImmutable var interactor: AlbumsScreenInteractorInput
+    @DelayedImmutable var router: AlbumsScreenRouterInput
 }
 
 // MARK: - AlbumsScreenViewOutput

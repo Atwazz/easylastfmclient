@@ -9,12 +9,11 @@
 import UIKit
 
 final class AlbumsScreenViewController: UIViewController {
-    // MARK: - Private instance properties
-    private let output: AlbumsScreenViewOutput
+    // MARK: - Public instance properties
+    @DelayedImmutable var output: AlbumsScreenViewOutput
     
     // MARK: - Init
-    init(output: AlbumsScreenViewOutput) {
-        self.output = output
+    init() {
         super.init(nibName: Self.name, bundle: nil)
     }
     

@@ -8,7 +8,12 @@
 
 import Swinject
 
-final class ArtistsSearchAssembly { }
+final class ArtistsSearchAssembly {
+    typealias View = ArtistsSearchViewController
+    typealias Interactor = ArtistsSearchInteractor
+    typealias Presenter = ArtistsSearchPresenter
+    typealias Router = ArtistsSearchRouter
+}
 
 // MARK: - Assembly
 extension ArtistsSearchAssembly: Assembly {
@@ -23,36 +28,55 @@ extension ArtistsSearchAssembly: Assembly {
 // MARK: - Registrations
 private extension ArtistsSearchAssembly {
     func registerView(in container: Container) {
-        container.register(ArtistsSearchViewInput.self) { resolver in
-            let viewOutput = resolver.resolveSafe(ArtistsSearchViewOutput.self)
-            return ArtistsSearchViewController(output: viewOutput)
+        container.register(ArtistsSearchViewInput.self) { _ in
+            View()
+        }
+        .initCompleted { resolver, object in
+            guard let viewController = object as? View else {
+                fatalError("View has unexpected type: \(String(describing: object))")
+            }
+            viewController.output = resolver.resolveSafe(ArtistsSearchViewOutput.self)
         }
     }
     
     func registerInteractor(in container: Container) {
-        container.register(ArtistsSearchInteractorInput.self) { resolver in
-            let output = resolver.resolveSafe(ArtistsSearchInteractorOutput.self)
-            return ArtistsSearchInteractor(output: output)
+        container.register(ArtistsSearchInteractorInput.self) { _ in
+            Interactor()
+        }
+        .initCompleted { resolver, object in
+            guard let interactor = object as? Interactor else {
+                fatalError("Interactor has unexpected type: \(String(describing: object))")
+            }
+            interactor.output = resolver.resolveSafe(ArtistsSearchInteractorOutput.self)
         }
     }
     
     func registerPresenter(in container: Container) {
-        container.register(ArtistsSearchViewOutput.self) { resolver in
-            let view = resolver.resolveSafe(ArtistsSearchViewInput.self)
-            let interactor = resolver.resolveSafe(ArtistsSearchInteractorInput.self)
-            let router = resolver.resolveSafe(ArtistsSearchRouterInput.self)
-            return ArtistsSearchPresenter(view: view,
-                                          interactor: interactor,
-                                          router: router)
+        container.register(ArtistsSearchViewOutput.self) { _ in
+            Presenter()
         }
         .implements(ArtistsSearchInteractorOutput.self)
         .implements(ArtistsSearchRouterOutput.self)
+        .initCompleted { resolver, object in
+            guard let presenter = object as? Presenter else {
+                fatalError("Presenter has unexpected type: \(String(describing: object))")
+            }
+            presenter.view = resolver.resolveSafe(ArtistsSearchViewInput.self)
+            presenter.interactor = resolver.resolveSafe(ArtistsSearchInteractorInput.self)
+            presenter.router = resolver.resolveSafe(ArtistsSearchRouterInput.self)
+        }
     }
     
     func registerRouter(in container: Container) {
         container.register(ArtistsSearchRouterInput.self) { resolver in
-            let output = resolver.resolveSafe(ArtistsSearchRouterOutput.self)
-            return ArtistsSearchRouter(output: output)
+            let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
+            return Router(viewDispatcher: viewDispatcher)
+        }
+        .initCompleted { resolver, object in
+            guard let router = object as? Router else {
+                fatalError("Router has unexpected type: \(String(describing: object))")
+            }
+            router.output = resolver.resolveSafe(ArtistsSearchRouterOutput.self)
         }
     }
 }

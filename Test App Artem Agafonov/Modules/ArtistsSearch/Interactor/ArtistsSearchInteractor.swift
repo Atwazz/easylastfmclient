@@ -7,13 +7,8 @@
 //
 
 final class ArtistsSearchInteractor {
-    // MARK: - Private instance properties
-    private weak var output: ArtistsSearchInteractorOutput?
-    
-    // MARK: - Init
-    init(output: ArtistsSearchInteractorOutput) {
-        self.output = output
-    }
+    // MARK: - Public instance properties
+    weak var output: ArtistsSearchInteractorOutput?
 }
 
 // MARK: - ArtistsSearchInteractorInput

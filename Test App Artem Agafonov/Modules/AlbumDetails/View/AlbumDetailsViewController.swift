@@ -9,12 +9,11 @@
 import UIKit
 
 final class AlbumDetailsViewController: UIViewController {
-    // MARK: - Private instance properties
-    private let output: AlbumDetailsViewOutput
+    // MARK: - Public instance properties
+    @DelayedImmutable var output: AlbumDetailsViewOutput
     
     // MARK: - Init
-    init(output: AlbumDetailsViewOutput) {
-        self.output = output
+    init() {
         super.init(nibName: Self.name, bundle: nil)
     }
     

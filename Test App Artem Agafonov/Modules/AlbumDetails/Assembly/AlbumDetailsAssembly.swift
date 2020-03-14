@@ -8,7 +8,12 @@
 
 import Swinject
 
-final class AlbumDetailsAssembly { }
+final class AlbumDetailsAssembly {
+    typealias View = AlbumDetailsViewController
+    typealias Interactor = AlbumDetailsInteractor
+    typealias Presenter = AlbumDetailsPresenter
+    typealias Router = AlbumDetailsRouter
+}
 
 // MARK: - Assembly
 extension AlbumDetailsAssembly: Assembly {
@@ -23,36 +28,55 @@ extension AlbumDetailsAssembly: Assembly {
 // MARK: - Registrations
 private extension AlbumDetailsAssembly {
     func registerView(in container: Container) {
-        container.register(AlbumDetailsViewInput.self) { resolver in
-            let viewOutput = resolver.resolveSafe(AlbumDetailsViewOutput.self)
-            return AlbumDetailsViewController(output: viewOutput)
+        container.register(AlbumDetailsViewInput.self) { _ in
+            View()
+        }
+        .initCompleted { resolver, object in
+            guard let viewController = object as? View else {
+                fatalError("View has unexpected type: \(String(describing: object))")
+            }
+            viewController.output = resolver.resolveSafe(AlbumDetailsViewOutput.self)
         }
     }
     
     func registerInteractor(in container: Container) {
-        container.register(AlbumDetailsInteractorInput.self) { resolver in
-            let output = resolver.resolveSafe(AlbumDetailsInteractorOutput.self)
-            return AlbumDetailsInteractor(output: output)
+        container.register(AlbumDetailsInteractorInput.self) { _ in
+            Interactor()
+        }
+        .initCompleted { resolver, object in
+            guard let interactor = object as? Interactor else {
+                fatalError("Interactor has unexpected type: \(String(describing: object))")
+            }
+            interactor.output = resolver.resolveSafe(AlbumDetailsInteractorOutput.self)
         }
     }
     
     func registerPresenter(in container: Container) {
-        container.register(AlbumDetailsViewOutput.self) { resolver in
-            let view = resolver.resolveSafe(AlbumDetailsViewInput.self)
-            let interactor = resolver.resolveSafe(AlbumDetailsInteractorInput.self)
-            let router = resolver.resolveSafe(AlbumDetailsRouterInput.self)
-            return AlbumDetailsPresenter(view: view,
-                                          interactor: interactor,
-                                          router: router)
+        container.register(AlbumDetailsViewOutput.self) { _ in
+            Presenter()
         }
         .implements(AlbumDetailsInteractorOutput.self)
         .implements(AlbumDetailsRouterOutput.self)
+        .initCompleted { resolver, object in
+            guard let presenter = object as? Presenter else {
+                fatalError("Presenter has unexpected type: \(String(describing: object))")
+            }
+            presenter.view = resolver.resolveSafe(AlbumDetailsViewInput.self)
+            presenter.interactor = resolver.resolveSafe(AlbumDetailsInteractorInput.self)
+            presenter.router = resolver.resolveSafe(AlbumDetailsRouterInput.self)
+        }
     }
     
     func registerRouter(in container: Container) {
         container.register(AlbumDetailsRouterInput.self) { resolver in
-            let output = resolver.resolveSafe(AlbumDetailsRouterOutput.self)
-            return AlbumDetailsRouter(output: output)
+            let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
+            return Router(viewDispatcher: viewDispatcher)
+        }
+        .initCompleted { resolver, object in
+            guard let router = object as? Router else {
+                fatalError("Router has unexpected type: \(String(describing: object))")
+            }
+            router.output = resolver.resolveSafe(AlbumDetailsRouterOutput.self)
         }
     }
 }

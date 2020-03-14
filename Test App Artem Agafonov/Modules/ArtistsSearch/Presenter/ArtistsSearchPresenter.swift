@@ -7,19 +7,10 @@
 //
 
 final class ArtistsSearchPresenter {
-    // MARK: - Private instance properties
-    private let view: ArtistsSearchViewInput
-    private let interactor: ArtistsSearchInteractorInput
-    private let router: ArtistsSearchRouterInput
-    
-    // MARK: - Init
-    init(view: ArtistsSearchViewInput,
-         interactor: ArtistsSearchInteractorInput,
-         router: ArtistsSearchRouterInput) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-    }
+    // MARK: - Public instance properties
+    @DelayedImmutable var view: ArtistsSearchViewInput
+    @DelayedImmutable var interactor: ArtistsSearchInteractorInput
+    @DelayedImmutable var router: ArtistsSearchRouterInput
 }
 
 // MARK: - ArtistsSearchViewOutput

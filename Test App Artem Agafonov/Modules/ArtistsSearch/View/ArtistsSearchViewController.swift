@@ -9,12 +9,11 @@
 import UIKit
 
 final class ArtistsSearchViewController: UIViewController {
-    // MARK: - Private instance properties
-    private let output: ArtistsSearchViewOutput
+    // MARK: - Public instance properties
+    @DelayedImmutable var output: ArtistsSearchViewOutput
     
     // MARK: - Init
-    init(output: ArtistsSearchViewOutput) {
-        self.output = output
+    init() {
         super.init(nibName: Self.name, bundle: nil)
     }
     

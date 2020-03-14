@@ -11,11 +11,18 @@ import CoreData
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
+    // MARK: - Public instance properties
+    var window: UIWindow?
+    
     // MARK: - Private instance properties
-    private let entryPointRouter = EntryPointFactory().router
+    private let entryPointFactory = EntryPointFactory()
+    private lazy var entryPointRouter = {
+        entryPointFactory.router
+    }()
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = entryPointFactory.window
         entryPointRouter.showInitialScreen()
         return true
     }

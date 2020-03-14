@@ -20,6 +20,10 @@ extension EntryPointFactory {
     var router: EntryPointRouter {
         assembler.synchronizedResolveSafe(EntryPointRouter.self)
     }
+    
+    var window: UIWindow {
+        assembler.synchronizedResolveSafe(UIWindow.self)
+    }
 }
 
 // MARK: - Private

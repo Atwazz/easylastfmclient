@@ -7,12 +7,15 @@
 //
 
 final class AlbumsScreenRouter {
+    // MARK: - Public instance properties
+    weak var output: AlbumsScreenRouterOutput?
+    
     // MARK: - Private instance properties
-    private weak var output: AlbumsScreenRouterOutput?
+    private let viewDispatcher: ViewDispatcher
     
     // MARK: - Init
-    init(output: AlbumsScreenRouterOutput) {
-        self.output = output
+    init(viewDispatcher: ViewDispatcher) {
+        self.viewDispatcher = viewDispatcher
     }
 }
 
