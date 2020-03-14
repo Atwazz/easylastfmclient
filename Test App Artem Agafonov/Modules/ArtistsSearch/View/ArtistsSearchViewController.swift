@@ -27,3 +27,8 @@ final class ArtistsSearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
+
+// MARK: - ArtistsSearchViewInput
+extension ArtistsSearchViewController: ArtistsSearchViewInput {
+    
+}

@@ -27,3 +27,8 @@ final class MainScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
+
+// MARK: - MainScreenViewInput
+extension MainScreenViewController: MainScreenViewInput {
+    
+}

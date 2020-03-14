@@ -27,3 +27,8 @@ final class AlbumDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
+
+// MARK: - AlbumDetailsViewInput
+extension AlbumDetailsViewController: AlbumDetailsViewInput {
+    
+}
