@@ -59,6 +59,32 @@
 		8B7312A3241D461E001922F4 /* ArtistsSearchViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731293241D461E001922F4 /* ArtistsSearchViewOutput.swift */; };
 		8B7312A4241D461E001922F4 /* ArtistsSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731295241D461E001922F4 /* ArtistsSearchPresenter.swift */; };
 		8B7312A5241D461E001922F4 /* ArtistsSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731297241D461E001922F4 /* ArtistsSearchFactory.swift */; };
+		8B7312BA241D4C26001922F4 /* AlbumDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312A7241D4C26001922F4 /* AlbumDetailsInteractor.swift */; };
+		8B7312BB241D4C26001922F4 /* AlbumDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312A8241D4C26001922F4 /* AlbumDetailsInteractorInput.swift */; };
+		8B7312BC241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312A9241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift */; };
+		8B7312BD241D4C26001922F4 /* AlbumDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */; };
+		8B7312BE241D4C26001922F4 /* AlbumDetailsRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */; };
+		8B7312BF241D4C26001922F4 /* AlbumDetailsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */; };
+		8B7312C0241D4C26001922F4 /* AlbumDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AF241D4C26001922F4 /* AlbumDetailsFactory.swift */; };
+		8B7312C1241D4C26001922F4 /* AlbumDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */; };
+		8B7312C2241D4C26001922F4 /* AlbumDetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B2241D4C26001922F4 /* AlbumDetailsViewOutput.swift */; };
+		8B7312C3241D4C26001922F4 /* AlbumDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7312B3241D4C26001922F4 /* AlbumDetailsViewController.xib */; };
+		8B7312C4241D4C26001922F4 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B4241D4C26001922F4 /* AlbumDetailsViewController.swift */; };
+		8B7312C5241D4C26001922F4 /* AlbumDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B7241D4C26001922F4 /* AlbumDetailsAssembly.swift */; };
+		8B7312C6241D4C26001922F4 /* AlbumDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B9241D4C26001922F4 /* AlbumDetailsPresenter.swift */; };
+		8B7312DB241D4C2D001922F4 /* AlbumsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312C8241D4C2C001922F4 /* AlbumsScreenFactory.swift */; };
+		8B7312DC241D4C2D001922F4 /* AlbumsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312CA241D4C2C001922F4 /* AlbumsScreenViewController.swift */; };
+		8B7312DD241D4C2D001922F4 /* AlbumsScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312CB241D4C2C001922F4 /* AlbumsScreenViewInput.swift */; };
+		8B7312DE241D4C2D001922F4 /* AlbumsScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312CC241D4C2C001922F4 /* AlbumsScreenViewOutput.swift */; };
+		8B7312DF241D4C2D001922F4 /* AlbumsScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7312CD241D4C2C001922F4 /* AlbumsScreenViewController.xib */; };
+		8B7312E0241D4C2D001922F4 /* AlbumsScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312CF241D4C2C001922F4 /* AlbumsScreenRouterOutput.swift */; };
+		8B7312E1241D4C2D001922F4 /* AlbumsScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D0241D4C2C001922F4 /* AlbumsScreenRouterInput.swift */; };
+		8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D1241D4C2C001922F4 /* AlbumsScreenRouter.swift */; };
+		8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D3241D4C2D001922F4 /* AlbumsScreenPresenter.swift */; };
+		8B7312E4241D4C2D001922F4 /* AlbumsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D5241D4C2D001922F4 /* AlbumsScreenInteractor.swift */; };
+		8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D6241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift */; };
+		8B7312E6241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D7241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift */; };
+		8B7312E7241D4C2D001922F4 /* AlbumsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */; };
 		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +144,32 @@
 		8B731293241D461E001922F4 /* ArtistsSearchViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchViewOutput.swift; sourceTree = "<group>"; };
 		8B731295241D461E001922F4 /* ArtistsSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchPresenter.swift; sourceTree = "<group>"; };
 		8B731297241D461E001922F4 /* ArtistsSearchFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchFactory.swift; sourceTree = "<group>"; };
+		8B7312A7241D4C26001922F4 /* AlbumDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractor.swift; sourceTree = "<group>"; };
+		8B7312A8241D4C26001922F4 /* AlbumDetailsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorInput.swift; sourceTree = "<group>"; };
+		8B7312A9241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorOutput.swift; sourceTree = "<group>"; };
+		8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouter.swift; sourceTree = "<group>"; };
+		8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterOutput.swift; sourceTree = "<group>"; };
+		8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterInput.swift; sourceTree = "<group>"; };
+		8B7312AF241D4C26001922F4 /* AlbumDetailsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsFactory.swift; sourceTree = "<group>"; };
+		8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewInput.swift; sourceTree = "<group>"; };
+		8B7312B2241D4C26001922F4 /* AlbumDetailsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewOutput.swift; sourceTree = "<group>"; };
+		8B7312B3241D4C26001922F4 /* AlbumDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumDetailsViewController.xib; sourceTree = "<group>"; };
+		8B7312B4241D4C26001922F4 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		8B7312B7241D4C26001922F4 /* AlbumDetailsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsAssembly.swift; sourceTree = "<group>"; };
+		8B7312B9241D4C26001922F4 /* AlbumDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsPresenter.swift; sourceTree = "<group>"; };
+		8B7312C8241D4C2C001922F4 /* AlbumsScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenFactory.swift; sourceTree = "<group>"; };
+		8B7312CA241D4C2C001922F4 /* AlbumsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewController.swift; sourceTree = "<group>"; };
+		8B7312CB241D4C2C001922F4 /* AlbumsScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewInput.swift; sourceTree = "<group>"; };
+		8B7312CC241D4C2C001922F4 /* AlbumsScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewOutput.swift; sourceTree = "<group>"; };
+		8B7312CD241D4C2C001922F4 /* AlbumsScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumsScreenViewController.xib; sourceTree = "<group>"; };
+		8B7312CF241D4C2C001922F4 /* AlbumsScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouterOutput.swift; sourceTree = "<group>"; };
+		8B7312D0241D4C2C001922F4 /* AlbumsScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouterInput.swift; sourceTree = "<group>"; };
+		8B7312D1241D4C2C001922F4 /* AlbumsScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouter.swift; sourceTree = "<group>"; };
+		8B7312D3241D4C2D001922F4 /* AlbumsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenPresenter.swift; sourceTree = "<group>"; };
+		8B7312D5241D4C2D001922F4 /* AlbumsScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractor.swift; sourceTree = "<group>"; };
+		8B7312D6241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorInput.swift; sourceTree = "<group>"; };
+		8B7312D7241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenAssembly.swift; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -343,6 +395,13 @@
 		8B7311D2241CF00B001922F4 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				8B7312D9241D4C2D001922F4 /* Assembly */,
+				8B7312C7241D4C2C001922F4 /* Factory */,
+				8B7312D4241D4C2D001922F4 /* Interactor */,
+				8B7312D8241D4C2D001922F4 /* Model */,
+				8B7312D2241D4C2C001922F4 /* Presenter */,
+				8B7312CE241D4C2C001922F4 /* Router */,
+				8B7312C9241D4C2C001922F4 /* View */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -360,6 +419,13 @@
 		8B731215241D09DA001922F4 /* AlbumDetails */ = {
 			isa = PBXGroup;
 			children = (
+				8B7312B6241D4C26001922F4 /* Assembly */,
+				8B7312AE241D4C26001922F4 /* Factory */,
+				8B7312A6241D4C26001922F4 /* Interactor */,
+				8B7312B5241D4C26001922F4 /* Model */,
+				8B7312B8241D4C26001922F4 /* Presenter */,
+				8B7312AA241D4C26001922F4 /* Router */,
+				8B7312B0241D4C26001922F4 /* View */,
 			);
 			path = AlbumDetails;
 			sourceTree = "<group>";
@@ -540,6 +606,130 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8B7312A6241D4C26001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312A7241D4C26001922F4 /* AlbumDetailsInteractor.swift */,
+				8B7312A8241D4C26001922F4 /* AlbumDetailsInteractorInput.swift */,
+				8B7312A9241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B7312AA241D4C26001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */,
+				8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */,
+				8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B7312AE241D4C26001922F4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312AF241D4C26001922F4 /* AlbumDetailsFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		8B7312B0241D4C26001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */,
+				8B7312B2241D4C26001922F4 /* AlbumDetailsViewOutput.swift */,
+				8B7312B3241D4C26001922F4 /* AlbumDetailsViewController.xib */,
+				8B7312B4241D4C26001922F4 /* AlbumDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B7312B5241D4C26001922F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B7312B6241D4C26001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312B7241D4C26001922F4 /* AlbumDetailsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B7312B8241D4C26001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312B9241D4C26001922F4 /* AlbumDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B7312C7241D4C2C001922F4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312C8241D4C2C001922F4 /* AlbumsScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		8B7312C9241D4C2C001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312CA241D4C2C001922F4 /* AlbumsScreenViewController.swift */,
+				8B7312CB241D4C2C001922F4 /* AlbumsScreenViewInput.swift */,
+				8B7312CC241D4C2C001922F4 /* AlbumsScreenViewOutput.swift */,
+				8B7312CD241D4C2C001922F4 /* AlbumsScreenViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B7312CE241D4C2C001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312CF241D4C2C001922F4 /* AlbumsScreenRouterOutput.swift */,
+				8B7312D0241D4C2C001922F4 /* AlbumsScreenRouterInput.swift */,
+				8B7312D1241D4C2C001922F4 /* AlbumsScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B7312D2241D4C2C001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312D3241D4C2D001922F4 /* AlbumsScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B7312D4241D4C2D001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312D5241D4C2D001922F4 /* AlbumsScreenInteractor.swift */,
+				8B7312D6241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift */,
+				8B7312D7241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B7312D8241D4C2D001922F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B7312D9241D4C2D001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		A5CAE365F41D6E489E550561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +810,8 @@
 				8B41998F241C2F85004F0195 /* LaunchScreen.storyboard in Resources */,
 				8B731259241D2F92001922F4 /* MainScreenViewController.xib in Resources */,
 				8B7312A0241D461E001922F4 /* ArtistsSearchViewController.xib in Resources */,
+				8B7312DF241D4C2D001922F4 /* AlbumsScreenViewController.xib in Resources */,
+				8B7312C3241D4C26001922F4 /* AlbumDetailsViewController.xib in Resources */,
 				8B41998C241C2F85004F0195 /* Assets.xcassets in Resources */,
 				8B419987241C2F84004F0195 /* Main.storyboard in Resources */,
 			);
@@ -677,9 +869,13 @@
 			files = (
 				8B41998A241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld in Sources */,
 				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
+				8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */,
 				8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */,
 				8B73129D241D461E001922F4 /* ArtistsSearchRouterInput.swift in Sources */,
+				8B7312BF241D4C26001922F4 /* AlbumDetailsRouterInput.swift in Sources */,
 				8B7312A1241D461E001922F4 /* ArtistsSearchViewController.swift in Sources */,
+				8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
+				8B7312BB241D4C26001922F4 /* AlbumDetailsInteractorInput.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8B73129E241D461E001922F4 /* ArtistsSearchRouterOutput.swift in Sources */,
 				8B731264241D320F001922F4 /* ScreenSizeProvider.swift in Sources */,
@@ -688,10 +884,15 @@
 				8B7312A5241D461E001922F4 /* ArtistsSearchFactory.swift in Sources */,
 				8B7311EE241CFA4B001922F4 /* MainScreenViewInput.swift in Sources */,
 				8B7312A3241D461E001922F4 /* ArtistsSearchViewOutput.swift in Sources */,
+				8B7312E0241D4C2D001922F4 /* AlbumsScreenRouterOutput.swift in Sources */,
 				8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */,
+				8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */,
 				8B73126B241D3415001922F4 /* UIServicesAssemblerProvider.swift in Sources */,
+				8B7312E7241D4C2D001922F4 /* AlbumsScreenAssembly.swift in Sources */,
 				8B7312A2241D461E001922F4 /* ArtistsSearchViewInput.swift in Sources */,
+				8B7312C2241D4C26001922F4 /* AlbumDetailsViewOutput.swift in Sources */,
 				8B731273241D3683001922F4 /* ScreenFactory.swift in Sources */,
+				8B7312C5241D4C26001922F4 /* AlbumDetailsAssembly.swift in Sources */,
 				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
 				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
@@ -700,6 +901,8 @@
 				8B419980241C2F84004F0195 /* AppDelegate.swift in Sources */,
 				8B731299241D461E001922F4 /* ArtistsSearchInteractorOutput.swift in Sources */,
 				8B731253241D182A001922F4 /* ViewDispatcherBase.swift in Sources */,
+				8B7312BA241D4C26001922F4 /* AlbumDetailsInteractor.swift in Sources */,
+				8B7312C1241D4C26001922F4 /* AlbumDetailsViewInput.swift in Sources */,
 				8B731268241D32C9001922F4 /* UIHelpersAssembly.swift in Sources */,
 				8B7311E2241CF8F3001922F4 /* MainScreenInteractor.swift in Sources */,
 				8B7311F5241D0219001922F4 /* MainScreenRouter.swift in Sources */,
@@ -710,17 +913,30 @@
 				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,
 				8B731270241D3546001922F4 /* MainScreenFactory.swift in Sources */,
 				8B731276241D38EA001922F4 /* EntryPointRouterBase.swift in Sources */,
+				8B7312E6241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */,
+				8B7312C6241D4C26001922F4 /* AlbumDetailsPresenter.swift in Sources */,
 				8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */,
 				8B73126D241D3477001922F4 /* ServicesAssemblerProvider.swift in Sources */,
 				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
+				8B7312C4241D4C26001922F4 /* AlbumDetailsViewController.swift in Sources */,
 				8B73129C241D461E001922F4 /* ArtistsSearchAssembly.swift in Sources */,
+				8B7312E4241D4C2D001922F4 /* AlbumsScreenInteractor.swift in Sources */,
 				8B73129A241D461E001922F4 /* ArtistsSearchInteractor.swift in Sources */,
+				8B7312C0241D4C26001922F4 /* AlbumDetailsFactory.swift in Sources */,
 				8B731280241D3C73001922F4 /* EntryPointFactory.swift in Sources */,
+				8B7312BD241D4C26001922F4 /* AlbumDetailsRouter.swift in Sources */,
+				8B7312E1241D4C2D001922F4 /* AlbumsScreenRouterInput.swift in Sources */,
 				8B73127B241D39CE001922F4 /* EntryPointAssembly.swift in Sources */,
+				8B7312DB241D4C2D001922F4 /* AlbumsScreenFactory.swift in Sources */,
 				8B7311F3241D00BF001922F4 /* UIViewController+Name.swift in Sources */,
 				8B7311EA241CFA2B001922F4 /* MainScreenViewOutput.swift in Sources */,
 				8B7311E0241CF865001922F4 /* MainScreenAssembly.swift in Sources */,
+				8B7312DE241D4C2D001922F4 /* AlbumsScreenViewOutput.swift in Sources */,
 				8B73129F241D461E001922F4 /* ArtistsSearchRouter.swift in Sources */,
+				8B7312BC241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */,
+				8B7312DC241D4C2D001922F4 /* AlbumsScreenViewController.swift in Sources */,
+				8B7312DD241D4C2D001922F4 /* AlbumsScreenViewInput.swift in Sources */,
+				8B7312BE241D4C26001922F4 /* AlbumDetailsRouterOutput.swift in Sources */,
 				8B731251241D1631001922F4 /* ViewDispatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
