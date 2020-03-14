@@ -14,6 +14,55 @@
 		8B41998A241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B419988241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld */; };
 		8B41998C241C2F85004F0195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B41998B241C2F85004F0195 /* Assets.xcassets */; };
 		8B41998F241C2F85004F0195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B41998D241C2F85004F0195 /* LaunchScreen.storyboard */; };
+		8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C3241CE992001922F4 /* DelayedMutable.swift */; };
+		8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */; };
+		8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */; };
+		8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311CA241CEA2C001922F4 /* Resolver+Safe.swift */; };
+		8B7311E0241CF865001922F4 /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311DF241CF865001922F4 /* MainScreenAssembly.swift */; };
+		8B7311E2241CF8F3001922F4 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311E1241CF8F3001922F4 /* MainScreenInteractor.swift */; };
+		8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311E3241CF905001922F4 /* MainScreenInteractorInput.swift */; };
+		8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311E5241CF90D001922F4 /* MainScreenInteractorOutput.swift */; };
+		8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311E7241CF971001922F4 /* MainScreenPresenter.swift */; };
+		8B7311EA241CFA2B001922F4 /* MainScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */; };
+		8B7311EE241CFA4B001922F4 /* MainScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */; };
+		8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311EF241CFF7B001922F4 /* MainScreenViewController.swift */; };
+		8B7311F3241D00BF001922F4 /* UIViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311F2241D00BF001922F4 /* UIViewController+Name.swift */; };
+		8B7311F5241D0219001922F4 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311F4241D0219001922F4 /* MainScreenRouter.swift */; };
+		8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311F6241D0244001922F4 /* MainScreenRouterInput.swift */; };
+		8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311F8241D024D001922F4 /* MainScreenRouterOutput.swift */; };
+		8B73120A241D0917001922F4 /* ArtistsSearchRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311FB241D0917001922F4 /* ArtistsSearchRouterInput.swift */; };
+		8B73120B241D0917001922F4 /* ArtistsSearchRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311FC241D0917001922F4 /* ArtistsSearchRouterOutput.swift */; };
+		8B73120C241D0917001922F4 /* ArtistsSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311FD241D0917001922F4 /* ArtistsSearchRouter.swift */; };
+		8B73120D241D0917001922F4 /* ArtistsSearchInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311FF241D0917001922F4 /* ArtistsSearchInteractorOutput.swift */; };
+		8B73120E241D0917001922F4 /* ArtistsSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731200241D0917001922F4 /* ArtistsSearchInteractor.swift */; };
+		8B73120F241D0917001922F4 /* ArtistsSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731201241D0917001922F4 /* ArtistsSearchInteractorInput.swift */; };
+		8B731210241D0917001922F4 /* ArtistsSearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731203241D0917001922F4 /* ArtistsSearchAssembly.swift */; };
+		8B731211241D0917001922F4 /* ArtistsSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731205241D0917001922F4 /* ArtistsSearchPresenter.swift */; };
+		8B731212241D0917001922F4 /* ArtistsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731207241D0917001922F4 /* ArtistsSearchViewController.swift */; };
+		8B731213241D0918001922F4 /* ArtistsSearchViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731208241D0917001922F4 /* ArtistsSearchViewInput.swift */; };
+		8B731214241D0918001922F4 /* ArtistsSearchViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731209241D0917001922F4 /* ArtistsSearchViewOutput.swift */; };
+		8B731227241D0A7F001922F4 /* AlbumDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731217241D0A7F001922F4 /* AlbumDetailsAssembly.swift */; };
+		8B731228241D0A7F001922F4 /* AlbumDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731219241D0A7F001922F4 /* AlbumDetailsPresenter.swift */; };
+		8B731229241D0A7F001922F4 /* AlbumDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73121C241D0A7F001922F4 /* AlbumDetailsViewInput.swift */; };
+		8B73122A241D0A7F001922F4 /* AlbumDetailsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73121D241D0A7F001922F4 /* AlbumDetailsViewOutput.swift */; };
+		8B73122B241D0A7F001922F4 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73121E241D0A7F001922F4 /* AlbumDetailsViewController.swift */; };
+		8B73122C241D0A7F001922F4 /* AlbumDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731220241D0A7F001922F4 /* AlbumDetailsRouter.swift */; };
+		8B73122D241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731221241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift */; };
+		8B73122E241D0A7F001922F4 /* AlbumDetailsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731222241D0A7F001922F4 /* AlbumDetailsRouterInput.swift */; };
+		8B73122F241D0A7F001922F4 /* AlbumDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731224241D0A7F001922F4 /* AlbumDetailsInteractor.swift */; };
+		8B731230241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731225241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift */; };
+		8B731231241D0A7F001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731226241D0A7F001922F4 /* AlbumDetailsInteractorOutput.swift */; };
+		8B731243241D0A87001922F4 /* AlbumsScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731233241D0A87001922F4 /* AlbumsScreenRouterOutput.swift */; };
+		8B731244241D0A87001922F4 /* AlbumsScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731234241D0A87001922F4 /* AlbumsScreenRouterInput.swift */; };
+		8B731245241D0A87001922F4 /* AlbumsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731235241D0A87001922F4 /* AlbumsScreenRouter.swift */; };
+		8B731246241D0A87001922F4 /* AlbumsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731237241D0A87001922F4 /* AlbumsScreenViewController.swift */; };
+		8B731247241D0A87001922F4 /* AlbumsScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731238241D0A87001922F4 /* AlbumsScreenViewInput.swift */; };
+		8B731248241D0A87001922F4 /* AlbumsScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731239241D0A87001922F4 /* AlbumsScreenViewOutput.swift */; };
+		8B731249241D0A87001922F4 /* AlbumsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73123B241D0A87001922F4 /* AlbumsScreenAssembly.swift */; };
+		8B73124A241D0A87001922F4 /* AlbumsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73123E241D0A87001922F4 /* AlbumsScreenInteractor.swift */; };
+		8B73124B241D0A87001922F4 /* AlbumsScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73123F241D0A87001922F4 /* AlbumsScreenInteractorInput.swift */; };
+		8B73124C241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731240241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift */; };
+		8B73124D241D0A87001922F4 /* AlbumsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731242241D0A87001922F4 /* AlbumsScreenPresenter.swift */; };
 		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +77,55 @@
 		8B41998B241C2F85004F0195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B41998E241C2F85004F0195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B419990241C2F85004F0195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B7311C3241CE992001922F4 /* DelayedMutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedMutable.swift; sourceTree = "<group>"; };
+		8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedImmutable.swift; sourceTree = "<group>"; };
+		8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+SynchronizedResolver.swift"; sourceTree = "<group>"; };
+		8B7311CA241CEA2C001922F4 /* Resolver+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Safe.swift"; sourceTree = "<group>"; };
+		8B7311DF241CF865001922F4 /* MainScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
+		8B7311E1241CF8F3001922F4 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		8B7311E3241CF905001922F4 /* MainScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorInput.swift; sourceTree = "<group>"; };
+		8B7311E5241CF90D001922F4 /* MainScreenInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		8B7311E7241CF971001922F4 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewOutput.swift; sourceTree = "<group>"; };
+		8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewInput.swift; sourceTree = "<group>"; };
+		8B7311EF241CFF7B001922F4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		8B7311F2241D00BF001922F4 /* UIViewController+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Name.swift"; sourceTree = "<group>"; };
+		8B7311F4241D0219001922F4 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		8B7311F6241D0244001922F4 /* MainScreenRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouterInput.swift; sourceTree = "<group>"; };
+		8B7311F8241D024D001922F4 /* MainScreenRouterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouterOutput.swift; sourceTree = "<group>"; };
+		8B7311FB241D0917001922F4 /* ArtistsSearchRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchRouterInput.swift; sourceTree = "<group>"; };
+		8B7311FC241D0917001922F4 /* ArtistsSearchRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchRouterOutput.swift; sourceTree = "<group>"; };
+		8B7311FD241D0917001922F4 /* ArtistsSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchRouter.swift; sourceTree = "<group>"; };
+		8B7311FF241D0917001922F4 /* ArtistsSearchInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchInteractorOutput.swift; sourceTree = "<group>"; };
+		8B731200241D0917001922F4 /* ArtistsSearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchInteractor.swift; sourceTree = "<group>"; };
+		8B731201241D0917001922F4 /* ArtistsSearchInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchInteractorInput.swift; sourceTree = "<group>"; };
+		8B731203241D0917001922F4 /* ArtistsSearchAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchAssembly.swift; sourceTree = "<group>"; };
+		8B731205241D0917001922F4 /* ArtistsSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchPresenter.swift; sourceTree = "<group>"; };
+		8B731207241D0917001922F4 /* ArtistsSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchViewController.swift; sourceTree = "<group>"; };
+		8B731208241D0917001922F4 /* ArtistsSearchViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchViewInput.swift; sourceTree = "<group>"; };
+		8B731209241D0917001922F4 /* ArtistsSearchViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsSearchViewOutput.swift; sourceTree = "<group>"; };
+		8B731217241D0A7F001922F4 /* AlbumDetailsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsAssembly.swift; sourceTree = "<group>"; };
+		8B731219241D0A7F001922F4 /* AlbumDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsPresenter.swift; sourceTree = "<group>"; };
+		8B73121C241D0A7F001922F4 /* AlbumDetailsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewInput.swift; sourceTree = "<group>"; };
+		8B73121D241D0A7F001922F4 /* AlbumDetailsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewOutput.swift; sourceTree = "<group>"; };
+		8B73121E241D0A7F001922F4 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		8B731220241D0A7F001922F4 /* AlbumDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouter.swift; sourceTree = "<group>"; };
+		8B731221241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterOutput.swift; sourceTree = "<group>"; };
+		8B731222241D0A7F001922F4 /* AlbumDetailsRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterInput.swift; sourceTree = "<group>"; };
+		8B731224241D0A7F001922F4 /* AlbumDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractor.swift; sourceTree = "<group>"; };
+		8B731225241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorInput.swift; sourceTree = "<group>"; };
+		8B731226241D0A7F001922F4 /* AlbumDetailsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorOutput.swift; sourceTree = "<group>"; };
+		8B731233241D0A87001922F4 /* AlbumsScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouterOutput.swift; sourceTree = "<group>"; };
+		8B731234241D0A87001922F4 /* AlbumsScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouterInput.swift; sourceTree = "<group>"; };
+		8B731235241D0A87001922F4 /* AlbumsScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenRouter.swift; sourceTree = "<group>"; };
+		8B731237241D0A87001922F4 /* AlbumsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewController.swift; sourceTree = "<group>"; };
+		8B731238241D0A87001922F4 /* AlbumsScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewInput.swift; sourceTree = "<group>"; };
+		8B731239241D0A87001922F4 /* AlbumsScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenViewOutput.swift; sourceTree = "<group>"; };
+		8B73123B241D0A87001922F4 /* AlbumsScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenAssembly.swift; sourceTree = "<group>"; };
+		8B73123E241D0A87001922F4 /* AlbumsScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractor.swift; sourceTree = "<group>"; };
+		8B73123F241D0A87001922F4 /* AlbumsScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorInput.swift; sourceTree = "<group>"; };
+		8B731240241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		8B731242241D0A87001922F4 /* AlbumsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenPresenter.swift; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -48,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8B41997E241C2F84004F0195 /* Test App Artem Agafonov */,
+				8B419983241C2F84004F0195 /* ViewController.swift */,
 				8B41997D241C2F84004F0195 /* Products */,
 				A5CAE365F41D6E489E550561 /* Pods */,
 				D3E46C3109D696E6839CACE6 /* Frameworks */,
@@ -65,16 +164,384 @@
 		8B41997E241C2F84004F0195 /* Test App Artem Agafonov */ = {
 			isa = PBXGroup;
 			children = (
-				8B41997F241C2F84004F0195 /* AppDelegate.swift */,
-				8B419981241C2F84004F0195 /* SceneDelegate.swift */,
-				8B419983241C2F84004F0195 /* ViewController.swift */,
-				8B419985241C2F84004F0195 /* Main.storyboard */,
-				8B41998B241C2F85004F0195 /* Assets.xcassets */,
-				8B41998D241C2F85004F0195 /* LaunchScreen.storyboard */,
-				8B419990241C2F85004F0195 /* Info.plist */,
-				8B419988241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld */,
+				8B7311B5241CE6C1001922F4 /* Services */,
+				8B7311B6241CE6C8001922F4 /* Utils */,
+				8B7311B7241CE6CD001922F4 /* Extensions */,
+				8B7311B8241CE6D5001922F4 /* Common */,
+				8B7311BB241CE707001922F4 /* Modules */,
+				8B7311B9241CE6DC001922F4 /* Resources */,
+				8B7311BA241CE6E3001922F4 /* SupportingFiles */,
 			);
 			path = "Test App Artem Agafonov";
+			sourceTree = "<group>";
+		};
+		8B7311B5241CE6C1001922F4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311BC241CE73A001922F4 /* PersistentStorage */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B7311B6241CE6C8001922F4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8B7311B7241CE6CD001922F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311F1241D007C001922F4 /* UIKit */,
+				8B7311C7241CEA0E001922F4 /* Swinject */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B7311B8241CE6D5001922F4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311C2241CE97E001922F4 /* PropertyWrappers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B7311B9241CE6DC001922F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B419988241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld */,
+				8B41998B241C2F85004F0195 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B7311BA241CE6E3001922F4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8B419985241C2F84004F0195 /* Main.storyboard */,
+				8B41998D241C2F85004F0195 /* LaunchScreen.storyboard */,
+				8B419990241C2F85004F0195 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8B7311BB241CE707001922F4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B731215241D09DA001922F4 /* AlbumDetails */,
+				8B7311D2241CF00B001922F4 /* Albums */,
+				8B7311BE241CE7E4001922F4 /* Application */,
+				8B7311D1241CEFEF001922F4 /* ArtistsSearch */,
+				8B7311C0241CE7F9001922F4 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8B7311BC241CE73A001922F4 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		8B7311BE241CE7E4001922F4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311BF241CE7EF001922F4 /* Delegates */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8B7311BF241CE7EF001922F4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8B41997F241C2F84004F0195 /* AppDelegate.swift */,
+				8B419981241C2F84004F0195 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8B7311C0241CE7F9001922F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311CC241CEFB1001922F4 /* Assembly */,
+				8B7311CD241CEFB8001922F4 /* Interactor */,
+				8B7311D0241CEFCE001922F4 /* Model */,
+				8B7311CE241CEFBF001922F4 /* Presenter */,
+				8B7311CF241CEFC7001922F4 /* Router */,
+				8B7311C1241CE800001922F4 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8B7311C1241CE800001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */,
+				8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */,
+				8B7311EF241CFF7B001922F4 /* MainScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B7311C2241CE97E001922F4 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311C3241CE992001922F4 /* DelayedMutable.swift */,
+				8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		8B7311C7241CEA0E001922F4 /* Swinject */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */,
+				8B7311CA241CEA2C001922F4 /* Resolver+Safe.swift */,
+			);
+			path = Swinject;
+			sourceTree = "<group>";
+		};
+		8B7311CC241CEFB1001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311DF241CF865001922F4 /* MainScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B7311CD241CEFB8001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311E1241CF8F3001922F4 /* MainScreenInteractor.swift */,
+				8B7311E3241CF905001922F4 /* MainScreenInteractorInput.swift */,
+				8B7311E5241CF90D001922F4 /* MainScreenInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B7311CE241CEFBF001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311E7241CF971001922F4 /* MainScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B7311CF241CEFC7001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311F4241D0219001922F4 /* MainScreenRouter.swift */,
+				8B7311F6241D0244001922F4 /* MainScreenRouterInput.swift */,
+				8B7311F8241D024D001922F4 /* MainScreenRouterOutput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B7311D0241CEFCE001922F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B7311D1241CEFEF001922F4 /* ArtistsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				8B731202241D0917001922F4 /* Assembly */,
+				8B7311FE241D0917001922F4 /* Interactor */,
+				8B731204241D0917001922F4 /* Presenter */,
+				8B7311FA241D0917001922F4 /* Router */,
+				8B731206241D0917001922F4 /* View */,
+			);
+			path = ArtistsSearch;
+			sourceTree = "<group>";
+		};
+		8B7311D2241CF00B001922F4 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				8B73123A241D0A87001922F4 /* Assembly */,
+				8B73123D241D0A87001922F4 /* Interactor */,
+				8B73123C241D0A87001922F4 /* Model */,
+				8B731241241D0A87001922F4 /* Presenter */,
+				8B731232241D0A87001922F4 /* Router */,
+				8B731236241D0A87001922F4 /* View */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		8B7311F1241D007C001922F4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311F2241D00BF001922F4 /* UIViewController+Name.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8B7311FA241D0917001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311FB241D0917001922F4 /* ArtistsSearchRouterInput.swift */,
+				8B7311FC241D0917001922F4 /* ArtistsSearchRouterOutput.swift */,
+				8B7311FD241D0917001922F4 /* ArtistsSearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B7311FE241D0917001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B7311FF241D0917001922F4 /* ArtistsSearchInteractorOutput.swift */,
+				8B731200241D0917001922F4 /* ArtistsSearchInteractor.swift */,
+				8B731201241D0917001922F4 /* ArtistsSearchInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B731202241D0917001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B731203241D0917001922F4 /* ArtistsSearchAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B731204241D0917001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B731205241D0917001922F4 /* ArtistsSearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B731206241D0917001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B731207241D0917001922F4 /* ArtistsSearchViewController.swift */,
+				8B731208241D0917001922F4 /* ArtistsSearchViewInput.swift */,
+				8B731209241D0917001922F4 /* ArtistsSearchViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B731215241D09DA001922F4 /* AlbumDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8B731216241D0A7F001922F4 /* Assembly */,
+				8B731223241D0A7F001922F4 /* Interactor */,
+				8B73121A241D0A7F001922F4 /* Model */,
+				8B731218241D0A7F001922F4 /* Presenter */,
+				8B73121F241D0A7F001922F4 /* Router */,
+				8B73121B241D0A7F001922F4 /* View */,
+			);
+			path = AlbumDetails;
+			sourceTree = "<group>";
+		};
+		8B731216241D0A7F001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B731217241D0A7F001922F4 /* AlbumDetailsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B731218241D0A7F001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B731219241D0A7F001922F4 /* AlbumDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B73121A241D0A7F001922F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B73121B241D0A7F001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B73121C241D0A7F001922F4 /* AlbumDetailsViewInput.swift */,
+				8B73121D241D0A7F001922F4 /* AlbumDetailsViewOutput.swift */,
+				8B73121E241D0A7F001922F4 /* AlbumDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B73121F241D0A7F001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B731220241D0A7F001922F4 /* AlbumDetailsRouter.swift */,
+				8B731221241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift */,
+				8B731222241D0A7F001922F4 /* AlbumDetailsRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B731223241D0A7F001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B731224241D0A7F001922F4 /* AlbumDetailsInteractor.swift */,
+				8B731225241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift */,
+				8B731226241D0A7F001922F4 /* AlbumDetailsInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B731232241D0A87001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B731233241D0A87001922F4 /* AlbumsScreenRouterOutput.swift */,
+				8B731234241D0A87001922F4 /* AlbumsScreenRouterInput.swift */,
+				8B731235241D0A87001922F4 /* AlbumsScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B731236241D0A87001922F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B731237241D0A87001922F4 /* AlbumsScreenViewController.swift */,
+				8B731238241D0A87001922F4 /* AlbumsScreenViewInput.swift */,
+				8B731239241D0A87001922F4 /* AlbumsScreenViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B73123A241D0A87001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B73123B241D0A87001922F4 /* AlbumsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B73123C241D0A87001922F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B73123D241D0A87001922F4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8B73123E241D0A87001922F4 /* AlbumsScreenInteractor.swift */,
+				8B73123F241D0A87001922F4 /* AlbumsScreenInteractorInput.swift */,
+				8B731240241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8B731241241D0A87001922F4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B731242241D0A87001922F4 /* AlbumsScreenPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		A5CAE365F41D6E489E550561 /* Pods */ = {
@@ -210,10 +677,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B731231241D0A7F001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */,
+				8B73124C241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */,
+				8B731244241D0A87001922F4 /* AlbumsScreenRouterInput.swift in Sources */,
 				8B41998A241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld in Sources */,
 				8B419984241C2F84004F0195 /* ViewController.swift in Sources */,
+				8B73120F241D0917001922F4 /* ArtistsSearchInteractorInput.swift in Sources */,
+				8B731211241D0917001922F4 /* ArtistsSearchPresenter.swift in Sources */,
+				8B73122A241D0A7F001922F4 /* AlbumDetailsViewOutput.swift in Sources */,
+				8B73122E241D0A7F001922F4 /* AlbumDetailsRouterInput.swift in Sources */,
+				8B731246241D0A87001922F4 /* AlbumsScreenViewController.swift in Sources */,
+				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
+				8B73124A241D0A87001922F4 /* AlbumsScreenInteractor.swift in Sources */,
+				8B731243241D0A87001922F4 /* AlbumsScreenRouterOutput.swift in Sources */,
+				8B73120A241D0917001922F4 /* ArtistsSearchRouterInput.swift in Sources */,
+				8B73120C241D0917001922F4 /* ArtistsSearchRouter.swift in Sources */,
+				8B73120B241D0917001922F4 /* ArtistsSearchRouterOutput.swift in Sources */,
+				8B731228241D0A7F001922F4 /* AlbumDetailsPresenter.swift in Sources */,
+				8B7311EE241CFA4B001922F4 /* MainScreenViewInput.swift in Sources */,
+				8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */,
+				8B731213241D0918001922F4 /* ArtistsSearchViewInput.swift in Sources */,
+				8B73124D241D0A87001922F4 /* AlbumsScreenPresenter.swift in Sources */,
+				8B731245241D0A87001922F4 /* AlbumsScreenRouter.swift in Sources */,
+				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
+				8B731227241D0A7F001922F4 /* AlbumDetailsAssembly.swift in Sources */,
+				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
+				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
+				8B731248241D0A87001922F4 /* AlbumsScreenViewOutput.swift in Sources */,
 				8B419980241C2F84004F0195 /* AppDelegate.swift in Sources */,
+				8B73122D241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift in Sources */,
+				8B73122C241D0A7F001922F4 /* AlbumDetailsRouter.swift in Sources */,
 				8B419982241C2F84004F0195 /* SceneDelegate.swift in Sources */,
+				8B7311E2241CF8F3001922F4 /* MainScreenInteractor.swift in Sources */,
+				8B73120E241D0917001922F4 /* ArtistsSearchInteractor.swift in Sources */,
+				8B731229241D0A7F001922F4 /* AlbumDetailsViewInput.swift in Sources */,
+				8B73122F241D0A7F001922F4 /* AlbumDetailsInteractor.swift in Sources */,
+				8B7311F5241D0219001922F4 /* MainScreenRouter.swift in Sources */,
+				8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */,
+				8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */,
+				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,
+				8B731247241D0A87001922F4 /* AlbumsScreenViewInput.swift in Sources */,
+				8B731212241D0917001922F4 /* ArtistsSearchViewController.swift in Sources */,
+				8B73120D241D0917001922F4 /* ArtistsSearchInteractorOutput.swift in Sources */,
+				8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */,
+				8B731214241D0918001922F4 /* ArtistsSearchViewOutput.swift in Sources */,
+				8B731230241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift in Sources */,
+				8B731249241D0A87001922F4 /* AlbumsScreenAssembly.swift in Sources */,
+				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
+				8B7311F3241D00BF001922F4 /* UIViewController+Name.swift in Sources */,
+				8B73124B241D0A87001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
+				8B7311EA241CFA2B001922F4 /* MainScreenViewOutput.swift in Sources */,
+				8B7311E0241CF865001922F4 /* MainScreenAssembly.swift in Sources */,
+				8B73122B241D0A7F001922F4 /* AlbumDetailsViewController.swift in Sources */,
+				8B731210241D0917001922F4 /* ArtistsSearchAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +876,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZRY5FDTRG8;
-				INFOPLIST_FILE = "Test App Artem Agafonov/Info.plist";
+				INFOPLIST_FILE = "Test App Artem Agafonov/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +884,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.agafonov.Test-App-Artem-Agafonov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -379,7 +895,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZRY5FDTRG8;
-				INFOPLIST_FILE = "Test App Artem Agafonov/Info.plist";
+				INFOPLIST_FILE = "Test App Artem Agafonov/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,7 +903,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.agafonov.Test-App-Artem-Agafonov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
