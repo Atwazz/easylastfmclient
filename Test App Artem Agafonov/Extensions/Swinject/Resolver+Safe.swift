@@ -26,20 +26,4 @@ extension Resolver {
         }
         return instance
     }
-    
-    func resolveSafe<Service, Arg1>(_ serviceType: Service.Type, argument: Arg1) -> Service {
-        guard let instance = resolve(serviceType, argument: argument) else {
-            fatalError("\(#function) -> Can't resolve \(String(describing: serviceType))")
-        }
-        return instance
-    }
-    
-    func resolveSafe<Service, Arg1, Arg2>(_ serviceType: Service.Type,
-                                          firstArgument: Arg1,
-                                          secondArgument: Arg2) -> Service {
-        guard let instance = resolve(serviceType, arguments: firstArgument, secondArgument) else {
-            fatalError("\(#function) -> Can't resolve \(String(describing: serviceType))")
-        }
-        return instance
-    }
 }

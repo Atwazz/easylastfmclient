@@ -7,13 +7,8 @@
 //
 
 final class MainScreenInteractor {
-    // MARK: - Private instance properties
-    private weak var output: MainScreenInteractorOutput?
-    
-    // MARK: - Init
-    init(output: MainScreenInteractorOutput) {
-        self.output = output
-    }
+    // MARK: - Public instance properties
+    weak var output: MainScreenInteractorOutput?
 }
 
 // MARK: - MainScreenInteractorInput

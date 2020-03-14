@@ -7,12 +7,15 @@
 //
 
 final class MainScreenRouter {
+    // MARK: - Public instance properties
+    weak var output: MainScreenRouterOutput?
+    
     // MARK: - Private instance properties
-    private weak var output: MainScreenRouterOutput?
+    private let viewDispatcher: ViewDispatcher
     
     // MARK: - Init
-    init(output: MainScreenRouterOutput) {
-        self.output = output
+    init(viewDispatcher: ViewDispatcher) {
+        self.viewDispatcher = viewDispatcher
     }
 }
 

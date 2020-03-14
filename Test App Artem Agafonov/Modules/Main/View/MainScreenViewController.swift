@@ -9,12 +9,11 @@
 import UIKit
 
 final class MainScreenViewController: UIViewController {
-    // MARK: - Private instance properties
-    private let output: MainScreenViewOutput
+    // MARK: - Public instance properties
+    @DelayedImmutable var output: MainScreenViewOutput
     
     // MARK: - Init
-    init(output: MainScreenViewOutput) {
-        self.output = output
+    init() {
         super.init(nibName: Self.name, bundle: nil)
     }
     

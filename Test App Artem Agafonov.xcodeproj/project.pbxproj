@@ -63,6 +63,24 @@
 		8B73124B241D0A87001922F4 /* AlbumsScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73123F241D0A87001922F4 /* AlbumsScreenInteractorInput.swift */; };
 		8B73124C241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731240241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift */; };
 		8B73124D241D0A87001922F4 /* AlbumsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731242241D0A87001922F4 /* AlbumsScreenPresenter.swift */; };
+		8B731251241D1631001922F4 /* ViewDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731250241D1631001922F4 /* ViewDispatcher.swift */; };
+		8B731253241D182A001922F4 /* ViewDispatcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731252241D182A001922F4 /* ViewDispatcherBase.swift */; };
+		8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731254241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift */; };
+		8B731257241D29EE001922F4 /* Array+ReverseFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731256241D29EE001922F4 /* Array+ReverseFind.swift */; };
+		8B731259241D2F92001922F4 /* MainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B731258241D2F92001922F4 /* MainScreenViewController.xib */; };
+		8B73125E241D3131001922F4 /* NavigationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73125D241D3131001922F4 /* NavigationAssembly.swift */; };
+		8B731264241D320F001922F4 /* ScreenSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731263241D320F001922F4 /* ScreenSizeProvider.swift */; };
+		8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731265241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift */; };
+		8B731268241D32C9001922F4 /* UIHelpersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731267241D32C9001922F4 /* UIHelpersAssembly.swift */; };
+		8B73126B241D3415001922F4 /* UIServicesAssemblerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73126A241D3415001922F4 /* UIServicesAssemblerProvider.swift */; };
+		8B73126D241D3477001922F4 /* ServicesAssemblerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73126C241D3477001922F4 /* ServicesAssemblerProvider.swift */; };
+		8B731270241D3546001922F4 /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73126F241D3546001922F4 /* MainScreenFactory.swift */; };
+		8B731273241D3683001922F4 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731272241D3683001922F4 /* ScreenFactory.swift */; };
+		8B731276241D38EA001922F4 /* EntryPointRouterBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731275241D38EA001922F4 /* EntryPointRouterBase.swift */; };
+		8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731277241D3909001922F4 /* EntryPointRouter.swift */; };
+		8B73127B241D39CE001922F4 /* EntryPointAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73127A241D39CE001922F4 /* EntryPointAssembly.swift */; };
+		8B731280241D3C73001922F4 /* EntryPointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B73127F241D3C73001922F4 /* EntryPointFactory.swift */; };
+		8B731283241D3E53001922F4 /* ModuleFactoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B731282241D3E53001922F4 /* ModuleFactoriesAssembly.swift */; };
 		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +144,24 @@
 		8B73123F241D0A87001922F4 /* AlbumsScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorInput.swift; sourceTree = "<group>"; };
 		8B731240241D0A87001922F4 /* AlbumsScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorOutput.swift; sourceTree = "<group>"; };
 		8B731242241D0A87001922F4 /* AlbumsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenPresenter.swift; sourceTree = "<group>"; };
+		8B731250241D1631001922F4 /* ViewDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDispatcher.swift; sourceTree = "<group>"; };
+		8B731252241D182A001922F4 /* ViewDispatcherBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDispatcherBase.swift; sourceTree = "<group>"; };
+		8B731254241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+PresentingHierarchy.swift"; sourceTree = "<group>"; };
+		8B731256241D29EE001922F4 /* Array+ReverseFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ReverseFind.swift"; sourceTree = "<group>"; };
+		8B731258241D2F92001922F4 /* MainScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenViewController.xib; sourceTree = "<group>"; };
+		8B73125D241D3131001922F4 /* NavigationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAssembly.swift; sourceTree = "<group>"; };
+		8B731263241D320F001922F4 /* ScreenSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizeProvider.swift; sourceTree = "<group>"; };
+		8B731265241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+ScreenSizeProvider.swift"; sourceTree = "<group>"; };
+		8B731267241D32C9001922F4 /* UIHelpersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpersAssembly.swift; sourceTree = "<group>"; };
+		8B73126A241D3415001922F4 /* UIServicesAssemblerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIServicesAssemblerProvider.swift; sourceTree = "<group>"; };
+		8B73126C241D3477001922F4 /* ServicesAssemblerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssemblerProvider.swift; sourceTree = "<group>"; };
+		8B73126F241D3546001922F4 /* MainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
+		8B731272241D3683001922F4 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		8B731275241D38EA001922F4 /* EntryPointRouterBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointRouterBase.swift; sourceTree = "<group>"; };
+		8B731277241D3909001922F4 /* EntryPointRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointRouter.swift; sourceTree = "<group>"; };
+		8B73127A241D39CE001922F4 /* EntryPointAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointAssembly.swift; sourceTree = "<group>"; };
+		8B73127F241D3C73001922F4 /* EntryPointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointFactory.swift; sourceTree = "<group>"; };
+		8B731282241D3E53001922F4 /* ModuleFactoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoriesAssembly.swift; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,7 +214,9 @@
 		8B7311B5241CE6C1001922F4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8B73124E241D161D001922F4 /* UI */,
 				8B7311BC241CE73A001922F4 /* PersistentStorage */,
+				8B73126C241D3477001922F4 /* ServicesAssemblerProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -195,6 +233,7 @@
 			children = (
 				8B7311F1241D007C001922F4 /* UIKit */,
 				8B7311C7241CEA0E001922F4 /* Swinject */,
+				8B731256241D29EE001922F4 /* Array+ReverseFind.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +241,7 @@
 		8B7311B8241CE6D5001922F4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8B731271241D3674001922F4 /* ScreenFactory */,
 				8B7311C2241CE97E001922F4 /* PropertyWrappers */,
 			);
 			path = Common;
@@ -266,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				8B7311CC241CEFB1001922F4 /* Assembly */,
+				8B731284241D41A5001922F4 /* Factory */,
 				8B7311CD241CEFB8001922F4 /* Interactor */,
 				8B7311D0241CEFCE001922F4 /* Model */,
 				8B7311CE241CEFBF001922F4 /* Presenter */,
@@ -281,6 +322,7 @@
 				8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */,
 				8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */,
 				8B7311EF241CFF7B001922F4 /* MainScreenViewController.swift */,
+				8B731258241D2F92001922F4 /* MainScreenViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,7 +416,9 @@
 		8B7311F1241D007C001922F4 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8B731265241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift */,
 				8B7311F2241D00BF001922F4 /* UIViewController+Name.swift */,
+				8B731254241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -544,6 +588,120 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		8B73124E241D161D001922F4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8B731260241D31F1001922F4 /* Helpers */,
+				8B731281241D3E33001922F4 /* ModuleFactoriesAssembly */,
+				8B73125B241D30D1001922F4 /* Navigation */,
+				8B73126A241D3415001922F4 /* UIServicesAssemblerProvider.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8B73124F241D1622001922F4 /* ViewDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				8B731250241D1631001922F4 /* ViewDispatcher.swift */,
+				8B731252241D182A001922F4 /* ViewDispatcherBase.swift */,
+			);
+			path = ViewDispatcher;
+			sourceTree = "<group>";
+		};
+		8B73125B241D30D1001922F4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8B73125C241D30DA001922F4 /* Assembly */,
+				8B73127E241D3BCA001922F4 /* EntryPoint */,
+				8B73124F241D1622001922F4 /* ViewDispatcher */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8B73125C241D30DA001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B73125D241D3131001922F4 /* NavigationAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B731260241D31F1001922F4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B731261241D31F8001922F4 /* Assembly */,
+				8B731262241D3201001922F4 /* ScreenSizeProvider */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B731261241D31F8001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B731267241D32C9001922F4 /* UIHelpersAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B731262241D3201001922F4 /* ScreenSizeProvider */ = {
+			isa = PBXGroup;
+			children = (
+				8B731263241D320F001922F4 /* ScreenSizeProvider.swift */,
+			);
+			path = ScreenSizeProvider;
+			sourceTree = "<group>";
+		};
+		8B731271241D3674001922F4 /* ScreenFactory */ = {
+			isa = PBXGroup;
+			children = (
+				8B731272241D3683001922F4 /* ScreenFactory.swift */,
+			);
+			path = ScreenFactory;
+			sourceTree = "<group>";
+		};
+		8B731274241D38E0001922F4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8B731277241D3909001922F4 /* EntryPointRouter.swift */,
+				8B731275241D38EA001922F4 /* EntryPointRouterBase.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8B731279241D39BF001922F4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B73127A241D39CE001922F4 /* EntryPointAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8B73127E241D3BCA001922F4 /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				8B731279241D39BF001922F4 /* Assembly */,
+				8B731274241D38E0001922F4 /* Router */,
+				8B73127F241D3C73001922F4 /* EntryPointFactory.swift */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
+		8B731281241D3E33001922F4 /* ModuleFactoriesAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B731282241D3E53001922F4 /* ModuleFactoriesAssembly.swift */,
+			);
+			path = ModuleFactoriesAssembly;
+			sourceTree = "<group>";
+		};
+		8B731284241D41A5001922F4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8B73126F241D3546001922F4 /* MainScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		A5CAE365F41D6E489E550561 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B41998F241C2F85004F0195 /* LaunchScreen.storyboard in Resources */,
+				8B731259241D2F92001922F4 /* MainScreenViewController.xib in Resources */,
 				8B41998C241C2F85004F0195 /* Assets.xcassets in Resources */,
 				8B419987241C2F84004F0195 /* Main.storyboard in Resources */,
 			);
@@ -688,23 +847,33 @@
 				8B73122E241D0A7F001922F4 /* AlbumDetailsRouterInput.swift in Sources */,
 				8B731246241D0A87001922F4 /* AlbumsScreenViewController.swift in Sources */,
 				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
+				8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */,
 				8B73124A241D0A87001922F4 /* AlbumsScreenInteractor.swift in Sources */,
+				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8B731243241D0A87001922F4 /* AlbumsScreenRouterOutput.swift in Sources */,
 				8B73120A241D0917001922F4 /* ArtistsSearchRouterInput.swift in Sources */,
+				8B731264241D320F001922F4 /* ScreenSizeProvider.swift in Sources */,
 				8B73120C241D0917001922F4 /* ArtistsSearchRouter.swift in Sources */,
 				8B73120B241D0917001922F4 /* ArtistsSearchRouterOutput.swift in Sources */,
 				8B731228241D0A7F001922F4 /* AlbumDetailsPresenter.swift in Sources */,
+				8B731283241D3E53001922F4 /* ModuleFactoriesAssembly.swift in Sources */,
 				8B7311EE241CFA4B001922F4 /* MainScreenViewInput.swift in Sources */,
 				8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */,
+				8B73126B241D3415001922F4 /* UIServicesAssemblerProvider.swift in Sources */,
 				8B731213241D0918001922F4 /* ArtistsSearchViewInput.swift in Sources */,
 				8B73124D241D0A87001922F4 /* AlbumsScreenPresenter.swift in Sources */,
+				8B731273241D3683001922F4 /* ScreenFactory.swift in Sources */,
 				8B731245241D0A87001922F4 /* AlbumsScreenRouter.swift in Sources */,
 				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
+				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
 				8B731227241D0A7F001922F4 /* AlbumDetailsAssembly.swift in Sources */,
 				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
 				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
+				8B731257241D29EE001922F4 /* Array+ReverseFind.swift in Sources */,
 				8B731248241D0A87001922F4 /* AlbumsScreenViewOutput.swift in Sources */,
 				8B419980241C2F84004F0195 /* AppDelegate.swift in Sources */,
+				8B731253241D182A001922F4 /* ViewDispatcherBase.swift in Sources */,
+				8B731268241D32C9001922F4 /* UIHelpersAssembly.swift in Sources */,
 				8B73122D241D0A7F001922F4 /* AlbumDetailsRouterOutput.swift in Sources */,
 				8B73122C241D0A7F001922F4 /* AlbumDetailsRouter.swift in Sources */,
 				8B419982241C2F84004F0195 /* SceneDelegate.swift in Sources */,
@@ -713,23 +882,30 @@
 				8B731229241D0A7F001922F4 /* AlbumDetailsViewInput.swift in Sources */,
 				8B73122F241D0A7F001922F4 /* AlbumDetailsInteractor.swift in Sources */,
 				8B7311F5241D0219001922F4 /* MainScreenRouter.swift in Sources */,
+				8B73125E241D3131001922F4 /* NavigationAssembly.swift in Sources */,
 				8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */,
 				8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */,
 				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,
+				8B731270241D3546001922F4 /* MainScreenFactory.swift in Sources */,
 				8B731247241D0A87001922F4 /* AlbumsScreenViewInput.swift in Sources */,
 				8B731212241D0917001922F4 /* ArtistsSearchViewController.swift in Sources */,
 				8B73120D241D0917001922F4 /* ArtistsSearchInteractorOutput.swift in Sources */,
+				8B731276241D38EA001922F4 /* EntryPointRouterBase.swift in Sources */,
 				8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */,
 				8B731214241D0918001922F4 /* ArtistsSearchViewOutput.swift in Sources */,
 				8B731230241D0A7F001922F4 /* AlbumDetailsInteractorInput.swift in Sources */,
 				8B731249241D0A87001922F4 /* AlbumsScreenAssembly.swift in Sources */,
+				8B73126D241D3477001922F4 /* ServicesAssemblerProvider.swift in Sources */,
 				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
+				8B731280241D3C73001922F4 /* EntryPointFactory.swift in Sources */,
+				8B73127B241D39CE001922F4 /* EntryPointAssembly.swift in Sources */,
 				8B7311F3241D00BF001922F4 /* UIViewController+Name.swift in Sources */,
 				8B73124B241D0A87001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
 				8B7311EA241CFA2B001922F4 /* MainScreenViewOutput.swift in Sources */,
 				8B7311E0241CF865001922F4 /* MainScreenAssembly.swift in Sources */,
 				8B73122B241D0A7F001922F4 /* AlbumDetailsViewController.swift in Sources */,
 				8B731210241D0917001922F4 /* ArtistsSearchAssembly.swift in Sources */,
+				8B731251241D1631001922F4 /* ViewDispatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

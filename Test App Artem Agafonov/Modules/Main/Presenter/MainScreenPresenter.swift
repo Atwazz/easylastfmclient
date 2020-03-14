@@ -7,19 +7,10 @@
 //
 
 final class MainScreenPresenter {
-    // MARK: - Private instance properties
-    private let view: MainScreenViewInput
-    private let interactor: MainScreenInteractorInput
-    private let router: MainScreenRouterInput
-    
-    // MARK: - Init
-    init(view: MainScreenViewInput,
-         interactor: MainScreenInteractorInput,
-         router: MainScreenRouterInput) {
-        self.view = view
-        self.interactor = interactor
-        self.router = router
-    }
+    // MARK: - Public instance properties
+    @DelayedImmutable var view: MainScreenViewInput
+    @DelayedImmutable var interactor: MainScreenInteractorInput
+    @DelayedImmutable var router: MainScreenRouterInput
 }
 
 // MARK: - MainScreenViewOutput
