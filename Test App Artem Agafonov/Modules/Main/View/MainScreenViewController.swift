@@ -12,6 +12,8 @@ final class MainScreenViewController: UIViewController {
     // MARK: - Public instance properties
     @DelayedImmutable var output: MainScreenViewOutput
     
+    // MARK: - Private instance properties
+    
     // MARK: - Init
     init() {
         super.init(nibName: Self.name, bundle: nil)
@@ -23,7 +25,26 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setup()
+    }
+    
+}
+
+// MARK: - Private
+private extension MainScreenViewController {
+    var searchButton: UIBarButtonItem {
+        UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openSearchButtonTapped(_:)))
+    }
+    
+    func setup() {
+        navigationItem.rightBarButtonItem = searchButton
+    }
+}
+
+// MARK: - Private: Actions
+private extension MainScreenViewController {
+    @objc func openSearchButtonTapped(_ sender: Any) {
+        output.openSearchButtonTapped()
     }
 }
 

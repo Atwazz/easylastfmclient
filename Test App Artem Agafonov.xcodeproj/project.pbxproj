@@ -85,6 +85,9 @@
 		8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D6241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift */; };
 		8B7312E6241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312D7241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift */; };
 		8B7312E7241D4C2D001922F4 /* AlbumsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */; };
+		8BD6E143241D7A9500223F74 /* APIKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6E142241D7A9500223F74 /* APIKeyProvider.swift */; };
+		8BD6E145241D7AA000223F74 /* APIKeyProviderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6E144241D7AA000223F74 /* APIKeyProviderBase.swift */; };
+		8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6E147241D7B6300223F74 /* NetworkServicesAssembly.swift */; };
 		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +173,9 @@
 		8B7312D6241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorInput.swift; sourceTree = "<group>"; };
 		8B7312D7241D4C2D001922F4 /* AlbumsScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenInteractorOutput.swift; sourceTree = "<group>"; };
 		8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsScreenAssembly.swift; sourceTree = "<group>"; };
+		8BD6E142241D7A9500223F74 /* APIKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyProvider.swift; sourceTree = "<group>"; };
+		8BD6E144241D7AA000223F74 /* APIKeyProviderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyProviderBase.swift; sourceTree = "<group>"; };
+		8BD6E147241D7B6300223F74 /* NetworkServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicesAssembly.swift; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -222,8 +228,9 @@
 		8B7311B5241CE6C1001922F4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8B73124E241D161D001922F4 /* UI */,
+				8BD6E140241D7A7D00223F74 /* Network */,
 				8B7311BC241CE73A001922F4 /* PersistentStorage */,
+				8B73124E241D161D001922F4 /* UI */,
 				8B73126C241D3477001922F4 /* ServicesAssemblerProvider.swift */,
 			);
 			path = Services;
@@ -309,10 +316,10 @@
 		8B7311C1241CE800001922F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */,
-				8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */,
 				8B7311EF241CFF7B001922F4 /* MainScreenViewController.swift */,
 				8B731258241D2F92001922F4 /* MainScreenViewController.xib */,
+				8B7311ED241CFA4B001922F4 /* MainScreenViewInput.swift */,
+				8B7311E9241CFA2B001922F4 /* MainScreenViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,8 +582,8 @@
 		8B73128F241D461E001922F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B731290241D461E001922F4 /* ArtistsSearchViewController.xib */,
 				8B731291241D461E001922F4 /* ArtistsSearchViewController.swift */,
+				8B731290241D461E001922F4 /* ArtistsSearchViewController.xib */,
 				8B731292241D461E001922F4 /* ArtistsSearchViewInput.swift */,
 				8B731293241D461E001922F4 /* ArtistsSearchViewOutput.swift */,
 			);
@@ -637,10 +644,10 @@
 		8B7312B0241D4C26001922F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B7312B4241D4C26001922F4 /* AlbumDetailsViewController.swift */,
+				8B7312B3241D4C26001922F4 /* AlbumDetailsViewController.xib */,
 				8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */,
 				8B7312B2241D4C26001922F4 /* AlbumDetailsViewOutput.swift */,
-				8B7312B3241D4C26001922F4 /* AlbumDetailsViewController.xib */,
-				8B7312B4241D4C26001922F4 /* AlbumDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -680,9 +687,9 @@
 			isa = PBXGroup;
 			children = (
 				8B7312CA241D4C2C001922F4 /* AlbumsScreenViewController.swift */,
+				8B7312CD241D4C2C001922F4 /* AlbumsScreenViewController.xib */,
 				8B7312CB241D4C2C001922F4 /* AlbumsScreenViewInput.swift */,
 				8B7312CC241D4C2C001922F4 /* AlbumsScreenViewOutput.swift */,
-				8B7312CD241D4C2C001922F4 /* AlbumsScreenViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -726,6 +733,32 @@
 			isa = PBXGroup;
 			children = (
 				8B7312DA241D4C2D001922F4 /* AlbumsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8BD6E140241D7A7D00223F74 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8BD6E146241D7B4F00223F74 /* Assembly */,
+				8BD6E141241D7A8600223F74 /* APIKeyProvider */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8BD6E141241D7A8600223F74 /* APIKeyProvider */ = {
+			isa = PBXGroup;
+			children = (
+				8BD6E142241D7A9500223F74 /* APIKeyProvider.swift */,
+				8BD6E144241D7AA000223F74 /* APIKeyProviderBase.swift */,
+			);
+			path = APIKeyProvider;
+			sourceTree = "<group>";
+		};
+		8BD6E146241D7B4F00223F74 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8BD6E147241D7B6300223F74 /* NetworkServicesAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -877,6 +910,7 @@
 				8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
 				8B7312BB241D4C26001922F4 /* AlbumDetailsInteractorInput.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
+				8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */,
 				8B73129E241D461E001922F4 /* ArtistsSearchRouterOutput.swift in Sources */,
 				8B731264241D320F001922F4 /* ScreenSizeProvider.swift in Sources */,
 				8B7312A4241D461E001922F4 /* ArtistsSearchPresenter.swift in Sources */,
@@ -896,6 +930,7 @@
 				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
 				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
+				8BD6E143241D7A9500223F74 /* APIKeyProvider.swift in Sources */,
 				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
 				8B731257241D29EE001922F4 /* Array+ReverseFind.swift in Sources */,
 				8B419980241C2F84004F0195 /* AppDelegate.swift in Sources */,
@@ -917,6 +952,7 @@
 				8B7312C6241D4C26001922F4 /* AlbumDetailsPresenter.swift in Sources */,
 				8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */,
 				8B73126D241D3477001922F4 /* ServicesAssemblerProvider.swift in Sources */,
+				8BD6E145241D7AA000223F74 /* APIKeyProviderBase.swift in Sources */,
 				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
 				8B7312C4241D4C26001922F4 /* AlbumDetailsViewController.swift in Sources */,
 				8B73129C241D461E001922F4 /* ArtistsSearchAssembly.swift in Sources */,

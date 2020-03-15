@@ -23,7 +23,7 @@ final class ViewDispatcherBase {
 extension ViewDispatcherBase: ViewDispatcher {
     func show(rootViewController: UIViewController) {
         window.makeKeyAndVisible()
-        window.rootViewController = rootViewController
+        window.rootViewController = wrappedViewControllerInNavigation(rootViewController)
     }
     
     func push(_ viewController: UIViewController) {
@@ -55,5 +55,9 @@ extension ViewDispatcherBase: ViewDispatcher {
 private extension ViewDispatcherBase {
     var topViewController: UIViewController? {
         window.presentingHierarchy?.reverseFind { !$0.isBeingDismissed }
+    }
+    
+    func wrappedViewControllerInNavigation(_ viewController: UIViewController) -> UINavigationController {
+        UINavigationController(rootViewController: viewController)
     }
 }

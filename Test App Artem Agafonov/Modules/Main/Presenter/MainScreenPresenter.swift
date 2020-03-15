@@ -15,7 +15,9 @@ final class MainScreenPresenter {
 
 // MARK: - MainScreenViewOutput
 extension MainScreenPresenter: MainScreenViewOutput {
-    
+    func openSearchButtonTapped() {
+        router.showSearchScreen()
+    }
 }
 
 // MARK: - MainScreenInteractorOutput

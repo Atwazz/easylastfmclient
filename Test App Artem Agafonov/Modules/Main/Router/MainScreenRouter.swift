@@ -12,14 +12,19 @@ final class MainScreenRouter {
     
     // MARK: - Private instance properties
     private let viewDispatcher: ViewDispatcher
+    private let searchScreenFactory: ScreenFactory
     
     // MARK: - Init
-    init(viewDispatcher: ViewDispatcher) {
+    init(viewDispatcher: ViewDispatcher,
+         searchScreenFactory: ScreenFactory) {
         self.viewDispatcher = viewDispatcher
+        self.searchScreenFactory = searchScreenFactory
     }
 }
 
 // MARK: - MainScreenRouterIMput
 extension MainScreenRouter: MainScreenRouterInput {
-    
+    func showSearchScreen() {
+        viewDispatcher.push(searchScreenFactory.viewController)
+    }
 }

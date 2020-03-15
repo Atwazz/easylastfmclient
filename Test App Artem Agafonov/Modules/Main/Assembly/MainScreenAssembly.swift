@@ -70,7 +70,9 @@ private extension MainScreenAssembly {
     func registerRouter(in container: Container) {
         container.register(MainScreenRouterInput.self) { resolver in
             let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
-            return Router(viewDispatcher: viewDispatcher)
+            let searchScreenFactory = resolver.resolveSafe(ArtistsSearchFactory.self)
+            return Router(viewDispatcher: viewDispatcher,
+                          searchScreenFactory: searchScreenFactory)
         }
         .initCompleted { resolver, object in
             guard let router = object as? Router else {

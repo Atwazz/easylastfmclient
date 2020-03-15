@@ -7,5 +7,5 @@
 //
 
 protocol MainScreenViewOutput {
-    
+    func openSearchButtonTapped()
 }
