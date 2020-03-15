@@ -40,8 +40,9 @@ private extension ArtistsSearchAssembly {
     }
     
     func registerInteractor(in container: Container) {
-        container.register(ArtistsSearchInteractorInput.self) { _ in
-            Interactor()
+        container.register(ArtistsSearchInteractorInput.self) { resolver in
+            let artistsSearchService = resolver.resolveSafe(ArtistsSearchService.self)
+            return Interactor(artistsSearchService: artistsSearchService)
         }
         .initCompleted { resolver, object in
             guard let interactor = object as? Interactor else {

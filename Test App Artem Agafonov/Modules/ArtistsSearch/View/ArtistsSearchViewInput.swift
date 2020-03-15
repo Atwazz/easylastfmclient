@@ -7,5 +7,7 @@
 //
 
 protocol ArtistsSearchViewInput {
-    
+    func cleanSearchResults()
+    // func showSearchResults(_)
+    // func appendSearchResults(_)
 }

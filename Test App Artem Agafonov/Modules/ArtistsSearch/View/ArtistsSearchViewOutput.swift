@@ -7,5 +7,8 @@
 //
 
 protocol ArtistsSearchViewOutput {
+    func viewWillAppear()
+    func viewDidDisappear()
     
+    func triggerSearch(_ searchText: String?)
 }

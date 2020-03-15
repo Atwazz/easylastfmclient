@@ -9,9 +9,26 @@
 final class ArtistsSearchInteractor {
     // MARK: - Public instance properties
     weak var output: ArtistsSearchInteractorOutput?
+    
+    // MARK: - Private instance properties
+    private let searchService: ArtistsSearchService
+    
+    // MARK: - Init
+    init(artistsSearchService: ArtistsSearchService) {
+        searchService = artistsSearchService
+    }
 }
 
 // MARK: - ArtistsSearchInteractorInput
 extension ArtistsSearchInteractor: ArtistsSearchInteractorInput {
-    
+    func triggerSearch(_ searchText: String, page: UInt?, pageSize: UInt?) {
+        print("Searching for \(searchText)...")
+        searchService.search(for: searchText, page: page, pageSize: pageSize) { result in
+            guard case .success(let results) = result else {
+                print("Search failed!!!")
+                return
+            }
+            print("\(String(describing: results))")
+        }
+    }
 }

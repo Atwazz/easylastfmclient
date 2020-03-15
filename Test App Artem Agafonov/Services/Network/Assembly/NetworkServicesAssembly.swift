@@ -13,15 +13,21 @@ final class NetworkServicesAssembly { }
 // MARK: - Assembly
 extension NetworkServicesAssembly: Assembly {
     func assemble(container: Container) {
-        registerAPIKeyProvider(in: container)
+       registerArtistsSearchService(in: container)
     }
 }
 
 // MARK: - Registrations
 private extension NetworkServicesAssembly {
-    func registerAPIKeyProvider(in container: Container) {
-        container.register(APIKeyProvider.self) { _ in
-            APIKeyProviderBase()
+    func registerArtistsSearchService(in container: Container) {
+        container.register(ArtistsSearchService.self) { resolver in
+            let queue = resolver.resolveSafe(NetworkQueueProvider.self).queue
+            let urlProvider = resolver.resolveSafe(APIURLProvider.self)
+            let commonParamsProvider = resolver.resolveSafe(APICommonParamsProvider.self)
+            return ArtistsSearchServiceBase(queue: queue,
+                                            urlProvider: urlProvider,
+                                            commonParamsProvider: commonParamsProvider)
         }
+        .inObjectScope(.weak)
     }
 }

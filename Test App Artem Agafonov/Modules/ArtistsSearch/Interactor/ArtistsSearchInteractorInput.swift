@@ -7,5 +7,5 @@
 //
 
 protocol ArtistsSearchInteractorInput {
-    
+    func triggerSearch(_ searchText: String, page: UInt?, pageSize: UInt?)
 }
