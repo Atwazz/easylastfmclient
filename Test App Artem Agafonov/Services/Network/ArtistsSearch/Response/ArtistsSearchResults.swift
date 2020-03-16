@@ -32,9 +32,9 @@ extension ArtistsSearchResults: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let queryContainer = try container.nestedContainer(keyedBy: QueryCodingKeys.self,
                                                            forKey: .searchQuery)
-        let page = try queryContainer.decodeUintFromString(forKey: .page)
-        let totalResults = try container.decodeUintFromString(forKey: .totalResults)
-        let pageSize = try container.decodeUintFromString(forKey: .pageSize)
+        let page = try queryContainer.decodeUIntFromString(forKey: .page)
+        let totalResults = try container.decodeUIntFromString(forKey: .totalResults)
+        let pageSize = try container.decodeUIntFromString(forKey: .pageSize)
         let matchesContainer = try container.nestedContainer(keyedBy: MatchingCodingKeys.self,
                                                              forKey: .matches)
         artists = try matchesContainer.decode([Artist].self, forKey: .artists)

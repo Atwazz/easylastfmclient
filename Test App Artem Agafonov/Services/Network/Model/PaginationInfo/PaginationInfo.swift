@@ -22,8 +22,8 @@ extension PaginationInfo: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        page = try container.decodeUintFromString(forKey: .page)
-        pageSize = try container.decodeUintFromString(forKey: .pageSize)
-        totalResults = try container.decodeUintFromString(forKey: .totalResults)
+        page = try container.decodeUIntFromString(forKey: .page)
+        pageSize = try container.decodeUIntFromString(forKey: .pageSize)
+        totalResults = try container.decodeUIntFromString(forKey: .totalResults)
     }
 }

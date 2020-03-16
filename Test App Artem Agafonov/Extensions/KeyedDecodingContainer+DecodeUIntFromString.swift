@@ -1,5 +1,5 @@
 //
-//  KeyedDecodingContainer+DecodeUIntFromString.swift
+//  KeyedDecodingContainer+decodeUIntFromString.swift
 //  Test App Artem Agafonov
 //
 //  Created by Artem Agafonov on 15.03.2020.
@@ -7,7 +7,7 @@
 //
 
 extension KeyedDecodingContainer {
-    func decodeUintFromString(forKey key: KeyedDecodingContainer<K>.Key) throws -> UInt {
+    func decodeUIntFromString(forKey key: KeyedDecodingContainer<K>.Key) throws -> UInt {
         let stringValue = try decode(String.self, forKey: key)
         guard let uintValue = UInt(stringValue) else {
             assertionFailure("Can't decode UInt for key: \(key)")

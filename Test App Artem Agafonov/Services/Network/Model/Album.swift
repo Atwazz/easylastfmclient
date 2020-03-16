@@ -6,10 +6,21 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-struct Album: Decodable {
+struct Album {
     let name: String
     let mbid: String?
     let url: String?
     let artist: Artist
     let images: [ImageModel]?
+}
+
+// MARK: - Decodable
+extension Album: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case mbid
+        case url
+        case artist
+        case images = "image"
+    }
 }
