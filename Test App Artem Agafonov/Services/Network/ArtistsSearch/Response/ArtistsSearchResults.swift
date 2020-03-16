@@ -7,20 +7,16 @@
 //
 
 struct ArtistsSearchResults {
-    let searchQueryInfo: SearchQueryInfo
-    let totalResults: UInt
-    let startIndex: UInt
-    let itemsPerPage: UInt
+    let paginationInfo: PaginationInfo
     let artists: [Artist]
 }
 
 // MARK: - Decodable
 extension ArtistsSearchResults: Decodable {
     enum CodingKeys: String, CodingKey {
-        case searchQueryInfo = "opensearch:Query"
+        case searchQuery = "opensearch:Query"
         case totalResults = "opensearch:totalResults"
-        case startIndex = "opensearch:startIndex"
-        case itemsPerPage = "opensearch:itemsPerPage"
+        case pageSize = "opensearch:itemsPerPage"
         case matches = "artistmatches"
     }
     
@@ -28,13 +24,22 @@ extension ArtistsSearchResults: Decodable {
         case artists = "artist"
     }
     
+    enum QueryCodingKeys: String, CodingKey {
+      case page = "startPage"
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        searchQueryInfo = try container.decode(SearchQueryInfo.self, forKey: .searchQueryInfo)
-        totalResults = try container.decodeUintFromString(forKey: .totalResults)
-        startIndex = try container.decodeUintFromString(forKey: .startIndex)
-        itemsPerPage = try container.decodeUintFromString(forKey: .itemsPerPage)
-        let matchesContainer = try container.nestedContainer(keyedBy: MatchingCodingKeys.self, forKey: .matches)
+        let queryContainer = try container.nestedContainer(keyedBy: QueryCodingKeys.self,
+                                                           forKey: .searchQuery)
+        let page = try queryContainer.decodeUintFromString(forKey: .page)
+        let totalResults = try container.decodeUintFromString(forKey: .totalResults)
+        let pageSize = try container.decodeUintFromString(forKey: .pageSize)
+        let matchesContainer = try container.nestedContainer(keyedBy: MatchingCodingKeys.self,
+                                                             forKey: .matches)
         artists = try matchesContainer.decode([Artist].self, forKey: .artists)
+        paginationInfo = PaginationInfo(page: page,
+                                        pageSize: pageSize,
+                                        totalResults: totalResults)
     }
 }

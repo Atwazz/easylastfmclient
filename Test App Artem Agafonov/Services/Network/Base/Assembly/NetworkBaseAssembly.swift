@@ -17,6 +17,7 @@ extension NetworkBaseAssembly: Assembly {
         registerCommonParamsProvider(in: container)
         registerAPIURLProvider(in: container)
         registerQueueProvider(in: container)
+        registerRequestValidator(in: container)
     }
 }
 
@@ -46,5 +47,12 @@ private extension NetworkBaseAssembly {
             NetworkQueueProvider()
         }
         .inObjectScope(.container)
+    }
+    
+    func registerRequestValidator(in container: Container) {
+        container.register(Validator.self) { resolver in
+            let queue = resolver.resolveSafe(NetworkQueueProvider.self).queue
+            return RequestValidator(queue: queue)
+        }
     }
 }

@@ -31,13 +31,17 @@ extension ArtistsSearchServiceBase: ArtistsSearchService {
                 page: UInt?,
                 pageSize: UInt?,
                 completion: @escaping (ArtistsSearchResult) -> Void) {
-        request(for: artist, page: page, pageSize: pageSize)
-            .responseDecodable(of: ArtistsSearchResponse.self, queue: queue) { response in
-                let result = response.result
-                    .map { $0.results }
-                    .mapError { $0 as Error }
-                completion(result)
+        queue.async { [weak self] in
+            guard let self = self else { return }
+            self.request(for: artist, page: page, pageSize: pageSize)
+                .responseDecodable(of: ArtistsSearchResponse.self, queue: self.queue) { response in
+                    let result = response.result
+                        .map { $0.results }
+                        .mapError { $0 as Error }
+                    completion(result)
             }
+        }
+        
     }
 }
 
@@ -57,7 +61,7 @@ private extension ArtistsSearchServiceBase {
     func requestModel(for artist: String,
                       page: UInt?,
                       pageSize: UInt?) -> ArtistsSearchRequest {
-        ArtistsSearchRequest(searchText: artist,
+        ArtistsSearchRequest(artist: artist,
                              page: page,
                              limit: pageSize,
                              commonParams: commonParameters)

@@ -14,6 +14,7 @@ final class NetworkServicesAssembly { }
 extension NetworkServicesAssembly: Assembly {
     func assemble(container: Container) {
        registerArtistsSearchService(in: container)
+        registerAlbumsLoadService(in: container)
     }
 }
 
@@ -27,6 +28,20 @@ private extension NetworkServicesAssembly {
             return ArtistsSearchServiceBase(queue: queue,
                                             urlProvider: urlProvider,
                                             commonParamsProvider: commonParamsProvider)
+        }
+        .inObjectScope(.weak)
+    }
+    
+    func registerAlbumsLoadService(in container: Container) {
+        container.register(ArtistAlbumsLoadService.self) { resolver in
+            let queue = resolver.resolveSafe(NetworkQueueProvider.self).queue
+            let urlProvider = resolver.resolveSafe(APIURLProvider.self)
+            let commonParamsProvider = resolver.resolveSafe(APICommonParamsProvider.self)
+            let validator = resolver.resolveSafe(Validator.self)
+            return ArtistAlbumsLoadServiceBase(queue: queue,
+                                               urlProvider: urlProvider,
+                                               commonParamsProvider: commonParamsProvider,
+                                               requestValidator: validator)
         }
         .inObjectScope(.weak)
     }

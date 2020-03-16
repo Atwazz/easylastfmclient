@@ -1,14 +1,15 @@
 //
-//  ArtistsSearchRequest.swift
+//  ArtistAlbumsLoadRequest.swift
 //  Test App Artem Agafonov
 //
-//  Created by Artem Agafonov on 15.03.2020.
+//  Created by Artem Agafonov on 16.03.2020.
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-struct ArtistsSearchRequest: APICommonParams {
+struct ArtistAlbumsLoadRequest: APICommonParams {
     // MARK: - Public instance properties
-    let artist: String
+    let artistName: String?
+    let artistMbid: String?
     let page: UInt?
     let limit: UInt?
     
@@ -18,11 +19,13 @@ struct ArtistsSearchRequest: APICommonParams {
     let apiKey: String
     
     // MARK: - Init
-    init(artist: String,
+    init(artistName: String?,
+         artistMbid: String?,
          page: UInt?,
          limit: UInt?,
          commonParams: APICommonParams) {
-        self.artist = artist
+        self.artistName = artistName
+        self.artistMbid = artistMbid
         self.page = page
         self.limit = limit
         method = commonParams.method
@@ -31,10 +34,18 @@ struct ArtistsSearchRequest: APICommonParams {
     }
 }
 
+// MARK: - Validatable
+extension ArtistAlbumsLoadRequest: Validatable {
+    func isValid() -> Bool {
+        artistName != nil || artistMbid != nil
+    }
+}
+
 // MARK: - Encodable
-extension ArtistsSearchRequest: Encodable {
+extension ArtistAlbumsLoadRequest: Encodable {
     enum CodingKeys: String, CodingKey {
-        case artist
+        case artistName = "artist"
+        case artistMbid = "mbid"
         case page
         case limit
         

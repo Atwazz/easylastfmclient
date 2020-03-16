@@ -8,19 +8,19 @@
 
 struct SearchQueryInfo {
     let searchTerms: String
-    let startPage: UInt
+    let page: UInt
 }
 
 // MARK: - Decodable
 extension SearchQueryInfo: Decodable {
     enum CodingKeys: String, CodingKey {
       case searchTerms
-      case startPage
+      case page = "startPage"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         searchTerms = try container.decode(String.self, forKey: .searchTerms)
-        startPage = try container.decodeUintFromString(forKey: .startPage)
+        page = try container.decodeUintFromString(forKey: .page)
     }
 }

@@ -17,11 +17,4 @@ extension Assembler {
                                           name: String? = nil) -> Service {
         synchronizedResolver.resolveSafe(serviceType)
     }
-    
-    func resolveViewController<Service>(_ serviceType: Service.Type) -> UIViewController {
-        guard let viewController = synchronizedResolveSafe(serviceType) as? UIViewController else {
-            fatalError("Can't resolve UIViewController for type: \(String(describing: serviceType))")
-        }
-        return viewController
-    }
 }
