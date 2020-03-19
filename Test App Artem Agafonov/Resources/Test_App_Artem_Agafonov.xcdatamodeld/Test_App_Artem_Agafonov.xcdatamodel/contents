@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlbumEntity" representedClassName="AlbumEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="mbid" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistEntity" inverseName="albums" inverseEntity="ArtistEntity"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ImageModelEntity"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TagEntity"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrackEntity"/>
+        <relationship name="wiki" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WikiEntity"/>
+    </entity>
+    <entity name="ArtistEntity" representedClassName="ArtistEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="mbid" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AlbumEntity" inverseName="artist" inverseEntity="AlbumEntity"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ImageModelEntity"/>
+    </entity>
+    <entity name="ImageModelEntity" representedClassName="ImageModelEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="size" attributeType="String"/>
+        <attribute name="url" attributeType="URI"/>
+    </entity>
+    <entity name="TagEntity" representedClassName="TagEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+    </entity>
+    <entity name="TrackEntity" representedClassName="TrackEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="rank" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistEntity"/>
+    </entity>
+    <entity name="WikiEntity" representedClassName="WikiEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="published" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="TrackEntity" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="WikiEntity" positionX="-54" positionY="18" width="128" height="88"/>
+        <element name="TagEntity" positionX="-36" positionY="27" width="128" height="73"/>
+        <element name="ImageModelEntity" positionX="-9" positionY="63" width="128" height="73"/>
+        <element name="ArtistEntity" positionX="9" positionY="81" width="128" height="118"/>
+        <element name="AlbumEntity" positionX="27" positionY="126" width="128" height="163"/>
+    </elements>
 </model>

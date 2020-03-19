@@ -7,7 +7,7 @@
 //
 
 struct Wiki: Decodable {
-    let published: String
-    let summary: String
-    let content: String
+    let published: String?
+    let summary: String?
+    let content: String?
 }
