@@ -6,7 +6,23 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-struct Tag: Decodable {
+import Foundation.NSURL
+
+struct Tag {
     let name: String
-    let url: String
+    let url: URL?
+}
+
+// MARK: - Decodable
+extension Tag: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case url
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        url = try container.decodeURLFromString(forKey: .url)
+    }
 }

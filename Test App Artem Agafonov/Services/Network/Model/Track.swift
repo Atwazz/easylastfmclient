@@ -6,9 +6,11 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSURL
+
 struct Track {
     let name: String
-    let url: String?
+    let url: URL?
     let duration: UInt
     let rank: UInt
     let artist: Artist
@@ -31,7 +33,7 @@ extension Track: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        url = try container.decode(String.self, forKey: .url)
+        url = try container.decodeURLFromString(forKey: .url)
         duration = try container.decodeUIntFromString(forKey: .duration)
         artist = try container.decode(Artist.self, forKey: .artist)
         let rankContainer = try container.nestedContainer(keyedBy: RankContainerCodingKeys.self,

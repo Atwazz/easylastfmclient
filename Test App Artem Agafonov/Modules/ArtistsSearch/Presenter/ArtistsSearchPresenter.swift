@@ -57,7 +57,7 @@ extension ArtistsSearchPresenter: ArtistsSearchRouterOutput {
 private extension ArtistsSearchPresenter {
     func subscribeToSearchTrigger() {
         searchTrigger
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
             .filter { $0.count > 2 }
             .sink { [weak self] searchText in
                 self?.interactor.triggerSearch(searchText,

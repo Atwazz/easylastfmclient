@@ -24,10 +24,12 @@ extension ArtistsSearchInteractor: ArtistsSearchInteractorInput {
     func triggerSearch(_ searchText: String, page: UInt?, pageSize: UInt?) {
         print("Searching for \(searchText)...")
         searchService.search(for: searchText, page: page, pageSize: pageSize) { result in
-            guard case .success(_) = result else {
+            guard case .success(let results) = result else {
                 print("Search failed!!!")
                 return
             }
+            print("Search results: found \(results.artists.count) items in one pages, " +
+                "total: \(results.paginationInfo.totalResults)")
         }
     }
 }

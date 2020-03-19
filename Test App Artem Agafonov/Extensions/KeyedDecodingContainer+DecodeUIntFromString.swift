@@ -1,5 +1,5 @@
 //
-//  KeyedDecodingContainer+decodeUIntFromString.swift
+//  KeyedDecodingContainer+DecodeUIntFromString.swift
 //  Test App Artem Agafonov
 //
 //  Created by Artem Agafonov on 15.03.2020.

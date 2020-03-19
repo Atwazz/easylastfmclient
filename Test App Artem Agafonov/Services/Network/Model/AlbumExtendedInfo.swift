@@ -6,14 +6,17 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSURL
+
 struct AlbumExtendedInfo {
     let name: String
     let artist: String
     let mbid: String?
-    let url: String?
+    let url: URL?
     let images: [ImageModel]
     let tracks: [Track]
     let tags: [Tag]
+    let wiki: Wiki?
 }
 
 // MARK: - Decodable
@@ -26,6 +29,7 @@ extension AlbumExtendedInfo: Decodable {
         case images = "image"
         case tracks
         case tags
+        case wiki
     }
     
     enum TracksCodingKeys: String, CodingKey {
@@ -41,8 +45,9 @@ extension AlbumExtendedInfo: Decodable {
         name = try container.decode(String.self, forKey: .name)
         artist = try container.decode(String.self, forKey: .artist)
         mbid = try container.decode(String.self, forKey: .mbid)
-        url = try container.decode(String.self, forKey: .url)
+        url = try container.decodeURLFromString(forKey: .url)
         images = try container.decode([ImageModel].self, forKey: .images)
+        wiki = try container.decode(Wiki.self, forKey: .wiki)
         let tracksContainer = try container.nestedContainer(keyedBy: TracksCodingKeys.self,
                                                             forKey: .tracks)
         tracks = try tracksContainer.decode([Track].self, forKey: .track)

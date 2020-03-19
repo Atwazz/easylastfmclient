@@ -6,10 +6,12 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSURL
+
 struct Album {
     let name: String
     let mbid: String?
-    let url: String?
+    let url: URL?
     let artist: Artist
     let images: [ImageModel]?
 }
@@ -22,5 +24,14 @@ extension Album: Decodable {
         case url
         case artist
         case images = "image"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        mbid = try container.decode(String.self, forKey: .mbid)
+        url = try container.decodeURLFromString(forKey: .url)
+        artist = try container.decode(Artist.self, forKey: .artist)
+        images = try container.decode([ImageModel].self, forKey: .images)
     }
 }
