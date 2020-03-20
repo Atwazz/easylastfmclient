@@ -19,12 +19,16 @@ final class ArtistsSearchPresenter {
     @DelayedImmutable var router: ArtistsSearchRouterInput
     
     // MARK: - Private instance properties
-    private var disposeBag = DisposeBag()
     private let searchTrigger = PassthroughSubject<String, Never>()
+    private var disposeBag = DisposeBag()
 }
 
 // MARK: - ArtistsSearchViewOutput
 extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
+    func viewIsReady() {
+        
+    }
+    
     func viewWillAppear() {
         subscribeToSearchTrigger()
     }
@@ -53,8 +57,8 @@ extension ArtistsSearchPresenter: ArtistsSearchRouterOutput {
     
 }
 
-// MARK: - Private
-private extension ArtistsSearchPresenter {
+// MARK: - Private: Subscriptions
+private extension ArtistsSearchPresenter {    
     func subscribeToSearchTrigger() {
         searchTrigger
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
@@ -65,5 +69,16 @@ private extension ArtistsSearchPresenter {
                                                pageSize: Self.pageSize)
             }
             .store(in: &disposeBag)
+    }
+}
+
+// MARK: - Private
+private extension ArtistsSearchPresenter {
+    func showLoadingIndicator() {
+        
+    }
+    
+    func hideLoadingIndicator() {
+        
     }
 }

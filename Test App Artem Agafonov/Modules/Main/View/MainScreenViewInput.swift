@@ -7,5 +7,6 @@
 //
 
 protocol MainScreenViewInput {
-    
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
 }

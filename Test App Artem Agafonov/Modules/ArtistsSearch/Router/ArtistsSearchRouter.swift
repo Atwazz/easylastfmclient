@@ -21,5 +21,7 @@ final class ArtistsSearchRouter {
 
 // MARK: - ArtistsSearchRouterIMput
 extension ArtistsSearchRouter: ArtistsSearchRouterInput {
-    
+    func showAlert(error: Error) {
+        
+    }
 }

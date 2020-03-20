@@ -8,4 +8,5 @@
 
 protocol MainScreenRouterInput {
     func showSearchScreen()
+    func showAlertWithError(_ error: Error, completion: (() -> Void)?)
 }

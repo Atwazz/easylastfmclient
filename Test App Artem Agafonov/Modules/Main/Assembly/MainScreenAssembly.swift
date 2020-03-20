@@ -52,8 +52,9 @@ private extension MainScreenAssembly {
     }
     
     func registerPresenter(in container: Container) {
-        container.register(MainScreenViewOutput.self) { _ in
-            Presenter()
+        container.register(MainScreenViewOutput.self) { resolver in
+            let storageStateEmitter = resolver.resolveSafe(PersistentStorageStateEmitter.self)
+            return Presenter(storageStateEmitter: storageStateEmitter)
         }
         .implements(MainScreenInteractorOutput.self)
         .implements(MainScreenRouterOutput.self)

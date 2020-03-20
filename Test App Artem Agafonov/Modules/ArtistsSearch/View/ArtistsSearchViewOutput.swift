@@ -7,6 +7,7 @@
 //
 
 protocol ArtistsSearchViewOutput {
+    func viewIsReady()
     func viewWillAppear()
     func viewDidDisappear()
     

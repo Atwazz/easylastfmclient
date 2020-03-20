@@ -28,6 +28,7 @@ final class ArtistsSearchViewController: UIViewController {
         super.viewDidLoad()
         title = "Artists"
         setupSearchController()
+        output.viewIsReady()
     }
     
     override func viewWillAppear(_ animated: Bool) {

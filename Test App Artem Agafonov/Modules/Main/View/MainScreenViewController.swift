@@ -26,6 +26,7 @@ final class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        output.viewIsReady()
     }
     
 }
@@ -50,5 +51,11 @@ private extension MainScreenViewController {
 
 // MARK: - MainScreenViewInput
 extension MainScreenViewController: MainScreenViewInput {
+    func showLoadingIndicator() {
+        
+    }
     
+    func hideLoadingIndicator() {
+        
+    }
 }

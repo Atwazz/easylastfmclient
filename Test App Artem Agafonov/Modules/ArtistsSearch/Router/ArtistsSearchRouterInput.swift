@@ -7,5 +7,5 @@
 //
 
 protocol ArtistsSearchRouterInput {
-    
+    func showAlert(error: Error)
 }

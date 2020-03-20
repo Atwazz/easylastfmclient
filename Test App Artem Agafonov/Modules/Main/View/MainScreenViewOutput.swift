@@ -8,4 +8,5 @@
 
 protocol MainScreenViewOutput {
     func openSearchButtonTapped()
+    func viewIsReady()
 }

@@ -14,8 +14,13 @@ final class ServicesAssemblerProvider {
         Assembler([], container: Container())
     }()
     
+    private lazy var baseAssembler: Assembler = {
+       let assemblerProvider = BaseAssemblerProvider(with: emptyAssembler)
+        return assemblerProvider.assembler
+    }()
+    
     private lazy var networkAssembler: Assembler = {
-        let assemblerProvider = NetworkServicesAssemblerProvider(with: emptyAssembler)
+        let assemblerProvider = NetworkServicesAssemblerProvider(with: baseAssembler)
         return assemblerProvider.assembler
     }()
     
@@ -23,7 +28,7 @@ final class ServicesAssemblerProvider {
         let uiServicesAssemblerProvider = UIServicesAssemblerProvider(with: networkAssembler)
         return uiServicesAssemblerProvider.assembler
     }()
-
+    
     // MARK: - Public properties
     private(set) lazy var assembler: Assembler = {
         uiServicesAssembler

@@ -7,8 +7,14 @@
         <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistEntity" inverseName="albums" inverseEntity="ArtistEntity"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ImageModelEntity"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TagEntity"/>
-        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrackEntity"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TrackEntity" inverseName="album" inverseEntity="TrackEntity"/>
         <relationship name="wiki" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WikiEntity"/>
+        <fetchIndex name="byName">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byMbid">
+            <fetchIndexElement property="mbid" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="ArtistEntity" representedClassName="ArtistEntity" syncable="YES" codeGenerationType="class">
         <attribute name="mbid" optional="YES" attributeType="String"/>
@@ -16,6 +22,12 @@
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AlbumEntity" inverseName="artist" inverseEntity="AlbumEntity"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ImageModelEntity"/>
+        <fetchIndex name="byName">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byMbid">
+            <fetchIndexElement property="mbid" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="ImageModelEntity" representedClassName="ImageModelEntity" syncable="YES" codeGenerationType="class">
         <attribute name="size" attributeType="String"/>
@@ -30,7 +42,11 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="rank" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlbumEntity" inverseName="tracks" inverseEntity="AlbumEntity"/>
         <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistEntity"/>
+        <fetchIndex name="byRank">
+            <fetchIndexElement property="rank" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="WikiEntity" representedClassName="WikiEntity" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
@@ -38,11 +54,11 @@
         <attribute name="summary" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TrackEntity" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="WikiEntity" positionX="-54" positionY="18" width="128" height="88"/>
-        <element name="TagEntity" positionX="-36" positionY="27" width="128" height="73"/>
-        <element name="ImageModelEntity" positionX="-9" positionY="63" width="128" height="73"/>
-        <element name="ArtistEntity" positionX="9" positionY="81" width="128" height="118"/>
-        <element name="AlbumEntity" positionX="27" positionY="126" width="128" height="163"/>
+        <element name="AlbumEntity" positionX="945.12890625" positionY="90.73046875" width="128" height="28"/>
+        <element name="ArtistEntity" positionX="-1.98046875" positionY="266.62109375" width="128" height="28"/>
+        <element name="ImageModelEntity" positionX="547.52734375" positionY="532.23828125" width="128" height="73"/>
+        <element name="TagEntity" positionX="750.73828125" positionY="-183.59765625" width="128" height="73"/>
+        <element name="TrackEntity" positionX="-284.828125" positionY="-46.921875" width="128" height="28"/>
+        <element name="WikiEntity" positionX="371.7578125" positionY="-152.39453125" width="128" height="88"/>
     </elements>
 </model>

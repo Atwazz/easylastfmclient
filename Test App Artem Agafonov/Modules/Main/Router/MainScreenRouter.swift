@@ -6,6 +6,8 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import UIKit.UIAlertController
+
 final class MainScreenRouter {
     // MARK: - Public instance properties
     weak var output: MainScreenRouterOutput?
@@ -24,6 +26,14 @@ final class MainScreenRouter {
 
 // MARK: - MainScreenRouterIMput
 extension MainScreenRouter: MainScreenRouterInput {
+    func showAlertWithError(_ error: Error, completion: (() -> Void)?) {
+        let alertController = UIAlertController(title: "Error",
+                                                message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        viewDispatcher.presentModal(alertController, completion: completion)
+    }
+    
     func showSearchScreen() {
         viewDispatcher.push(searchScreenFactory.viewController)
     }
