@@ -938,8 +938,8 @@
 			isa = PBXGroup;
 			children = (
 				8B9BB7B12423DDE7001E08AF /* PersistentStorageLoader.swift */,
-				8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */,
 				8B9BB7B32423DE58001E08AF /* PersistentStorageLoaderBase.swift */,
+				8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */,
 			);
 			path = Loader;
 			sourceTree = "<group>";

@@ -6,14 +6,16 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSError
+
 enum PersistentStorageLoadError: Error {
     case loadFailed
     case misuseDetected
 }
 
-// MARK: - Public
-extension PersistentStorageLoadError {
-    var localizedDescription: String {
+// MARK: - LocalizedError
+extension PersistentStorageLoadError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .loadFailed:
             return "Can't load data from disk. " + errorAdvice
@@ -26,6 +28,6 @@ extension PersistentStorageLoadError {
 // MARK: - Private
 private extension PersistentStorageLoadError {
     var errorAdvice: String {
-        "Please try reintstall the app or contact the developer."
+        "Please try reintstalling the app or contact the developer."
     }
 }

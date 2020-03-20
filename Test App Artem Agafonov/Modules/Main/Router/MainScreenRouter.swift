@@ -26,7 +26,7 @@ final class MainScreenRouter {
 
 // MARK: - MainScreenRouterIMput
 extension MainScreenRouter: MainScreenRouterInput {
-    func showAlertWithError(_ error: Error, completion: (() -> Void)?) {
+    func showAlertWithError(_ error: LocalizedError, completion: (() -> Void)?) {
         let alertController = UIAlertController(title: "Error",
                                                 message: error.localizedDescription,
                                                 preferredStyle: .alert)

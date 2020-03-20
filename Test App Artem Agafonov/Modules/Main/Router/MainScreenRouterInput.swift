@@ -6,7 +6,9 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSError
+
 protocol MainScreenRouterInput {
     func showSearchScreen()
-    func showAlertWithError(_ error: Error, completion: (() -> Void)?)
+    func showAlertWithError(_ error: LocalizedError, completion: (() -> Void)?)
 }
