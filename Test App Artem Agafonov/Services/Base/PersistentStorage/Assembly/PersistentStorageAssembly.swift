@@ -37,27 +37,25 @@ private extension PersistentStorageAssembly {
 // MARK: - Registrations
 private extension PersistentStorageAssembly {
     func registerContainerProvider(in container: Container) {
-        container.register(PersistentContainerProvider.self) { [weak self] _ in
-            guard let containerName = self?.persistentContainerName else {
-                fatalError("Can't resolve persistentContainerName")
-            }
-            return PersistentContainerProviderBase(containerName: containerName)
+        container.register(PersistentContainerProvider.self) { [persistentContainerName] _ in
+            PersistentContainerProviderBase(containerName: persistentContainerName)
         }
-        .implements(ViewContextProvider.self)
+        .implements(PSViewContextProvider.self)
+        .implements(PSBackgroundTaskInvoker.self)
         .inObjectScope(.container)
     }
     
     func registerViewContextConfigurator(in container: Container) {
-        container.register(ViewContextConfigurator.self) { resolver in
-            let viewContextProvider = resolver.resolveSafe(ViewContextProvider.self)
-            return ViewContextConfiguratorBase(viewContextProvider: viewContextProvider)
+        container.register(PSViewContextConfigurator.self) { resolver in
+            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
+            return PSViewContextConfiguratorBase(viewContextProvider: viewContextProvider)
         }
     }
     
     func registerPersistentStorageLoader(in container: Container) {
         container.register(PersistentStorageLoader.self) { resolver in
             let persistentContainerProvider = resolver.resolveSafe(PersistentContainerProvider.self)
-            let viewContextConfigurator = resolver.resolveSafe(ViewContextConfigurator.self)
+            let viewContextConfigurator = resolver.resolveSafe(PSViewContextConfigurator.self)
             return PersistentStorageLoaderBase(persistentContainerProvider: persistentContainerProvider,
                                                viewContextConfigurator: viewContextConfigurator)
         }
@@ -67,7 +65,7 @@ private extension PersistentStorageAssembly {
         container.register(PersistentStorageMaintainer.self) { resolver in
             let appStateEmitter = resolver.resolveSafe(ApplicationStateEmitter.self)
             let loader = resolver.resolveSafe(PersistentStorageLoader.self)
-            let viewContextProvider = resolver.resolveSafe(ViewContextProvider.self)
+            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
             return PersistentStorageMaintainer(appStateEmitter: appStateEmitter,
                                                storageLoader: loader,
                                                viewContextProvider: viewContextProvider)

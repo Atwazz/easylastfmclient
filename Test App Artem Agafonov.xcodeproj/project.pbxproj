@@ -101,9 +101,9 @@
 		8B9BB7B22423DDE7001E08AF /* PersistentStorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B12423DDE7001E08AF /* PersistentStorageLoader.swift */; };
 		8B9BB7B42423DE58001E08AF /* PersistentStorageLoaderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B32423DE58001E08AF /* PersistentStorageLoaderBase.swift */; };
 		8B9BB7B62423DF05001E08AF /* PersistentStorageLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */; };
-		8B9BB7B92423E24D001E08AF /* ViewContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B82423E24D001E08AF /* ViewContextProvider.swift */; };
-		8B9BB7BE2423E475001E08AF /* ViewContextConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7BD2423E475001E08AF /* ViewContextConfigurator.swift */; };
-		8B9BB7C02423E48D001E08AF /* ViewContextConfiguratorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7BF2423E48D001E08AF /* ViewContextConfiguratorBase.swift */; };
+		8B9BB7B92423E24D001E08AF /* PSViewContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B82423E24D001E08AF /* PSViewContextProvider.swift */; };
+		8B9BB7BE2423E475001E08AF /* PSViewContextConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7BD2423E475001E08AF /* PSViewContextConfigurator.swift */; };
+		8B9BB7C02423E48D001E08AF /* PSViewContextConfiguratorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7BF2423E48D001E08AF /* PSViewContextConfiguratorBase.swift */; };
 		8B9BB7C52423E8E3001E08AF /* ApplicationStateEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C42423E8E3001E08AF /* ApplicationStateEmitter.swift */; };
 		8B9BB7C72423E943001E08AF /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C62423E943001E08AF /* ApplicationState.swift */; };
 		8B9BB7CA2423EAF3001E08AF /* MemoryWarningEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C92423EAF3001E08AF /* MemoryWarningEmitter.swift */; };
@@ -149,6 +149,7 @@
 		8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6E147241D7B6300223F74 /* NetworkServicesAssembly.swift */; };
 		8BD9311B242521DA00A9CE7D /* PersistentStorageStateEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9311A242521DA00A9CE7D /* PersistentStorageStateEmitter.swift */; };
 		8BD9311D242521E400A9CE7D /* PersistentStorageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9311C242521E400A9CE7D /* PersistentStorageState.swift */; };
+		8BD9311F2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9311E2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift */; };
 		BAA47CEF8AFF6ABCAB68AAE9 /* libPods-Test App Artem Agafonov.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */; };
 /* End PBXBuildFile section */
 
@@ -250,9 +251,9 @@
 		8B9BB7B12423DDE7001E08AF /* PersistentStorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoader.swift; sourceTree = "<group>"; };
 		8B9BB7B32423DE58001E08AF /* PersistentStorageLoaderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoaderBase.swift; sourceTree = "<group>"; };
 		8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoadError.swift; sourceTree = "<group>"; };
-		8B9BB7B82423E24D001E08AF /* ViewContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContextProvider.swift; sourceTree = "<group>"; };
-		8B9BB7BD2423E475001E08AF /* ViewContextConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContextConfigurator.swift; sourceTree = "<group>"; };
-		8B9BB7BF2423E48D001E08AF /* ViewContextConfiguratorBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContextConfiguratorBase.swift; sourceTree = "<group>"; };
+		8B9BB7B82423E24D001E08AF /* PSViewContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewContextProvider.swift; sourceTree = "<group>"; };
+		8B9BB7BD2423E475001E08AF /* PSViewContextConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewContextConfigurator.swift; sourceTree = "<group>"; };
+		8B9BB7BF2423E48D001E08AF /* PSViewContextConfiguratorBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSViewContextConfiguratorBase.swift; sourceTree = "<group>"; };
 		8B9BB7C42423E8E3001E08AF /* ApplicationStateEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStateEmitter.swift; sourceTree = "<group>"; };
 		8B9BB7C62423E943001E08AF /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		8B9BB7C92423EAF3001E08AF /* MemoryWarningEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWarningEmitter.swift; sourceTree = "<group>"; };
@@ -298,6 +299,7 @@
 		8BD6E147241D7B6300223F74 /* NetworkServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicesAssembly.swift; sourceTree = "<group>"; };
 		8BD9311A242521DA00A9CE7D /* PersistentStorageStateEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageStateEmitter.swift; sourceTree = "<group>"; };
 		8BD9311C242521E400A9CE7D /* PersistentStorageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageState.swift; sourceTree = "<group>"; };
+		8BD9311E2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSBackgroundTaskInvoker.swift; sourceTree = "<group>"; };
 		A29E0D577AACC52C6E50864D /* Pods-Test App Artem Agafonov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.debug.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B5AE2D24EE92C2D92D246 /* libPods-Test App Artem Agafonov.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test App Artem Agafonov.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -918,7 +920,8 @@
 			children = (
 				8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */,
 				8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */,
-				8B9BB7B82423E24D001E08AF /* ViewContextProvider.swift */,
+				8BD9311E2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift */,
+				8B9BB7B82423E24D001E08AF /* PSViewContextProvider.swift */,
 			);
 			path = ContainerProvider;
 			sourceTree = "<group>";
@@ -944,8 +947,8 @@
 		8B9BB7BC2423E45D001E08AF /* ViewContextConfigurator */ = {
 			isa = PBXGroup;
 			children = (
-				8B9BB7BD2423E475001E08AF /* ViewContextConfigurator.swift */,
-				8B9BB7BF2423E48D001E08AF /* ViewContextConfiguratorBase.swift */,
+				8B9BB7BD2423E475001E08AF /* PSViewContextConfigurator.swift */,
+				8B9BB7BF2423E48D001E08AF /* PSViewContextConfiguratorBase.swift */,
 			);
 			path = ViewContextConfigurator;
 			sourceTree = "<group>";
@@ -1343,7 +1346,7 @@
 				8BA702F8241FCAC90073E7A4 /* Track.swift in Sources */,
 				8BBDEDC9241E8177004CBD27 /* ArtistsSearchResponse.swift in Sources */,
 				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
-				8B9BB7C02423E48D001E08AF /* ViewContextConfiguratorBase.swift in Sources */,
+				8B9BB7C02423E48D001E08AF /* PSViewContextConfiguratorBase.swift in Sources */,
 				8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */,
 				8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */,
 				8B9BB7A424234786001E08AF /* Time.swift in Sources */,
@@ -1354,7 +1357,7 @@
 				8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
 				8BBDEDD0241E85C2004CBD27 /* SearchQueryInfo.swift in Sources */,
 				8B7312BB241D4C26001922F4 /* AlbumDetailsInteractorInput.swift in Sources */,
-				8B9BB7B92423E24D001E08AF /* ViewContextProvider.swift in Sources */,
+				8B9BB7B92423E24D001E08AF /* PSViewContextProvider.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */,
 				8BA702F1241FB2C40073E7A4 /* RequestValidator.swift in Sources */,
@@ -1394,6 +1397,7 @@
 				8B33AF0824250D89004C7F59 /* BaseAssemblerProvider.swift in Sources */,
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
 				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
+				8BD9311F2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift in Sources */,
 				8BD6E143241D7A9500223F74 /* APIKeyProvider.swift in Sources */,
 				8BA702E4241F85630073E7A4 /* ArtistAlbumsLoadRequest.swift in Sources */,
 				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
@@ -1437,7 +1441,7 @@
 				8BD6E145241D7AA000223F74 /* APIKeyProviderBase.swift in Sources */,
 				8BBDEDBE241E6FA8004CBD27 /* NetworkServicesAssemblerProvider.swift in Sources */,
 				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
-				8B9BB7BE2423E475001E08AF /* ViewContextConfigurator.swift in Sources */,
+				8B9BB7BE2423E475001E08AF /* PSViewContextConfigurator.swift in Sources */,
 				8B7312C4241D4C26001922F4 /* AlbumDetailsViewController.swift in Sources */,
 				8BBDEDB1241E6742004CBD27 /* APIURLProviderBase.swift in Sources */,
 				8B9BB7B22423DDE7001E08AF /* PersistentStorageLoader.swift in Sources */,

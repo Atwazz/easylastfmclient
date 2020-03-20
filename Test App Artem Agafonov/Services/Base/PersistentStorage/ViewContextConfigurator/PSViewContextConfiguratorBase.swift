@@ -1,5 +1,5 @@
 //
-//  ViewContextConfiguratorBase.swift
+//  PSViewContextConfiguratorBase.swift
 //  Test App Artem Agafonov
 //
 //  Created by Artem Agafonov on 19.03.2020.
@@ -8,18 +8,18 @@
 
 import CoreData.NSManagedObjectContext
 
-final class ViewContextConfiguratorBase {
+final class PSViewContextConfiguratorBase {
     // MARK: - Private instance properties
-    private let viewContextProvider: ViewContextProvider
+    private let viewContextProvider: PSViewContextProvider
     
     // MARK: - Init
-    init(viewContextProvider: ViewContextProvider) {
+    init(viewContextProvider: PSViewContextProvider) {
         self.viewContextProvider = viewContextProvider
     }
 }
 
 // MARK: - ViewContextConfigurator
-extension ViewContextConfiguratorBase: ViewContextConfigurator {
+extension PSViewContextConfiguratorBase: PSViewContextConfigurator {
     func configure() {
         viewContextProvider.viewContext.automaticallyMergesChangesFromParent = true
         viewContextProvider.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy

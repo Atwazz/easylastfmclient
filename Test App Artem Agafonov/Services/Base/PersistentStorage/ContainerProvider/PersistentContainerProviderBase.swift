@@ -26,8 +26,15 @@ extension PersistentContainerProviderBase: PersistentContainerProvider {
 }
 
 // MARK: - PersistentStorageViewContextProvider
-extension PersistentContainerProviderBase: ViewContextProvider {
+extension PersistentContainerProviderBase: PSViewContextProvider {
     var viewContext: NSManagedObjectContext {
         persistentContainer.viewContext
+    }
+}
+
+// MARK: - PSBackgroundTaskInvoker
+extension PersistentContainerProviderBase: PSBackgroundTaskInvoker {
+    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        persistentContainer.performBackgroundTask(block)
     }
 }

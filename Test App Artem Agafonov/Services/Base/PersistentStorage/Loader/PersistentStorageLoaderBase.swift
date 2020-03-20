@@ -11,11 +11,11 @@ import CoreData.NSPersistentContainer
 final class PersistentStorageLoaderBase {
     // MARK: - Private instance properties
     private let containerProvider: PersistentContainerProvider
-    private let viewContextConfigurator: ViewContextConfigurator
+    private let viewContextConfigurator: PSViewContextConfigurator
     
     // MARK: - Init
     init(persistentContainerProvider: PersistentContainerProvider,
-         viewContextConfigurator: ViewContextConfigurator) {
+         viewContextConfigurator: PSViewContextConfigurator) {
         containerProvider = persistentContainerProvider
         self.viewContextConfigurator = viewContextConfigurator
     }

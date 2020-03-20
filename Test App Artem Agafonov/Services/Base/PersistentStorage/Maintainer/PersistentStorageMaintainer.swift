@@ -13,14 +13,14 @@ final class PersistentStorageMaintainer {
     // MARK: - Private instance properties
     private let appStateEmitter: ApplicationStateEmitter
     private let storageLoader: PersistentStorageLoader
-    private let viewContextProvider: ViewContextProvider
+    private let viewContextProvider: PSViewContextProvider
     private let storageStateSubject = CurrentValueSubject<PersistentStorageState, Never>(.unknown)
     private var disposeBag = DisposeBag()
     
     // MARK: - Init
     init(appStateEmitter: ApplicationStateEmitter,
          storageLoader: PersistentStorageLoader,
-         viewContextProvider: ViewContextProvider) {
+         viewContextProvider: PSViewContextProvider) {
         self.appStateEmitter = appStateEmitter
         self.storageLoader = storageLoader
         self.viewContextProvider = viewContextProvider
@@ -60,7 +60,7 @@ private extension PersistentStorageMaintainer {
     func loadPersistentStorage() {
         storageLoader.load { [weak self] result in
             switch result {
-            case .success(_):
+            case .success:
                 self?.storageStateSubject.send(.loaded)
             case .failure(let error):
                 assertionFailure("Persistent storage loading failed: \(error)")

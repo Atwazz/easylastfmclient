@@ -1,5 +1,5 @@
 //
-//  PersistentStorageViewContextProvider.swift
+//  PSViewContextProvider.swift
 //  Test App Artem Agafonov
 //
 //  Created by Artem Agafonov on 19.03.2020.
@@ -8,6 +8,6 @@
 
 import CoreData.NSManagedObjectContext
 
-protocol ViewContextProvider {
+protocol PSViewContextProvider {
     var viewContext: NSManagedObjectContext { get }
 }
