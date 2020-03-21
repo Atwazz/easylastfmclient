@@ -23,8 +23,10 @@ extension AlbumEntityFactoryBase: AlbumEntityFactory {
         }
         let tracks = model.tracks.map { TrackEntity(context: context, model: $0) { $0.album = entity } }
         entity.addToTracks(Set(tracks) as NSSet)
-        let tags = model.tags.map { TagEntity(context: context, model: $0) { $0.album = entity } }
-        entity.addToTags(Set(tags) as NSSet)
+        if let tags = model.tags {
+            let tagEntities = tags.map { TagEntity(context: context, model: $0) { $0.album = entity } }
+            entity.addToTags(Set(tagEntities) as NSSet)
+        }
         entity.wiki = model.wiki.map { WikiEntity(context: context, model: $0) { $0.album = entity } }
         return entity
     }

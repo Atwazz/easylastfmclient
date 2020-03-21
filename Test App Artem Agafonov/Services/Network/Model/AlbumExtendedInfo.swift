@@ -13,9 +13,9 @@ struct AlbumExtendedInfo {
     let artist: String
     let mbid: String?
     let url: URL?
-    let images: [ImageModel]
+    let images: [ImageModel]?
     let tracks: [Track]
-    let tags: [Tag]
+    let tags: [Tag]?
     let wiki: Wiki?
 }
 
@@ -44,15 +44,15 @@ extension AlbumExtendedInfo: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
         artist = try container.decode(String.self, forKey: .artist)
-        mbid = try container.decode(String.self, forKey: .mbid)
-        url = try container.decodeURLFromString(forKey: .url)
-        images = try container.decode([ImageModel].self, forKey: .images)
-        wiki = try container.decode(Wiki.self, forKey: .wiki)
+        mbid = container.decodeSafe(String.self, forKey: .mbid)
+        url = container.decodeURLFromString(forKey: .url)
+        images = container.decodeSafe([ImageModel].self, forKey: .images)
+        wiki = container.decodeSafe(Wiki.self, forKey: .wiki)
         let tracksContainer = try container.nestedContainer(keyedBy: TracksCodingKeys.self,
                                                             forKey: .tracks)
         tracks = try tracksContainer.decode([Track].self, forKey: .track)
         let tagsContainer = try container.nestedContainer(keyedBy: TagsCodingKeys.self,
                                                           forKey: .tags)
-        tags = try tagsContainer.decode([Tag].self, forKey: .tag)
+        tags = tagsContainer.decodeSafe([Tag].self, forKey: .tag)
     }
 }

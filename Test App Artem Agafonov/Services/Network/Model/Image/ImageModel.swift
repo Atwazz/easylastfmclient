@@ -22,7 +22,7 @@ extension ImageModel: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        url = try container.decodeURLFromString(forKey: .url)
+        url = container.decodeURLFromString(forKey: .url)
         size = try container.decode(ImageSize.self, forKey: .size)
     }
 }

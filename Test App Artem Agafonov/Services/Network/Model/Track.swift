@@ -32,10 +32,10 @@ extension Track: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        url = try container.decodeURLFromString(forKey: .url)
-        duration = try container.decodeUIntFromString(forKey: .duration)
+        url = container.decodeURLFromString(forKey: .url)
+        duration = container.decodeUIntFromString(forKey: .duration)
         let rankContainer = try container.nestedContainer(keyedBy: RankContainerCodingKeys.self,
                                                           forKey: .rankContainer)
-        rank = try rankContainer.decodeUIntFromString(forKey: .rank)
+        rank = rankContainer.decodeUIntFromString(forKey: .rank)
     }
 }

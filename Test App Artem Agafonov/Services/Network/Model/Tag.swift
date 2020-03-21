@@ -23,6 +23,6 @@ extension Tag: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        url = try container.decodeURLFromString(forKey: .url)
+        url = container.decodeURLFromString(forKey: .url)
     }
 }

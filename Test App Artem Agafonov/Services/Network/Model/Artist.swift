@@ -27,8 +27,8 @@ extension Artist: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        mbid = try container.decode(String.self, forKey: .mbid)
-        url = try container.decodeURLFromString(forKey: .url)
-        images = try container.decode([ImageModel].self, forKey: .images)
+        mbid = container.decodeSafe(String.self, forKey: .mbid)
+        url = container.decodeURLFromString(forKey: .url)
+        images = container.decodeSafe([ImageModel].self, forKey: .images)
     }
 }

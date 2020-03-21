@@ -21,6 +21,6 @@ extension SearchQueryInfo: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         searchTerms = try container.decode(String.self, forKey: .searchTerms)
-        page = try container.decodeUIntFromString(forKey: .page)
+        page = container.decodeUIntFromString(forKey: .page)
     }
 }
