@@ -3,6 +3,7 @@ line_length: 120
 # excluded sources
 excluded:
   - Pods
+  - "Test App Artem Agafonov/Services/Base/PersistentStorage/Model/Machine"
 
 # customized rules
 disabled_rules:

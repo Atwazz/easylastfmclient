@@ -107,6 +107,18 @@
 		8B9BB7C52423E8E3001E08AF /* ApplicationStateEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C42423E8E3001E08AF /* ApplicationStateEmitter.swift */; };
 		8B9BB7C72423E943001E08AF /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C62423E943001E08AF /* ApplicationState.swift */; };
 		8B9BB7CA2423EAF3001E08AF /* MemoryWarningEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7C92423EAF3001E08AF /* MemoryWarningEmitter.swift */; };
+		8B9CDD6124260665008CE48F /* TrackEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5524260665008CE48F /* TrackEntity+CoreDataClass.swift */; };
+		8B9CDD6224260665008CE48F /* TrackEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5624260665008CE48F /* TrackEntity+CoreDataProperties.swift */; };
+		8B9CDD6324260665008CE48F /* ArtistEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5724260665008CE48F /* ArtistEntity+CoreDataClass.swift */; };
+		8B9CDD6424260665008CE48F /* ArtistEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5824260665008CE48F /* ArtistEntity+CoreDataProperties.swift */; };
+		8B9CDD6524260665008CE48F /* WikiEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5924260665008CE48F /* WikiEntity+CoreDataClass.swift */; };
+		8B9CDD6624260665008CE48F /* WikiEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5A24260665008CE48F /* WikiEntity+CoreDataProperties.swift */; };
+		8B9CDD6724260665008CE48F /* TagEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5B24260665008CE48F /* TagEntity+CoreDataClass.swift */; };
+		8B9CDD6824260665008CE48F /* TagEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5C24260665008CE48F /* TagEntity+CoreDataProperties.swift */; };
+		8B9CDD6924260665008CE48F /* AlbumEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5D24260665008CE48F /* AlbumEntity+CoreDataClass.swift */; };
+		8B9CDD6A24260665008CE48F /* AlbumEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5E24260665008CE48F /* AlbumEntity+CoreDataProperties.swift */; };
+		8B9CDD6B24260665008CE48F /* ImageModelEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD5F24260665008CE48F /* ImageModelEntity+CoreDataClass.swift */; };
+		8B9CDD6C24260665008CE48F /* ImageModelEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDD6024260665008CE48F /* ImageModelEntity+CoreDataProperties.swift */; };
 		8BA702D7241F66470073E7A4 /* ArtistAlbumsLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA702D6241F66470073E7A4 /* ArtistAlbumsLoadService.swift */; };
 		8BA702D9241F66520073E7A4 /* ArtistAlbumsLoadServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA702D8241F66520073E7A4 /* ArtistAlbumsLoadServiceBase.swift */; };
 		8BA702DE241F70980073E7A4 /* PaginationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA702DD241F70980073E7A4 /* PaginationInfo.swift */; };
@@ -257,6 +269,18 @@
 		8B9BB7C42423E8E3001E08AF /* ApplicationStateEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStateEmitter.swift; sourceTree = "<group>"; };
 		8B9BB7C62423E943001E08AF /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		8B9BB7C92423EAF3001E08AF /* MemoryWarningEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWarningEmitter.swift; sourceTree = "<group>"; };
+		8B9CDD5524260665008CE48F /* TrackEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrackEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD5624260665008CE48F /* TrackEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrackEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B9CDD5724260665008CE48F /* ArtistEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD5824260665008CE48F /* ArtistEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtistEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B9CDD5924260665008CE48F /* WikiEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD5A24260665008CE48F /* WikiEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WikiEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B9CDD5B24260665008CE48F /* TagEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD5C24260665008CE48F /* TagEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B9CDD5D24260665008CE48F /* AlbumEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD5E24260665008CE48F /* AlbumEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B9CDD5F24260665008CE48F /* ImageModelEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModelEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8B9CDD6024260665008CE48F /* ImageModelEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModelEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8BA702D6241F66470073E7A4 /* ArtistAlbumsLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsLoadService.swift; sourceTree = "<group>"; };
 		8BA702D8241F66520073E7A4 /* ArtistAlbumsLoadServiceBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsLoadServiceBase.swift; sourceTree = "<group>"; };
 		8BA702DD241F70980073E7A4 /* PaginationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationInfo.swift; sourceTree = "<group>"; };
@@ -454,6 +478,7 @@
 				8B9BB7AA2423DC0A001E08AF /* ContainerProvider */,
 				8B9BB7B02423DDB9001E08AF /* Loader */,
 				8B33AF092425126F004C7F59 /* Maintainer */,
+				8B9CDD5424260638008CE48F /* Model */,
 				8B33AF10242520BD004C7F59 /* StateEmitter */,
 				8B9BB7BC2423E45D001E08AF /* ViewContextConfigurator */,
 			);
@@ -988,6 +1013,41 @@
 			path = MemoryWarningEmitter;
 			sourceTree = "<group>";
 		};
+		8B9CDD5424260638008CE48F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CDD6D242606C2008CE48F /* Human */,
+				8B9CDD6E242606CE008CE48F /* Machine */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B9CDD6D242606C2008CE48F /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CDD5D24260665008CE48F /* AlbumEntity+CoreDataClass.swift */,
+				8B9CDD5724260665008CE48F /* ArtistEntity+CoreDataClass.swift */,
+				8B9CDD5F24260665008CE48F /* ImageModelEntity+CoreDataClass.swift */,
+				8B9CDD5B24260665008CE48F /* TagEntity+CoreDataClass.swift */,
+				8B9CDD5524260665008CE48F /* TrackEntity+CoreDataClass.swift */,
+				8B9CDD5924260665008CE48F /* WikiEntity+CoreDataClass.swift */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		8B9CDD6E242606CE008CE48F /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CDD5E24260665008CE48F /* AlbumEntity+CoreDataProperties.swift */,
+				8B9CDD5824260665008CE48F /* ArtistEntity+CoreDataProperties.swift */,
+				8B9CDD6024260665008CE48F /* ImageModelEntity+CoreDataProperties.swift */,
+				8B9CDD5C24260665008CE48F /* TagEntity+CoreDataProperties.swift */,
+				8B9CDD5624260665008CE48F /* TrackEntity+CoreDataProperties.swift */,
+				8B9CDD5A24260665008CE48F /* WikiEntity+CoreDataProperties.swift */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
 		8BA702D5241F662A0073E7A4 /* ArtistAlbumsLoad */ = {
 			isa = PBXGroup;
 			children = (
@@ -1345,6 +1405,7 @@
 				8B41998A241C2F84004F0195 /* Test_App_Artem_Agafonov.xcdatamodeld in Sources */,
 				8BA702F8241FCAC90073E7A4 /* Track.swift in Sources */,
 				8BBDEDC9241E8177004CBD27 /* ArtistsSearchResponse.swift in Sources */,
+				8B9CDD6424260665008CE48F /* ArtistEntity+CoreDataProperties.swift in Sources */,
 				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
 				8B9BB7C02423E48D001E08AF /* PSViewContextConfiguratorBase.swift in Sources */,
 				8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */,
@@ -1360,7 +1421,9 @@
 				8B9BB7B92423E24D001E08AF /* PSViewContextProvider.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */,
+				8B9CDD6224260665008CE48F /* TrackEntity+CoreDataProperties.swift in Sources */,
 				8BA702F1241FB2C40073E7A4 /* RequestValidator.swift in Sources */,
+				8B9CDD6824260665008CE48F /* TagEntity+CoreDataProperties.swift in Sources */,
 				8B73129E241D461E001922F4 /* ArtistsSearchRouterOutput.swift in Sources */,
 				8B731264241D320F001922F4 /* ScreenSizeProvider.swift in Sources */,
 				8BA702F3241FB55E0073E7A4 /* Assembler+ResolveViewController.swift in Sources */,
@@ -1368,6 +1431,7 @@
 				8B7312A4241D461E001922F4 /* ArtistsSearchPresenter.swift in Sources */,
 				8B731283241D3E53001922F4 /* ModuleFactoriesAssembly.swift in Sources */,
 				8B7312A5241D461E001922F4 /* ArtistsSearchFactory.swift in Sources */,
+				8B9CDD6924260665008CE48F /* AlbumEntity+CoreDataClass.swift in Sources */,
 				8B9BB7AF2423DCB4001E08AF /* PersistentStorageAssembly.swift in Sources */,
 				8B7BB850241FDEF500E80969 /* AlbumInfoLoadService.swift in Sources */,
 				8BA702E0241F80410073E7A4 /* ArtistAlbumsLoadResponse.swift in Sources */,
@@ -1398,6 +1462,7 @@
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
 				8B7311E6241CF90D001922F4 /* MainScreenInteractorOutput.swift in Sources */,
 				8BD9311F2425331C00A9CE7D /* PSBackgroundTaskInvoker.swift in Sources */,
+				8B9CDD6724260665008CE48F /* TagEntity+CoreDataClass.swift in Sources */,
 				8BD6E143241D7A9500223F74 /* APIKeyProvider.swift in Sources */,
 				8BA702E4241F85630073E7A4 /* ArtistAlbumsLoadRequest.swift in Sources */,
 				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
@@ -1409,6 +1474,7 @@
 				8B7312BA241D4C26001922F4 /* AlbumDetailsInteractor.swift in Sources */,
 				8B9BB7A62423DAF3001E08AF /* PersistentContainerProvider.swift in Sources */,
 				8B7312C1241D4C26001922F4 /* AlbumDetailsViewInput.swift in Sources */,
+				8B9CDD6A24260665008CE48F /* AlbumEntity+CoreDataProperties.swift in Sources */,
 				8BD9311B242521DA00A9CE7D /* PersistentStorageStateEmitter.swift in Sources */,
 				8B731268241D32C9001922F4 /* UIHelpersAssembly.swift in Sources */,
 				8BBDEDC7241E7F85004CBD27 /* ImageSize.swift in Sources */,
@@ -1423,6 +1489,7 @@
 				8B7BB856241FE0C000E80969 /* AlbumInfoLoadRequest.swift in Sources */,
 				8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */,
 				8BBDEDB4241E6C2D004CBD27 /* APICommonParamsProvider.swift in Sources */,
+				8B9CDD6324260665008CE48F /* ArtistEntity+CoreDataClass.swift in Sources */,
 				8BBDEDBB241E6EBE004CBD27 /* APICommonParamsProviderBase.swift in Sources */,
 				8BBDEDC3241E7F39004CBD27 /* Artist.swift in Sources */,
 				8BA702E9241FB14D0073E7A4 /* Validatable.swift in Sources */,
@@ -1447,6 +1514,7 @@
 				8B9BB7B22423DDE7001E08AF /* PersistentStorageLoader.swift in Sources */,
 				8B73129C241D461E001922F4 /* ArtistsSearchAssembly.swift in Sources */,
 				8BBDEDAF241E66E2004CBD27 /* APIURLProvider.swift in Sources */,
+				8B9CDD6624260665008CE48F /* WikiEntity+CoreDataProperties.swift in Sources */,
 				8B7312E4241D4C2D001922F4 /* AlbumsScreenInteractor.swift in Sources */,
 				8BBDEDD6241E88CB004CBD27 /* ArtistsSearchServiceBase.swift in Sources */,
 				8BCF09DE241E992F005F4905 /* KeyedDecodingContainer+DecodeUIntFromString.swift in Sources */,
@@ -1455,10 +1523,13 @@
 				8B9BB7C72423E943001E08AF /* ApplicationState.swift in Sources */,
 				8BA702D9241F66520073E7A4 /* ArtistAlbumsLoadServiceBase.swift in Sources */,
 				8B7312C0241D4C26001922F4 /* AlbumDetailsFactory.swift in Sources */,
+				8B9CDD6124260665008CE48F /* TrackEntity+CoreDataClass.swift in Sources */,
 				8B731280241D3C73001922F4 /* EntryPointFactory.swift in Sources */,
 				8BA702EC241FB1EE0073E7A4 /* RequestValidationError.swift in Sources */,
+				8B9CDD6C24260665008CE48F /* ImageModelEntity+CoreDataProperties.swift in Sources */,
 				8B7312BD241D4C26001922F4 /* AlbumDetailsRouter.swift in Sources */,
 				8BBDEDAD241E647F004CBD27 /* APIMethod.swift in Sources */,
+				8B9CDD6B24260665008CE48F /* ImageModelEntity+CoreDataClass.swift in Sources */,
 				8B9BB7A224233931001E08AF /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */,
 				8B7312E1241D4C2D001922F4 /* AlbumsScreenRouterInput.swift in Sources */,
 				8B9BB7B62423DF05001E08AF /* PersistentStorageLoadError.swift in Sources */,
@@ -1471,6 +1542,7 @@
 				8B73129F241D461E001922F4 /* ArtistsSearchRouter.swift in Sources */,
 				8BBDEDB6241E6C63004CBD27 /* APICommonParamsBase.swift in Sources */,
 				8B7312BC241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */,
+				8B9CDD6524260665008CE48F /* WikiEntity+CoreDataClass.swift in Sources */,
 				8BA702F6241FCA760073E7A4 /* AlbumExtendedInfo.swift in Sources */,
 				8BBDEDC0241E728B004CBD27 /* ArtistsSearchService.swift in Sources */,
 				8B7312DC241D4C2D001922F4 /* AlbumsScreenViewController.swift in Sources */,

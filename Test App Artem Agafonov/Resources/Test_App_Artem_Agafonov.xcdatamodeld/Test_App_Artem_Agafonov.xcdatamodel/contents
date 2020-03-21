@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AlbumEntity" representedClassName="AlbumEntity" syncable="YES">
+    <entity name="AlbumEntity" representedClassName=".AlbumEntity" syncable="YES">
         <attribute name="mbid" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
@@ -16,7 +16,7 @@
             <fetchIndexElement property="mbid" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
-    <entity name="ArtistEntity" representedClassName="ArtistEntity" syncable="YES">
+    <entity name="ArtistEntity" representedClassName=".ArtistEntity" syncable="YES">
         <attribute name="mbid" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
@@ -30,18 +30,18 @@
             <fetchIndexElement property="mbid" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
-    <entity name="ImageModelEntity" representedClassName="ImageModelEntity" syncable="YES">
+    <entity name="ImageModelEntity" representedClassName=".ImageModelEntity" syncable="YES">
         <attribute name="size" attributeType="String"/>
         <attribute name="url" attributeType="URI"/>
         <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlbumEntity" inverseName="images" inverseEntity="AlbumEntity"/>
         <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArtistEntity" inverseName="images" inverseEntity="ArtistEntity"/>
     </entity>
-    <entity name="TagEntity" representedClassName="TagEntity" syncable="YES">
+    <entity name="TagEntity" representedClassName=".TagEntity" syncable="YES">
         <attribute name="name" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlbumEntity" inverseName="tags" inverseEntity="AlbumEntity"/>
     </entity>
-    <entity name="TrackEntity" representedClassName="TrackEntity" syncable="YES">
+    <entity name="TrackEntity" representedClassName=".TrackEntity" syncable="YES">
         <attribute name="duration" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="rank" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -52,7 +52,7 @@
             <fetchIndexElement property="rank" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
-    <entity name="WikiEntity" representedClassName="WikiEntity" syncable="YES">
+    <entity name="WikiEntity" representedClassName=".WikiEntity" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="published" optional="YES" attributeType="String"/>
         <attribute name="summary" optional="YES" attributeType="String"/>
