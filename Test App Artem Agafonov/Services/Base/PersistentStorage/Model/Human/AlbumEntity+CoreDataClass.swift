@@ -10,6 +10,7 @@
 import Foundation
 import CoreData
 
-public class AlbumEntity: NSManagedObject {
+public class AlbumEntity: NSManagedObject { }
 
-}
+// MARK: - EntityWithImages
+extension AlbumEntity: EntityWithImages { }

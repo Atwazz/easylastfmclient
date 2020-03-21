@@ -11,5 +11,12 @@ import Foundation
 import CoreData
 
 public class TagEntity: NSManagedObject {
-
+    convenience init(context: NSManagedObjectContext,
+                     model: Tag,
+                     relationAssignment: (TagEntity) -> Void) {
+        self.init(context: context)
+        name = model.name
+        url = model.url
+        relationAssignment(self)
+    }
 }

@@ -11,5 +11,14 @@ import Foundation
 import CoreData
 
 public class TrackEntity: NSManagedObject {
-
+    convenience init(context: NSManagedObjectContext,
+                     model: Track,
+                     relationAssignment: (TrackEntity) -> Void) {
+        self.init(context: context)
+        name = model.name
+        url = model.url
+        duration = Int32(model.duration)
+        rank = Int16(model.rank)
+        relationAssignment(self)
+    }
 }

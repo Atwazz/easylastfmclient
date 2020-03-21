@@ -34,7 +34,7 @@ extension PersistentStorageLoaderBase: PersistentStorageLoader {
                 return
             }
             self.viewContextConfigurator.configure()
-            completion(.success(()))
+            completion(.success)
         }
     }
 }

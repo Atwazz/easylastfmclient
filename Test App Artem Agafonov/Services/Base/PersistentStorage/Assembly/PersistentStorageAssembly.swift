@@ -20,6 +20,9 @@ extension PersistentStorageAssembly: Assembly {
         registerViewContextConfigurator(in: container)
         registerPersistentStorageLoader(in: container)
         registerMaintainer(in: container)
+        registerAlbumsSaver(in: container)
+        registerAlbumFactory(in: container)
+        registerArtistFetcher(in: container)
     }
     
     func loaded(resolver: Resolver) {
@@ -72,5 +75,28 @@ private extension PersistentStorageAssembly {
         }
         .implements(PersistentStorageStateEmitter.self)
         .inObjectScope(.container)
+    }
+    
+    func registerAlbumsSaver(in container: Container) {
+        container.register(AlbumsSaver.self) { resolver in
+            let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
+            let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
+            let albumFactory = resolver.resolveSafe(AlbumEntityFactory.self)
+            return AlbumsSaverBase(backgroundTaskInvoker: backgroundTaskInvoker,
+                                   artistFetcher: artistFetcher,
+                                   albumFactory: albumFactory)
+        }
+    }
+    
+    func registerAlbumFactory(in container: Container) {
+        container.register(AlbumEntityFactory.self) { _ in
+            AlbumEntityFactoryBase()
+        }
+    }
+    
+    func registerArtistFetcher(in container: Container) {
+        container.register(ArtistEntityFetcher.self) { _ in
+            ArtistEntityFetcherBase()
+        }
     }
 }

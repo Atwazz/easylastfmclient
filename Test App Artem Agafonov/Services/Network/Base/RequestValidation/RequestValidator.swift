@@ -22,7 +22,7 @@ extension RequestValidator: Validator {
                 completion(.failure(RequestValidationError.requestModelIsInvalid))
                 return
             }
-            completion(.success(()))
+            completion(.success)
         }
     }
 }

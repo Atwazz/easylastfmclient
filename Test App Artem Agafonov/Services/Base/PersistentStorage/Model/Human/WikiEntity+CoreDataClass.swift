@@ -11,5 +11,13 @@ import Foundation
 import CoreData
 
 public class WikiEntity: NSManagedObject {
-
+    convenience init(context: NSManagedObjectContext,
+                     model: Wiki,
+                     relationAssignment: (WikiEntity) -> Void) {
+        self.init(context: context)
+        published = model.published
+        summary = model.summary
+        content = model.content
+        relationAssignment(self)
+    }
 }

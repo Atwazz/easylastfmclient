@@ -13,7 +13,6 @@ struct Track {
     let url: URL?
     let duration: UInt
     let rank: UInt
-    let artist: Artist
 }
 
 // MARK: - Decodable
@@ -35,7 +34,6 @@ extension Track: Decodable {
         name = try container.decode(String.self, forKey: .name)
         url = try container.decodeURLFromString(forKey: .url)
         duration = try container.decodeUIntFromString(forKey: .duration)
-        artist = try container.decode(Artist.self, forKey: .artist)
         let rankContainer = try container.nestedContainer(keyedBy: RankContainerCodingKeys.self,
                                                           forKey: .rankContainer)
         rank = try rankContainer.decodeUIntFromString(forKey: .rank)
