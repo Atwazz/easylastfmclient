@@ -10,5 +10,6 @@ import CoreData.NSManagedObjectContext
 
 protocol AlbumEntityFactory {
     func album(model: AlbumExtendedInfo,
+               for artist: ArtistEntity,
                in context: NSManagedObjectContext) -> AlbumEntity
 }

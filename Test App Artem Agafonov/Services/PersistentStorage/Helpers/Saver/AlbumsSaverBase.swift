@@ -52,8 +52,7 @@ private extension AlbumsSaverBase {
             assertionFailure("Trying to add already saved album: \(model.name)")
             return
         }
-        let entity = albumFactory.album(model: model, in: context)
-        entity.artist = artist
+        _ = albumFactory.album(model: model, for: artist, in: context)
     }
     
     func save(context: NSManagedObjectContext, completion: (SaverResult) -> Void) {

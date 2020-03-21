@@ -24,8 +24,13 @@ final class ServicesAssemblerProvider {
         return assemblerProvider.assembler
     }()
     
+    private lazy var persistentStorageAssembler: Assembler = {
+        let assemblerProvider = PersistentStorageAssemblerProvider(with: networkAssembler)
+        return assemblerProvider.assembler
+    }()
+    
     private lazy var uiServicesAssembler: Assembler = {
-        let uiServicesAssemblerProvider = UIServicesAssemblerProvider(with: networkAssembler)
+        let uiServicesAssemblerProvider = UIServicesAssemblerProvider(with: persistentStorageAssembler)
         return uiServicesAssemblerProvider.assembler
     }()
     

@@ -96,7 +96,7 @@
 		8B9BB7A424234786001E08AF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A324234786001E08AF /* Time.swift */; };
 		8B9BB7A62423DAF3001E08AF /* PersistentContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */; };
 		8B9BB7AC2423DC43001E08AF /* PersistentContainerProviderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */; };
-		8B9BB7AF2423DCB4001E08AF /* PersistentStorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7AE2423DCB4001E08AF /* PersistentStorageAssembly.swift */; };
+		8B9BB7AF2423DCB4001E08AF /* PersistentStorageMaintanenceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7AE2423DCB4001E08AF /* PersistentStorageMaintanenceAssembly.swift */; };
 		8B9BB7B22423DDE7001E08AF /* PersistentStorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B12423DDE7001E08AF /* PersistentStorageLoader.swift */; };
 		8B9BB7B42423DE58001E08AF /* PersistentStorageLoaderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B32423DE58001E08AF /* PersistentStorageLoaderBase.swift */; };
 		8B9BB7B62423DF05001E08AF /* PersistentStorageLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */; };
@@ -144,6 +144,8 @@
 		8BB3B99D2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B99A2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift */; };
 		8BB3B99E2426623700EBB5CC /* KeyedDecodingContainer+DecodeUIntFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B99B2426623700EBB5CC /* KeyedDecodingContainer+DecodeUIntFromString.swift */; };
 		8BB3B99F2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B99C2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift */; };
+		8BB3B9A1242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B9A0242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift */; };
+		8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B9A52426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift */; };
 		8BBDEDA5241E45C1004CBD27 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDEDA4241E45C1004CBD27 /* DisposeBag.swift */; };
 		8BBDEDAA241E6433004CBD27 /* NetworkBaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDEDA9241E6433004CBD27 /* NetworkBaseAssembly.swift */; };
 		8BBDEDAD241E647F004CBD27 /* APIMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDEDAC241E647F004CBD27 /* APIMethod.swift */; };
@@ -267,7 +269,7 @@
 		8B9BB7A324234786001E08AF /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProvider.swift; sourceTree = "<group>"; };
 		8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProviderBase.swift; sourceTree = "<group>"; };
-		8B9BB7AE2423DCB4001E08AF /* PersistentStorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageAssembly.swift; sourceTree = "<group>"; };
+		8B9BB7AE2423DCB4001E08AF /* PersistentStorageMaintanenceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageMaintanenceAssembly.swift; sourceTree = "<group>"; };
 		8B9BB7B12423DDE7001E08AF /* PersistentStorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoader.swift; sourceTree = "<group>"; };
 		8B9BB7B32423DE58001E08AF /* PersistentStorageLoaderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoaderBase.swift; sourceTree = "<group>"; };
 		8B9BB7B52423DF05001E08AF /* PersistentStorageLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageLoadError.swift; sourceTree = "<group>"; };
@@ -315,6 +317,8 @@
 		8BB3B99A2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+DecodeSafe.swift"; sourceTree = "<group>"; };
 		8BB3B99B2426623700EBB5CC /* KeyedDecodingContainer+DecodeUIntFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+DecodeUIntFromString.swift"; sourceTree = "<group>"; };
 		8BB3B99C2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+DecodeURLFromString.swift"; sourceTree = "<group>"; };
+		8BB3B9A0242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageAssemblerProvider.swift; sourceTree = "<group>"; };
+		8BB3B9A52426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageHelpersAssembly.swift; sourceTree = "<group>"; };
 		8BBDEDA4241E45C1004CBD27 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		8BBDEDA9241E6433004CBD27 /* NetworkBaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBaseAssembly.swift; sourceTree = "<group>"; };
 		8BBDEDAC241E647F004CBD27 /* APIMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethod.swift; sourceTree = "<group>"; };
@@ -423,6 +427,7 @@
 			children = (
 				8B9BB7C12423E899001E08AF /* Base */,
 				8BD6E140241D7A7D00223F74 /* Network */,
+				8B7311BC241CE73A001922F4 /* PersistentStorage */,
 				8B73124E241D161D001922F4 /* UI */,
 				8B73126C241D3477001922F4 /* ServicesAssemblerProvider.swift */,
 			);
@@ -492,14 +497,10 @@
 		8B7311BC241CE73A001922F4 /* PersistentStorage */ = {
 			isa = PBXGroup;
 			children = (
-				8B9BB7AD2423DCA8001E08AF /* Assembly */,
-				8B9BB7AA2423DC0A001E08AF /* ContainerProvider */,
 				8B9CDD8824261E8A008CE48F /* Helpers */,
-				8B9BB7B02423DDB9001E08AF /* Loader */,
-				8B33AF092425126F004C7F59 /* Maintainer */,
+				8BB3B9A2242667D100EBB5CC /* Maintanence */,
 				8B9CDD5424260638008CE48F /* Model */,
-				8B33AF10242520BD004C7F59 /* StateEmitter */,
-				8B9BB7BC2423E45D001E08AF /* ViewContextConfigurator */,
+				8BB3B9A0242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift */,
 			);
 			path = PersistentStorage;
 			sourceTree = "<group>";
@@ -970,14 +971,6 @@
 			path = ContainerProvider;
 			sourceTree = "<group>";
 		};
-		8B9BB7AD2423DCA8001E08AF /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				8B9BB7AE2423DCB4001E08AF /* PersistentStorageAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		8B9BB7B02423DDB9001E08AF /* Loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,7 +994,6 @@
 			isa = PBXGroup;
 			children = (
 				8B33AF0624250D6B004C7F59 /* Application */,
-				8B7311BC241CE73A001922F4 /* PersistentStorage */,
 				8B33AF0724250D89004C7F59 /* BaseAssemblerProvider.swift */,
 			);
 			path = Base;
@@ -1071,9 +1063,12 @@
 		8B9CDD8824261E8A008CE48F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8BB3B9A42426691B00EBB5CC /* Assembly */,
+				8B9BB7AA2423DC0A001E08AF /* ContainerProvider */,
 				8BB3B98D24264B9000EBB5CC /* Factories */,
 				8B9CDD8E24261F8B008CE48F /* Fetchers */,
 				8B9CDD8D24261F84008CE48F /* Saver */,
+				8B33AF10242520BD004C7F59 /* StateEmitter */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1187,6 +1182,33 @@
 				8BB3B99C2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift */,
 			);
 			path = KeyedDecodingContainer;
+			sourceTree = "<group>";
+		};
+		8BB3B9A2242667D100EBB5CC /* Maintanence */ = {
+			isa = PBXGroup;
+			children = (
+				8BB3B9A72426699A00EBB5CC /* Assembly */,
+				8B9BB7B02423DDB9001E08AF /* Loader */,
+				8B33AF092425126F004C7F59 /* Maintainer */,
+				8B9BB7BC2423E45D001E08AF /* ViewContextConfigurator */,
+			);
+			path = Maintanence;
+			sourceTree = "<group>";
+		};
+		8BB3B9A42426691B00EBB5CC /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8BB3B9A52426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8BB3B9A72426699A00EBB5CC /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B9BB7AE2423DCB4001E08AF /* PersistentStorageMaintanenceAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		8BBDEDA3241E45B2004CBD27 /* Combine */ = {
@@ -1516,7 +1538,7 @@
 				8B731283241D3E53001922F4 /* ModuleFactoriesAssembly.swift in Sources */,
 				8B7312A5241D461E001922F4 /* ArtistsSearchFactory.swift in Sources */,
 				8B9CDD6924260665008CE48F /* AlbumEntity+CoreDataClass.swift in Sources */,
-				8B9BB7AF2423DCB4001E08AF /* PersistentStorageAssembly.swift in Sources */,
+				8B9BB7AF2423DCB4001E08AF /* PersistentStorageMaintanenceAssembly.swift in Sources */,
 				8BB3B99E2426623700EBB5CC /* KeyedDecodingContainer+DecodeUIntFromString.swift in Sources */,
 				8B9CDD9324262018008CE48F /* ArtistEntityFetcherBase.swift in Sources */,
 				8B7BB850241FDEF500E80969 /* AlbumInfoLoadService.swift in Sources */,
@@ -1531,6 +1553,7 @@
 				8BBDEDD9241E8919004CBD27 /* ArtistsSearchRequest.swift in Sources */,
 				8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */,
 				8BBDEDDC241E8AD4004CBD27 /* NetworkQueueProvider.swift in Sources */,
+				8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */,
 				8B9CDD9124261FCF008CE48F /* ArtistEntityFetcher.swift in Sources */,
 				8BB3B99F2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */,
 				8B33AF0F242519A1004C7F59 /* Publisher+Convenience.swift in Sources */,
@@ -1545,6 +1568,7 @@
 				8B33AF0B24251288004C7F59 /* PersistentStorageMaintainer.swift in Sources */,
 				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
 				8BA702E2241F806A0073E7A4 /* ArtistAlbumsLoadResults.swift in Sources */,
+				8BB3B9A1242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift in Sources */,
 				8B7BB854241FDF8100E80969 /* AlbumInfoLoadResponse.swift in Sources */,
 				8B33AF0824250D89004C7F59 /* BaseAssemblerProvider.swift in Sources */,
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,

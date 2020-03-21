@@ -30,7 +30,7 @@ extension ArtistEntity {
         guard let albums = albums as? Set<AlbumEntity> else {
             return nil
         }
-        return albums.filter { $0.name == model.name && $0.mbid == mbid }.first
+        return albums.filter { $0.name == model.name && $0.mbid == model.mbid }.first
     }
 }
 
