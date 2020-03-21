@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="Tiu-jk-o6H" id="aMd-k0-F71"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mWu-BQ-UGW"/>
             </connections>
         </placeholder>
@@ -17,20 +18,42 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akO-RE-smT">
-                    <rect key="frame" x="159.5" y="442.5" width="95" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgR-iK-12c">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tiu-jk-o6H">
+                            <rect key="frame" x="20" y="20" width="374" height="832"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rdl-Cw-VOb">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="a0u-YB-c2F"/>
+                                <outlet property="delegate" destination="-1" id="j8u-Br-vX8"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Tiu-jk-o6H" firstAttribute="leading" secondItem="hgR-iK-12c" secondAttribute="leading" constant="20" symbolic="YES" id="8Cm-ia-Eho"/>
+                        <constraint firstAttribute="bottom" secondItem="Tiu-jk-o6H" secondAttribute="bottom" id="GBA-uq-cRM"/>
+                        <constraint firstAttribute="trailing" secondItem="Tiu-jk-o6H" secondAttribute="trailing" constant="20" symbolic="YES" id="XC3-59-G4b"/>
+                        <constraint firstItem="Tiu-jk-o6H" firstAttribute="top" secondItem="hgR-iK-12c" secondAttribute="top" constant="20" symbolic="YES" id="cKE-Wk-mSm"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="akO-RE-smT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="4Ur-Hh-6dO"/>
-                <constraint firstItem="akO-RE-smT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Zs0-6O-H6H"/>
+                <constraint firstItem="hgR-iK-12c" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="D4K-mH-6MK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hgR-iK-12c" secondAttribute="trailing" id="DyO-xc-baa"/>
+                <constraint firstItem="hgR-iK-12c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OnZ-ud-3mU"/>
+                <constraint firstAttribute="bottom" secondItem="hgR-iK-12c" secondAttribute="bottom" id="vUx-YL-pb1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

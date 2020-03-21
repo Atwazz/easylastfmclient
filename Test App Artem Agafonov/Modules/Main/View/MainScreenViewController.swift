@@ -13,6 +13,7 @@ final class MainScreenViewController: UIViewController {
     @DelayedImmutable var output: MainScreenViewOutput
     
     // MARK: - Private instance properties
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Init
     init() {
@@ -38,7 +39,13 @@ private extension MainScreenViewController {
     }
     
     func setup() {
+        title = "Saved Albums"
         navigationItem.rightBarButtonItem = searchButton
+        setupCollectionView()
+    }
+    
+    func setupCollectionView() {
+        collectionView.registerCell(AlbumCollectionViewCell.self)
     }
 }
 
