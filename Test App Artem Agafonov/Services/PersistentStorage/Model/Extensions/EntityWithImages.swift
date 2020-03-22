@@ -7,13 +7,16 @@
 //
 
 import Foundation.NSSet
+import Foundation.NSURL
 import CoreData.NSManagedObjectContext
 
 protocol EntityWithImages {
     var images: NSSet? { get }
     func addToImages(_ values: NSSet)
+    func imageUrl(size: ImageSize) -> URL?
 }
 
+// MARK: - Default implementation
 extension EntityWithImages {
     func replaceImages(with models: [ImageModel]?,
                        in context: NSManagedObjectContext,
@@ -24,11 +27,26 @@ extension EntityWithImages {
                                                    model: $0,
                                                    relationAssignment: relationAssignmentBlock)
         }
-        addToImages(Set(images) as NSSet)
+        addImages(images)
     }
     
     func removeAllImages(in context: NSManagedObjectContext) {
         guard let images = images as? Set<ImageModelEntity> else { return }
         images.forEach { context.delete($0) }
+    }
+    
+    func imageUrl(size: ImageSize) -> URL? {
+        imagesSet?.filter { $0.imageSize == size }.first?.url
+    }
+}
+
+// MARK: - Private
+private extension EntityWithImages {
+    var imagesSet: Set<ImageModelEntity>? {
+        images as? Set<ImageModelEntity>
+    }
+    
+    func addImages(_ array: [ImageModelEntity]) {
+        addToImages(Set(array) as NSSet)
     }
 }

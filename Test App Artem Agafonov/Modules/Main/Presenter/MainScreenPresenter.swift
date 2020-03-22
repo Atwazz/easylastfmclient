@@ -6,6 +6,8 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSIndexPath
+
 final class MainScreenPresenter {
     // MARK: - Public instance properties
     @DelayedImmutable var view: MainScreenViewInput
@@ -14,16 +16,23 @@ final class MainScreenPresenter {
     
     // MARK: - Private instance properties
     private let storageStateEmitter: PersistentStorageStateEmitter
+    private let dataSource: MainScreenCollectionViewDataSource
     private var disposeBag = DisposeBag()
     
     // MARK: - Init
-    init(storageStateEmitter: PersistentStorageStateEmitter) {
+    init(storageStateEmitter: PersistentStorageStateEmitter,
+         dataSource: MainScreenCollectionViewDataSource) {
         self.storageStateEmitter = storageStateEmitter
+        self.dataSource = dataSource
     }
 }
 
 // MARK: - MainScreenViewOutput
 extension MainScreenPresenter: MainScreenViewOutput {
+    func didSelectItem(at inedxPath: IndexPath) {
+        
+    }
+    
     func openSearchButtonTapped() {
         router.showSearchScreen()
     }
@@ -72,7 +81,13 @@ private extension MainScreenPresenter {
     }
     
     func loadAlbums() {
-        // Load..
+        setupDataSource()
         view.hideLoadingIndicator()
+        view.setup(dataSource: dataSource)
+    }
+    
+    func setupDataSource() {
+        dataSource.fetchedResultsController = interactor.obtainResultControllerForAlbums()
+        dataSource.loadData()
     }
 }

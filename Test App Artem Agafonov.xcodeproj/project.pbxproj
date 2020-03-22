@@ -93,6 +93,9 @@
 		8B7BB852241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB851241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift */; };
 		8B7BB854241FDF8100E80969 /* AlbumInfoLoadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB853241FDF8100E80969 /* AlbumInfoLoadResponse.swift */; };
 		8B7BB856241FE0C000E80969 /* AlbumInfoLoadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB855241FE0C000E80969 /* AlbumInfoLoadRequest.swift */; };
+		8B952775242781F00024A89C /* MainScreenCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */; };
+		8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */; };
+		8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */; };
 		8B9BB7A424234786001E08AF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A324234786001E08AF /* Time.swift */; };
 		8B9BB7A62423DAF3001E08AF /* PersistentContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */; };
 		8B9BB7AC2423DC43001E08AF /* PersistentContainerProviderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */; };
@@ -273,6 +276,9 @@
 		8B7BB851241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadServiceBase.swift; sourceTree = "<group>"; };
 		8B7BB853241FDF8100E80969 /* AlbumInfoLoadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadResponse.swift; sourceTree = "<group>"; };
 		8B7BB855241FE0C000E80969 /* AlbumInfoLoadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadRequest.swift; sourceTree = "<group>"; };
+		8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactory.swift; sourceTree = "<group>"; };
+		8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactoryBase.swift; sourceTree = "<group>"; };
 		8B9BB7A324234786001E08AF /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProvider.swift; sourceTree = "<group>"; };
 		8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProviderBase.swift; sourceTree = "<group>"; };
@@ -587,6 +593,7 @@
 		8B7311CE241CEFBF001922F4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8B952773242781D10024A89C /* DataSource */,
 				8B7311E7241CF971001922F4 /* MainScreenPresenter.swift */,
 			);
 			path = Presenter;
@@ -605,6 +612,7 @@
 		8B7311D0241CEFCE001922F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B95277724278A560024A89C /* Factory */,
 				8BD2868724269FC800A3815F /* AlbumCollectionViewModel.swift */,
 			);
 			path = Model;
@@ -977,6 +985,23 @@
 				8B7BB853241FDF8100E80969 /* AlbumInfoLoadResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		8B952773242781D10024A89C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		8B95277724278A560024A89C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */,
+				8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		8B9BB7AA2423DC0A001E08AF /* ContainerProvider */ = {
@@ -1573,6 +1598,7 @@
 				8B9BB7B92423E24D001E08AF /* PSViewContextProvider.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */,
+				8B952775242781F00024A89C /* MainScreenCollectionViewDataSource.swift in Sources */,
 				8B9CDD6224260665008CE48F /* TrackEntity+CoreDataProperties.swift in Sources */,
 				8BA702F1241FB2C40073E7A4 /* RequestValidator.swift in Sources */,
 				8B9CDD6824260665008CE48F /* TagEntity+CoreDataProperties.swift in Sources */,
@@ -1601,6 +1627,7 @@
 				8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */,
 				8BBDEDDC241E8AD4004CBD27 /* NetworkQueueProvider.swift in Sources */,
 				8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */,
+				8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */,
 				8B9CDD9124261FCF008CE48F /* ArtistEntityFetcher.swift in Sources */,
 				8BB3B99F2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */,
 				8B33AF0F242519A1004C7F59 /* Publisher+Convenience.swift in Sources */,
@@ -1655,6 +1682,7 @@
 				8BBDEDBB241E6EBE004CBD27 /* APICommonParamsProviderBase.swift in Sources */,
 				8BBDEDC3241E7F39004CBD27 /* Artist.swift in Sources */,
 				8BB3B98F24264BA400EBB5CC /* AlbumEntityFactoryBase.swift in Sources */,
+				8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */,
 				8BA702E9241FB14D0073E7A4 /* Validatable.swift in Sources */,
 				8BB3B99D2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift in Sources */,
 				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,

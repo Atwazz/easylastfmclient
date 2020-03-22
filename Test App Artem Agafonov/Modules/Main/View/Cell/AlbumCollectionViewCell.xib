@@ -28,14 +28,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vED-yo-OHB" userLabel="ContainerView" customClass="ViewWithRoundedCorners" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="230" height="255"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbumImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-4r-1C0">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbumImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-4r-1C0">
                             <rect key="frame" x="55" y="16" width="120" height="120"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="AFL-Rp-1YA"/>
                                 <constraint firstAttribute="width" secondItem="Wlm-4r-1C0" secondAttribute="height" multiplier="1:1" id="lVU-rL-Y7e"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="25" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Six, Seven or Eight - Single" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-Pm-AbM">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="25" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Six, Seven or Eight - Single" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-Pm-AbM">
                             <rect key="frame" x="8" y="148" width="214" height="19"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                             <nil key="textColor"/>
@@ -55,7 +55,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArtistImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-EV-TIv">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArtistImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-EV-TIv">
                                     <rect key="frame" x="12" y="12" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="2s1-EV-TIv" secondAttribute="height" multiplier="1:1" id="Qiv-oZ-n7M"/>
@@ -67,7 +67,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-zs-Uyv">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-zs-Uyv">
                                     <rect key="frame" x="64" y="23.5" width="73.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                     <nil key="textColor"/>

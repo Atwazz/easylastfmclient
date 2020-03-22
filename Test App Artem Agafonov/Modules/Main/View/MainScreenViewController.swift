@@ -29,7 +29,14 @@ final class MainScreenViewController: UIViewController {
         setup()
         output.viewIsReady()
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension MainScreenViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        output.didSelectItem(at: indexPath)
+    }
 }
 
 // MARK: - Private
@@ -64,5 +71,10 @@ extension MainScreenViewController: MainScreenViewInput {
     
     func hideLoadingIndicator() {
         
+    }
+    
+    func setup(dataSource: UICollectionViewDataSource) {
+        collectionView.dataSource = dataSource
+        collectionView.reloadData()
     }
 }

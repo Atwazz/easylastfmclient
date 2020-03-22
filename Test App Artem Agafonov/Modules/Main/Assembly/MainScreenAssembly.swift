@@ -22,6 +22,8 @@ extension MainScreenAssembly: Assembly {
         registerInteractor(in: container)
         registerPresenter(in: container)
         registerRouter(in: container)
+        registerCollectionViewCellModelFactory(in: container)
+        registerCollectionViewDataSource(in: container)
     }
 }
 
@@ -40,8 +42,9 @@ private extension MainScreenAssembly {
     }
     
     func registerInteractor(in container: Container) {
-        container.register(MainScreenInteractorInput.self) { _ in
-            Interactor()
+        container.register(MainScreenInteractorInput.self) { resolver in
+            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
+            return Interactor(viewContextProvider: viewContextProvider)
         }
         .initCompleted { resolver, object in
             guard let interactor = object as? Interactor else {
@@ -54,7 +57,9 @@ private extension MainScreenAssembly {
     func registerPresenter(in container: Container) {
         container.register(MainScreenViewOutput.self) { resolver in
             let storageStateEmitter = resolver.resolveSafe(PersistentStorageStateEmitter.self)
-            return Presenter(storageStateEmitter: storageStateEmitter)
+            let dataSource = resolver.resolveSafe(MainScreenCollectionViewDataSource.self)
+            return Presenter(storageStateEmitter: storageStateEmitter,
+                             dataSource: dataSource)
         }
         .implements(MainScreenInteractorOutput.self)
         .implements(MainScreenRouterOutput.self)
@@ -80,6 +85,19 @@ private extension MainScreenAssembly {
                 fatalError("Router has unexpected type: \(String(describing: object))")
             }
             router.output = resolver.resolveSafe(MainScreenRouterOutput.self)
+        }
+    }
+    
+    func registerCollectionViewCellModelFactory(in container: Container) {
+        container.register(AlbumCollectionViewModelFactory.self) { _ in
+            AlbumCollectionViewModelFactoryBase()
+        }
+    }
+    
+    func registerCollectionViewDataSource(in container: Container) {
+        container.register(MainScreenCollectionViewDataSource.self) { resolver in
+            let viewModelFactory = resolver.resolveSafe(AlbumCollectionViewModelFactory.self)
+            return MainScreenCollectionViewDataSource(viewModelFactory: viewModelFactory)
         }
     }
 }

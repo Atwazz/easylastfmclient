@@ -14,3 +14,19 @@ public class AlbumEntity: NSManagedObject { }
 
 // MARK: - EntityWithImages
 extension AlbumEntity: EntityWithImages { }
+
+// MARK: - FetchRequests
+extension AlbumEntity {
+    static func allAlbumsFetchRequest() -> NSFetchRequest<AlbumEntity> {
+        let request: NSFetchRequest<AlbumEntity> = AlbumEntity.fetchRequest()
+        request.sortDescriptors = [defaultSortDescriptor]
+        return request
+    }
+}
+
+// MARK: - SortDescriptors
+private extension AlbumEntity {
+    static var defaultSortDescriptor: NSSortDescriptor {
+        NSSortDescriptor(key: #keyPath(AlbumEntity.name), ascending: false)
+    }
+}

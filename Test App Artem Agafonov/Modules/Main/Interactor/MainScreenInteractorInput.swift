@@ -6,6 +6,8 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import CoreData.NSFetchedResultsController
+
 protocol MainScreenInteractorInput {
-    
+    func obtainResultControllerForAlbums() -> NSFetchedResultsController<AlbumEntity>
 }
