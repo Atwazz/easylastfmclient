@@ -23,10 +23,12 @@ extension EntityWithImages {
                        relationAssignmentBlock: (ImageModelEntity) -> Void) {
         removeAllImages(in: context)
         guard let models = models else { return }
-        let images = models.map { ImageModelEntity(context: context,
-                                                   model: $0,
-                                                   relationAssignment: relationAssignmentBlock)
-        }
+        let images = models
+            .filter { $0.url != nil }
+            .map { ImageModelEntity(context: context,
+                                    model: $0,
+                                    relationAssignment: relationAssignmentBlock)
+            }
         addImages(images)
     }
     

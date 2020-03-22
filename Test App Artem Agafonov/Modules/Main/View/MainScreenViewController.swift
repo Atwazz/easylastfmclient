@@ -14,6 +14,8 @@ final class MainScreenViewController: UIViewController {
     
     // MARK: - Private instance properties
     @IBOutlet weak var collectionView: UICollectionView!
+    private let minimumItemSpacing: CGFloat = 10
+    private let itemsPerRow: CGFloat = 2
     
     // MARK: - Init
     init() {
@@ -31,11 +33,26 @@ final class MainScreenViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension MainScreenViewController: UICollectionViewDelegate {
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         output.didSelectItem(at: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = minimumItemSpacing * (itemsPerRow - 1)
+        let availableWidth = min(collectionView.bounds.width, collectionView.bounds.height) - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumItemSpacing
     }
 }
 

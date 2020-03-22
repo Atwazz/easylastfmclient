@@ -11,7 +11,6 @@ import Foundation.NSURL
 struct AlbumCollectionViewModel {
     let albumImageUrl: URL?
     let albumName: String
-    let tracksCount: UInt
     let artistImageUrl: URL?
     let artistName: String
 }

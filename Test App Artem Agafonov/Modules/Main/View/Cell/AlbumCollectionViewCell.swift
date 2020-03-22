@@ -16,7 +16,6 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var artistImageView: UIImageView!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var tracksCountLabel: UILabel!
 }
 
 // MARK: - Public
@@ -24,7 +23,6 @@ extension AlbumCollectionViewCell {
     func update(with model: AlbumCollectionViewModel) {
         albumNameLabel.text = model.albumName
         artistNameLabel.text = model.artistName
-        tracksCountLabel.text = tracksCountText(for: model.tracksCount)
         if let albumImageUrl = model.albumImageUrl {
             albumImageView.af.setImage(withURL: albumImageUrl)
         } else {
@@ -35,12 +33,5 @@ extension AlbumCollectionViewCell {
         } else {
             artistImageView.image = UIImage(named: "ArtistImagePlaceholder")
         }
-    }
-}
-
-// MARK: - Private
-private extension AlbumCollectionViewCell {
-    func tracksCountText(for count: UInt) -> String {
-        count > 99 ? "99+" : String(count)
     }
 }

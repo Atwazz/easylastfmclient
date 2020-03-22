@@ -17,13 +17,11 @@ extension AlbumCollectionViewModelFactoryBase: AlbumCollectionViewModelFactory {
             let artistName = entity.artist?.name else {
                 fatalError("AlbumEntity has invalid state!")
         }
-        let tracksCount = UInt(entity.tracks?.count ?? 0)
-        let albumImageUrl = entity.imageUrl(size: .medium)
-        let artistImageUrl = entity.artist?.imageUrl(size: .small)
+        let albumImageUrl = entity.imageUrl(size: .large)
+        let artistImageUrl = entity.artist?.imageUrl(size: .medium)
         
         return AlbumCollectionViewModel(albumImageUrl: albumImageUrl,
                                         albumName: albumName,
-                                        tracksCount: tracksCount,
                                         artistImageUrl: artistImageUrl,
                                         artistName: artistName)
     }
