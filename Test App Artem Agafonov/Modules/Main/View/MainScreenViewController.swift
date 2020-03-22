@@ -52,7 +52,7 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumItemSpacing
+        minimumItemSpacing
     }
 }
 

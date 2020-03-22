@@ -15,6 +15,7 @@ final class MainScreenCollectionViewDataSource: NSObject {
     
     // MARK: - Private instance properties
     private let viewModelFactory: AlbumCollectionViewModelFactory
+    private weak var collectionView: UICollectionView?
     
     // MARK: - Init
     init(viewModelFactory: AlbumCollectionViewModelFactory) {
@@ -26,6 +27,7 @@ final class MainScreenCollectionViewDataSource: NSObject {
 // MARK: - Public
 extension MainScreenCollectionViewDataSource {
     func loadData() {
+        fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -37,7 +39,8 @@ extension MainScreenCollectionViewDataSource {
 // MARK: - UICollectionViewDataSource
 extension MainScreenCollectionViewDataSource: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        fetchedResultsController.sections?.count ?? 0
+        setCollectionView(collectionView)
+        return fetchedResultsController.sections?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -57,9 +60,23 @@ extension MainScreenCollectionViewDataSource: UICollectionViewDataSource {
     }
 }
 
+// MARK: - NSFetchedResultsControllerDelegate
+extension MainScreenCollectionViewDataSource: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView?.reloadData()
+    }
+}
+
 // MARK: - Private
 private extension MainScreenCollectionViewDataSource {
     var cellIdentifier: String {
         AlbumCollectionViewCell.className
+    }
+    
+    func setCollectionView(_ newValue: UICollectionView) {
+        guard collectionView != newValue else {
+            return
+        }
+        collectionView = newValue
     }
 }
