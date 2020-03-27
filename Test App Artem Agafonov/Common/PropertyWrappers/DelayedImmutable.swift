@@ -13,6 +13,10 @@
 struct DelayedImmutable<Value> {
     private var _value: Value?
     
+    init() {
+        _value = nil
+    }
+    
     var wrappedValue: Value {
         get {
             guard let value = _value else {

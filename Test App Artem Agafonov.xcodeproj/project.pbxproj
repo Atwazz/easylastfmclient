@@ -67,7 +67,6 @@
 		8B7312BB241D4C26001922F4 /* AlbumDetailsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312A8241D4C26001922F4 /* AlbumDetailsInteractorInput.swift */; };
 		8B7312BC241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312A9241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift */; };
 		8B7312BD241D4C26001922F4 /* AlbumDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */; };
-		8B7312BE241D4C26001922F4 /* AlbumDetailsRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */; };
 		8B7312BF241D4C26001922F4 /* AlbumDetailsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */; };
 		8B7312C0241D4C26001922F4 /* AlbumDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312AF241D4C26001922F4 /* AlbumDetailsFactory.swift */; };
 		8B7312C1241D4C26001922F4 /* AlbumDetailsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */; };
@@ -93,6 +92,13 @@
 		8B7BB852241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB851241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift */; };
 		8B7BB854241FDF8100E80969 /* AlbumInfoLoadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB853241FDF8100E80969 /* AlbumInfoLoadResponse.swift */; };
 		8B7BB856241FE0C000E80969 /* AlbumInfoLoadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BB855241FE0C000E80969 /* AlbumInfoLoadRequest.swift */; };
+		8B7E231A242BD76400316602 /* PSObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E2319242BD76400316602 /* PSObjectID.swift */; };
+		8B7E231F242BD7E100316602 /* NSManagedObject+PSObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E231E242BD7E100316602 /* NSManagedObject+PSObjectID.swift */; };
+		8B7E2321242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E2320242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift */; };
+		8B7E2323242BD95600316602 /* PSObjectID+AsObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E2322242BD95600316602 /* PSObjectID+AsObjectID.swift */; };
+		8B7E2325242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */; };
+		8B874032242E7E0D00140F11 /* AlbumDetailsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B874031242E7E0D00140F11 /* AlbumDetailsConfiguration.swift */; };
+		8B874034242E8F4400140F11 /* ConfiguredScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B874033242E8F4400140F11 /* ConfiguredScreenFactory.swift */; };
 		8B952775242781F00024A89C /* MainScreenCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */; };
 		8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */; };
 		8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */; };
@@ -250,7 +256,6 @@
 		8B7312A8241D4C26001922F4 /* AlbumDetailsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorInput.swift; sourceTree = "<group>"; };
 		8B7312A9241D4C26001922F4 /* AlbumDetailsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsInteractorOutput.swift; sourceTree = "<group>"; };
 		8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouter.swift; sourceTree = "<group>"; };
-		8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterOutput.swift; sourceTree = "<group>"; };
 		8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterInput.swift; sourceTree = "<group>"; };
 		8B7312AF241D4C26001922F4 /* AlbumDetailsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsFactory.swift; sourceTree = "<group>"; };
 		8B7312B1241D4C26001922F4 /* AlbumDetailsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewInput.swift; sourceTree = "<group>"; };
@@ -276,6 +281,13 @@
 		8B7BB851241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadServiceBase.swift; sourceTree = "<group>"; };
 		8B7BB853241FDF8100E80969 /* AlbumInfoLoadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadResponse.swift; sourceTree = "<group>"; };
 		8B7BB855241FE0C000E80969 /* AlbumInfoLoadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoLoadRequest.swift; sourceTree = "<group>"; };
+		8B7E2319242BD76400316602 /* PSObjectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSObjectID.swift; sourceTree = "<group>"; };
+		8B7E231E242BD7E100316602 /* NSManagedObject+PSObjectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+PSObjectID.swift"; sourceTree = "<group>"; };
+		8B7E2320242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectID+PSObjectID.swift"; sourceTree = "<group>"; };
+		8B7E2322242BD95600316602 /* PSObjectID+AsObjectID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PSObjectID+AsObjectID.swift"; sourceTree = "<group>"; };
+		8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+ObjectWithID.swift"; sourceTree = "<group>"; };
+		8B874031242E7E0D00140F11 /* AlbumDetailsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsConfiguration.swift; sourceTree = "<group>"; };
+		8B874033242E8F4400140F11 /* ConfiguredScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguredScreenFactory.swift; sourceTree = "<group>"; };
 		8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactory.swift; sourceTree = "<group>"; };
 		8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactoryBase.swift; sourceTree = "<group>"; };
@@ -465,6 +477,7 @@
 		8B7311B7241CE6CD001922F4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B7E231D242BD7CE00316602 /* CoreData */,
 				8BBDEDA3241E45B2004CBD27 /* Combine */,
 				8BB3B9992426623700EBB5CC /* KeyedDecodingContainer */,
 				8BD286892426AF0C00A3815F /* NSObject */,
@@ -738,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				8B731272241D3683001922F4 /* ScreenFactory.swift */,
+				8B874033242E8F4400140F11 /* ConfiguredScreenFactory.swift */,
 			);
 			path = ScreenFactory;
 			sourceTree = "<group>";
@@ -861,7 +875,6 @@
 			isa = PBXGroup;
 			children = (
 				8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */,
-				8B7312AC241D4C26001922F4 /* AlbumDetailsRouterOutput.swift */,
 				8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */,
 			);
 			path = Router;
@@ -897,6 +910,7 @@
 			isa = PBXGroup;
 			children = (
 				8B7312B7241D4C26001922F4 /* AlbumDetailsAssembly.swift */,
+				8B874031242E7E0D00140F11 /* AlbumDetailsConfiguration.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -987,6 +1001,26 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		8B7E2318242BD75400316602 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8BB3B98B242632F200EBB5CC /* EntityWithImages.swift */,
+				8B7E2319242BD76400316602 /* PSObjectID.swift */,
+				8B7E2322242BD95600316602 /* PSObjectID+AsObjectID.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B7E231D242BD7CE00316602 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8B7E231E242BD7E100316602 /* NSManagedObject+PSObjectID.swift */,
+				8B7E2320242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift */,
+				8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		8B952773242781D10024A89C /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1071,7 +1105,7 @@
 		8B9CDD5424260638008CE48F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8BB3B98A242632DF00EBB5CC /* Extensions */,
+				8B7E2318242BD75400316602 /* Common */,
 				8B9CDD6D242606C2008CE48F /* Human */,
 				8B9CDD6E242606CE008CE48F /* Machine */,
 			);
@@ -1199,14 +1233,6 @@
 				8B7BB851241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift */,
 			);
 			path = AlbumInfoLoad;
-			sourceTree = "<group>";
-		};
-		8BB3B98A242632DF00EBB5CC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8BB3B98B242632F200EBB5CC /* EntityWithImages.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8BB3B98D24264B9000EBB5CC /* Factories */ = {
@@ -1583,6 +1609,7 @@
 				8BBDEDC9241E8177004CBD27 /* ArtistsSearchResponse.swift in Sources */,
 				8B9CDD6424260665008CE48F /* ArtistEntity+CoreDataProperties.swift in Sources */,
 				8B7311F9241D024D001922F4 /* MainScreenRouterOutput.swift in Sources */,
+				8B874032242E7E0D00140F11 /* AlbumDetailsConfiguration.swift in Sources */,
 				8B9BB7C02423E48D001E08AF /* PSViewContextConfiguratorBase.swift in Sources */,
 				8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */,
 				8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */,
@@ -1621,12 +1648,14 @@
 				8BA702FC241FCB480073E7A4 /* Wiki.swift in Sources */,
 				8BD9311D242521E400A9CE7D /* PersistentStorageState.swift in Sources */,
 				8B7312E0241D4C2D001922F4 /* AlbumsScreenRouterOutput.swift in Sources */,
+				8B7E231F242BD7E100316602 /* NSManagedObject+PSObjectID.swift in Sources */,
 				8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */,
 				8BCF09E0241EA10E005F4905 /* Album.swift in Sources */,
 				8BBDEDD9241E8919004CBD27 /* ArtistsSearchRequest.swift in Sources */,
 				8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */,
 				8BBDEDDC241E8AD4004CBD27 /* NetworkQueueProvider.swift in Sources */,
 				8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */,
+				8B7E2325242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift in Sources */,
 				8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */,
 				8B9CDD9124261FCF008CE48F /* ArtistEntityFetcher.swift in Sources */,
 				8BB3B99F2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */,
@@ -1686,8 +1715,10 @@
 				8BA702E9241FB14D0073E7A4 /* Validatable.swift in Sources */,
 				8BB3B99D2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift in Sources */,
 				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,
+				8B7E2323242BD95600316602 /* PSObjectID+AsObjectID.swift in Sources */,
 				8BA702D7241F66470073E7A4 /* ArtistAlbumsLoadService.swift in Sources */,
 				8B731270241D3546001922F4 /* MainScreenFactory.swift in Sources */,
+				8B7E231A242BD76400316602 /* PSObjectID.swift in Sources */,
 				8B731276241D38EA001922F4 /* EntryPointRouterBase.swift in Sources */,
 				8BA702EE241FB2280073E7A4 /* Validator.swift in Sources */,
 				8B9BB7CA2423EAF3001E08AF /* MemoryWarningEmitter.swift in Sources */,
@@ -1701,6 +1732,7 @@
 				8BBDEDBE241E6FA8004CBD27 /* NetworkServicesAssemblerProvider.swift in Sources */,
 				8B7311F0241CFF7B001922F4 /* MainScreenViewController.swift in Sources */,
 				8B9BB7BE2423E475001E08AF /* PSViewContextConfigurator.swift in Sources */,
+				8B874034242E8F4400140F11 /* ConfiguredScreenFactory.swift in Sources */,
 				8B7312C4241D4C26001922F4 /* AlbumDetailsViewController.swift in Sources */,
 				8BB3B98C242632F200EBB5CC /* EntityWithImages.swift in Sources */,
 				8BBDEDB1241E6742004CBD27 /* APIURLProviderBase.swift in Sources */,
@@ -1744,8 +1776,8 @@
 				8B7312DC241D4C2D001922F4 /* AlbumsScreenViewController.swift in Sources */,
 				8B7312DD241D4C2D001922F4 /* AlbumsScreenViewInput.swift in Sources */,
 				8BBDEDAA241E6433004CBD27 /* NetworkBaseAssembly.swift in Sources */,
-				8B7312BE241D4C26001922F4 /* AlbumDetailsRouterOutput.swift in Sources */,
 				8B731251241D1631001922F4 /* ViewDispatcher.swift in Sources */,
+				8B7E2321242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

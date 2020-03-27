@@ -19,9 +19,12 @@ final class AlbumDetailsFactory {
     }
 }
 
-// MARK: - ScreenFactory
-extension AlbumDetailsFactory: ScreenFactory {
-    var viewController: UIViewController {
-        screenAssembler.resolveViewController(AlbumDetailsViewInput.self)
+// MARK: - ConfiguredScreenFactory
+extension AlbumDetailsFactory: ConfiguredScreenFactory {
+    typealias Configuration = AlbumDetailsConfiguration
+    
+    func viewController(configuration: AlbumDetailsConfiguration) -> UIViewController {
+        screenAssembler.resolveViewController(AlbumDetailsViewInput.self,
+                                              configuration: configuration)
     }
 }

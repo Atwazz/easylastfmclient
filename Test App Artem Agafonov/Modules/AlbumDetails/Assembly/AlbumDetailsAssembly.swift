@@ -13,6 +13,7 @@ final class AlbumDetailsAssembly {
     typealias Interactor = AlbumDetailsInteractor
     typealias Presenter = AlbumDetailsPresenter
     typealias Router = AlbumDetailsRouter
+    typealias Configuration = AlbumDetailsConfiguration
 }
 
 // MARK: - Assembly
@@ -28,42 +29,61 @@ extension AlbumDetailsAssembly: Assembly {
 // MARK: - Registrations
 private extension AlbumDetailsAssembly {
     func registerView(in container: Container) {
-        container.register(AlbumDetailsViewInput.self) { _ in
-            View()
+        var lastConfiguration: Configuration?
+        container.register(AlbumDetailsViewInput.self) { (_, configuration: Configuration) in
+            lastConfiguration = configuration
+            return View()
         }
         .initCompleted { resolver, object in
             guard let viewController = object as? View else {
                 fatalError("View has unexpected type: \(String(describing: object))")
             }
-            viewController.output = resolver.resolveSafe(AlbumDetailsViewOutput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            viewController.output = resolver.resolveSafe(AlbumDetailsViewOutput.self,
+                                                         argument: configuration)
         }
     }
     
     func registerInteractor(in container: Container) {
-        container.register(AlbumDetailsInteractorInput.self) { _ in
-            Interactor()
+        var lastConfiguration: Configuration?
+        container.register(AlbumDetailsInteractorInput.self) { (resolver, configuration: Configuration) in
+            lastConfiguration = configuration
+            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
+            return Interactor(viewContextProvider: viewContextProvider)
         }
         .initCompleted { resolver, object in
             guard let interactor = object as? Interactor else {
                 fatalError("Interactor has unexpected type: \(String(describing: object))")
             }
-            interactor.output = resolver.resolveSafe(AlbumDetailsInteractorOutput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            interactor.output = resolver.resolveSafe(AlbumDetailsInteractorOutput.self,
+                                                     argument: configuration)
         }
     }
     
     func registerPresenter(in container: Container) {
-        container.register(AlbumDetailsViewOutput.self) { _ in
-            Presenter()
+        var lastConfiguration: Configuration?
+        container.register(AlbumDetailsViewOutput.self) { (_, configuration: Configuration) in
+            lastConfiguration = configuration
+            return Presenter(configuration: configuration)
         }
         .implements(AlbumDetailsInteractorOutput.self)
-        .implements(AlbumDetailsRouterOutput.self)
         .initCompleted { resolver, object in
             guard let presenter = object as? Presenter else {
                 fatalError("Presenter has unexpected type: \(String(describing: object))")
             }
-            presenter.view = resolver.resolveSafe(AlbumDetailsViewInput.self)
-            presenter.interactor = resolver.resolveSafe(AlbumDetailsInteractorInput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            presenter.interactor = resolver.resolveSafe(AlbumDetailsInteractorInput.self,
+                                                        argument: configuration)
             presenter.router = resolver.resolveSafe(AlbumDetailsRouterInput.self)
+            presenter.view = resolver.resolveSafe(AlbumDetailsViewInput.self,
+                                                  argument: configuration)
         }
     }
     
@@ -71,12 +91,6 @@ private extension AlbumDetailsAssembly {
         container.register(AlbumDetailsRouterInput.self) { resolver in
             let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
             return Router(viewDispatcher: viewDispatcher)
-        }
-        .initCompleted { resolver, object in
-            guard let router = object as? Router else {
-                fatalError("Router has unexpected type: \(String(describing: object))")
-            }
-            router.output = resolver.resolveSafe(AlbumDetailsRouterOutput.self)
         }
     }
 }

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="sqq-8F-BW7" id="Ubl-Mp-Alf"/>
                 <outlet property="collectionView" destination="Tiu-jk-o6H" id="aMd-k0-F71"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mWu-BQ-UGW"/>
             </connections>
@@ -43,9 +44,15 @@
                         <constraint firstItem="Tiu-jk-o6H" firstAttribute="top" secondItem="hgR-iK-12c" secondAttribute="top" constant="20" symbolic="YES" id="cKE-Wk-mSm"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sqq-8F-BW7">
+                    <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="sqq-8F-BW7" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4LT-L3-TO7"/>
+                <constraint firstItem="sqq-8F-BW7" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8a0-mE-X9L"/>
                 <constraint firstItem="hgR-iK-12c" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="D4K-mH-6MK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hgR-iK-12c" secondAttribute="trailing" id="DyO-xc-baa"/>
                 <constraint firstItem="hgR-iK-12c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OnZ-ud-3mU"/>

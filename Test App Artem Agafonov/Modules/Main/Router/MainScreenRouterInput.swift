@@ -11,4 +11,6 @@ import Foundation.NSError
 protocol MainScreenRouterInput {
     func showSearchScreen()
     func showAlertWithError(_ error: LocalizedError, completion: (() -> Void)?)
+    func showAlbumDetails(name: String, mbid: String)
+    func showAlbumDetails(id: PSObjectID)
 }

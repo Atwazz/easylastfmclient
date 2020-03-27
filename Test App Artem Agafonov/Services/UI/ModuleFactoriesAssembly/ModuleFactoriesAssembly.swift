@@ -13,6 +13,7 @@ final class ModuleFactoriesAssembly: Assembly {
     func assemble(container: Container) {
         registerMainScreenFactory(in: container)
         registerArtistsSearchFactory(in: container)
+        registerAlbumDetailsFactory(in: container)
     }
 }
 
@@ -27,6 +28,12 @@ private extension ModuleFactoriesAssembly {
     func registerArtistsSearchFactory(in container: Container) {
         container.register(ArtistsSearchFactory.self) { _ in
             ArtistsSearchFactory(parentAssembler: Self.servicesAssembler)
+        }
+    }
+    
+    func registerAlbumDetailsFactory(in container: Container) {
+        container.register(AlbumDetailsFactory.self) { _ in
+            AlbumDetailsFactory(parentAssembler: Self.servicesAssembler)
         }
     }
 }

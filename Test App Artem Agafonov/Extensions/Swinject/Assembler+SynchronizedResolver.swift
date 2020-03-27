@@ -17,4 +17,9 @@ extension Assembler {
                                           name: String? = nil) -> Service {
         synchronizedResolver.resolveSafe(serviceType)
     }
+    
+    func synchronizedResolveSafe<Service, Arg1>(_ serviceType: Service.Type,
+                                                argument: Arg1) -> Service {
+        synchronizedResolver.resolveSafe(serviceType, argument: argument)
+    }
 }

@@ -15,4 +15,12 @@ extension Assembler {
         }
         return viewController
     }
+    
+    func resolveViewController<Service, Arg1>(_ serviceType: Service.Type, configuration: Arg1) -> UIViewController {
+        guard let viewController = synchronizedResolveSafe(serviceType,
+                                                           argument: configuration) as? UIViewController else {
+            fatalError("Can't resolve UIViewController for type: \(String(describing: serviceType))")
+        }
+        return viewController
+    }
 }

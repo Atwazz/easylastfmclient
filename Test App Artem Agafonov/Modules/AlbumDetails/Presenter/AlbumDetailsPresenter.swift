@@ -11,6 +11,14 @@ final class AlbumDetailsPresenter {
     @DelayedImmutable var view: AlbumDetailsViewInput
     @DelayedImmutable var interactor: AlbumDetailsInteractorInput
     @DelayedImmutable var router: AlbumDetailsRouterInput
+    
+    // MARK: - Private instance properties
+    private let configuration: AlbumDetailsConfiguration
+    
+    // MARK: - Init
+    init(configuration: AlbumDetailsConfiguration) {
+        self.configuration = configuration
+    }
 }
 
 // MARK: - AlbumDetailsViewOutput
@@ -20,10 +28,5 @@ extension AlbumDetailsPresenter: AlbumDetailsViewOutput {
 
 // MARK: - AlbumDetailsInteractorOutput
 extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
-    
-}
-
-// MARK: - AlbumDetailsRouterOutput
-extension AlbumDetailsPresenter: AlbumDetailsRouterOutput {
     
 }

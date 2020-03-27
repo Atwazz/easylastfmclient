@@ -30,7 +30,7 @@ final class MainScreenPresenter {
 // MARK: - MainScreenViewOutput
 extension MainScreenPresenter: MainScreenViewOutput {
     func didSelectItem(at inedxPath: IndexPath) {
-        
+        router.showAlbumDetails(id: dataSource.albumID(at: inedxPath))
     }
     
     func openSearchButtonTapped() {
@@ -82,8 +82,8 @@ private extension MainScreenPresenter {
     
     func loadAlbums() {
         setupDataSource()
-        view.hideLoadingIndicator()
         view.setup(dataSource: dataSource)
+        view.hideLoadingIndicator()
     }
     
     func setupDataSource() {

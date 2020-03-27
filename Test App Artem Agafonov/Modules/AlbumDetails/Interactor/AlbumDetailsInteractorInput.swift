@@ -7,5 +7,5 @@
 //
 
 protocol AlbumDetailsInteractorInput {
-    
+    func obtainAlbum(with id: PSObjectID) -> AlbumEntity?
 }

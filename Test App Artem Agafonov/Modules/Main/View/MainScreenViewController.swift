@@ -14,6 +14,7 @@ final class MainScreenViewController: UIViewController {
     
     // MARK: - Private instance properties
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private let minimumItemSpacing: CGFloat = 10
     private let itemsPerRow: CGFloat = 2
     
@@ -83,11 +84,13 @@ private extension MainScreenViewController {
 // MARK: - MainScreenViewInput
 extension MainScreenViewController: MainScreenViewInput {
     func showLoadingIndicator() {
-        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
     
     func hideLoadingIndicator() {
-        
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
     func setup(dataSource: UICollectionViewDataSource) {

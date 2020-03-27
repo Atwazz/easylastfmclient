@@ -34,6 +34,10 @@ extension MainScreenCollectionViewDataSource {
             assertionFailure("Error occured: \(error.localizedDescription)")
         }
     }
+    
+    func albumID(at indexPath: IndexPath) -> PSObjectID {
+        fetchedResultsController.object(at: indexPath).id
+    }
 }
 
 // MARK: - UICollectionViewDataSource

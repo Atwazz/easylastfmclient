@@ -15,17 +15,34 @@ final class MainScreenRouter {
     // MARK: - Private instance properties
     private let viewDispatcher: ViewDispatcher
     private let searchScreenFactory: ScreenFactory
+    private let albumDetailsScreenFactory: AlbumDetailsFactory
     
     // MARK: - Init
     init(viewDispatcher: ViewDispatcher,
-         searchScreenFactory: ScreenFactory) {
+         searchScreenFactory: ScreenFactory,
+         albumDetailsScreenFactory: AlbumDetailsFactory) {
         self.viewDispatcher = viewDispatcher
         self.searchScreenFactory = searchScreenFactory
+        self.albumDetailsScreenFactory = albumDetailsScreenFactory
     }
 }
 
 // MARK: - MainScreenRouterIMput
 extension MainScreenRouter: MainScreenRouterInput {
+    func showAlbumDetails(name: String, mbid: String) {
+        let configuration = AlbumDetailsConfiguration(name: name,
+                                                      mbid: mbid,
+                                                      id: nil)
+        showAlbumDetails(configuration: configuration)
+    }
+    
+    func showAlbumDetails(id: PSObjectID) {
+        let configuration = AlbumDetailsConfiguration(name: nil,
+                                                      mbid: nil,
+                                                      id: id)
+        showAlbumDetails(configuration: configuration)
+    }
+    
     func showAlertWithError(_ error: LocalizedError, completion: (() -> Void)?) {
         let alertController = UIAlertController(title: "Error",
                                                 message: error.localizedDescription,
@@ -36,5 +53,13 @@ extension MainScreenRouter: MainScreenRouterInput {
     
     func showSearchScreen() {
         viewDispatcher.push(searchScreenFactory.viewController)
+    }
+}
+
+// MARK: - Private
+private extension MainScreenRouter {
+    func showAlbumDetails(configuration: AlbumDetailsConfiguration) {
+        let viewController = albumDetailsScreenFactory.viewController(configuration: configuration)
+        viewDispatcher.presentModal(viewController)
     }
 }
