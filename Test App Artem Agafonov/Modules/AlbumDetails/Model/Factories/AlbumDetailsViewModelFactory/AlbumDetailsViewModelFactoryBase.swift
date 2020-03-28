@@ -43,7 +43,7 @@ extension AlbumDetailsViewModelFactoryBase: AlbumDetailsViewModelFactory {
                          tags: tags ?? [],
                          artist: artist,
                          published: entity.wiki?.published,
-                         summary: entity.wiki?.summary)
+                         summary: entity.wiki?.content)
         
     }
     
@@ -59,6 +59,6 @@ extension AlbumDetailsViewModelFactoryBase: AlbumDetailsViewModelFactory {
                          tags: tags ?? [],
                          artist: artistViewModel,
                          published: info.wiki?.published,
-                         summary: info.wiki?.summary)
+                         summary: info.wiki?.content)
     }
 }

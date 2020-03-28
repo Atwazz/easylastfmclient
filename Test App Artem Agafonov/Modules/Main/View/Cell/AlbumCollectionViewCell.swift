@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import AlamofireImage
 
 final class AlbumCollectionViewCell: UICollectionViewCell {
     // MARK: - Private instance propeties
@@ -23,15 +22,9 @@ extension AlbumCollectionViewCell {
     func update(with model: AlbumCollectionViewModel) {
         albumNameLabel.text = model.albumName
         artistNameLabel.text = model.artistName
-        if let albumImageUrl = model.albumImageUrl {
-            albumImageView.af.setImage(withURL: albumImageUrl)
-        } else {
-            albumImageView.image = UIImage(named: "AlbumImagePlaceholder")
-        }
-        if let artistImageUrl = model.artistImageUrl {
-            artistImageView.af.setImage(withURL: artistImageUrl)
-        } else {
-            artistImageView.image = UIImage(named: "ArtistImagePlaceholder")
-        }
+        albumImageView.setImage(with: model.albumImageUrl,
+                                placeholderName: "ArtistImagePlaceholder")
+        artistImageView.setImage(with: model.artistImageUrl,
+                                 placeholderName: "ArtistImagePlaceholder")
     }
 }

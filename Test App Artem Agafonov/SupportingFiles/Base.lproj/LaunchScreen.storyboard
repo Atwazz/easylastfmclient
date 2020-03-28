@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgT-nT-7mm">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgT-nT-7mm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Saved Albums" id="Yyn-0H-TPf">
@@ -26,11 +26,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rgT-nT-7mm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Hr-2u-pi0"/>
-                            <constraint firstItem="rgT-nT-7mm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OhL-Pc-xPn"/>
-                            <constraint firstItem="rgT-nT-7mm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ssK-YJ-XYA"/>
+                            <constraint firstItem="rgT-nT-7mm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="44" id="1Hr-2u-pi0"/>
+                            <constraint firstItem="rgT-nT-7mm" firstAttribute="leading" secondItem="8Vc-9e-Eq4" secondAttribute="leading" id="OhL-Pc-xPn"/>
+                            <constraint firstItem="rgT-nT-7mm" firstAttribute="trailing" secondItem="8Vc-9e-Eq4" secondAttribute="trailing" id="ssK-YJ-XYA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="8Vc-9e-Eq4"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

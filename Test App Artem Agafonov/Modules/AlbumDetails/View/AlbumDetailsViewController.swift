@@ -7,13 +7,15 @@
 //
 
 import UIKit
-import AlamofireImage
 
 final class AlbumDetailsViewController: UIViewController {
     // MARK: - Public instance properties
     @DelayedImmutable var output: AlbumDetailsViewOutput
     
     // MARK: - Private instance properties
+    @IBOutlet weak var loadingContainer: UIView!
+    @IBOutlet weak var noDataContainer: UIView!
+    @IBOutlet private weak var infoContainer: UIView!
     @IBOutlet private weak var artistImageView: UIImageView!
     @IBOutlet private weak var artistNameLabel: UILabel!
     @IBOutlet private weak var namelabel: UILabel!
@@ -21,6 +23,7 @@ final class AlbumDetailsViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var tagsView: TagsView!
     @IBOutlet private weak var albumSummaryTextView: UITextView!
+    @IBOutlet private weak var publishedDateZeroHeightConstraint: NSLayoutConstraint!
     
     private let tagsFlowLayout: CollectionViewDelegateFlowLayout
     
@@ -46,19 +49,24 @@ final class AlbumDetailsViewController: UIViewController {
 // MARK: - AlbumDetailsViewInput
 extension AlbumDetailsViewController: AlbumDetailsViewInput {
     func showLoadingIndicator() {
-        
+        infoContainer.isHidden = true
+        noDataContainer.isHidden = true
+        loadingContainer.isHidden = false
     }
     
     func showNoDataPlaceholder() {
-        
+        loadingContainer.isHidden = true
+        infoContainer.isHidden = true
+        noDataContainer.isHidden = false
     }
     
     func update(with model: AlbumDetailsViewModel) {
+        showInfoContainer()
         updateImageView(with: model.imageURL)
         updateArtistImageView(with: model.artist.imageURL)
         artistNameLabel.text = model.artist.name
         namelabel.text = model.name
-        publishedDateLabel.text = model.published ?? "Unknown published date"
+        updatePublishedDate(with: model.published)
         updateSummary(with: model.summary)
     }
     
@@ -70,6 +78,12 @@ extension AlbumDetailsViewController: AlbumDetailsViewInput {
 
 // MARK: - Private
 private extension AlbumDetailsViewController {
+    func showInfoContainer() {
+        noDataContainer.isHidden = true
+        loadingContainer.isHidden = true
+        infoContainer.isHidden = false
+    }
+    
     func updateImageView(with url: URL?) {
         imageView.setImage(with: url, placeholderName: "AlbumImagePlaceholder")
     }
@@ -81,5 +95,10 @@ private extension AlbumDetailsViewController {
     func updateSummary(with text: String?) {
         albumSummaryTextView.text = text
         albumSummaryTextView.isHidden = text?.count == 0
+    }
+    
+    func updatePublishedDate(with date: String?) {
+        publishedDateZeroHeightConstraint.isActive = date == nil
+        publishedDateLabel.text = date
     }
 }
