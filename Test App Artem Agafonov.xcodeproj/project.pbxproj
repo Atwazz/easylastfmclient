@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B308E1D242FECAD00752E99 /* SelfSizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B308E1C242FECAD00752E99 /* SelfSizedCollectionView.swift */; };
 		8B33AF05242509A2004C7F59 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33AF04242509A2004C7F59 /* ApplicationAssembly.swift */; };
 		8B33AF0824250D89004C7F59 /* BaseAssemblerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33AF0724250D89004C7F59 /* BaseAssemblerProvider.swift */; };
 		8B33AF0B24251288004C7F59 /* PersistentStorageMaintainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33AF0A24251288004C7F59 /* PersistentStorageMaintainer.swift */; };
@@ -222,6 +223,7 @@
 
 /* Begin PBXFileReference section */
 		1F9FC217262C6D537C4D1486 /* Pods-Test App Artem Agafonov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test App Artem Agafonov.release.xcconfig"; path = "Target Support Files/Pods-Test App Artem Agafonov/Pods-Test App Artem Agafonov.release.xcconfig"; sourceTree = "<group>"; };
+		8B308E1C242FECAD00752E99 /* SelfSizedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedCollectionView.swift; sourceTree = "<group>"; };
 		8B33AF04242509A2004C7F59 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		8B33AF0724250D89004C7F59 /* BaseAssemblerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAssemblerProvider.swift; sourceTree = "<group>"; };
 		8B33AF0A24251288004C7F59 /* PersistentStorageMaintainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageMaintainer.swift; sourceTree = "<group>"; };
@@ -1617,6 +1619,7 @@
 		8BD28680242690DA00A3815F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B308E1C242FECAD00752E99 /* SelfSizedCollectionView.swift */,
 				8BD28681242690F200A3815F /* ViewWithRoundedCorners.swift */,
 			);
 			path = Views;
@@ -1828,6 +1831,7 @@
 				8B9BB7B92423E24D001E08AF /* PSViewContextProvider.swift in Sources */,
 				8B731255241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift in Sources */,
 				8BB78DD6242F793400CB882C /* ImageModels+ImageURLWithSize.swift in Sources */,
+				8B308E1D242FECAD00752E99 /* SelfSizedCollectionView.swift in Sources */,
 				8BB78DCE242F753600CB882C /* TrackViewModelFactoryBase.swift in Sources */,
 				8BD6E148241D7B6300223F74 /* NetworkServicesAssembly.swift in Sources */,
 				8B952775242781F00024A89C /* MainScreenCollectionViewDataSource.swift in Sources */,

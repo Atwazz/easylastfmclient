@@ -36,7 +36,6 @@ extension TagsView {
         collectionView.delegate = layoutDelegate
         collectionView.dataSource = dataSource
         collectionView.reloadData()
-        collectionView.frame.size = collectionView.contentSize
     }
 }
 
