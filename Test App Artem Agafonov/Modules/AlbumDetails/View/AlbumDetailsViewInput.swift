@@ -11,5 +11,6 @@ import UIKit.UICollectionView
 protocol AlbumDetailsViewInput {
     func showLoadingIndicator()
     func showNoDataPlaceholder()
+    func update(with model: AlbumDetailsViewModel)
     func setup(with tagsDataSource: UICollectionViewDataSource)
 }

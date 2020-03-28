@@ -67,5 +67,6 @@ private extension AlbumDetailsPresenter {
     func handleDetailsLoaded(viewModel: AlbumDetailsViewModel) {
         tagsDataSource.setup(with: viewModel.tags.sorted { $0.name < $1.name })
         view.setup(with: tagsDataSource)
+        view.update(with: viewModel)
     }
 }
