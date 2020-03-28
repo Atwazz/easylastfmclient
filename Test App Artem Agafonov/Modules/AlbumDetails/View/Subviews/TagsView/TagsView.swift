@@ -11,7 +11,6 @@ import UIKit
 final class TagsView: UIView {
     // MARK: - Private instance properties
     @IBOutlet private weak var collectionView: UICollectionView!
-    @DelayedImmutable private var itemSelectionBlock: (IndexPath) -> Void
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -33,18 +32,10 @@ final class TagsView: UIView {
 // MARK: - Public
 extension TagsView {
     func setup(dataSource: UICollectionViewDataSource,
-               itemSelectionBlock: @escaping (IndexPath) -> Void) {
+               layoutDelegate: CollectionViewDelegateFlowLayout) {
+        collectionView.delegate = layoutDelegate
         collectionView.dataSource = dataSource
         collectionView.reloadData()
-        self.itemSelectionBlock = itemSelectionBlock
-    }
-}
-
-// MARK: - UICollectionViewDelegate
-extension TagsView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        itemSelectionBlock(indexPath)
     }
 }
 
@@ -52,6 +43,5 @@ extension TagsView: UICollectionViewDelegate {
 private extension TagsView {
     func setupCollectionView() {
         collectionView.registerCell(TagCell.self)
-        collectionView.setupAutomaticFlowSize()
     }
 }

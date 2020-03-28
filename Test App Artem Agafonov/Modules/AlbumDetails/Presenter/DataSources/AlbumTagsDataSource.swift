@@ -18,23 +18,34 @@ extension AlbumTagsDataSource {
     func setup(with tags: [TagViewModel]) {
         self.tags = tags
     }
+    
+    func url(at indexPath: IndexPath) -> URL? {
+        tags[indexPath.row].url
+    }
+}
+
+// MARK: - AlbumTagNameProvider
+extension AlbumTagsDataSource: AlbumTagNameProvider {
+    func name(at indexPath: IndexPath) -> String {
+        tags[indexPath.row].name
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension AlbumTagsDataSource: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        tags.count
+        tags.count > 0 ? 1 : 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        tags.count > 0 ? 1 : 0
+        tags.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(of: TagCell.self, indexPath: indexPath)
-        cell.update(with: tags[indexPath.section])
+        cell.update(with: tags[indexPath.row])
         return cell
     }
 }

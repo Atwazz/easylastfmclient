@@ -19,19 +19,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKb-mq-usY" customClass="TagsView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="20" y="64" width="374" height="798"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="zKb-mq-usY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IFb-ob-7LE"/>
-                <constraint firstItem="zKb-mq-usY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Q3t-vU-a7R"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zKb-mq-usY" secondAttribute="bottom" id="Vif-t0-X5C"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zKb-mq-usY" secondAttribute="trailing" id="oc1-ID-RkN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zKb-mq-usY" secondAttribute="trailing" constant="20" id="EKe-Kf-6Wk"/>
+                <constraint firstItem="zKb-mq-usY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="VOD-p8-wyQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zKb-mq-usY" secondAttribute="bottom" id="ZSf-Lm-W6J"/>
+                <constraint firstItem="zKb-mq-usY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="iFY-1W-B5l"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>

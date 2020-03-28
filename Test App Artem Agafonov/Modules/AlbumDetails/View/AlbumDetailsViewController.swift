@@ -14,9 +14,11 @@ final class AlbumDetailsViewController: UIViewController {
     
     // MARK: - Private instance properties
     @IBOutlet private weak var tagsView: TagsView!
+    private let tagsFlowLayout: CollectionViewDelegateFlowLayout
     
     // MARK: - Init
-    init() {
+    init(tagsFlowLayout: CollectionViewDelegateFlowLayout) {
+        self.tagsFlowLayout = tagsFlowLayout
         super.init(nibName: Self.name, bundle: nil)
     }
     
@@ -26,6 +28,9 @@ final class AlbumDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tagsFlowLayout.setup { [weak self] indexPath in
+            self?.output.selectedTag(at: indexPath)
+        }
         output.viewIsReady()
     }
 }
@@ -41,8 +46,7 @@ extension AlbumDetailsViewController: AlbumDetailsViewInput {
     }
     
     func setup(with tagsDataSource: UICollectionViewDataSource) {
-        tagsView.setup(dataSource: tagsDataSource) { [weak self] indexPath in
-            self?.output.selectedTag(at: indexPath)
-        }
+        tagsView.setup(dataSource: tagsDataSource,
+                       layoutDelegate: tagsFlowLayout)
     }
 }

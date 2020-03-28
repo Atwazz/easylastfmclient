@@ -72,10 +72,6 @@ extension MainScreenCollectionViewDataSource: NSFetchedResultsControllerDelegate
 
 // MARK: - Private
 private extension MainScreenCollectionViewDataSource {
-    var cellIdentifier: String {
-        AlbumCollectionViewCell.className
-    }
-    
     func setCollectionView(_ newValue: UICollectionView) {
         guard collectionView != newValue else {
             return

@@ -9,11 +9,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="TagCell" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="41" height="28"/>
+            <rect key="frame" x="0.0" y="0.0" width="61" height="28"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDy-3K-gfR" userLabel="BackgroundView" customClass="ViewWithRoundedCorners" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="41" height="28"/>
+                    <rect key="frame" x="0.0" y="0.0" width="61" height="28"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="roundTopLeftCorner" value="YES"/>
@@ -25,8 +25,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHL-hH-0Do">
-                    <rect key="frame" x="9" y="6" width="23.5" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A90s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHL-hH-0Do">
+                    <rect key="frame" x="14.5" y="6" width="32" height="16"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
             <connections>
                 <outlet property="label" destination="nHL-hH-0Do" id="rto-KZ-buH"/>
             </connections>
-            <point key="canvasLocation" x="-426.81159420289856" y="105.80357142857143"/>
+            <point key="canvasLocation" x="-412.31884057971018" y="105.80357142857143"/>
         </view>
     </objects>
 </document>

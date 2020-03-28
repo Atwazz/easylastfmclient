@@ -14,6 +14,10 @@ final class AlbumDetailsAssembly {
     typealias Presenter = AlbumDetailsPresenter
     typealias Router = AlbumDetailsRouter
     typealias Configuration = AlbumDetailsConfiguration
+    typealias LayoutDelegate = CollectionViewDelegateFlowLayout
+    
+    // MARK: - Private static properties
+    private static let tagsLayoutDelegate = "AlbumDetailsTagsLayoutDelegate"
 }
 
 // MARK: - Assembly
@@ -28,6 +32,7 @@ extension AlbumDetailsAssembly: Assembly {
         registerArtistViewModelFactory(in: container)
         registerTagViewModelFactory(in: container)
         registerTrackViewModelFactory(in: container)
+        registerTagsCollectionViewLayoutDelegate(in: container)
     }
 }
 
@@ -35,9 +40,10 @@ extension AlbumDetailsAssembly: Assembly {
 private extension AlbumDetailsAssembly {
     func registerView(in container: Container) {
         var lastConfiguration: Configuration?
-        container.register(AlbumDetailsViewInput.self) { (_, configuration: Configuration) in
+        container.register(AlbumDetailsViewInput.self) { (resolver, configuration: Configuration) in
             lastConfiguration = configuration
-            return View()
+            let tagsFlowLayout = resolver.resolveSafe(LayoutDelegate.self, name: Self.tagsLayoutDelegate)
+            return View(tagsFlowLayout: tagsFlowLayout)
         }
         .initCompleted { resolver, object in
             guard let viewController = object as? View else {
@@ -107,6 +113,8 @@ private extension AlbumDetailsAssembly {
         container.register(AlbumTagsDataSource.self) { _ in
             AlbumTagsDataSource()
         }
+        .implements(AlbumTagNameProvider.self)
+        .inObjectScope(.weak)
     }
     
     func registerAlbumDetailsViewModelFactory(in container: Container) {
@@ -133,8 +141,15 @@ private extension AlbumDetailsAssembly {
     }
     
     func registerTrackViewModelFactory(in container: Container) {
-        container.register(TrackViewModelFactory.self) { resolver in
+        container.register(TrackViewModelFactory.self) { _ in
             TrackViewModelFactoryBase()
+        }
+    }
+    
+    func registerTagsCollectionViewLayoutDelegate(in container: Container) {
+        container.register(LayoutDelegate.self, name: Self.tagsLayoutDelegate) { resolver in
+            let tagNameProvider = resolver.resolveSafe(AlbumTagNameProvider.self)
+            return TagsCollectionViewDelegateFlowLayout(nameProvider: tagNameProvider)
         }
     }
 }
