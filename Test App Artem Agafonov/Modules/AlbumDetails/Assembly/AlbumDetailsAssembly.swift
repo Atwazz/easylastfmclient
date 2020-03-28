@@ -23,6 +23,11 @@ extension AlbumDetailsAssembly: Assembly {
         registerInteractor(in: container)
         registerPresenter(in: container)
         registerRouter(in: container)
+        registerAlbumTagsDataSource(in: container)
+        registerAlbumDetailsViewModelFactory(in: container)
+        registerArtistViewModelFactory(in: container)
+        registerTagViewModelFactory(in: container)
+        registerTrackViewModelFactory(in: container)
     }
 }
 
@@ -67,9 +72,13 @@ private extension AlbumDetailsAssembly {
     
     func registerPresenter(in container: Container) {
         var lastConfiguration: Configuration?
-        container.register(AlbumDetailsViewOutput.self) { (_, configuration: Configuration) in
+        container.register(AlbumDetailsViewOutput.self) { (resolver, configuration: Configuration) in
             lastConfiguration = configuration
-            return Presenter(configuration: configuration)
+            let viewModelFactory = resolver.resolveSafe(AlbumDetailsViewModelFactory.self)
+            let tagsDataSource = resolver.resolveSafe(AlbumTagsDataSource.self)
+            return Presenter(configuration: configuration,
+                             viewModelFactory: viewModelFactory,
+                             tagsDataSource: tagsDataSource)
         }
         .implements(AlbumDetailsInteractorOutput.self)
         .initCompleted { resolver, object in
@@ -91,6 +100,41 @@ private extension AlbumDetailsAssembly {
         container.register(AlbumDetailsRouterInput.self) { resolver in
             let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
             return Router(viewDispatcher: viewDispatcher)
+        }
+    }
+    
+    func registerAlbumTagsDataSource(in container: Container) {
+        container.register(AlbumTagsDataSource.self) { _ in
+            AlbumTagsDataSource()
+        }
+    }
+    
+    func registerAlbumDetailsViewModelFactory(in container: Container) {
+        container.register(AlbumDetailsViewModelFactory.self) { resolver in
+            let artistViewModelFactory = resolver.resolveSafe(ArtistViewModelFactory.self)
+            let tagViewModelFactory = resolver.resolveSafe(TagViewModelFactory.self)
+            let trackViewModelFactory = resolver.resolveSafe(TrackViewModelFactory.self)
+            return AlbumDetailsViewModelFactoryBase(artistViewModelFactory: artistViewModelFactory,
+                                                    tagViewModelFactory: tagViewModelFactory,
+                                                    trackViewModelFactory: trackViewModelFactory)
+        }
+    }
+    
+    func registerArtistViewModelFactory(in container: Container) {
+        container.register(ArtistViewModelFactory.self) { _ in
+            ArtistViewModelFactoryBase()
+        }
+    }
+    
+    func registerTagViewModelFactory(in container: Container) {
+        container.register(TagViewModelFactory.self) { _ in
+            TagViewModelFactoryBase()
+        }
+    }
+    
+    func registerTrackViewModelFactory(in container: Container) {
+        container.register(TrackViewModelFactory.self) { resolver in
+            TrackViewModelFactoryBase()
         }
     }
 }

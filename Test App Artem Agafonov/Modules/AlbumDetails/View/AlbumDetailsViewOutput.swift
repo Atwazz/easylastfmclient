@@ -6,6 +6,9 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSIndexPath
+
 protocol AlbumDetailsViewOutput {
-    
+    func viewIsReady()
+    func selectedTag(at indexPath: IndexPath)
 }

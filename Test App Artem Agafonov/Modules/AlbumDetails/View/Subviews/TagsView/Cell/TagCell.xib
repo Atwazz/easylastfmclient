@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="TagCell" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="41" height="28"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDy-3K-gfR" userLabel="BackgroundView" customClass="ViewWithRoundedCorners" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="41" height="28"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundTopLeftCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundTopRightCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundBottomLeftCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundBottomRightCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHL-hH-0Do">
+                    <rect key="frame" x="9" y="6" width="23.5" height="16"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nHL-hH-0Do" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Hu-Xt-Rkt"/>
+                <constraint firstItem="nHL-hH-0Do" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="AXO-yU-j7g"/>
+                <constraint firstItem="GDy-3K-gfR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DV3-9Q-sNr"/>
+                <constraint firstItem="GDy-3K-gfR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IMI-R5-4dL"/>
+                <constraint firstAttribute="bottom" secondItem="GDy-3K-gfR" secondAttribute="bottom" id="PTz-Tv-92B"/>
+                <constraint firstItem="nHL-hH-0Do" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="Xnw-db-j09"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nHL-hH-0Do" secondAttribute="bottom" constant="6" id="bj8-Pi-5fN"/>
+                <constraint firstAttribute="trailing" secondItem="GDy-3K-gfR" secondAttribute="trailing" id="eBj-PT-ylh"/>
+                <constraint firstItem="nHL-hH-0Do" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hGU-2d-Hu7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nHL-hH-0Do" secondAttribute="trailing" constant="6" id="jEe-6Q-PtU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="label" destination="nHL-hH-0Do" id="rto-KZ-buH"/>
+            </connections>
+            <point key="canvasLocation" x="-426.81159420289856" y="105.80357142857143"/>
+        </view>
+    </objects>
+</document>

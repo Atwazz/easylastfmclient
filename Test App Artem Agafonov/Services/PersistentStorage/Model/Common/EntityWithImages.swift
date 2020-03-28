@@ -33,21 +33,17 @@ extension EntityWithImages {
     }
     
     func removeAllImages(in context: NSManagedObjectContext) {
-        guard let images = images as? Set<ImageModelEntity> else { return }
+        guard let images = images?.set(of: ImageModelEntity.self) else { return }
         images.forEach { context.delete($0) }
     }
     
     func imageUrl(size: ImageSize) -> URL? {
-        imagesSet?.filter { $0.imageSize == size }.first?.url
+        images?.set(of: ImageModelEntity.self)?.filter { $0.imageSize == size }.first?.url
     }
 }
 
 // MARK: - Private
-private extension EntityWithImages {
-    var imagesSet: Set<ImageModelEntity>? {
-        images as? Set<ImageModelEntity>
-    }
-    
+private extension EntityWithImages {    
     func addImages(_ array: [ImageModelEntity]) {
         addToImages(Set(array) as NSSet)
     }

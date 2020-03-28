@@ -13,6 +13,9 @@ final class MainScreenAssembly {
     typealias Interactor = MainScreenInteractor
     typealias Presenter = MainScreenPresenter
     typealias Router = MainScreenRouter
+    
+    // MARK: - Private static properties
+    private static let layoutDelegateName = "MainScreenLayoutDelegate"
 }
 
 // MARK: - Assembly
@@ -24,14 +27,17 @@ extension MainScreenAssembly: Assembly {
         registerRouter(in: container)
         registerCollectionViewCellModelFactory(in: container)
         registerCollectionViewDataSource(in: container)
+        registerCollectionViewLayoutDelegate(in: container)
     }
 }
 
 // MARK: - Registrations
 private extension MainScreenAssembly {
     func registerView(in container: Container) {
-        container.register(MainScreenViewInput.self) { _ in
-            View()
+        container.register(MainScreenViewInput.self) { resolver in
+            let layoutDelegate = resolver.resolveSafe(CollectionViewDelegateFlowLayout.self,
+                                                      name: Self.layoutDelegateName)
+            return View(layoutDelegate: layoutDelegate)
         }
         .initCompleted { resolver, object in
             guard let viewController = object as? View else {
@@ -100,6 +106,13 @@ private extension MainScreenAssembly {
         container.register(MainScreenCollectionViewDataSource.self) { resolver in
             let viewModelFactory = resolver.resolveSafe(AlbumCollectionViewModelFactory.self)
             return MainScreenCollectionViewDataSource(viewModelFactory: viewModelFactory)
+        }
+    }
+    
+    func registerCollectionViewLayoutDelegate(in container: Container) {
+        container.register(CollectionViewDelegateFlowLayout.self,
+                           name: Self.layoutDelegateName) { _ in
+            AlbumsCollectionViewDelegateFlowLayout()
         }
     }
 }

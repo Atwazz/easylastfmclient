@@ -10,12 +10,10 @@ import CoreData.NSFetchedResultsController
 import UIKit.UICollectionView
 
 final class MainScreenCollectionViewDataSource: NSObject {
-    // MARK: - Public properties
-    @DelayedImmutable var fetchedResultsController: NSFetchedResultsController<AlbumEntity>
-    
     // MARK: - Private instance properties
     private let viewModelFactory: AlbumCollectionViewModelFactory
     private weak var collectionView: UICollectionView?
+    @DelayedImmutable private var fetchedResultsController: NSFetchedResultsController<AlbumEntity>
     
     // MARK: - Init
     init(viewModelFactory: AlbumCollectionViewModelFactory) {
@@ -26,8 +24,12 @@ final class MainScreenCollectionViewDataSource: NSObject {
 
 // MARK: - Public
 extension MainScreenCollectionViewDataSource {
-    func loadData() {
+    func setup(with resultsController: NSFetchedResultsController<AlbumEntity>) {
+        fetchedResultsController = resultsController
         fetchedResultsController.delegate = self
+    }
+    
+    func loadData() {
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -54,11 +56,8 @@ extension MainScreenCollectionViewDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
-                                                              for: indexPath)
-        guard let cell = reusableCell as? AlbumCollectionViewCell else {
-            fatalError("Cell has unexpected type")
-        }
+        let cell = collectionView.dequeueCell(of: AlbumCollectionViewCell.self,
+                                              indexPath: indexPath)
         cell.update(with: viewModelFactory.model(for: fetchedResultsController.object(at: indexPath)))
         return cell
     }

@@ -12,10 +12,10 @@ import AlamofireImage
 
 final class AlbumCollectionViewCell: UICollectionViewCell {
     // MARK: - Private instance propeties
-    @IBOutlet weak var albumImageView: UIImageView!
-    @IBOutlet weak var albumNameLabel: UILabel!
-    @IBOutlet weak var artistImageView: UIImageView!
-    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet private weak var albumImageView: UIImageView!
+    @IBOutlet private weak var albumNameLabel: UILabel!
+    @IBOutlet private weak var artistImageView: UIImageView!
+    @IBOutlet private weak var artistNameLabel: UILabel!
 }
 
 // MARK: - Public

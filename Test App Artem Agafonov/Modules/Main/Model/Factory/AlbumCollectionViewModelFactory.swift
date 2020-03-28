@@ -6,8 +6,6 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-import Foundation.NSURL
-
 protocol AlbumCollectionViewModelFactory {
     func model(for entity: AlbumEntity) -> AlbumCollectionViewModel
 }

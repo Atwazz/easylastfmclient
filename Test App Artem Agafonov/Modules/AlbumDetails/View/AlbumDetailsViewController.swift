@@ -12,6 +12,9 @@ final class AlbumDetailsViewController: UIViewController {
     // MARK: - Public instance properties
     @DelayedImmutable var output: AlbumDetailsViewOutput
     
+    // MARK: - Private instance properties
+    @IBOutlet private weak var tagsView: TagsView!
+    
     // MARK: - Init
     init() {
         super.init(nibName: Self.name, bundle: nil)
@@ -23,11 +26,23 @@ final class AlbumDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        output.viewIsReady()
     }
 }
 
 // MARK: - AlbumDetailsViewInput
 extension AlbumDetailsViewController: AlbumDetailsViewInput {
+    func showLoadingIndicator() {
+        
+    }
     
+    func showNoDataPlaceholder() {
+        
+    }
+    
+    func setup(with tagsDataSource: UICollectionViewDataSource) {
+        tagsView.setup(dataSource: tagsDataSource) { [weak self] indexPath in
+            self?.output.selectedTag(at: indexPath)
+        }
+    }
 }

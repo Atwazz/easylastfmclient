@@ -87,7 +87,7 @@ private extension MainScreenPresenter {
     }
     
     func setupDataSource() {
-        dataSource.fetchedResultsController = interactor.obtainResultControllerForAlbums()
+        dataSource.setup(with: interactor.obtainResultControllerForAlbums()) 
         dataSource.loadData()
     }
 }

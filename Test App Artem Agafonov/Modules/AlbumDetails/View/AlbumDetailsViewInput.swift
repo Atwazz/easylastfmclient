@@ -6,6 +6,10 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import UIKit.UICollectionView
+
 protocol AlbumDetailsViewInput {
-    
+    func showLoadingIndicator()
+    func showNoDataPlaceholder()
+    func setup(with tagsDataSource: UICollectionViewDataSource)
 }

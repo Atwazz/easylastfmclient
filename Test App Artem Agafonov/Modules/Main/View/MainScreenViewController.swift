@@ -13,13 +13,13 @@ final class MainScreenViewController: UIViewController {
     @DelayedImmutable var output: MainScreenViewOutput
     
     // MARK: - Private instance properties
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    private let minimumItemSpacing: CGFloat = 10
-    private let itemsPerRow: CGFloat = 2
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    private let flowLayout: CollectionViewDelegateFlowLayout
     
     // MARK: - Init
-    init() {
+    init(layoutDelegate: CollectionViewDelegateFlowLayout) {
+        flowLayout = layoutDelegate
         super.init(nibName: Self.name, bundle: nil)
     }
     
@@ -34,33 +34,12 @@ final class MainScreenViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        output.didSelectItem(at: indexPath)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = minimumItemSpacing * (itemsPerRow - 1)
-        let availableWidth = min(collectionView.bounds.width, collectionView.bounds.height) - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        minimumItemSpacing
-    }
-}
-
 // MARK: - Private
 private extension MainScreenViewController {
     var searchButton: UIBarButtonItem {
-        UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(openSearchButtonTapped(_:)))
+        UIBarButtonItem(barButtonSystemItem: .search,
+                        target: self,
+                        action: #selector(openSearchButtonTapped(_:)))
     }
     
     func setup() {
@@ -70,6 +49,10 @@ private extension MainScreenViewController {
     }
     
     func setupCollectionView() {
+        flowLayout.setup { [weak self] indexPath in
+            self?.output.didSelectItem(at: indexPath)
+        }
+        collectionView.delegate = flowLayout
         collectionView.registerCell(AlbumCollectionViewCell.self)
     }
 }

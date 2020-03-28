@@ -27,7 +27,7 @@ extension ArtistEntity {
     }
     
     func album(for model: AlbumExtendedInfo) -> AlbumEntity? {
-        guard let albums = albums as? Set<AlbumEntity> else {
+        guard let albums = albums?.set(of: AlbumEntity.self) else {
             return nil
         }
         return albums.filter { $0.name == model.name && $0.mbid == model.mbid }.first

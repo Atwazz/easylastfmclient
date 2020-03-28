@@ -6,8 +6,6 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-import Foundation.NSURL
-
 struct AlbumCollectionViewModelFactoryBase { }
 
 // MARK: - AlbumCollectionViewModelFactory

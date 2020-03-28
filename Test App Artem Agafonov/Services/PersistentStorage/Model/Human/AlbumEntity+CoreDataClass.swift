@@ -30,3 +30,20 @@ private extension AlbumEntity {
         NSSortDescriptor(key: #keyPath(AlbumEntity.name), ascending: false)
     }
 }
+
+// MARK: - Convenience
+extension AlbumEntity {
+    var tagsArray: [TagEntity]? {
+        guard let set = tags?.set(of: TagEntity.self) else {
+            return nil
+        }
+        return Array(set)
+    }
+    
+    var tracksArray: [TrackEntity]? {
+        guard let set = tracks?.set(of: TrackEntity.self) else {
+            return nil
+        }
+        return Array(set)
+    }
+}
