@@ -20,13 +20,35 @@ final class ArtistsSearchPresenter {
     
     // MARK: - Private instance properties
     private let searchTrigger = PassthroughSubject<String, Never>()
+    private let dataSource: ArtistsSearchDataSource
+    private var pageIndex: UInt = 1
+    private var searchText: String?
+    private var paginationInfo: PaginationInfo?
     private var disposeBag = DisposeBag()
+    
+    // MARK: - Init
+    init(dataSource: ArtistsSearchDataSource) {
+        self.dataSource = dataSource
+    }
 }
 
 // MARK: - ArtistsSearchViewOutput
 extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
+    func didSelectArtist(at indexPath: IndexPath) {
+        // TODO: -
+    }
+    
+    func willShowArtist(at indexPath: IndexPath) {
+        guard dataSource.isItemLast(at: indexPath),
+            let paginationInfo = paginationInfo,
+            paginationInfo.totalResults != indexPath.row + 1 else {
+                return
+        }
+        loadNextPage()
+    }
+    
     func viewIsReady() {
-        
+        view.setup(with: dataSource)
     }
     
     func viewWillAppear() {
@@ -38,18 +60,36 @@ extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
     }
     
     func triggerSearch(_ searchText: String?) {
+        guard searchText != self.searchText else {
+            return
+        }
         guard let searchText = searchText,
             searchText.count > 0 else {
-                view.cleanSearchResults()
+                view.showNoDataPlaceholder()
+                dataSource.clearSearchResults()
+                view.reloadData()
                 return
         }
+        view.showLoadingIndicator()
+        dataSource.clearSearchResults()
+        view.reloadData()
         searchTrigger.send(searchText)
     }
 }
 
 // MARK: - ArtistsSearchInteractorOutput
 extension ArtistsSearchPresenter: ArtistsSearchInteractorOutput {
+    func searchFailed() {
+        view.hideLoadingIndicator()
+    }
     
+    func searchFinished(results: ArtistsSearchResults) {
+        view.hideLoadingIndicator()
+        view.hideFooterLoadingIndicator()
+        dataSource.appendResults(results.artists)
+        paginationInfo = results.paginationInfo
+        view.showSearchResults()
+    }
 }
 
 // MARK: - ArtistsSearchRouterOutput
@@ -64,8 +104,11 @@ private extension ArtistsSearchPresenter {
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
             .filter { $0.count > 2 }
             .sink { [weak self] searchText in
+                self?.pageIndex = 1
+                self?.searchText = searchText
+                self?.view.showLoadingIndicator()
                 self?.interactor.triggerSearch(searchText,
-                                               page: 1,
+                                               page: self?.pageIndex,
                                                pageSize: Self.pageSize)
             }
             .store(in: &disposeBag)
@@ -74,11 +117,14 @@ private extension ArtistsSearchPresenter {
 
 // MARK: - Private
 private extension ArtistsSearchPresenter {
-    func showLoadingIndicator() {
-        
-    }
-    
-    func hideLoadingIndicator() {
-        
+    func loadNextPage() {
+        guard let searchText = searchText else {
+            return
+        }
+        pageIndex += 1
+        view.showFooterLoadingIndicator()
+        interactor.triggerSearch(searchText,
+                                 page: pageIndex,
+                                 pageSize: Self.pageSize)
     }
 }

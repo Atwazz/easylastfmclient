@@ -13,7 +13,10 @@ final class ArtistsSearchViewController: UIViewController {
     @DelayedImmutable var output: ArtistsSearchViewOutput
     
     // MARK: - Private instance properties
-    @DelayedImmutable var searchController: UISearchController
+    @DelayedImmutable private var searchController: UISearchController
+    @IBOutlet private weak var loadingIndicatorContainer: UIView!
+    @IBOutlet private weak var noDataContainerView: UIView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Init
     init() {
@@ -28,16 +31,84 @@ final class ArtistsSearchViewController: UIViewController {
         super.viewDidLoad()
         title = "Artists"
         setupSearchController()
+        setupTableView()
+        setupFooterSpinner()
         output.viewIsReady()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.hidesSearchBarWhenScrolling = false
         output.viewWillAppear()
         searchController.resignFirstResponder()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         output.viewDidDisappear()
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension ArtistsSearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        output.triggerSearch(searchController.searchBar.text)
+    }
+}
+
+// MARK: - ArtistsSearchViewInput
+extension ArtistsSearchViewController: ArtistsSearchViewInput {
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func showFooterLoadingIndicator() {
+        tableView.tableFooterView?.isHidden = false
+    }
+    
+    func hideFooterLoadingIndicator() {
+        tableView.tableFooterView?.isHidden = true
+    }
+    
+    func showLoadingIndicator() {
+        noDataContainerView.isHidden = true
+        loadingIndicatorContainer.isHidden = false
+    }
+    
+    func hideLoadingIndicator() {
+        loadingIndicatorContainer.isHidden = true
+    }
+    
+    func showNoDataPlaceholder() {
+        noDataContainerView.isHidden = false
+    }
+    
+    func showSearchResults() {
+        noDataContainerView.isHidden = true
+        tableView.reloadData()
+    }
+    
+    func setup(with dataSource: UITableViewDataSource) {
+        tableView.dataSource = dataSource
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ArtistsSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        output.willShowArtist(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        output.didSelectArtist(at: indexPath)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchController.searchBar.resignFirstResponder()
     }
 }
 
@@ -51,18 +122,17 @@ private extension ArtistsSearchViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-}
-
-// MARK: - UISearchResultsUpdating
-extension ArtistsSearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        output.triggerSearch(searchController.searchBar.text)
+    
+    func setupTableView() {
+        tableView.registerCell(ArtistCell.self)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 66
     }
-}
-
-// MARK: - ArtistsSearchViewInput
-extension ArtistsSearchViewController: ArtistsSearchViewInput {
-    func cleanSearchResults() {
-        
+    
+    func setupFooterSpinner() {
+        let footerSpinner = UIActivityIndicatorView(style: .medium)
+        footerSpinner.startAnimating()
+        tableView.tableFooterView = footerSpinner
+        tableView.tableFooterView?.isHidden = true
     }
 }

@@ -6,10 +6,14 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSIndexPath
+
 protocol ArtistsSearchViewOutput {
     func viewIsReady()
     func viewWillAppear()
     func viewDidDisappear()
     
     func triggerSearch(_ searchText: String?)
+    func didSelectArtist(at indexPath: IndexPath)
+    func willShowArtist(at indexPath: IndexPath)
 }

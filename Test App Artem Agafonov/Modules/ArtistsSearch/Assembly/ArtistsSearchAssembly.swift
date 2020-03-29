@@ -22,6 +22,8 @@ extension ArtistsSearchAssembly: Assembly {
         registerInteractor(in: container)
         registerPresenter(in: container)
         registerRouter(in: container)
+        registerArtistCellModelFactory(in: container)
+        registerDataSource(in: container)
     }
 }
 
@@ -53,8 +55,9 @@ private extension ArtistsSearchAssembly {
     }
     
     func registerPresenter(in container: Container) {
-        container.register(ArtistsSearchViewOutput.self) { _ in
-            Presenter()
+        container.register(ArtistsSearchViewOutput.self) { resolver in
+            let dataSource = resolver.resolveSafe(ArtistsSearchDataSource.self)
+            return Presenter(dataSource: dataSource)
         }
         .implements(ArtistsSearchInteractorOutput.self)
         .implements(ArtistsSearchRouterOutput.self)
@@ -78,6 +81,19 @@ private extension ArtistsSearchAssembly {
                 fatalError("Router has unexpected type: \(String(describing: object))")
             }
             router.output = resolver.resolveSafe(ArtistsSearchRouterOutput.self)
+        }
+    }
+    
+    func registerArtistCellModelFactory(in container: Container) {
+        container.register(ArtistCellModelFactory.self) { _ in
+            ArtistCellModelFactoryBase()
+        }
+    }
+    
+    func registerDataSource(in container: Container) {
+        container.register(ArtistsSearchDataSource.self) { resolver in
+            let viewModelFactory = resolver.resolveSafe(ArtistCellModelFactory.self)
+            return ArtistsSearchDataSource(viewModelFactory: viewModelFactory)
         }
     }
 }

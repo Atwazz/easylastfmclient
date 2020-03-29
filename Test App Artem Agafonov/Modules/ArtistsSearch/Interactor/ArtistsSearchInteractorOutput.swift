@@ -7,5 +7,6 @@
 //
 
 protocol ArtistsSearchInteractorOutput: class {
-    
+    func searchFailed()
+    func searchFinished(results: ArtistsSearchResults)
 }

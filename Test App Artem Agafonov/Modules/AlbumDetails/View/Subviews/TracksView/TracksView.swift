@@ -10,7 +10,7 @@ import UIKit.UIView
 
 final class TracksView: UIView {
     // MARK: - Private instance properties
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet private weak var stackView: UIStackView!
     @DelayedMutable private var itemSelectionBlock: (URL?) -> Void
     
     // MARK: - Init

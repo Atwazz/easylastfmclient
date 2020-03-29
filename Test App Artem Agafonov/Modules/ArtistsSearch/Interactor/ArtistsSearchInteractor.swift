@@ -6,6 +6,8 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation
+
 final class ArtistsSearchInteractor {
     // MARK: - Public instance properties
     weak var output: ArtistsSearchInteractorOutput?
@@ -22,14 +24,16 @@ final class ArtistsSearchInteractor {
 // MARK: - ArtistsSearchInteractorInput
 extension ArtistsSearchInteractor: ArtistsSearchInteractorInput {
     func triggerSearch(_ searchText: String, page: UInt?, pageSize: UInt?) {
-        print("Searching for \(searchText)...")
-        searchService.search(for: searchText, page: page, pageSize: pageSize) { result in
+        searchService.search(for: searchText, page: page, pageSize: pageSize) { [weak self] result in
             guard case .success(let results) = result else {
-                print("Search failed!!!")
+                DispatchQueue.main.async {
+                    self?.output?.searchFailed()
+                }
                 return
             }
-            print("Search results: found \(results.artists.count) items in one pages, " +
-                "total: \(results.paginationInfo.totalResults)")
+            DispatchQueue.main.async {
+                self?.output?.searchFinished(results: results)
+            }
         }
     }
 }

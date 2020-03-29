@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="ArtistCell" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="PXh-iG-1Ok">
+                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="mvd-wT-V0C"/>
+                        <constraint firstAttribute="height" constant="50" id="xBC-MX-WoB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Artist Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnm-0d-EVn">
+                    <rect key="frame" x="66" y="8" width="312" height="50"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b1Q-K4-eXL">
+                    <rect key="frame" x="386" y="25" width="20" height="16.5"/>
+                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="8Yv-pW-jlA"/>
+                        <constraint firstAttribute="height" constant="20" id="lpU-1g-5de"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="qnm-0d-EVn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6qo-Qt-Buy"/>
+                <constraint firstAttribute="bottom" secondItem="qnm-0d-EVn" secondAttribute="bottom" constant="8" id="AUb-Lk-9OZ"/>
+                <constraint firstItem="qnm-0d-EVn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="H4b-EY-9FU"/>
+                <constraint firstItem="qnm-0d-EVn" firstAttribute="leading" secondItem="PXh-iG-1Ok" secondAttribute="trailing" constant="8" id="JhJ-tA-pqJ"/>
+                <constraint firstAttribute="trailing" secondItem="b1Q-K4-eXL" secondAttribute="trailing" constant="8" id="Urw-Ru-BUU"/>
+                <constraint firstItem="b1Q-K4-eXL" firstAttribute="leading" secondItem="qnm-0d-EVn" secondAttribute="trailing" constant="8" id="XEJ-yG-EwN"/>
+                <constraint firstItem="PXh-iG-1Ok" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Yae-75-phw"/>
+                <constraint firstItem="PXh-iG-1Ok" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="cNU-Th-iR4"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PXh-iG-1Ok" secondAttribute="bottom" constant="8" id="jqY-gi-oZK"/>
+                <constraint firstItem="b1Q-K4-eXL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vVq-6J-gXi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="artistImageView" destination="PXh-iG-1Ok" id="9wh-Wk-hKJ"/>
+                <outlet property="nameLabel" destination="qnm-0d-EVn" id="CqL-57-xYO"/>
+            </connections>
+            <point key="canvasLocation" x="69.565217391304358" y="34.821428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avatar_placeholder" width="600" height="600"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+    </resources>
+</document>

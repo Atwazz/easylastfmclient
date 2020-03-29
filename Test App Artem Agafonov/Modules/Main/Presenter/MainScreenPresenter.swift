@@ -45,12 +45,12 @@ extension MainScreenPresenter: MainScreenViewOutput {
 
 // MARK: - MainScreenInteractorOutput
 extension MainScreenPresenter: MainScreenInteractorOutput {
-    
+    // TODO: Cleanup if not needed
 }
 
 // MARK: - MainScreenRouterOutput
 extension MainScreenPresenter: MainScreenRouterOutput {
-    
+    // TODO: Cleanup if not needed
 }
 
 // MARK: - Private: Subscriptions
