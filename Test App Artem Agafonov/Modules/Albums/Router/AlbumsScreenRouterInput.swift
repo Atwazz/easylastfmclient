@@ -7,5 +7,7 @@
 //
 
 protocol AlbumsScreenRouterInput {
-    
+    func showBasicFailureAlert()
+    func showInfo(for album: Album, artist: Artist)
+    func showInfo(for albumId: PSObjectID)
 }

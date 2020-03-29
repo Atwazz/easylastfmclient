@@ -63,9 +63,11 @@ private extension AlbumDetailsAssembly {
             lastConfiguration = configuration
             let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
             let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
+            let albumInfoLoadService = resolver.resolveSafe(AlbumInfoLoadService.self)
             let albumsSaver = resolver.resolveSafe(AlbumsSaver.self)
             return Interactor(viewContextProvider: viewContextProvider,
                               backgroundTaskInvoker: backgroundTaskInvoker,
+                              albumInfoLoadService: albumInfoLoadService,
                               albumsSaver: albumsSaver)
         }
         .initCompleted { resolver, object in
@@ -87,12 +89,10 @@ private extension AlbumDetailsAssembly {
             let viewModelFactory = resolver.resolveSafe(AlbumDetailsViewModelFactory.self)
             let tagsDataSource = resolver.resolveSafe(AlbumTagsDataSource.self)
             let urlHandler = resolver.resolveSafe(URLHandler.self)
-            let albumInfoLoadService = resolver.resolveSafe(AlbumInfoLoadService.self)
             return Presenter(configuration: configuration,
                              viewModelFactory: viewModelFactory,
                              tagsDataSource: tagsDataSource,
-                             urlhandler: urlHandler,
-                             albumInfoLoadService: albumInfoLoadService)
+                             urlhandler: urlHandler)
         }
         .implements(AlbumDetailsInteractorOutput.self)
         .implements(AlbumDetailsRouterOutput.self)

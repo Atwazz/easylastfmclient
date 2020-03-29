@@ -22,7 +22,7 @@ final class ArtistsSearchDataSource: NSObject {
 
 // MARK: - Public
 extension ArtistsSearchDataSource {
-    func clearSearchResults() {
+    func clearResults() {
         results.removeAll()
     }
     
@@ -32,6 +32,10 @@ extension ArtistsSearchDataSource {
     
     func isItemLast(at indexpath: IndexPath) -> Bool {
        results.count == indexpath.row + 1
+    }
+    
+    func item(at indexPath: IndexPath) -> Artist {
+        results[indexPath.row]
     }
 }
 
@@ -43,7 +47,7 @@ extension ArtistsSearchDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(of: ArtistCell.self, indexPath: indexPath)
-        cell.update(with: modelFactory.viewModel(for: results[indexPath.row]))
+        cell.update(with: modelFactory.viewModel(for: item(at: indexPath)))
         return cell
     }
 }

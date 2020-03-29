@@ -7,5 +7,6 @@
 //
 
 protocol ArtistsSearchRouterInput {
-    func showAlert(error: Error)
+    func showBasicFailureAlert()
+    func showAlbums(for artist: Artist)
 }

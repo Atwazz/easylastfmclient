@@ -10,8 +10,8 @@ import UIKit.UITableViewCell
 
 final class ArtistCell: UITableViewCell {
     // MARK: - Private instance properties
-    @IBOutlet weak var artistImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var artistImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
 }
 
 // MARK: - Public

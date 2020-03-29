@@ -74,7 +74,9 @@ private extension ArtistsSearchAssembly {
     func registerRouter(in container: Container) {
         container.register(ArtistsSearchRouterInput.self) { resolver in
             let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
-            return Router(viewDispatcher: viewDispatcher)
+            let albumScreenFactory = resolver.resolveSafe(AlbumsScreenFactory.self)
+            return Router(viewDispatcher: viewDispatcher,
+                          albumsScreenFactory: albumScreenFactory)
         }
         .initCompleted { resolver, object in
             guard let router = object as? Router else {

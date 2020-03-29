@@ -35,7 +35,7 @@ final class ArtistsSearchPresenter {
 // MARK: - ArtistsSearchViewOutput
 extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
     func didSelectArtist(at indexPath: IndexPath) {
-        // TODO: -
+        router.showAlbums(for: dataSource.item(at: indexPath))
     }
     
     func willShowArtist(at indexPath: IndexPath) {
@@ -66,12 +66,12 @@ extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
         guard let searchText = searchText,
             searchText.count > 0 else {
                 view.showNoDataPlaceholder()
-                dataSource.clearSearchResults()
+                dataSource.clearResults()
                 view.reloadData()
                 return
         }
         view.showLoadingIndicator()
-        dataSource.clearSearchResults()
+        dataSource.clearResults()
         view.reloadData()
         searchTrigger.send(searchText)
     }
@@ -80,7 +80,10 @@ extension ArtistsSearchPresenter: ArtistsSearchViewOutput {
 // MARK: - ArtistsSearchInteractorOutput
 extension ArtistsSearchPresenter: ArtistsSearchInteractorOutput {
     func searchFailed() {
-        view.hideLoadingIndicator()
+        view.showNoDataPlaceholder()
+        dataSource.clearResults()
+        view.reloadData()
+        router.showBasicFailureAlert()
     }
     
     func searchFinished(results: ArtistsSearchResults) {

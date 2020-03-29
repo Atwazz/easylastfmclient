@@ -7,5 +7,5 @@
 //
 
 protocol AlbumsScreenInteractorInput {
-    
+    func loadAlbums(artist: Artist, page: UInt?, pageSize: UInt?)
 }

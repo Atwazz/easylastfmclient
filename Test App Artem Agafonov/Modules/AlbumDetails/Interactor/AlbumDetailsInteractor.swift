@@ -9,20 +9,25 @@
 import Foundation
 
 final class AlbumDetailsInteractor {
+    typealias LoadResult = AlbumInfoLoadService.AlbumInfoLoadResult
+    
     // MARK: - Public instance properties
     weak var output: AlbumDetailsInteractorOutput?
     
     // MARK: - Private insatnce properties
     private let viewContextProvider: PSViewContextProvider
     private let backgroundTaskInvoker: PSBackgroundTaskInvoker
+    private let albumInfoLoadService: AlbumInfoLoadService
     private let albumsSaver: AlbumsSaver
     
     // MARK: - Init
     init(viewContextProvider: PSViewContextProvider,
          backgroundTaskInvoker: PSBackgroundTaskInvoker,
+         albumInfoLoadService: AlbumInfoLoadService,
          albumsSaver: AlbumsSaver) {
         self.viewContextProvider = viewContextProvider
         self.backgroundTaskInvoker = backgroundTaskInvoker
+        self.albumInfoLoadService = albumInfoLoadService
         self.albumsSaver = albumsSaver
     }
 }
@@ -59,6 +64,26 @@ extension AlbumDetailsInteractor: AlbumDetailsInteractorInput {
             DispatchQueue.main.async {
                 self?.output?.savedAlbum(id: id)
             }
+        }
+    }
+    
+    func loadAlbumInfo(name: String, mbid: String?, artist: Artist) {
+        let completion: (LoadResult) -> Void = { [weak self] result in
+            guard case .success(let info) = result else {
+                DispatchQueue.main.async {
+                    self?.output?.failedToLoadAlbumInfo()
+                }
+                return
+            }
+            self?.output?.loaded(albumExtendedInfo: info, artist: artist)
+        }
+        
+        if let mbid = mbid {
+            albumInfoLoadService.loadAlbumInfo(mbid: mbid, completion: completion)
+        } else {
+            albumInfoLoadService.loadAlbumInfo(artist: artist.name,
+                                               album: name,
+                                               completion: completion)
         }
     }
 }

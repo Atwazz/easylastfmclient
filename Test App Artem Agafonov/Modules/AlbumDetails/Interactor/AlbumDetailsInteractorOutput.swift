@@ -10,4 +10,6 @@ protocol AlbumDetailsInteractorOutput: class {
     func removedAlbum()
     func savedAlbum(id: PSObjectID)
     func failedToSaveAlbum()
+    func failedToLoadAlbumInfo()
+    func loaded(albumExtendedInfo: AlbumExtendedInfo, artist: Artist)
 }

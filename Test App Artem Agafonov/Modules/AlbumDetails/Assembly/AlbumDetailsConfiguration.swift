@@ -16,6 +16,6 @@ struct AlbumDetailsConfiguration {
 // MARK: - Validatable
 extension AlbumDetailsConfiguration: Validatable {
     func isValid() -> Bool {
-        name != nil || id != nil
+        (name != nil && artist != nil) || id != nil
     }
 }

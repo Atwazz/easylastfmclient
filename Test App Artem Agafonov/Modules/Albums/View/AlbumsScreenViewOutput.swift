@@ -6,6 +6,11 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import Foundation.NSIndexPath
+
 protocol AlbumsScreenViewOutput {
-    
+    func viewIsReady()
+
+    func didSelectAlbum(at indexPath: IndexPath)
+    func willShowAlbum(at indexPath: IndexPath)
 }

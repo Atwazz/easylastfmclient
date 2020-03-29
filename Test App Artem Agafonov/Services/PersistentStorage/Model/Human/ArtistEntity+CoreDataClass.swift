@@ -27,10 +27,21 @@ extension ArtistEntity {
     }
     
     func album(for model: AlbumExtendedInfo) -> AlbumEntity? {
+        album(with: model.name, mbid: model.mbid)
+    }
+    
+    func album(for model: Album) -> AlbumEntity? {
+        album(with: model.name, mbid: model.mbid)
+    }
+}
+
+// MARK: - Private
+private extension ArtistEntity {
+    func album(with name: String, mbid: String?) -> AlbumEntity? {
         guard let albums = albums?.set(of: AlbumEntity.self) else {
             return nil
         }
-        return albums.filter { $0.name == model.name && $0.mbid == model.mbid }.first
+        return albums.filter { $0.name == name && $0.mbid == mbid }.first
     }
 }
 

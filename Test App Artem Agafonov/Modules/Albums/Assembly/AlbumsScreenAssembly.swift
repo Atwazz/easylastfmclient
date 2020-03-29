@@ -13,6 +13,7 @@ final class AlbumsScreenAssembly {
     typealias Interactor = AlbumsScreenInteractor
     typealias Presenter = AlbumsScreenPresenter
     typealias Router = AlbumsScreenRouter
+    typealias Configuration = AlbumsScreenConfiguration
 }
 
 // MARK: - Assembly
@@ -22,38 +23,61 @@ extension AlbumsScreenAssembly: Assembly {
         registerInteractor(in: container)
         registerPresenter(in: container)
         registerRouter(in: container)
+        registerAlbumCellModelFactory(in: container)
+        registerDataSource(in: container)
     }
 }
 
 // MARK: - Registrations
 private extension AlbumsScreenAssembly {
     func registerView(in container: Container) {
-        container.register(AlbumsScreenViewInput.self) { _ in
-            View()
+        var lastConfiguration: Configuration?
+        container.register(AlbumsScreenViewInput.self) { (_, configuration: Configuration) in
+            lastConfiguration = configuration
+            return View()
         }
         .initCompleted { resolver, object in
             guard let viewController = object as? View else {
                 fatalError("View has unexpected type: \(String(describing: object))")
             }
-            viewController.output = resolver.resolveSafe(AlbumsScreenViewOutput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            viewController.output = resolver.resolveSafe(AlbumsScreenViewOutput.self,
+                                                         argument: configuration)
         }
     }
     
     func registerInteractor(in container: Container) {
-        container.register(AlbumsScreenInteractorInput.self) { _ in
-            Interactor()
+        var lastConfiguration: Configuration?
+        container.register(AlbumsScreenInteractorInput.self) { (resolver, configuration: Configuration) in
+            lastConfiguration = configuration
+            let albumsLoadService = resolver.resolveSafe(ArtistAlbumsLoadService.self)
+            let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
+            let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
+            return Interactor(albumsLoadService: albumsLoadService,
+                              artistFetcher: artistFetcher,
+                              backgroundTaskInvoker: backgroundTaskInvoker)
         }
         .initCompleted { resolver, object in
             guard let interactor = object as? Interactor else {
                 fatalError("Interactor has unexpected type: \(String(describing: object))")
             }
-            interactor.output = resolver.resolveSafe(AlbumsScreenInteractorOutput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            interactor.output = resolver.resolveSafe(AlbumsScreenInteractorOutput.self,
+                                                     argument: configuration)
         }
     }
     
     func registerPresenter(in container: Container) {
-        container.register(AlbumsScreenViewOutput.self) { _ in
-            Presenter()
+        var lastConfiguration: Configuration?
+        container.register(AlbumsScreenViewOutput.self) { (resolver, configuration: Configuration) in
+            lastConfiguration = configuration
+            let dataSource = resolver.resolveSafe(AlbumsScreenDataSource.self)
+            return Presenter(configuration: configuration,
+                             dataSource: dataSource)
         }
         .implements(AlbumsScreenInteractorOutput.self)
         .implements(AlbumsScreenRouterOutput.self)
@@ -61,22 +85,50 @@ private extension AlbumsScreenAssembly {
             guard let presenter = object as? Presenter else {
                 fatalError("Presenter has unexpected type: \(String(describing: object))")
             }
-            presenter.view = resolver.resolveSafe(AlbumsScreenViewInput.self)
-            presenter.interactor = resolver.resolveSafe(AlbumsScreenInteractorInput.self)
-            presenter.router = resolver.resolveSafe(AlbumsScreenRouterInput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            presenter.view = resolver.resolveSafe(AlbumsScreenViewInput.self,
+                                                  argument: configuration)
+            presenter.interactor = resolver.resolveSafe(AlbumsScreenInteractorInput.self,
+                                                        argument: configuration)
+            presenter.router = resolver.resolveSafe(AlbumsScreenRouterInput.self,
+                                                    argument: configuration)
         }
     }
     
     func registerRouter(in container: Container) {
-        container.register(AlbumsScreenRouterInput.self) { resolver in
+        var lastConfiguration: Configuration?
+        container.register(AlbumsScreenRouterInput.self) { (resolver, configuration: Configuration) in
+            lastConfiguration = configuration
             let viewDispatcher = resolver.resolveSafe(ViewDispatcher.self)
-            return Router(viewDispatcher: viewDispatcher)
+            let albumDetailsFactory = resolver.resolveSafe(AlbumDetailsFactory.self)
+            return Router(viewDispatcher: viewDispatcher,
+                          albumDetailsFactory: albumDetailsFactory)
         }
         .initCompleted { resolver, object in
             guard let router = object as? Router else {
                 fatalError("Router has unexpected type: \(String(describing: object))")
             }
-            router.output = resolver.resolveSafe(AlbumsScreenRouterOutput.self)
+            guard let configuration = lastConfiguration else {
+                fatalError("Configuration is required")
+            }
+            router.output = resolver.resolveSafe(AlbumsScreenRouterOutput.self,
+                                                 argument: configuration)
+        }
+    }
+    
+    func registerAlbumCellModelFactory(in container: Container) {
+        container.register(AlbumCellModelFactory.self) { resolver in
+            let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
+            return AlbumCellModelFactoryBase(artistFetcher: artistFetcher)
+        }
+    }
+    
+    func registerDataSource(in container: Container) {
+        container.register(AlbumsScreenDataSource.self) { resolver in
+            let viewModelFactory = resolver.resolveSafe(AlbumCellModelFactory.self)
+            return AlbumsScreenDataSource(viewModelFactory: viewModelFactory)
         }
     }
 }

@@ -7,5 +7,5 @@
 //
 
 protocol MainScreenRouterOutput: class {
-    
+    // TODO: - Cleanup
 }

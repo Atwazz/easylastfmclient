@@ -6,11 +6,9 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-import Foundation.NSIndexPath
+import Foundation
 
-final class AlbumDetailsPresenter {
-    typealias LoadResult = AlbumInfoLoadService.AlbumInfoLoadResult
-    
+final class AlbumDetailsPresenter {    
     // MARK: - Public instance properties
     @DelayedImmutable var view: AlbumDetailsViewInput
     @DelayedImmutable var interactor: AlbumDetailsInteractorInput
@@ -21,7 +19,6 @@ final class AlbumDetailsPresenter {
     private let viewModelFactory: AlbumDetailsViewModelFactory
     private let tagsDataSource: AlbumTagsDataSource
     private let urlhandler: URLHandler
-    private let albumInfoLoadService: AlbumInfoLoadService
     private var model: AlbumDetailsViewModel?
     private var albumId: PSObjectID?
     private var albumExtendedInfo: AlbumExtendedInfo?
@@ -30,13 +27,11 @@ final class AlbumDetailsPresenter {
     init(configuration: AlbumDetailsConfiguration,
          viewModelFactory: AlbumDetailsViewModelFactory,
          tagsDataSource: AlbumTagsDataSource,
-         urlhandler: URLHandler,
-         albumInfoLoadService: AlbumInfoLoadService) {
+         urlhandler: URLHandler) {
         self.configuration = configuration
         self.viewModelFactory = viewModelFactory
         self.tagsDataSource = tagsDataSource
         self.urlhandler = urlhandler
-        self.albumInfoLoadService = albumInfoLoadService
         albumId = configuration.id
     }
 }
@@ -96,6 +91,20 @@ extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
         albumId = id
         view.update(albumSaved: true)
     }
+    
+    func failedToLoadAlbumInfo() {
+        DispatchQueue.main.async {
+            self.view.showNoDataPlaceholder()
+        }
+    }
+    
+    func loaded(albumExtendedInfo info: AlbumExtendedInfo, artist: Artist) {
+        let viewModel = viewModelFactory.viewModel(albumExtendedInfo: info,
+                                                   artist: artist)
+        DispatchQueue.main.async {
+            self.handleDetailsLoaded(viewModel: viewModel)
+        }
+    }
 }
 
 // MARK: - AlbumDetailsRouterOutput
@@ -126,36 +135,14 @@ private extension AlbumDetailsPresenter {
     }
     
     func loadAlbumInfoFromNetwork() {
-        guard let artist = self.configuration.artist else {
+        guard let artist = self.configuration.artist,
+            let name = configuration.name else {
             view.showNoDataPlaceholder()
             return
         }
-        let completion: (LoadResult) -> Void = { [weak self] result in
-            guard let self = self else { return }
-            guard case .success(let info) = result else {
-                DispatchQueue.main.async {
-                    self.view.showNoDataPlaceholder()
-                }
-                return
-            }
-            let viewModel = self.viewModelFactory.viewModel(albumExtendedInfo: info,
-                                                            artist: artist)
-            DispatchQueue.main.async {
-                self.handleDetailsLoaded(viewModel: viewModel)
-            }
-        }
-        
-        if let mbid = configuration.mbid {
-            albumInfoLoadService.loadAlbumInfo(mbid: mbid, completion: completion)
-        } else {
-            guard let name = configuration.name else {
-                view.showNoDataPlaceholder()
-                return
-            }
-            albumInfoLoadService.loadAlbumInfo(artist: artist.name,
-                                               album: name,
-                                               completion: completion)
-        }
+        interactor.loadAlbumInfo(name: name,
+                                 mbid: configuration.mbid,
+                                 artist: artist)
     }
     
     func handleDetailsLoaded(viewModel: AlbumDetailsViewModel) {

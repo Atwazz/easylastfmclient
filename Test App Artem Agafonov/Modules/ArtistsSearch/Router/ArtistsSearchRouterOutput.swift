@@ -7,5 +7,5 @@
 //
 
 protocol ArtistsSearchRouterOutput: class {
-    
+    // TODO: - Cleanup
 }

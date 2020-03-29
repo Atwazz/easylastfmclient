@@ -23,7 +23,7 @@ final class AlbumDetailsFactory {
 extension AlbumDetailsFactory: ConfiguredScreenFactory {
     typealias Configuration = AlbumDetailsConfiguration
     
-    func viewController(configuration: AlbumDetailsConfiguration) -> UIViewController {
+    func viewController(configuration: Configuration) -> UIViewController {
         screenAssembler.resolveViewController(AlbumDetailsViewInput.self,
                                               configuration: configuration)
     }
