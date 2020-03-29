@@ -85,11 +85,11 @@ private extension AlbumDetailsViewController {
     }
     
     func updateImageView(with url: URL?) {
-        imageView.setImage(with: url, placeholderName: "AlbumImagePlaceholder")
+        imageView.setImage(with: url, placeholderName: "no_data")
     }
     
     func updateArtistImageView(with url: URL?) {
-        artistImageView.setImage(with: url, placeholderName: "ArtistImagePlaceholder")
+        artistImageView.setImage(with: url, placeholderName: "avatar_placeholder")
     }
     
     func updateSummary(with text: String?) {

@@ -23,8 +23,8 @@ extension AlbumCollectionViewCell {
         albumNameLabel.text = model.albumName
         artistNameLabel.text = model.artistName
         albumImageView.setImage(with: model.albumImageUrl,
-                                placeholderName: "ArtistImagePlaceholder")
+                                placeholderName: "no_data")
         artistImageView.setImage(with: model.artistImageUrl,
-                                 placeholderName: "ArtistImagePlaceholder")
+                                 placeholderName: "avatar_placeholder")
     }
 }

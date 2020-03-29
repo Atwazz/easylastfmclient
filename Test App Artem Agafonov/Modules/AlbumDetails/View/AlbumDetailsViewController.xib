@@ -31,8 +31,8 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xH2-sJ-8z5" userLabel="LoadingContainer">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gvz-Ef-bVC">
-                            <rect key="frame" x="197" y="399" width="20" height="20"/>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gvz-Ef-bVC">
+                            <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

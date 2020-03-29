@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eft-7q-yG3" userLabel="BackgroundView" customClass="ViewWithRoundedCorners" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbumImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-4r-1C0">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_data" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-4r-1C0">
                             <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                         </imageView>
                     </subviews>
@@ -83,7 +83,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArtistImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-EV-TIv">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2s1-EV-TIv">
                                     <rect key="frame" x="8" y="27" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="1xG-g5-13U"/>
@@ -143,7 +143,7 @@
         </view>
     </objects>
     <resources>
-        <image name="AlbumImagePlaceholder" width="600" height="600"/>
-        <image name="ArtistImagePlaceholder" width="600" height="600"/>
+        <image name="avatar_placeholder" width="600" height="600"/>
+        <image name="no_data" width="1024" height="1024"/>
     </resources>
 </document>
