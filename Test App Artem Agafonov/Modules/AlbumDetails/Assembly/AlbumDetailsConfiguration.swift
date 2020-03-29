@@ -9,8 +9,8 @@
 struct AlbumDetailsConfiguration {
     let name: String?
     let mbid: String?
+    let artist: Artist?
     let id: PSObjectID?
-    // TODO: Add an optional artist here
 }
 
 // MARK: - Validatable

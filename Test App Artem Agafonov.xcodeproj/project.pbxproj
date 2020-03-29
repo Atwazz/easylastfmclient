@@ -160,6 +160,13 @@
 		8BB3B99F2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B99C2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift */; };
 		8BB3B9A1242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B9A0242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift */; };
 		8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3B9A52426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift */; };
+		8BB5A9BF24309E3200267704 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9BE24309E3200267704 /* TrackView.swift */; };
+		8BB5A9C124309E3C00267704 /* TrackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C024309E3C00267704 /* TrackView.xib */; };
+		8BB5A9C32430A12000267704 /* TracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C22430A12000267704 /* TracksView.swift */; };
+		8BB5A9C52430A67D00267704 /* TracksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C42430A67D00267704 /* TracksView.xib */; };
+		8BB5A9C72430C8FC00267704 /* AlbumDetailsRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C62430C8FC00267704 /* AlbumDetailsRouterOutput.swift */; };
+		8BB5A9C92430CFBC00267704 /* UIApplication+URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */; };
+		8BB5A9CB2430D01A00267704 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9CA2430D01A00267704 /* URLHandler.swift */; };
 		8BB78DC1242F72B400CB882C /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC0242F72B400CB882C /* AlbumDetailsViewModel.swift */; };
 		8BB78DC3242F731100CB882C /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC2242F731100CB882C /* TrackViewModel.swift */; };
 		8BB78DC5242F735E00CB882C /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC4242F735E00CB882C /* TagViewModel.swift */; };
@@ -378,6 +385,13 @@
 		8BB3B99C2426623700EBB5CC /* KeyedDecodingContainer+DecodeURLFromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+DecodeURLFromString.swift"; sourceTree = "<group>"; };
 		8BB3B9A0242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageAssemblerProvider.swift; sourceTree = "<group>"; };
 		8BB3B9A52426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageHelpersAssembly.swift; sourceTree = "<group>"; };
+		8BB5A9BE24309E3200267704 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		8BB5A9C024309E3C00267704 /* TrackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackView.xib; sourceTree = "<group>"; };
+		8BB5A9C22430A12000267704 /* TracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksView.swift; sourceTree = "<group>"; };
+		8BB5A9C42430A67D00267704 /* TracksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracksView.xib; sourceTree = "<group>"; };
+		8BB5A9C62430C8FC00267704 /* AlbumDetailsRouterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterOutput.swift; sourceTree = "<group>"; };
+		8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+URLHandler.swift"; sourceTree = "<group>"; };
+		8BB5A9CA2430D01A00267704 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
 		8BB78DC0242F72B400CB882C /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		8BB78DC2242F731100CB882C /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		8BB78DC4242F735E00CB882C /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
@@ -564,6 +578,7 @@
 				8B731271241D3674001922F4 /* ScreenFactory */,
 				8BD28680242690DA00A3815F /* Views */,
 				8BB78DF6242F983200CB882C /* CollectionViewDelegateFlowLayout.swift */,
+				8BB5A9CA2430D01A00267704 /* URLHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -737,6 +752,7 @@
 				8B731265241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift */,
 				8B731254241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift */,
 				8BB22C3A242FD6D000CABF48 /* UIImageView+ImageWithURL.swift */,
+				8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -947,6 +963,7 @@
 			children = (
 				8B7312AB241D4C26001922F4 /* AlbumDetailsRouter.swift */,
 				8B7312AD241D4C26001922F4 /* AlbumDetailsRouterInput.swift */,
+				8BB5A9C62430C8FC00267704 /* AlbumDetailsRouterOutput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1359,6 +1376,25 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		8BB5A9BB24309CFB00267704 /* TracksView */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5A9BD24309E2700267704 /* TrackView */,
+				8BB5A9C22430A12000267704 /* TracksView.swift */,
+				8BB5A9C42430A67D00267704 /* TracksView.xib */,
+			);
+			path = TracksView;
+			sourceTree = "<group>";
+		};
+		8BB5A9BD24309E2700267704 /* TrackView */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5A9BE24309E3200267704 /* TrackView.swift */,
+				8BB5A9C024309E3C00267704 /* TrackView.xib */,
+			);
+			path = TrackView;
+			sourceTree = "<group>";
+		};
 		8BB78DCA242F74C000CB882C /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1417,6 +1453,7 @@
 		8BB78DE6242F86C300CB882C /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				8BB5A9BB24309CFB00267704 /* TracksView */,
 				8BB78DEC242F889700CB882C /* TagsView */,
 			);
 			path = Subviews;
@@ -1744,9 +1781,11 @@
 			files = (
 				8B41998F241C2F85004F0195 /* LaunchScreen.storyboard in Resources */,
 				8B731259241D2F92001922F4 /* MainScreenViewController.xib in Resources */,
+				8BB5A9C124309E3C00267704 /* TrackView.xib in Resources */,
 				8B7312A0241D461E001922F4 /* ArtistsSearchViewController.xib in Resources */,
 				8BB78DEE242F88AC00CB882C /* TagsView.xib in Resources */,
 				8BB78DEB242F86F700CB882C /* TagCell.xib in Resources */,
+				8BB5A9C52430A67D00267704 /* TracksView.xib in Resources */,
 				8B7312DF241D4C2D001922F4 /* AlbumsScreenViewController.xib in Resources */,
 				8BD2867F2426905D00A3815F /* AlbumCollectionViewCell.xib in Resources */,
 				8B7312C3241D4C26001922F4 /* AlbumDetailsViewController.xib in Resources */,
@@ -1861,6 +1900,7 @@
 				8B7312E0241D4C2D001922F4 /* AlbumsScreenRouterOutput.swift in Sources */,
 				8B7E231F242BD7E100316602 /* NSManagedObject+PSObjectID.swift in Sources */,
 				8B7311E4241CF905001922F4 /* MainScreenInteractorInput.swift in Sources */,
+				8BB5A9BF24309E3200267704 /* TrackView.swift in Sources */,
 				8BCF09E0241EA10E005F4905 /* Album.swift in Sources */,
 				8BBDEDD9241E8919004CBD27 /* ArtistsSearchRequest.swift in Sources */,
 				8B7312E3241D4C2D001922F4 /* AlbumsScreenPresenter.swift in Sources */,
@@ -1878,8 +1918,10 @@
 				8BB78DF5242F96DA00CB882C /* AlbumsCollectionViewDelegateFlowLayout.swift in Sources */,
 				8B7312A2241D461E001922F4 /* ArtistsSearchViewInput.swift in Sources */,
 				8BB78DF7242F983200CB882C /* CollectionViewDelegateFlowLayout.swift in Sources */,
+				8BB5A9CB2430D01A00267704 /* URLHandler.swift in Sources */,
 				8B7312C2241D4C26001922F4 /* AlbumDetailsViewOutput.swift in Sources */,
 				8B731273241D3683001922F4 /* ScreenFactory.swift in Sources */,
+				8BB5A9C32430A12000267704 /* TracksView.swift in Sources */,
 				8B7312C5241D4C26001922F4 /* AlbumDetailsAssembly.swift in Sources */,
 				8BD2867D24268B7D00A3815F /* NSObject+ClassName.swift in Sources */,
 				8B7BB852241FDF0200E80969 /* AlbumInfoLoadServiceBase.swift in Sources */,
@@ -1909,6 +1951,7 @@
 				8B9BB7A62423DAF3001E08AF /* PersistentContainerProvider.swift in Sources */,
 				8B7312C1241D4C26001922F4 /* AlbumDetailsViewInput.swift in Sources */,
 				8B9CDD6A24260665008CE48F /* AlbumEntity+CoreDataProperties.swift in Sources */,
+				8BB5A9C72430C8FC00267704 /* AlbumDetailsRouterOutput.swift in Sources */,
 				8BD9311B242521DA00A9CE7D /* PersistentStorageStateEmitter.swift in Sources */,
 				8B731268241D32C9001922F4 /* UIHelpersAssembly.swift in Sources */,
 				8BB78DDD242F7B2100CB882C /* TagViewModelFactoryBase.swift in Sources */,
@@ -1937,6 +1980,7 @@
 				8BA702D7241F66470073E7A4 /* ArtistAlbumsLoadService.swift in Sources */,
 				8B731270241D3546001922F4 /* MainScreenFactory.swift in Sources */,
 				8B7E231A242BD76400316602 /* PSObjectID.swift in Sources */,
+				8BB5A9C92430CFBC00267704 /* UIApplication+URLHandler.swift in Sources */,
 				8B731276241D38EA001922F4 /* EntryPointRouterBase.swift in Sources */,
 				8B4AAAB2242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift in Sources */,
 				8BA702EE241FB2280073E7A4 /* Validator.swift in Sources */,

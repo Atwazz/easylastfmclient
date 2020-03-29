@@ -30,9 +30,15 @@ extension AlbumDetailsViewModelFactoryBase: AlbumDetailsViewModelFactory {
             let trackEntities = entity.tracks?.array(of: TrackEntity.self) else {
                 fatalError("AlbumEntity has invalid state!")
         }
-        let tracks = trackEntities.map { trackViewModelFactory.vieModel(entity: $0) }
+        let tracks = trackEntities
+            .sorted { $0.rank < $1.rank }
+            .map { trackViewModelFactory.vieModel(entity: $0) }
+            .filter { $0.name.count > 0 }
+        
         let tags = entity.tags?.array(of: TagEntity.self)?
             .map { tagViewModelFactory.viewModel(entity: $0) }
+            .filter { $0.name.count > 0 }
+            .sorted { $0.name < $1.name }
         
         let artist = artistViewModelFactory.viewModel(entity: artistEntity)
         

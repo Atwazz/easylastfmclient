@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackView">
+            <connections>
+                <outlet property="durationLabel" destination="rxi-yt-3Zp" id="MiF-nV-4b4"/>
+                <outlet property="nameLabel" destination="FeX-6h-7gi" id="jYC-9l-pH4"/>
+                <outlet property="rankLabel" destination="lnZ-av-Pyo" id="i9G-NC-DLV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="39"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-me-GiO">
+                    <rect key="frame" x="0.0" y="0.0" width="347" height="39"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnZ-av-Pyo">
+                            <rect key="frame" x="0.0" y="10.5" width="25.5" height="18"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Some track name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeX-6h-7gi">
+                            <rect key="frame" x="33.5" y="10.5" width="273.5" height="18"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="2:54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-yt-3Zp">
+                            <rect key="frame" x="315" y="10.5" width="32" height="18"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="LdN-me-GiO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OBj-lE-k1o"/>
+                <constraint firstAttribute="bottom" secondItem="LdN-me-GiO" secondAttribute="bottom" id="bn2-XK-4Qr"/>
+                <constraint firstItem="LdN-me-GiO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cfU-BQ-zTW"/>
+                <constraint firstAttribute="trailing" secondItem="LdN-me-GiO" secondAttribute="trailing" id="tUz-Wn-klQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="CaW-aW-N24" appends="YES" id="jZH-QP-Cp8"/>
+            </connections>
+            <point key="canvasLocation" x="-36.956521739130437" y="-62.611607142857139"/>
+        </view>
+        <tapGestureRecognizer id="CaW-aW-N24">
+            <connections>
+                <action selector="tapHappened:" destination="-1" id="rDJ-m1-Hot"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

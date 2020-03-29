@@ -13,8 +13,8 @@ final class AlbumDetailsViewController: UIViewController {
     @DelayedImmutable var output: AlbumDetailsViewOutput
     
     // MARK: - Private instance properties
-    @IBOutlet weak var loadingContainer: UIView!
-    @IBOutlet weak var noDataContainer: UIView!
+    @IBOutlet private weak var loadingContainer: UIView!
+    @IBOutlet private weak var noDataContainer: UIView!
     @IBOutlet private weak var infoContainer: UIView!
     @IBOutlet private weak var artistImageView: UIImageView!
     @IBOutlet private weak var artistNameLabel: UILabel!
@@ -24,7 +24,7 @@ final class AlbumDetailsViewController: UIViewController {
     @IBOutlet private weak var tagsView: TagsView!
     @IBOutlet private weak var albumSummaryTextView: UITextView!
     @IBOutlet private weak var publishedDateZeroHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private weak var tracksView: TracksView!
     private let tagsFlowLayout: CollectionViewDelegateFlowLayout
     
     // MARK: - Init
@@ -42,6 +42,7 @@ final class AlbumDetailsViewController: UIViewController {
         tagsFlowLayout.setup { [weak self] indexPath in
             self?.output.selectedTag(at: indexPath)
         }
+        albumSummaryTextView.textContainerInset = .zero
         output.viewIsReady()
     }
 }
@@ -68,11 +69,29 @@ extension AlbumDetailsViewController: AlbumDetailsViewInput {
         namelabel.text = model.name
         updatePublishedDate(with: model.published)
         updateSummary(with: model.summary)
+        tracksView.setup(with: model.tracks) { [weak self] trackUrl in
+            self?.output.selectedTrack(with: trackUrl)
+        }
     }
     
     func setup(with tagsDataSource: UICollectionViewDataSource) {
         tagsView.setup(dataSource: tagsDataSource,
                        layoutDelegate: tagsFlowLayout)
+    }
+}
+
+// MARK: - Private: Actions
+private extension AlbumDetailsViewController {
+    @IBAction func artistInfoTapped(_ sender: Any) {
+        output.artistInfoTapped()
+    }
+    
+    @IBAction func albumNameTapped(_ sender: Any) {
+        output.albumNameTapped()
+    }
+    
+    @IBAction func albumImageTapped(_ sender: Any) {
+        output.albumImageTapped()
     }
 }
 

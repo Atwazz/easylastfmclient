@@ -20,6 +20,7 @@
                 <outlet property="publishedDateLabel" destination="aUc-rh-sEH" id="rV5-wa-YMi"/>
                 <outlet property="publishedDateZeroHeightConstraint" destination="qpL-zg-Eij" id="UlC-S1-kb3"/>
                 <outlet property="tagsView" destination="zKb-mq-usY" id="0z3-lq-r7r"/>
+                <outlet property="tracksView" destination="gSc-Jm-eF5" id="XvK-0d-NEy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mWu-BQ-UGW"/>
             </connections>
         </placeholder>
@@ -97,23 +98,32 @@ Please try again later.</string>
                                         <constraint firstItem="wjV-AS-FBK" firstAttribute="leading" secondItem="xNb-ey-ADY" secondAttribute="leading" id="izB-bx-UAn"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wjV-AS-FBK" secondAttribute="bottom" constant="8" id="o2A-c3-Vz2"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="OGQ-G6-mKT" appends="YES" id="Igz-zH-PkX"/>
+                                    </connections>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Og-9W-ZPL">
+                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Og-9W-ZPL">
                                     <rect key="frame" x="0.0" y="110" width="382" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="3SW-Wn-GlU" appends="YES" id="s65-pQ-Tjk"/>
+                                    </connections>
                                 </label>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKb-mq-usY" customClass="TagsView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="591" width="382" height="78"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0da-h8-7kD">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0da-h8-7kD">
                                     <rect key="frame" x="0.0" y="193" width="382" height="382"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="0da-h8-7kD" secondAttribute="height" multiplier="1:1" id="8rT-5N-T2h"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Hsu-y3-HWg" appends="YES" id="cfg-st-9nH"/>
+                                    </connections>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Published Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-rh-sEH">
                                     <rect key="frame" x="0.0" y="159" width="104" height="18"/>
@@ -129,16 +139,21 @@ Please try again later.</string>
                                         </mask>
                                     </variation>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXM-u6-pFG">
-                                    <rect key="frame" x="0.0" y="707" width="382" height="103"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXM-u6-pFG">
+                                    <rect key="frame" x="0.0" y="765" width="382" height="45"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Jm-eF5" customClass="TracksView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="692" width="382" height="65"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="gSc-Jm-eF5" firstAttribute="leading" secondItem="zKb-mq-usY" secondAttribute="leading" id="0TA-OM-csw"/>
                                 <constraint firstItem="zKb-mq-usY" firstAttribute="leading" secondItem="GpW-K8-H3d" secondAttribute="leading" id="2LT-m9-H4O"/>
                                 <constraint firstItem="xNb-ey-ADY" firstAttribute="top" secondItem="GpW-K8-H3d" secondAttribute="top" constant="8" id="2tv-10-RD2"/>
                                 <constraint firstItem="GpW-K8-H3d" firstAttribute="trailing" secondItem="0da-h8-7kD" secondAttribute="trailing" id="6pM-Gx-UYd"/>
@@ -149,18 +164,20 @@ Please try again later.</string>
                                 <constraint firstItem="5Og-9W-ZPL" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="QM7-D3-VFP"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="width" secondItem="XB5-4a-ZLY" secondAttribute="width" id="QkJ-ny-Ezd"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="top" secondItem="aUc-rh-sEH" secondAttribute="bottom" constant="16" id="T1Z-nh-PEh"/>
+                                <constraint firstItem="gSc-Jm-eF5" firstAttribute="trailing" secondItem="zKb-mq-usY" secondAttribute="trailing" id="VI4-N0-UKT"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="width" secondItem="GpW-K8-H3d" secondAttribute="width" id="bBr-oL-klP"/>
                                 <constraint firstItem="xNb-ey-ADY" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="bgr-MC-VG5"/>
                                 <constraint firstItem="hXM-u6-pFG" firstAttribute="bottom" secondItem="GpW-K8-H3d" secondAttribute="bottom" id="clJ-2Y-adq"/>
+                                <constraint firstItem="gSc-Jm-eF5" firstAttribute="top" secondItem="zKb-mq-usY" secondAttribute="bottom" constant="16" id="d1i-ks-r8r"/>
                                 <constraint firstItem="GpW-K8-H3d" firstAttribute="trailing" secondItem="zKb-mq-usY" secondAttribute="trailing" id="dK5-Nk-9FN"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="trailing" secondItem="XB5-4a-ZLY" secondAttribute="trailing" id="dS5-NU-nlq"/>
                                 <constraint firstItem="aUc-rh-sEH" firstAttribute="top" secondItem="5Og-9W-ZPL" secondAttribute="bottom" constant="8" id="eag-qS-tSG"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="ee2-w5-1b4"/>
                                 <constraint firstItem="zKb-mq-usY" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="iet-1W-Una"/>
+                                <constraint firstItem="hXM-u6-pFG" firstAttribute="top" secondItem="gSc-Jm-eF5" secondAttribute="bottom" constant="16" id="jGY-UU-48Y"/>
                                 <constraint firstItem="aUc-rh-sEH" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="mty-g9-Qd2"/>
                                 <constraint firstItem="zKb-mq-usY" firstAttribute="trailing" secondItem="XB5-4a-ZLY" secondAttribute="trailing" id="oCL-kj-4dA"/>
                                 <constraint firstItem="5Og-9W-ZPL" firstAttribute="top" secondItem="xNb-ey-ADY" secondAttribute="bottom" constant="16" id="qbP-0H-oZd"/>
-                                <constraint firstItem="hXM-u6-pFG" firstAttribute="top" secondItem="zKb-mq-usY" secondAttribute="bottom" constant="8" id="qrv-XU-MP9"/>
                                 <constraint firstItem="5Og-9W-ZPL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XB5-4a-ZLY" secondAttribute="trailing" id="ulc-0u-fpe"/>
                                 <constraint firstItem="XB5-4a-ZLY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aUc-rh-sEH" secondAttribute="trailing" id="umr-UH-lyA"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="leading" secondItem="GpW-K8-H3d" secondAttribute="leading" id="y2x-F7-4SC"/>
@@ -198,5 +215,20 @@ Please try again later.</string>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
+        <tapGestureRecognizer id="OGQ-G6-mKT" userLabel="Artist Tap Gesture Recognizer">
+            <connections>
+                <action selector="artistInfoTapped:" destination="-1" id="upk-pC-qYc"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="3SW-Wn-GlU" userLabel="Album Name Tap Gesture Recognizer">
+            <connections>
+                <action selector="albumNameTapped:" destination="-1" id="KwQ-Vg-PIn"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Hsu-y3-HWg" userLabel="Album Image Tap Gesture Recognizer">
+            <connections>
+                <action selector="albumImageTapped:" destination="-1" id="VTT-tE-K9y"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

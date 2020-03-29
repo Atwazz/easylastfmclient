@@ -11,4 +11,8 @@ import Foundation.NSIndexPath
 protocol AlbumDetailsViewOutput {
     func viewIsReady()
     func selectedTag(at indexPath: IndexPath)
+    func selectedTrack(with url: URL?)
+    func artistInfoTapped()
+    func albumNameTapped()
+    func albumImageTapped()
 }

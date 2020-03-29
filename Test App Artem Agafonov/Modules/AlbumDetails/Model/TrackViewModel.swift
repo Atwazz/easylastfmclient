@@ -11,6 +11,6 @@ import Foundation.NSURL
 struct TrackViewModel {
     let name: String
     let url: URL?
-    let rank: UInt
+    let rank: String
     let duration: String
 }

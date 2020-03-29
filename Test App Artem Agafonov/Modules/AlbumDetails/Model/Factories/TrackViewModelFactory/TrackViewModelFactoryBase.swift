@@ -16,14 +16,14 @@ extension TrackViewModelFactoryBase: TrackViewModelFactory {
         }
         return TrackViewModel(name: name,
                               url: entity.url,
-                              rank: UInt(entity.rank),
+                              rank: String(entity.rank),
                               duration: entity.duration.formattedDurationString)
     }
     
     func viewModel(track: Track) -> TrackViewModel {
         TrackViewModel(name: track.name,
                        url: track.url,
-                       rank: track.rank,
+                       rank: String(track.rank),
                        duration: track.duration.formattedDurationString)
     }
 }

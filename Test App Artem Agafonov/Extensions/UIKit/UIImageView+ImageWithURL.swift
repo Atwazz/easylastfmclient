@@ -11,10 +11,9 @@ import AlamofireImage
 
 extension UIImageView {
     func setImage(with url: URL?, placeholderName: String) {
+        image = UIImage(named: placeholderName)
         if let imageUrl = url {
             af.setImage(withURL: imageUrl)
-        } else {
-            image = UIImage(named: placeholderName)
         }
     }
 }

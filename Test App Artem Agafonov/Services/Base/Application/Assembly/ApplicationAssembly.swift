@@ -47,6 +47,7 @@ private extension ApplicationAssembly {
         container.register(UIApplication.self) { _ in
             UIApplication.shared
         }
+        .implements(URLHandler.self)
     }
     
     func registerApplicationDelegate(in container: Container) {
