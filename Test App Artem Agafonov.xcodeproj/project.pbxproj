@@ -167,6 +167,9 @@
 		8BB5A9C72430C8FC00267704 /* AlbumDetailsRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C62430C8FC00267704 /* AlbumDetailsRouterOutput.swift */; };
 		8BB5A9C92430CFBC00267704 /* UIApplication+URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */; };
 		8BB5A9CB2430D01A00267704 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9CA2430D01A00267704 /* URLHandler.swift */; };
+		8BB5A9CD2430DB4A00267704 /* NSManagedObjectContext+SaveIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9CC2430DB4A00267704 /* NSManagedObjectContext+SaveIfNeeded.swift */; };
+		8BB5A9CF2430DEB500267704 /* NSManagedObjectContext+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9CE2430DEB500267704 /* NSManagedObjectContext+Convenience.swift */; };
+		8BB5A9D12430F3BB00267704 /* UIBarButtonItem+ItemWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5A9D02430F3BB00267704 /* UIBarButtonItem+ItemWithImage.swift */; };
 		8BB78DC1242F72B400CB882C /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC0242F72B400CB882C /* AlbumDetailsViewModel.swift */; };
 		8BB78DC3242F731100CB882C /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC2242F731100CB882C /* TrackViewModel.swift */; };
 		8BB78DC5242F735E00CB882C /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB78DC4242F735E00CB882C /* TagViewModel.swift */; };
@@ -392,6 +395,9 @@
 		8BB5A9C62430C8FC00267704 /* AlbumDetailsRouterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsRouterOutput.swift; sourceTree = "<group>"; };
 		8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+URLHandler.swift"; sourceTree = "<group>"; };
 		8BB5A9CA2430D01A00267704 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		8BB5A9CC2430DB4A00267704 /* NSManagedObjectContext+SaveIfNeeded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+SaveIfNeeded.swift"; sourceTree = "<group>"; };
+		8BB5A9CE2430DEB500267704 /* NSManagedObjectContext+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Convenience.swift"; sourceTree = "<group>"; };
+		8BB5A9D02430F3BB00267704 /* UIBarButtonItem+ItemWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+ItemWithImage.swift"; sourceTree = "<group>"; };
 		8BB78DC0242F72B400CB882C /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		8BB78DC2242F731100CB882C /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		8BB78DC4242F735E00CB882C /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
@@ -753,6 +759,7 @@
 				8B731254241D1AD2001922F4 /* UIWindow+PresentingHierarchy.swift */,
 				8BB22C3A242FD6D000CABF48 /* UIImageView+ImageWithURL.swift */,
 				8BB5A9C82430CFBC00267704 /* UIApplication+URLHandler.swift */,
+				8BB5A9D02430F3BB00267704 /* UIBarButtonItem+ItemWithImage.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1110,8 +1117,10 @@
 			isa = PBXGroup;
 			children = (
 				8B7E231E242BD7E100316602 /* NSManagedObject+PSObjectID.swift */,
-				8B7E2320242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift */,
+				8BB5A9CE2430DEB500267704 /* NSManagedObjectContext+Convenience.swift */,
 				8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */,
+				8BB5A9CC2430DB4A00267704 /* NSManagedObjectContext+SaveIfNeeded.swift */,
+				8B7E2320242BD89A00316602 /* NSManagedObjectID+PSObjectID.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1913,6 +1922,7 @@
 				8B33AF0F242519A1004C7F59 /* Publisher+Convenience.swift in Sources */,
 				8B73126B241D3415001922F4 /* UIServicesAssemblerProvider.swift in Sources */,
 				8B7312E7241D4C2D001922F4 /* AlbumsScreenAssembly.swift in Sources */,
+				8BB5A9CF2430DEB500267704 /* NSManagedObjectContext+Convenience.swift in Sources */,
 				8BBDEDA5241E45C1004CBD27 /* DisposeBag.swift in Sources */,
 				8BB78E05242FA79700CB882C /* UICollectionView+DequeueCellOfType.swift in Sources */,
 				8BB78DF5242F96DA00CB882C /* AlbumsCollectionViewDelegateFlowLayout.swift in Sources */,
@@ -1930,6 +1940,7 @@
 				8B7311CB241CEA2C001922F4 /* Resolver+Safe.swift in Sources */,
 				8BA702E2241F806A0073E7A4 /* ArtistAlbumsLoadResults.swift in Sources */,
 				8BB3B9A1242666D100EBB5CC /* PersistentStorageAssemblerProvider.swift in Sources */,
+				8BB5A9CD2430DB4A00267704 /* NSManagedObjectContext+SaveIfNeeded.swift in Sources */,
 				8B7BB854241FDF8100E80969 /* AlbumInfoLoadResponse.swift in Sources */,
 				8B33AF0824250D89004C7F59 /* BaseAssemblerProvider.swift in Sources */,
 				8B731266241D3272001922F4 /* UIScreen+ScreenSizeProvider.swift in Sources */,
@@ -1939,6 +1950,7 @@
 				8B9CDD6724260665008CE48F /* TagEntity+CoreDataClass.swift in Sources */,
 				8BD6E143241D7A9500223F74 /* APIKeyProvider.swift in Sources */,
 				8BA702E4241F85630073E7A4 /* ArtistAlbumsLoadRequest.swift in Sources */,
+				8BB5A9D12430F3BB00267704 /* UIBarButtonItem+ItemWithImage.swift in Sources */,
 				8BB3B9932426525400EBB5CC /* Result+Convenience.swift in Sources */,
 				8B7311F7241D0244001922F4 /* MainScreenRouterInput.swift in Sources */,
 				8B731257241D29EE001922F4 /* Array+ReverseFind.swift in Sources */,

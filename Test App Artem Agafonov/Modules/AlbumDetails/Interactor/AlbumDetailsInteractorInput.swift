@@ -8,4 +8,6 @@
 
 protocol AlbumDetailsInteractorInput {
     func obtainAlbum(with id: PSObjectID) -> AlbumEntity?
+    func removeAlbum(with id: PSObjectID)
+    func saveAlbum(album: AlbumExtendedInfo, artist: Artist)
 }

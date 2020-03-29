@@ -10,4 +10,6 @@ import Foundation.NSURL
 
 protocol AlbumDetailsRouterInput {
     func showOpenConfirmation(url: URL)
+    func showBasicFailureAlert()
+    func close()
 }

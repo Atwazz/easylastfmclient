@@ -11,13 +11,19 @@ import UIKit.UIViewController
 protocol ViewDispatcher {
     func show(rootViewController: UIViewController)
     func push(_ viewController: UIViewController)
-    func presentModal(_ viewController: UIViewController, completion: (() -> Void)?)
+    func presentModal(_ viewController: UIViewController,
+                      wrappedInNavigationController: Bool,
+                      completion: (() -> Void)?)
     func dismissTopViewController(completion: (() -> Void)?)
 }
 
 extension ViewDispatcher {
-    func presentModal(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
-        presentModal(viewController, completion: completion)
+    func presentModal(_ viewController: UIViewController,
+                      wrappedInNavigationController: Bool = false,
+                      completion: (() -> Void)? = nil) {
+        presentModal(viewController,
+                     wrappedInNavigationController: wrappedInNavigationController,
+                     completion: completion)
     }
     
     func dismissTopViewController(completion: (() -> Void)? = nil) {

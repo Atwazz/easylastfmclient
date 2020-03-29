@@ -7,5 +7,7 @@
 //
 
 protocol AlbumDetailsInteractorOutput: class {
-    
+    func removedAlbum()
+    func savedAlbum(id: PSObjectID)
+    func failedToSaveAlbum()
 }

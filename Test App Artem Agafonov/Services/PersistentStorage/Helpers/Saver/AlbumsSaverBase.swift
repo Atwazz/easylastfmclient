@@ -35,30 +35,37 @@ extension AlbumsSaverBase: AlbumsSaver {
             let artistEntity = self.artistFetcher.fetchArtist(representing: artist) ??
                     ArtistEntity(context: context)
             artistEntity.update(with: artist, in: context)
-            self.saveAlbums(models: albums, artist: artistEntity, in: context)
-            self.save(context: context, completion: completion)
+            let ids = self.saveAlbums(models: albums, artist: artistEntity, in: context)
+            self.save(context: context, ids: ids, completion: completion)
         }
     }
 }
 
 // MARK: - Private
 private extension AlbumsSaverBase {
-    func saveAlbums(models: [AlbumExtendedInfo], artist: ArtistEntity, in context: NSManagedObjectContext) {
-        models.forEach { self.saveAlbum(model: $0, artist: artist, in: context) }
+    func saveAlbums(models: [AlbumExtendedInfo],
+                    artist: ArtistEntity,
+                    in context: NSManagedObjectContext) -> [PSObjectID] {
+        models.map { saveAlbum(model: $0, artist: artist, in: context) }
     }
     
-    func saveAlbum(model: AlbumExtendedInfo, artist: ArtistEntity, in context: NSManagedObjectContext) {
+    func saveAlbum(model: AlbumExtendedInfo,
+                   artist: ArtistEntity,
+                   in context: NSManagedObjectContext) -> PSObjectID {
         guard artist.album(for: model) == nil else {
             assertionFailure("Trying to add already saved album: \(model.name)")
-            return
+            return artist.id
         }
-        _ = albumFactory.album(model: model, for: artist, in: context)
+        let entity = albumFactory.album(model: model, for: artist, in: context)
+        return entity.id
     }
     
-    func save(context: NSManagedObjectContext, completion: (SaverResult) -> Void) {
+    func save(context: NSManagedObjectContext,
+              ids: [PSObjectID],
+              completion: (SaverResult) -> Void) {
         do {
             try context.save()
-            completion(.success)
+            completion(.success(ids))
         } catch {
             assertionFailure("Unexpected error occured: \(error.localizedDescription)")
             completion(.failure(error))

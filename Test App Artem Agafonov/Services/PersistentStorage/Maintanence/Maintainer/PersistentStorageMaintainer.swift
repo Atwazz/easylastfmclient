@@ -51,7 +51,7 @@ private extension PersistentStorageMaintainer {
         case .launched:
             loadPersistentStorage()
         case .willTerminate:
-            saveViewContext()
+            viewContextProvider.viewContext.saveIfNeeded()
         default:
             fatalError("Unexpected application state: \(state)")
         }
@@ -66,17 +66,6 @@ private extension PersistentStorageMaintainer {
                 assertionFailure("Persistent storage loading failed: \(error)")
                 self?.storageStateSubject.send(.loadFailed(error: error))
             }
-        }
-    }
-    
-    func saveViewContext() {
-        let context = viewContextProvider.viewContext
-        guard context.hasChanges else { return }
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

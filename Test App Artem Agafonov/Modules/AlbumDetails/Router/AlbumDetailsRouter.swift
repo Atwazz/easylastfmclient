@@ -24,6 +24,19 @@ final class AlbumDetailsRouter {
 
 // MARK: - AlbumDetailsRouterIMput
 extension AlbumDetailsRouter: AlbumDetailsRouterInput {
+    func showBasicFailureAlert() {
+        let alertController = UIAlertController(title: "Operation failed.",
+                                                message: "Please try again later or contact the developer.",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        viewDispatcher.presentModal(alertController, completion: nil)
+    }
+    
+    func close() {
+        viewDispatcher.dismissTopViewController(completion: nil)
+    }
+    
     func showOpenConfirmation(url: URL) {
         let alertController = UIAlertController(title: "Do you want to open url?",
                                                 message: url.absoluteString,

@@ -10,6 +10,8 @@ import Foundation.NSIndexPath
 
 protocol AlbumDetailsViewOutput {
     func viewIsReady()
+    func toggleAlbumIsSaved()
+    func closeButtonTapped()
     func selectedTag(at indexPath: IndexPath)
     func selectedTrack(with url: URL?)
     func artistInfoTapped()

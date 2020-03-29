@@ -33,11 +33,13 @@ extension ViewDispatcherBase: ViewDispatcher {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func presentModal(_ viewController: UIViewController, completion: (() -> Void)?) {
+    func presentModal(_ viewController: UIViewController,
+                      wrappedInNavigationController wrap: Bool,
+                      completion: (() -> Void)?) {
         guard let topViewController = topViewController else {
             fatalError("ViewDispatcher misuse detected")
         }
-        topViewController.present(viewController,
+        topViewController.present(wrap ? wrappedViewControllerInNavigation(viewController) : viewController,
                                   animated: true,
                                   completion: completion)
     }

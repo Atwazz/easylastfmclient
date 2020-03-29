@@ -7,7 +7,7 @@
 //
 
 protocol AlbumsSaver {
-    typealias SaverResult = Result<Void, Error>
+    typealias SaverResult = Result<[PSObjectID], Error>
     
     func save(albums: [AlbumExtendedInfo],
               for artist: Artist,

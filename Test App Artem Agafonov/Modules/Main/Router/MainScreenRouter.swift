@@ -29,9 +29,10 @@ final class MainScreenRouter {
 
 // MARK: - MainScreenRouterIMput
 extension MainScreenRouter: MainScreenRouterInput {
-    func showAlbumDetails(name: String, mbid: String) {
+    func showAlbumDetails(name: String, mbid: String, artist: Artist) {
         let configuration = AlbumDetailsConfiguration(name: name,
                                                       mbid: mbid,
+                                                      artist: artist,
                                                       id: nil)
         showAlbumDetails(configuration: configuration)
     }
@@ -39,6 +40,7 @@ extension MainScreenRouter: MainScreenRouterInput {
     func showAlbumDetails(id: PSObjectID) {
         let configuration = AlbumDetailsConfiguration(name: nil,
                                                       mbid: nil,
+                                                      artist: nil,
                                                       id: id)
         showAlbumDetails(configuration: configuration)
     }
@@ -60,6 +62,6 @@ extension MainScreenRouter: MainScreenRouterInput {
 private extension MainScreenRouter {
     func showAlbumDetails(configuration: AlbumDetailsConfiguration) {
         let viewController = albumDetailsScreenFactory.viewController(configuration: configuration)
-        viewDispatcher.presentModal(viewController)
+        viewDispatcher.presentModal(viewController, wrappedInNavigationController: true)
     }
 }

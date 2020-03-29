@@ -9,6 +9,8 @@
 import Foundation.NSIndexPath
 
 final class AlbumDetailsPresenter {
+    typealias LoadResult = AlbumInfoLoadService.AlbumInfoLoadResult
+    
     // MARK: - Public instance properties
     @DelayedImmutable var view: AlbumDetailsViewInput
     @DelayedImmutable var interactor: AlbumDetailsInteractorInput
@@ -19,22 +21,40 @@ final class AlbumDetailsPresenter {
     private let viewModelFactory: AlbumDetailsViewModelFactory
     private let tagsDataSource: AlbumTagsDataSource
     private let urlhandler: URLHandler
+    private let albumInfoLoadService: AlbumInfoLoadService
     private var model: AlbumDetailsViewModel?
+    private var albumId: PSObjectID?
+    private var albumExtendedInfo: AlbumExtendedInfo?
     
     // MARK: - Init
     init(configuration: AlbumDetailsConfiguration,
          viewModelFactory: AlbumDetailsViewModelFactory,
          tagsDataSource: AlbumTagsDataSource,
-         urlhandler: URLHandler) {
+         urlhandler: URLHandler,
+         albumInfoLoadService: AlbumInfoLoadService) {
         self.configuration = configuration
         self.viewModelFactory = viewModelFactory
         self.tagsDataSource = tagsDataSource
         self.urlhandler = urlhandler
+        self.albumInfoLoadService = albumInfoLoadService
+        albumId = configuration.id
     }
 }
 
 // MARK: - AlbumDetailsViewOutput
 extension AlbumDetailsPresenter: AlbumDetailsViewOutput {
+    func toggleAlbumIsSaved() {
+        if albumId != nil {
+            removeAlbum()
+        } else {
+            saveAlbum()
+        }
+    }
+    
+    func closeButtonTapped() {
+        router.close()
+    }
+    
     func artistInfoTapped() {
         openArtistUrl()
     }
@@ -62,7 +82,20 @@ extension AlbumDetailsPresenter: AlbumDetailsViewOutput {
 
 // MARK: - AlbumDetailsInteractorOutput
 extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
+    func failedToSaveAlbum() {
+        router.showBasicFailureAlert()
+    }
     
+    func removedAlbum() {
+        albumId = nil
+        view.update(albumSaved: false)
+        router.close()
+    }
+    
+    func savedAlbum(id: PSObjectID) {
+        albumId = id
+        view.update(albumSaved: true)
+    }
 }
 
 // MARK: - AlbumDetailsRouterOutput
@@ -85,9 +118,43 @@ private extension AlbumDetailsPresenter {
                 view.showNoDataPlaceholder()
                 return
             }
+            view.update(albumSaved: true)
             handleDetailsLoaded(viewModel: viewModelFactory.viewModel(entity: entity))
         } else {
-            // load from network
+            loadAlbumInfoFromNetwork()
+        }
+    }
+    
+    func loadAlbumInfoFromNetwork() {
+        guard let artist = self.configuration.artist else {
+            view.showNoDataPlaceholder()
+            return
+        }
+        let completion: (LoadResult) -> Void = { [weak self] result in
+            guard let self = self else { return }
+            guard case .success(let info) = result else {
+                DispatchQueue.main.async {
+                    self.view.showNoDataPlaceholder()
+                }
+                return
+            }
+            let viewModel = self.viewModelFactory.viewModel(albumExtendedInfo: info,
+                                                            artist: artist)
+            DispatchQueue.main.async {
+                self.handleDetailsLoaded(viewModel: viewModel)
+            }
+        }
+        
+        if let mbid = configuration.mbid {
+            albumInfoLoadService.loadAlbumInfo(mbid: mbid, completion: completion)
+        } else {
+            guard let name = configuration.name else {
+                view.showNoDataPlaceholder()
+                return
+            }
+            albumInfoLoadService.loadAlbumInfo(artist: artist.name,
+                                               album: name,
+                                               completion: completion)
         }
     }
     
@@ -111,5 +178,21 @@ private extension AlbumDetailsPresenter {
             return
         }
         router.showOpenConfirmation(url: url)
+    }
+    
+    func removeAlbum() {
+        guard let id = albumId else {
+            return
+        }
+        interactor.removeAlbum(with: id)
+    }
+    
+    func saveAlbum() {
+        guard let artist = configuration.artist,
+            let albumInfo = albumExtendedInfo else {
+                router.showBasicFailureAlert()
+                return
+        }
+        interactor.saveAlbum(album: albumInfo, artist: artist)
     }
 }

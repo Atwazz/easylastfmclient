@@ -39,16 +39,27 @@ final class AlbumDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tagsFlowLayout.setup { [weak self] indexPath in
-            self?.output.selectedTag(at: indexPath)
-        }
-        albumSummaryTextView.textContainerInset = .zero
+        setupSubviews()
         output.viewIsReady()
     }
 }
 
 // MARK: - AlbumDetailsViewInput
 extension AlbumDetailsViewController: AlbumDetailsViewInput {
+    func update(albumSaved: Bool) {
+        guard let height = navigationController?.navigationBar.bounds.size.height else {
+            return
+        }
+        let width = height - 20
+        let image = UIImage(named: albumSaved ? "star_filled" : "star_border")
+        let item = UIBarButtonItem.with(image: image,
+                                        size: CGSize(width: width, height: width),
+                                        target: self,
+                                        action: #selector(toggleAlbumIsSaved),
+                                        for: .touchUpInside)
+        navigationItem.rightBarButtonItem = item
+    }
+    
     func showLoadingIndicator() {
         infoContainer.isHidden = true
         noDataContainer.isHidden = true
@@ -93,10 +104,33 @@ private extension AlbumDetailsViewController {
     @IBAction func albumImageTapped(_ sender: Any) {
         output.albumImageTapped()
     }
+    
+    @objc func closeButtonTapped() {
+        output.closeButtonTapped()
+    }
+    
+    @objc func toggleAlbumIsSaved() {
+        output.toggleAlbumIsSaved()
+    }
 }
 
 // MARK: - Private
 private extension AlbumDetailsViewController {
+    func setupSubviews() {
+        tagsFlowLayout.setup { [weak self] indexPath in
+            self?.output.selectedTag(at: indexPath)
+        }
+        albumSummaryTextView.textContainerInset = .zero
+        setupNavBar()
+    }
+    
+    func setupNavBar() {
+        let closeItem = UIBarButtonItem(barButtonSystemItem: .close,
+                                        target: self,
+                                        action: #selector(closeButtonTapped))
+        navigationItem.leftBarButtonItem = closeItem
+    }
+    
     func showInfoContainer() {
         noDataContainer.isHidden = true
         loadingContainer.isHidden = true
