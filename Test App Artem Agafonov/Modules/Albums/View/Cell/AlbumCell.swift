@@ -14,7 +14,6 @@ final class AlbumCell: UITableViewCell {
     @IBOutlet private weak var albumImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private var starImageViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet private var albumAndStarImageViewsSpaceConstraint: NSLayoutConstraint!
     
 }
 
@@ -30,13 +29,7 @@ extension AlbumCell {
 // MARK: - Private
 private extension AlbumCell {
     func setStarImageView(hidden: Bool) {
-        let constraints: [NSLayoutConstraint] = [starImageViewWidthConstraint,
-                                                 albumAndStarImageViewsSpaceConstraint]
-        if hidden {
-            NSLayoutConstraint.deactivate(constraints)
-        } else {
-            NSLayoutConstraint.activate(constraints)
-        }
         starImageView.isHidden = hidden
+        starImageViewWidthConstraint.isActive = !hidden
      }
 }
