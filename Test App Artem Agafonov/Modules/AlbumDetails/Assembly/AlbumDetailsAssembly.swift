@@ -43,7 +43,8 @@ private extension AlbumDetailsAssembly {
         container.register(AlbumDetailsViewInput.self) { (resolver, configuration: Configuration) in
             lastConfiguration = configuration
             let tagsFlowLayout = resolver.resolveSafe(LayoutDelegate.self, name: Self.tagsLayoutDelegate)
-            return View(tagsFlowLayout: tagsFlowLayout)
+            return View(tagsFlowLayout: tagsFlowLayout,
+                        dismissListener: configuration.dismissListener)
         }
         .initCompleted { resolver, object in
             guard let viewController = object as? View else {

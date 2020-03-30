@@ -11,6 +11,7 @@ struct AlbumDetailsConfiguration {
     let mbid: String?
     let artist: Artist?
     let id: PSObjectID?
+    let dismissListener: DismissListener?
 }
 
 // MARK: - Validatable

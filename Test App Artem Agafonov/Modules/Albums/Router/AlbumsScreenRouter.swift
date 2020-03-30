@@ -41,10 +41,22 @@ extension AlbumsScreenRouter: AlbumsScreenRouterInput {
         let configuration = AlbumDetailsConfiguration(name: album.name,
                                                       mbid: album.mbid,
                                                       artist: artist,
-                                                      id: album.id)
+                                                      id: album.id,
+                                                      dismissListener: self)
         let viewController = albumDetailsFactory.viewController(configuration: configuration)
         viewDispatcher.presentModal(viewController,
                                     wrappedInNavigationController: true,
                                     completion: nil)
+    }
+}
+
+// MARK: - DismissListener
+extension AlbumsScreenRouter: DismissListener {
+    func dismissable(didDismiss dismissable: Dismissable) {
+        output?.dismissedAlbumInfo()
+    }
+    
+    func dismissable(willBeDismissed dismissable: Dismissable) {
+        
     }
 }

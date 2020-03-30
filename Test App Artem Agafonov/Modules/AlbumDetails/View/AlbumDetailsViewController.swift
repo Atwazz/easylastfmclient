@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class AlbumDetailsViewController: UIViewController {
+final class AlbumDetailsViewController: UIViewController, Dismissable {
     // MARK: - Public instance properties
     @DelayedImmutable var output: AlbumDetailsViewOutput
+    weak var dismissListener: DismissListener?
     
     // MARK: - Private instance properties
     @IBOutlet private weak var loadingContainer: UIView!
@@ -28,8 +29,10 @@ final class AlbumDetailsViewController: UIViewController {
     private let tagsFlowLayout: CollectionViewDelegateFlowLayout
     
     // MARK: - Init
-    init(tagsFlowLayout: CollectionViewDelegateFlowLayout) {
+    init(tagsFlowLayout: CollectionViewDelegateFlowLayout,
+         dismissListener: DismissListener?) {
         self.tagsFlowLayout = tagsFlowLayout
+        self.dismissListener = dismissListener
         super.init(nibName: Self.name, bundle: nil)
     }
     
@@ -41,6 +44,16 @@ final class AlbumDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         output.viewIsReady()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dismissListener?.dismissable(willBeDismissed: self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        dismissListener?.dismissable(didDismiss: self)
     }
 }
 

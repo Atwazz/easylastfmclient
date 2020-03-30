@@ -116,6 +116,8 @@
 		8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */; };
 		8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */; };
 		8B9B7D7D243228FA008DC6F6 /* UITableView+DeselectAllRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B7D7C243228FA008DC6F6 /* UITableView+DeselectAllRows.swift */; };
+		8B9B7D7F243231A6008DC6F6 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B7D7E243231A6008DC6F6 /* Dismissable.swift */; };
+		8B9B7D812432323D008DC6F6 /* DismissListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B7D802432323D008DC6F6 /* DismissListener.swift */; };
 		8B9BB7A424234786001E08AF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A324234786001E08AF /* Time.swift */; };
 		8B9BB7A62423DAF3001E08AF /* PersistentContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */; };
 		8B9BB7AC2423DC43001E08AF /* PersistentContainerProviderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */; };
@@ -367,6 +369,8 @@
 		8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactory.swift; sourceTree = "<group>"; };
 		8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactoryBase.swift; sourceTree = "<group>"; };
 		8B9B7D7C243228FA008DC6F6 /* UITableView+DeselectAllRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DeselectAllRows.swift"; sourceTree = "<group>"; };
+		8B9B7D7E243231A6008DC6F6 /* Dismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
+		8B9B7D802432323D008DC6F6 /* DismissListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissListener.swift; sourceTree = "<group>"; };
 		8B9BB7A324234786001E08AF /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		8B9BB7A52423DAF3001E08AF /* PersistentContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProvider.swift; sourceTree = "<group>"; };
 		8B9BB7AB2423DC43001E08AF /* PersistentContainerProviderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerProviderBase.swift; sourceTree = "<group>"; };
@@ -923,6 +927,7 @@
 			isa = PBXGroup;
 			children = (
 				8B73125C241D30DA001922F4 /* Assembly */,
+				8B9B7D8224323759008DC6F6 /* Dismissable */,
 				8B73127E241D3BCA001922F4 /* EntryPoint */,
 				8B73124F241D1622001922F4 /* ViewDispatcher */,
 			);
@@ -1164,9 +1169,9 @@
 		8B7312CE241D4C2C001922F4 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				8B7312CF241D4C2C001922F4 /* AlbumsScreenRouterOutput.swift */,
-				8B7312D0241D4C2C001922F4 /* AlbumsScreenRouterInput.swift */,
 				8B7312D1241D4C2C001922F4 /* AlbumsScreenRouter.swift */,
+				8B7312D0241D4C2C001922F4 /* AlbumsScreenRouterInput.swift */,
+				8B7312CF241D4C2C001922F4 /* AlbumsScreenRouterOutput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1261,6 +1266,15 @@
 				8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		8B9B7D8224323759008DC6F6 /* Dismissable */ = {
+			isa = PBXGroup;
+			children = (
+				8B9B7D7E243231A6008DC6F6 /* Dismissable.swift */,
+				8B9B7D802432323D008DC6F6 /* DismissListener.swift */,
+			);
+			path = Dismissable;
 			sourceTree = "<group>";
 		};
 		8B9BB7AA2423DC0A001E08AF /* ContainerProvider */ = {
@@ -2030,6 +2044,7 @@
 				8B7312BF241D4C26001922F4 /* AlbumDetailsRouterInput.swift in Sources */,
 				8BB78DC1242F72B400CB882C /* AlbumDetailsViewModel.swift in Sources */,
 				8B9BB7AC2423DC43001E08AF /* PersistentContainerProviderBase.swift in Sources */,
+				8B9B7D812432323D008DC6F6 /* DismissListener.swift in Sources */,
 				8B7312A1241D461E001922F4 /* ArtistsSearchViewController.swift in Sources */,
 				8B7312E5241D4C2D001922F4 /* AlbumsScreenInteractorInput.swift in Sources */,
 				8B9CDD8C24261F17008CE48F /* AlbumsSaverBase.swift in Sources */,
@@ -2207,6 +2222,7 @@
 				8B9CDD6124260665008CE48F /* TrackEntity+CoreDataClass.swift in Sources */,
 				8BB78DFC242FA18500CB882C /* UICollectionView+AutomaticFlowSize.swift in Sources */,
 				8B731280241D3C73001922F4 /* EntryPointFactory.swift in Sources */,
+				8B9B7D7F243231A6008DC6F6 /* Dismissable.swift in Sources */,
 				8BA702EC241FB1EE0073E7A4 /* RequestValidationError.swift in Sources */,
 				8BB78DF2242F8BEA00CB882C /* TagsView.swift in Sources */,
 				8B9CDD6C24260665008CE48F /* ImageModelEntity+CoreDataProperties.swift in Sources */,

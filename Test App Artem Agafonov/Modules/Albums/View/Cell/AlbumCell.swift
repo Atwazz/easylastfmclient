@@ -14,7 +14,6 @@ final class AlbumCell: UITableViewCell {
     @IBOutlet private weak var albumImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private var starImageViewWidthConstraint: NSLayoutConstraint!
-    
 }
 
 // MARK: - Public

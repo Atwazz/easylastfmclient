@@ -7,5 +7,5 @@
 //
 
 protocol AlbumsScreenRouterOutput: class {
-    // TODO: - Cleanup
+    func dismissedAlbumInfo()
 }

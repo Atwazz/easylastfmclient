@@ -16,4 +16,3 @@ extension UITableView {
         selectedIndexPaths.forEach { deselectRow(at: $0, animated: animated) }
     }
 }
-

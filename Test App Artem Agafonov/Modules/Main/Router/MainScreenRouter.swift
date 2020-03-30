@@ -33,7 +33,8 @@ extension MainScreenRouter: MainScreenRouterInput {
         let configuration = AlbumDetailsConfiguration(name: nil,
                                                       mbid: nil,
                                                       artist: nil,
-                                                      id: id)
+                                                      id: id,
+                                                      dismissListener: nil)
         let viewController = albumDetailsScreenFactory.viewController(configuration: configuration)
         viewDispatcher.presentModal(viewController, wrappedInNavigationController: true)
     }
