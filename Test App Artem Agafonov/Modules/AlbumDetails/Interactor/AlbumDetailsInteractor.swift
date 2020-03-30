@@ -78,7 +78,8 @@ extension AlbumDetailsInteractor: AlbumDetailsInteractorInput {
             self?.output?.loaded(albumExtendedInfo: info, artist: artist)
         }
         
-        if let mbid = mbid {
+        if let mbid = mbid,
+            mbid.count > 0 {
             albumInfoLoadService.loadAlbumInfo(mbid: mbid, completion: completion)
         } else {
             albumInfoLoadService.loadAlbumInfo(artist: artist.name,

@@ -27,7 +27,7 @@ extension AlbumDetailsViewModelFactoryBase: AlbumDetailsViewModelFactory {
     func viewModel(entity: AlbumEntity) -> ViewModel {
         guard let name = entity.name,
             let artistEntity = entity.artist,
-            let trackEntities = entity.tracks?.array(of: TrackEntity.self) else {
+            let trackEntities = entity.tracksArray else {
                 fatalError("AlbumEntity has invalid state!")
         }
         let tracks = trackEntities
@@ -35,7 +35,7 @@ extension AlbumDetailsViewModelFactoryBase: AlbumDetailsViewModelFactory {
             .map { trackViewModelFactory.vieModel(entity: $0) }
             .filter { $0.name.count > 0 }
         
-        let tags = entity.tags?.array(of: TagEntity.self)?
+        let tags = entity.tagsArray?
             .map { tagViewModelFactory.viewModel(entity: $0) }
             .filter { $0.name.count > 0 }
             .sorted { $0.name < $1.name }

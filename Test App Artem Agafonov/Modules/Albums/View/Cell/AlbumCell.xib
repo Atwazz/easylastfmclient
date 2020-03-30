@@ -66,6 +66,7 @@
             <connections>
                 <outlet property="albumAndStarImageViewsSpaceConstraint" destination="nSS-oT-aNv" id="FYD-aM-VzV"/>
                 <outlet property="albumImageView" destination="PXh-iG-1Ok" id="fXR-5l-1C6"/>
+                <outlet property="nameLabel" destination="qnm-0d-EVn" id="L9o-9T-cEp"/>
                 <outlet property="starImageView" destination="Qio-zq-X8h" id="eDW-W8-6Li"/>
                 <outlet property="starImageViewWidthConstraint" destination="JS9-Gb-ihF" id="zjE-hc-9Hv"/>
             </connections>

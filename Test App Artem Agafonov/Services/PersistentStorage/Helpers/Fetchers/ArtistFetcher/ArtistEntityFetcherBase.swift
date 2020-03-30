@@ -6,12 +6,14 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-final class ArtistEntityFetcherBase { }
+struct ArtistEntityFetcherBase { }
 
 // MARK: - ArtistEntityFetcher
 extension ArtistEntityFetcherBase: ArtistEntityFetcher {
     func fetchArtist(representing model: Artist) -> ArtistEntity? {
-        let request = ArtistEntity.fetchRequest(mbid: model.mbid, name: model.name)
+        let request = ArtistEntity.fetchRequest(mbid: model.mbid,
+                                                name: model.name,
+                                                url: model.url)
         do {
             return try request.execute().first
         } catch {

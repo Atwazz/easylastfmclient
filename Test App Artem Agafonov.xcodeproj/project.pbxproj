@@ -22,6 +22,8 @@
 		8B419E5124310A2600EE0850 /* ArtistCellModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B419E5024310A2600EE0850 /* ArtistCellModelFactoryBase.swift */; };
 		8B419E5424310B2600EE0850 /* UITableView+DequeueCellOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B419E5324310B2600EE0850 /* UITableView+DequeueCellOfType.swift */; };
 		8B4AAAB2242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AAAB1242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift */; };
+		8B69AEF82431EE3200B53788 /* AlbumEntityFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEF72431EE3200B53788 /* AlbumEntityFetcher.swift */; };
+		8B69AEFA2431EE7100B53788 /* AlbumEntityFetcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */; };
 		8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C3241CE992001922F4 /* DelayedMutable.swift */; };
 		8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */; };
 		8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */; };
@@ -265,6 +267,8 @@
 		8B419E5024310A2600EE0850 /* ArtistCellModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCellModelFactoryBase.swift; sourceTree = "<group>"; };
 		8B419E5324310B2600EE0850 /* UITableView+DequeueCellOfType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DequeueCellOfType.swift"; sourceTree = "<group>"; };
 		8B4AAAB1242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
+		8B69AEF72431EE3200B53788 /* AlbumEntityFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntityFetcher.swift; sourceTree = "<group>"; };
+		8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntityFetcherBase.swift; sourceTree = "<group>"; };
 		8B7311C3241CE992001922F4 /* DelayedMutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedMutable.swift; sourceTree = "<group>"; };
 		8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedImmutable.swift; sourceTree = "<group>"; };
 		8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+SynchronizedResolver.swift"; sourceTree = "<group>"; };
@@ -603,6 +607,15 @@
 				8B4AAAB1242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		8B69AEF62431EDC600B53788 /* AlbumFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				8B69AEF72431EE3200B53788 /* AlbumEntityFetcher.swift */,
+				8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */,
+			);
+			path = AlbumFetcher;
 			sourceTree = "<group>";
 		};
 		8B7311B5241CE6C1001922F4 /* Services */ = {
@@ -1333,6 +1346,7 @@
 		8B9CDD8E24261F8B008CE48F /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
+				8B69AEF62431EDC600B53788 /* AlbumFetcher */,
 				8B9CDD8F24261FB2008CE48F /* ArtistFetcher */,
 			);
 			path = Fetchers;
@@ -2021,6 +2035,7 @@
 				8BBDEDDC241E8AD4004CBD27 /* NetworkQueueProvider.swift in Sources */,
 				8BB3B9A62426692D00EBB5CC /* PersistentStorageHelpersAssembly.swift in Sources */,
 				8B7E2325242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift in Sources */,
+				8B69AEFA2431EE7100B53788 /* AlbumEntityFetcherBase.swift in Sources */,
 				8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */,
 				8B9CDD9124261FCF008CE48F /* ArtistEntityFetcher.swift in Sources */,
 				8BF66B41243157C500BB9296 /* AlbumCellModelFactory.swift in Sources */,
@@ -2098,6 +2113,7 @@
 				8BB3B98F24264BA400EBB5CC /* AlbumEntityFactoryBase.swift in Sources */,
 				8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */,
 				8BA702E9241FB14D0073E7A4 /* Validatable.swift in Sources */,
+				8B69AEF82431EE3200B53788 /* AlbumEntityFetcher.swift in Sources */,
 				8BB3B99D2426623700EBB5CC /* KeyedDecodingContainer+DecodeSafe.swift in Sources */,
 				8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */,
 				8B7E2323242BD95600316602 /* PSObjectID+AsObjectID.swift in Sources */,

@@ -53,10 +53,8 @@ private extension AlbumsScreenAssembly {
         container.register(AlbumsScreenInteractorInput.self) { (resolver, configuration: Configuration) in
             lastConfiguration = configuration
             let albumsLoadService = resolver.resolveSafe(ArtistAlbumsLoadService.self)
-            let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
             let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
             return Interactor(albumsLoadService: albumsLoadService,
-                              artistFetcher: artistFetcher,
                               backgroundTaskInvoker: backgroundTaskInvoker)
         }
         .initCompleted { resolver, object in
@@ -121,7 +119,9 @@ private extension AlbumsScreenAssembly {
     func registerAlbumCellModelFactory(in container: Container) {
         container.register(AlbumCellModelFactory.self) { resolver in
             let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
-            return AlbumCellModelFactoryBase(artistFetcher: artistFetcher)
+            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
+            return AlbumCellModelFactoryBase(artistFetcher: artistFetcher,
+                                             viewContextProvider: viewContextProvider)
         }
     }
     

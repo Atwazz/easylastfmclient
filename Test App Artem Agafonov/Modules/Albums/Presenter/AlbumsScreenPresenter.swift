@@ -28,6 +28,7 @@ final class AlbumsScreenPresenter {
          dataSource: AlbumsScreenDataSource) {
         self.configuration = configuration
         self.dataSource = dataSource
+        dataSource.setup(for: artist)
     }
 }
 
@@ -58,18 +59,22 @@ extension AlbumsScreenPresenter: AlbumsScreenViewOutput {
 // MARK: - AlbumsScreenInteractorOutput
 extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
     func loadFailed() {
-        view.showNoDataPlaceholder()
-        dataSource.clearResults()
-        view.reloadData()
-        router.showBasicFailureAlert()
+        DispatchQueue.main.async {
+            self.view.showNoDataPlaceholder()
+            self.dataSource.clearResults()
+            self.view.reloadData()
+            self.router.showBasicFailureAlert()
+        }
     }
     
     func loadFinished(paginationInfo: PaginationInfo, albums: [Album]) {
-        view.hideLoadingIndicator()
-        view.hideFooterLoadingIndicator()
-        dataSource.appendResults(albums)
-        self.paginationInfo = paginationInfo
-        view.showResults()
+        DispatchQueue.main.async {
+            self.view.hideLoadingIndicator()
+            self.view.hideFooterLoadingIndicator()
+            self.dataSource.appendResults(albums)
+            self.paginationInfo = paginationInfo
+            self.view.showResults()
+        }
     }
 }
 
@@ -78,7 +83,7 @@ extension AlbumsScreenPresenter: AlbumsScreenRouterOutput {
     // TODO: - Cleanup
 }
 
-// MARK; - Private
+// MARK: - Private
 private extension AlbumsScreenPresenter {
     var artist: Artist {
         configuration.artist

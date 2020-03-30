@@ -27,57 +27,59 @@ extension ArtistEntity {
     }
     
     func album(for model: AlbumExtendedInfo) -> AlbumEntity? {
-        album(with: model.name, mbid: model.mbid)
+        album(with: model.name, mbid: model.mbid, url: model.url)
     }
     
     func album(for model: Album) -> AlbumEntity? {
-        album(with: model.name, mbid: model.mbid)
+        album(with: model.name, mbid: model.mbid, url: model.url)
     }
 }
 
 // MARK: - Private
 private extension ArtistEntity {
-    func album(with name: String, mbid: String?) -> AlbumEntity? {
+    func album(with name: String, mbid: String?, url: URL?) -> AlbumEntity? {
         guard let albums = albums?.set(of: AlbumEntity.self) else {
             return nil
         }
-        return albums.filter { $0.name == name && $0.mbid == mbid }.first
+        return albums
+            .filter { $0.name == name && $0.mbid == mbid && $0.url == url}
+            .first
     }
 }
 
 // MARK: - FetchRequests
 extension ArtistEntity {
-    static func fetchRequest(mbid: String?, name: String) -> NSFetchRequest<ArtistEntity> {
+    static func fetchRequest(mbid: String?, name: String, url: URL?) -> NSFetchRequest<ArtistEntity> {
         let request: NSFetchRequest<ArtistEntity> = ArtistEntity.fetchRequest()
         request.fetchLimit = 1
-        request.predicate = predicate(mbid: mbid, name: name)
-        request.sortDescriptors = [defaultSortDescriptor]
+        request.predicate = predicate(mbid: mbid, name: name, url: url)
         return request
-    }
-}
-
-// MARK: - SortDescriptors
-private extension ArtistEntity {
-    static var defaultSortDescriptor: NSSortDescriptor {
-        NSSortDescriptor(key: #keyPath(ArtistEntity.name), ascending: false)
     }
 }
 
 // MARK: - Predicates
 private extension ArtistEntity {
-    static func predicate(mbid: String?, name: String) -> NSPredicate {
+    static func predicate(mbid: String?, name: String, url: URL?) -> NSPredicate {
         NSCompoundPredicate(andPredicateWithSubpredicates: [predicate(mbid: mbid),
-                                                            predicate(name: name)])
+                                                            predicate(name: name),
+                                                            predicate(url: url)])
     }
     
     static func predicate(mbid: String?) -> NSPredicate {
         guard let mbid = mbid else {
             return NSPredicate(format: "\(#keyPath(ArtistEntity.mbid)) = nil")
         }
-        return NSPredicate(format: "\(#keyPath(ArtistEntity.mbid)) = %@", mbid)
+        return NSPredicate(format: "\(#keyPath(ArtistEntity.mbid)) == %@", mbid)
     }
     
     static func predicate(name: String) -> NSPredicate {
         NSPredicate(format: "\(#keyPath(ArtistEntity.name)) == %@", name)
+    }
+    
+    static func predicate(url: URL?) -> NSPredicate {
+        guard let url = url else {
+            return NSPredicate(format: "\(#keyPath(ArtistEntity.url)) = nil")
+        }
+        return NSPredicate(format: "\(#keyPath(ArtistEntity.url)) == %@", url as NSURL)
     }
 }

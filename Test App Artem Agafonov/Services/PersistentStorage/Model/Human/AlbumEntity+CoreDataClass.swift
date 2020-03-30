@@ -22,6 +22,16 @@ extension AlbumEntity {
         request.sortDescriptors = [defaultSortDescriptor]
         return request
     }
+    
+    static func fetchRequest(mbid: String?, name: String, url: URL?, artistId: PSObjectID) -> NSFetchRequest<AlbumEntity> {
+        let request: NSFetchRequest<AlbumEntity> = AlbumEntity.fetchRequest()
+        request.fetchLimit = 1
+        request.predicate = predicate(mbid: mbid,
+                                      name: name,
+                                      url: url,
+                                      artistId: artistId)
+        return request
+    }
 }
 
 // MARK: - SortDescriptors
@@ -34,16 +44,42 @@ private extension AlbumEntity {
 // MARK: - Convenience
 extension AlbumEntity {
     var tagsArray: [TagEntity]? {
-        guard let set = tags?.set(of: TagEntity.self) else {
-            return nil
-        }
-        return Array(set)
+        tags?.array(of: TagEntity.self)
+    }
+
+    var tracksArray: [TrackEntity]? {
+        tracks?.array(of: TrackEntity.self)
+    }
+}
+
+// MARK: - Predicates
+private extension AlbumEntity {
+    static func predicate(mbid: String?, name: String, url: URL?, artistId: PSObjectID) -> NSPredicate {
+        NSCompoundPredicate(andPredicateWithSubpredicates: [predicate(mbid: mbid),
+                                                            predicate(name: name),
+                                                            predicate(url: url),
+                                                            predicate(artistId: artistId)])
     }
     
-    var tracksArray: [TrackEntity]? {
-        guard let set = tracks?.set(of: TrackEntity.self) else {
-            return nil
+    static func predicate(mbid: String?) -> NSPredicate {
+        guard let mbid = mbid else {
+            return NSPredicate(format: "\(#keyPath(AlbumEntity.mbid)) = nil")
         }
-        return Array(set)
+        return NSPredicate(format: "\(#keyPath(AlbumEntity.mbid)) == %@", mbid)
+    }
+    
+    static func predicate(name: String) -> NSPredicate {
+        NSPredicate(format: "\(#keyPath(AlbumEntity.name)) == %@", name)
+    }
+    
+    static func predicate(url: URL?) -> NSPredicate {
+        guard let url = url else {
+            return NSPredicate(format: "\(#keyPath(AlbumEntity.url)) = nil")
+        }
+        return NSPredicate(format: "\(#keyPath(AlbumEntity.url)) == %@", url as NSURL)
+    }
+    
+    static func predicate(artistId: PSObjectID) -> NSPredicate {
+        NSPredicate(format: "\(#keyPath(AlbumEntity.artist)).objectID = %@", artistId.asObjectId)
     }
 }

@@ -20,6 +20,7 @@ extension PersistentStorageHelpersAssembly: Assembly {
         registerAlbumsSaver(in: container)
         registerAlbumFactory(in: container)
         registerArtistFetcher(in: container)
+        registerAlbumEntityFetcher(in: container)
     }
 }
 
@@ -54,6 +55,12 @@ private extension PersistentStorageHelpersAssembly {
     func registerArtistFetcher(in container: Container) {
         container.register(ArtistEntityFetcher.self) { _ in
             ArtistEntityFetcherBase()
+        }
+    }
+    
+    func registerAlbumEntityFetcher(in container: Container) {
+        container.register(AlbumEntityFetcher.self) { _ in
+            AlbumEntityFetcherBase()
         }
     }
 }

@@ -6,13 +6,18 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
+import CoreData.NSManagedObjectContext
+
 struct AlbumCellModelFactoryBase {
     // MARK: - Private instance properties
     private let artistFetcher: ArtistEntityFetcher
+    private let viewContextProvider: PSViewContextProvider
     
     // MARK: - Init
-    init(artistFetcher: ArtistEntityFetcher) {
+    init(artistFetcher: ArtistEntityFetcher,
+         viewContextProvider: PSViewContextProvider) {
         self.artistFetcher = artistFetcher
+        self.viewContextProvider = viewContextProvider
     }
 }
 
@@ -25,12 +30,16 @@ extension AlbumCellModelFactoryBase: AlbumCellModelFactory {
     }
 }
 
-// MARK - Private
+// MARK: - Private
 private extension AlbumCellModelFactoryBase {
     func isSaved(album: Album, for artist: Artist) -> Bool {
-        guard let artistEntity = artistFetcher.fetchArtist(representing: artist) else {
-            return false
+        var result = false
+        viewContextProvider.viewContext.performAndWait {
+            guard let artistEntity = self.artistFetcher.fetchArtist(representing: artist) else {
+                return
+            }
+            result = artistEntity.album(for: album) != nil
         }
-        return artistEntity.album(for: album) != nil
+        return result
     }
 }

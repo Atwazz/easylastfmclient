@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumsScreenViewController" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicatorContainer" destination="L3h-Xj-HOj" id="tx3-cb-nOg"/>
+                <outlet property="noDataContainerView" destination="sTJ-Ce-3P9" id="Y9y-Qj-EjZ"/>
+                <outlet property="tableView" destination="CkZ-Od-5s7" id="x37-bd-JGH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="mWu-BQ-UGW"/>
             </connections>
         </placeholder>
@@ -17,15 +20,70 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Some text goes here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akO-RE-smT">
-                    <rect key="frame" x="126" y="438" width="163" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXJ-hl-Iq7" userLabel="TableViewContainer">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CkZ-Od-5s7">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="I8F-Nw-n1R"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="CkZ-Od-5s7" firstAttribute="top" secondItem="LXJ-hl-Iq7" secondAttribute="top" id="4Vp-oI-hhs"/>
+                        <constraint firstAttribute="trailing" secondItem="CkZ-Od-5s7" secondAttribute="trailing" id="MOH-8S-hOt"/>
+                        <constraint firstItem="CkZ-Od-5s7" firstAttribute="leading" secondItem="LXJ-hl-Iq7" secondAttribute="leading" id="Pvz-Yq-aoG"/>
+                        <constraint firstAttribute="bottom" secondItem="CkZ-Od-5s7" secondAttribute="bottom" id="aM3-RF-009"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3h-Xj-HOj" userLabel="LoadingIndicatorContainer">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tC7-hM-np2">
+                            <rect key="frame" x="188.5" y="407.5" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="tC7-hM-np2" firstAttribute="centerX" secondItem="L3h-Xj-HOj" secondAttribute="centerX" id="GIF-fZ-tyV"/>
+                        <constraint firstItem="tC7-hM-np2" firstAttribute="centerY" secondItem="L3h-Xj-HOj" secondAttribute="centerY" id="wI4-tk-eZA"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTJ-Ce-3P9" userLabel="NoDataContainer">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No search results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O81-K2-Yrl">
+                            <rect key="frame" x="124.5" y="412.5" width="165" height="27"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="O81-K2-Yrl" firstAttribute="centerX" secondItem="sTJ-Ce-3P9" secondAttribute="centerX" id="5f8-jl-A1z"/>
+                        <constraint firstItem="O81-K2-Yrl" firstAttribute="centerY" secondItem="sTJ-Ce-3P9" secondAttribute="centerY" id="Hjh-G4-3Fr"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LXJ-hl-Iq7" secondAttribute="bottom" id="4S0-u1-cR2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LXJ-hl-Iq7" secondAttribute="trailing" id="9Dc-z3-hgQ"/>
+                <constraint firstItem="sTJ-Ce-3P9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ANE-gS-KCQ"/>
+                <constraint firstItem="L3h-Xj-HOj" firstAttribute="leading" secondItem="sTJ-Ce-3P9" secondAttribute="leading" id="Asy-58-VMm"/>
+                <constraint firstItem="LXJ-hl-Iq7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Fh0-JT-218"/>
+                <constraint firstItem="L3h-Xj-HOj" firstAttribute="bottom" secondItem="sTJ-Ce-3P9" secondAttribute="bottom" id="QHI-GN-xhl"/>
+                <constraint firstAttribute="bottom" secondItem="sTJ-Ce-3P9" secondAttribute="bottom" id="T2A-pn-Zbc"/>
+                <constraint firstItem="L3h-Xj-HOj" firstAttribute="top" secondItem="sTJ-Ce-3P9" secondAttribute="top" id="TFW-Vs-Pfs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sTJ-Ce-3P9" secondAttribute="trailing" id="TLN-Pi-lFH"/>
+                <constraint firstItem="LXJ-hl-Iq7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WiY-zc-MGw"/>
+                <constraint firstItem="L3h-Xj-HOj" firstAttribute="trailing" secondItem="sTJ-Ce-3P9" secondAttribute="trailing" id="WoG-gC-u5m"/>
+                <constraint firstItem="sTJ-Ce-3P9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mKY-an-RVO"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="132" y="154"/>
         </view>

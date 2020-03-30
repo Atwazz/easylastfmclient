@@ -12,15 +12,12 @@ final class AlbumsScreenInteractor {
     
     // MARK: - Private instanc properties
     private let albumsLoadService: ArtistAlbumsLoadService
-    private let artistFetcher: ArtistEntityFetcher
     private let backgroundTaskInvoker: PSBackgroundTaskInvoker
     
     // MARK: - Init
     init(albumsLoadService: ArtistAlbumsLoadService,
-         artistFetcher: ArtistEntityFetcher,
          backgroundTaskInvoker: PSBackgroundTaskInvoker) {
         self.albumsLoadService = albumsLoadService
-        self.artistFetcher = artistFetcher
         self.backgroundTaskInvoker = backgroundTaskInvoker
     }
 }
@@ -36,7 +33,8 @@ extension AlbumsScreenInteractor: AlbumsScreenInteractorInput {
             self?.output?.loadFinished(paginationInfo: results.paginationInfo,
                                        albums: results.albums)
         }
-        if let mbid = artist.mbid {
+        if let mbid = artist.mbid,
+            mbid.count > 0 {
             albumsLoadService.loadAlbums(artistMbid: mbid,
                                          page: page,
                                          pageSize: pageSize,
