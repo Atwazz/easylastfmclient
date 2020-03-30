@@ -9,6 +9,9 @@
 import UIKit
 
 final class AlbumDetailsViewController: UIViewController, Dismissable {
+    // MARK: - Private static properties
+    private static let rightBarButtonItemSize = CGSize(width: 30, height: 30)
+    
     // MARK: - Public instance properties
     @DelayedImmutable var output: AlbumDetailsViewOutput
     weak var dismissListener: DismissListener?
@@ -64,13 +67,9 @@ extension AlbumDetailsViewController: AlbumDetailsViewInput {
     }
     
     func update(albumSaved: Bool) {
-        guard let height = navigationController?.navigationBar.bounds.size.height else {
-            return
-        }
-        let width = height - 20
         let image = UIImage(named: albumSaved ? "star_filled" : "star_border")
         let item = UIBarButtonItem.with(image: image,
-                                        size: CGSize(width: width, height: width),
+                                        size: Self.rightBarButtonItemSize,
                                         target: self,
                                         action: #selector(toggleAlbumIsSaved),
                                         for: .touchUpInside)

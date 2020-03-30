@@ -6,7 +6,7 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-import Foundation
+import Foundation.NSObject
 
 @objc extension NSObject {
     final var className: String {

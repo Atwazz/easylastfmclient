@@ -7,7 +7,7 @@
 //
 //
 
-import Foundation
+import Foundation.NSURL
 import CoreData
 
 public class AlbumEntity: NSManagedObject { }

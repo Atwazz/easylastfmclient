@@ -6,7 +6,7 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-struct TagViewModelFactoryBase {}
+struct TagViewModelFactoryBase { }
 
 // MARK: - TagViewModelFactory
 extension TagViewModelFactoryBase: TagViewModelFactory {
