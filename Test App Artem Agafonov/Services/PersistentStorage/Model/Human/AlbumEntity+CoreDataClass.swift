@@ -23,13 +23,13 @@ extension AlbumEntity {
         return request
     }
     
-    static func fetchRequest(mbid: String?, name: String, url: URL?, artistId: PSObjectID) -> NSFetchRequest<AlbumEntity> {
+    static func fetchRequest(mbid: String?,
+                             name: String,
+                             url: URL?,
+                             artistId: PSObjectID) -> NSFetchRequest<AlbumEntity> {
         let request: NSFetchRequest<AlbumEntity> = AlbumEntity.fetchRequest()
         request.fetchLimit = 1
-        request.predicate = predicate(mbid: mbid,
-                                      name: name,
-                                      url: url,
-                                      artistId: artistId)
+        request.predicate = predicate(mbid: mbid, name: name, url: url, artistId: artistId)
         return request
     }
 }
@@ -80,6 +80,6 @@ private extension AlbumEntity {
     }
     
     static func predicate(artistId: PSObjectID) -> NSPredicate {
-        NSPredicate(format: "\(#keyPath(AlbumEntity.artist)).objectID = %@", artistId.asObjectId)
+        NSPredicate(format: "\(#keyPath(AlbumEntity.artist)) = %@", artistId.asObjectId)
     }
 }

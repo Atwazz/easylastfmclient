@@ -32,7 +32,6 @@ final class ArtistsSearchViewController: UIViewController {
         title = "Artists"
         setupSearchController()
         setupTableView()
-        setupFooterSpinner()
         output.viewIsReady()
     }
     
@@ -64,11 +63,11 @@ extension ArtistsSearchViewController: ArtistsSearchViewInput {
     }
     
     func showFooterLoadingIndicator() {
-        tableView.tableFooterView?.isHidden = false
+        tableView.showFooter()
     }
     
     func hideFooterLoadingIndicator() {
-        tableView.tableFooterView?.isHidden = true
+        tableView.hideFooter()
     }
     
     func showLoadingIndicator() {
@@ -121,19 +120,12 @@ private extension ArtistsSearchViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Artists"
         navigationItem.searchController = searchController
-        definesPresentationContext = true
     }
     
     func setupTableView() {
         tableView.registerCell(ArtistCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 66
-    }
-    
-    func setupFooterSpinner() {
-        let footerSpinner = UIActivityIndicatorView(style: .medium)
-        footerSpinner.startAnimating()
-        tableView.tableFooterView = footerSpinner
-        tableView.tableFooterView?.isHidden = true
+        tableView.setupFooterLoadingIndicator()
     }
 }

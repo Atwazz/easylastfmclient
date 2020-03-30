@@ -7,5 +7,5 @@
 //
 
 protocol AlbumCellModelFactory {
-    func viewModel(for album: Album, artist: Artist) -> AlbumCellModel
+    func viewModel(for album: Album, artistId: PSObjectID?) -> AlbumCellModel
 }

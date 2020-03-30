@@ -24,6 +24,8 @@
 		8B4AAAB2242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AAAB1242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift */; };
 		8B69AEF82431EE3200B53788 /* AlbumEntityFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEF72431EE3200B53788 /* AlbumEntityFetcher.swift */; };
 		8B69AEFA2431EE7100B53788 /* AlbumEntityFetcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */; };
+		8B69AEFC2432050400B53788 /* UITableView+FooterLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEFB2432050400B53788 /* UITableView+FooterLoadingIndicator.swift */; };
+		8B69AEFE243209EB00B53788 /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEFD243209EB00B53788 /* ThreadSafe.swift */; };
 		8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C3241CE992001922F4 /* DelayedMutable.swift */; };
 		8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */; };
 		8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */; };
@@ -269,6 +271,8 @@
 		8B4AAAB1242FB5EE008E317B /* TagsCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		8B69AEF72431EE3200B53788 /* AlbumEntityFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntityFetcher.swift; sourceTree = "<group>"; };
 		8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntityFetcherBase.swift; sourceTree = "<group>"; };
+		8B69AEFB2432050400B53788 /* UITableView+FooterLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FooterLoadingIndicator.swift"; sourceTree = "<group>"; };
+		8B69AEFD243209EB00B53788 /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
 		8B7311C3241CE992001922F4 /* DelayedMutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedMutable.swift; sourceTree = "<group>"; };
 		8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedImmutable.swift; sourceTree = "<group>"; };
 		8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+SynchronizedResolver.swift"; sourceTree = "<group>"; };
@@ -588,6 +592,7 @@
 			children = (
 				8B419E5324310B2600EE0850 /* UITableView+DequeueCellOfType.swift */,
 				8BB5A9DA2431091600267704 /* UITableView+RegisterCell.swift */,
+				8B69AEFB2432050400B53788 /* UITableView+FooterLoadingIndicator.swift */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -740,6 +745,7 @@
 			children = (
 				8B7311C3241CE992001922F4 /* DelayedMutable.swift */,
 				8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */,
+				8B69AEFD243209EB00B53788 /* ThreadSafe.swift */,
 			);
 			path = PropertyWrappers;
 			sourceTree = "<group>";
@@ -1978,6 +1984,7 @@
 				8B874032242E7E0D00140F11 /* AlbumDetailsConfiguration.swift in Sources */,
 				8BB78DCC242F74CF00CB882C /* TrackViewModelFactory.swift in Sources */,
 				8B9BB7C02423E48D001E08AF /* PSViewContextConfiguratorBase.swift in Sources */,
+				8B69AEFE243209EB00B53788 /* ThreadSafe.swift in Sources */,
 				8BB78DF0242F8A5100CB882C /* UIView+LoadFromNib.swift in Sources */,
 				8B7312E2241D4C2D001922F4 /* AlbumsScreenRouter.swift in Sources */,
 				8B731278241D3909001922F4 /* EntryPointRouter.swift in Sources */,
@@ -2022,6 +2029,7 @@
 				8BA702E0241F80410073E7A4 /* ArtistAlbumsLoadResponse.swift in Sources */,
 				8B7311EE241CFA4B001922F4 /* MainScreenViewInput.swift in Sources */,
 				8B7312A3241D461E001922F4 /* ArtistsSearchViewOutput.swift in Sources */,
+				8B69AEFC2432050400B53788 /* UITableView+FooterLoadingIndicator.swift in Sources */,
 				8BD2868B2426AF5D00A3815F /* NSObject+DefaulttNib.swift in Sources */,
 				8BA702FC241FCB480073E7A4 /* Wiki.swift in Sources */,
 				8BD9311D242521E400A9CE7D /* PersistentStorageState.swift in Sources */,

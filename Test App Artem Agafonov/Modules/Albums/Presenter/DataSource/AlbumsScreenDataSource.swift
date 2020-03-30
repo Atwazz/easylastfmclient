@@ -12,7 +12,7 @@ final class AlbumsScreenDataSource: NSObject {
     // MARK: - Private instance properties
     private let viewModelFactory: AlbumCellModelFactory
     private var results = [Album]()
-    @DelayedImmutable private var artist: Artist
+    @ThreadSafe private var artistId: PSObjectID?
     
     // MARK: - Init
     init(viewModelFactory: AlbumCellModelFactory) {
@@ -22,10 +22,6 @@ final class AlbumsScreenDataSource: NSObject {
 
 // MARK: - Public
 extension AlbumsScreenDataSource {
-    func setup(for artist: Artist) {
-        self.artist = artist
-    }
-    
     func clearResults() {
         results.removeAll()
     }
@@ -41,6 +37,10 @@ extension AlbumsScreenDataSource {
     func item(at indexPath: IndexPath) -> Album {
         results[indexPath.row]
     }
+    
+    func updateArtistId(_ newValue: PSObjectID?) {
+        artistId = newValue
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -52,7 +52,7 @@ extension AlbumsScreenDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(of: AlbumCell.self, indexPath: indexPath)
         cell.update(with: viewModelFactory.viewModel(for: item(at: indexPath),
-                                                     artist: artist))
+                                                     artistId: artistId))
         return cell
     }
 }

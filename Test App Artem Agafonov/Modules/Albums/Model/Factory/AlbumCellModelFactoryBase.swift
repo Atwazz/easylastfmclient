@@ -10,35 +10,36 @@ import CoreData.NSManagedObjectContext
 
 struct AlbumCellModelFactoryBase {
     // MARK: - Private instance properties
-    private let artistFetcher: ArtistEntityFetcher
+    private let albumFetcher: AlbumEntityFetcher
     private let viewContextProvider: PSViewContextProvider
     
     // MARK: - Init
-    init(artistFetcher: ArtistEntityFetcher,
+    init(albumFetcher: AlbumEntityFetcher,
          viewContextProvider: PSViewContextProvider) {
-        self.artistFetcher = artistFetcher
+        self.albumFetcher = albumFetcher
         self.viewContextProvider = viewContextProvider
     }
 }
 
 // MARK: - AlbumCellModelFactory
 extension AlbumCellModelFactoryBase: AlbumCellModelFactory {
-    func viewModel(for album: Album, artist: Artist) -> AlbumCellModel {
+    func viewModel(for album: Album, artistId: PSObjectID?) -> AlbumCellModel {
         AlbumCellModel(name: album.name,
                        imageUrl: album.images?.imageUrl(size: .medium),
-                       isSaved: isSaved(album: album, for: artist))
+                       isSaved: isSaved(album: album, for: artistId))
     }
 }
 
 // MARK: - Private
 private extension AlbumCellModelFactoryBase {
-    func isSaved(album: Album, for artist: Artist) -> Bool {
+    func isSaved(album: Album, for artistId: PSObjectID?) -> Bool {
+        guard let artistId = artistId else {
+            return false
+        }
+        
         var result = false
         viewContextProvider.viewContext.performAndWait {
-            guard let artistEntity = self.artistFetcher.fetchArtist(representing: artist) else {
-                return
-            }
-            result = artistEntity.album(for: album) != nil
+            result = self.albumFetcher.fetchAlbum(representing: album, artistId: artistId) != nil
         }
         return result
     }

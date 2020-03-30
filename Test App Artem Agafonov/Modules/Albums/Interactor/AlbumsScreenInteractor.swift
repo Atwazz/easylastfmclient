@@ -12,12 +12,15 @@ final class AlbumsScreenInteractor {
     
     // MARK: - Private instanc properties
     private let albumsLoadService: ArtistAlbumsLoadService
+    private let artistFetcher: ArtistEntityFetcher
     private let backgroundTaskInvoker: PSBackgroundTaskInvoker
     
     // MARK: - Init
     init(albumsLoadService: ArtistAlbumsLoadService,
+         artistFetcher: ArtistEntityFetcher,
          backgroundTaskInvoker: PSBackgroundTaskInvoker) {
         self.albumsLoadService = albumsLoadService
+        self.artistFetcher = artistFetcher
         self.backgroundTaskInvoker = backgroundTaskInvoker
     }
 }
@@ -44,6 +47,13 @@ extension AlbumsScreenInteractor: AlbumsScreenInteractorInput {
                                          page: page,
                                          pageSize: pageSize,
                                          completion: completion)
+        }
+    }
+    
+    func fetchArtistId(artist: Artist) {
+        backgroundTaskInvoker.performBackgroundTask { [weak self] _ in
+            let entity = self?.artistFetcher.fetchArtist(representing: artist)
+            self?.output?.fetchedArtistId(entity?.id)
         }
     }
 }

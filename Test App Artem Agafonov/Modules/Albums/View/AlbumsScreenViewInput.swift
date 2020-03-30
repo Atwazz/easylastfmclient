@@ -15,6 +15,6 @@ protocol AlbumsScreenViewInput {
     func showFooterLoadingIndicator()
     func hideFooterLoadingIndicator()
     func showNoDataPlaceholder()
-    func showResults()
+    func hideNoDataPlaceholder()
     func reloadData()
 }

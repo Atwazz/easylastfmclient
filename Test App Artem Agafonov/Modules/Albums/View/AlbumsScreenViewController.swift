@@ -29,7 +29,6 @@ final class AlbumsScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupFooterSpinner()
         output.viewIsReady()
     }
 }
@@ -52,20 +51,19 @@ extension AlbumsScreenViewController: AlbumsScreenViewInput {
     }
     
     func showFooterLoadingIndicator() {
-        tableView.tableFooterView?.isHidden = false
+        tableView.showFooter()
     }
     
     func hideFooterLoadingIndicator() {
-        tableView.tableFooterView?.isHidden = true
+        tableView.hideFooter()
     }
     
     func showNoDataPlaceholder() {
         noDataContainerView.isHidden = false
     }
     
-    func showResults() {
+    func hideNoDataPlaceholder() {
         noDataContainerView.isHidden = true
-        tableView.reloadData()
     }
     
     func reloadData() {
@@ -94,12 +92,6 @@ private extension AlbumsScreenViewController {
         tableView.registerCell(AlbumCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 66
-    }
-    
-    func setupFooterSpinner() {
-        let footerSpinner = UIActivityIndicatorView(style: .medium)
-        footerSpinner.startAnimating()
-        tableView.tableFooterView = footerSpinner
-        tableView.tableFooterView?.isHidden = true
+        tableView.setupFooterLoadingIndicator()
     }
 }

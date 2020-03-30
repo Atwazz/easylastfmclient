@@ -9,4 +9,5 @@
 protocol AlbumsScreenInteractorOutput: class {
     func loadFailed()
     func loadFinished(paginationInfo: PaginationInfo, albums: [Album])
+    func fetchedArtistId(_ id: PSObjectID?)
 }

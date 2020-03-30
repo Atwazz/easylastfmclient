@@ -21,14 +21,16 @@ final class AlbumsScreenPresenter {
     private let configuration: AlbumsScreenConfiguration
     private let dataSource: AlbumsScreenDataSource
     private var pageIndex: UInt = 1
-    private var paginationInfo: PaginationInfo?
+    @ThreadSafe private var paginationInfo: PaginationInfo?
+    @ThreadSafe private var artistId: PSObjectID?
+    @ThreadSafe(wrappedValue: false) private var artistIdLoaded: Bool?
+    @ThreadSafe(wrappedValue: false) private var firstPageLoaded: Bool?
     
     // MARK: - Init
     init(configuration: AlbumsScreenConfiguration,
          dataSource: AlbumsScreenDataSource) {
         self.configuration = configuration
         self.dataSource = dataSource
-        dataSource.setup(for: artist)
     }
 }
 
@@ -37,6 +39,7 @@ extension AlbumsScreenPresenter: AlbumsScreenViewOutput {
     func viewIsReady() {
         view.setup(with: dataSource, title: artist.name)
         view.showLoadingIndicator()
+        interactor.fetchArtistId(artist: artist)
         interactor.loadAlbums(artist: artist,
                               page: pageIndex,
                               pageSize: Self.pageSize)
@@ -58,6 +61,15 @@ extension AlbumsScreenPresenter: AlbumsScreenViewOutput {
 
 // MARK: - AlbumsScreenInteractorOutput
 extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
+    func fetchedArtistId(_ id: PSObjectID?) {
+        artistId = id
+        dataSource.updateArtistId(id)
+        artistIdLoaded = true
+        DispatchQueue.main.async {
+            self.hideLoadingIndicatorsIfNeeded()
+        }
+    }
+    
     func loadFailed() {
         DispatchQueue.main.async {
             self.view.showNoDataPlaceholder()
@@ -68,12 +80,14 @@ extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
     }
     
     func loadFinished(paginationInfo: PaginationInfo, albums: [Album]) {
+        self.paginationInfo = paginationInfo
+        if pageIndex == 1 {
+            firstPageLoaded = true
+        }
         DispatchQueue.main.async {
-            self.view.hideLoadingIndicator()
-            self.view.hideFooterLoadingIndicator()
             self.dataSource.appendResults(albums)
-            self.paginationInfo = paginationInfo
-            self.view.showResults()
+            self.view.hideNoDataPlaceholder()
+            self.hideLoadingIndicatorsIfNeeded()
         }
     }
 }
@@ -99,5 +113,16 @@ private extension AlbumsScreenPresenter {
         interactor.loadAlbums(artist: artist,
                               page: pageIndex,
                               pageSize: Self.pageSize)
+    }
+    
+    func hideLoadingIndicatorsIfNeeded() {
+        guard let firstPageLoaded = firstPageLoaded,
+            let artistIdLoaded = artistIdLoaded,
+            firstPageLoaded && artistIdLoaded else {
+                return
+        }
+        view.hideLoadingIndicator()
+        view.hideFooterLoadingIndicator()
+        view.reloadData()
     }
 }
