@@ -63,13 +63,13 @@ private extension AlbumDetailsAssembly {
         container.register(AlbumDetailsInteractorInput.self) { (resolver, configuration: Configuration) in
             lastConfiguration = configuration
             let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
-            let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
             let albumInfoLoadService = resolver.resolveSafe(AlbumInfoLoadService.self)
             let albumsSaver = resolver.resolveSafe(AlbumsSaver.self)
+            let albumRemover = resolver.resolveSafe(AlbumRemover.self)
             return Interactor(viewContextProvider: viewContextProvider,
-                              backgroundTaskInvoker: backgroundTaskInvoker,
                               albumInfoLoadService: albumInfoLoadService,
-                              albumsSaver: albumsSaver)
+                              albumsSaver: albumsSaver,
+                              albumRemover: albumRemover)
         }
         .initCompleted { resolver, object in
             guard let interactor = object as? Interactor else {

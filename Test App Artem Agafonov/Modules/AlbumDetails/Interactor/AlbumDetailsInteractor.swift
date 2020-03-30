@@ -6,8 +6,6 @@
 //  Copyright © 2020 Artem Agafonov. All rights reserved.
 //
 
-import Foundation
-
 final class AlbumDetailsInteractor {
     typealias LoadResult = AlbumInfoLoadService.AlbumInfoLoadResult
     
@@ -16,19 +14,19 @@ final class AlbumDetailsInteractor {
     
     // MARK: - Private insatnce properties
     private let viewContextProvider: PSViewContextProvider
-    private let backgroundTaskInvoker: PSBackgroundTaskInvoker
+    private let albumRemover: AlbumRemover
     private let albumInfoLoadService: AlbumInfoLoadService
     private let albumsSaver: AlbumsSaver
     
     // MARK: - Init
     init(viewContextProvider: PSViewContextProvider,
-         backgroundTaskInvoker: PSBackgroundTaskInvoker,
          albumInfoLoadService: AlbumInfoLoadService,
-         albumsSaver: AlbumsSaver) {
+         albumsSaver: AlbumsSaver,
+         albumRemover: AlbumRemover) {
         self.viewContextProvider = viewContextProvider
-        self.backgroundTaskInvoker = backgroundTaskInvoker
         self.albumInfoLoadService = albumInfoLoadService
         self.albumsSaver = albumsSaver
+        self.albumRemover = albumRemover
     }
 }
 
@@ -39,16 +37,8 @@ extension AlbumDetailsInteractor: AlbumDetailsInteractorInput {
     }
     
     func removeAlbum(with id: PSObjectID) {
-        backgroundTaskInvoker.performBackgroundTask { [weak self] context in
-            guard let entity = context.albumEntity(with: id) else {
-                return
-            }
-            context.delete(entity)
-            context.saveIfNeeded()
-            
-            DispatchQueue.main.async {
-                self?.output?.removedAlbum()
-            }
+        albumRemover.removeAlbum(id: id) { [weak self] in
+            self?.output?.removedAlbum()
         }
     }
     
@@ -56,23 +46,17 @@ extension AlbumDetailsInteractor: AlbumDetailsInteractorInput {
         albumsSaver.save(albums: [album], for: artist) { [weak self] result in
             guard case .success(let ids) = result,
                 let id = ids.first else {
-                    DispatchQueue.main.async {
-                        self?.output?.failedToSaveAlbum()
-                    }
+                    self?.output?.failedToSaveAlbum()
                     return
             }
-            DispatchQueue.main.async {
-                self?.output?.savedAlbum(id: id)
-            }
+            self?.output?.savedAlbum(id: id)
         }
     }
     
     func loadAlbumInfo(name: String, mbid: String?, artist: Artist) {
         let completion: (LoadResult) -> Void = { [weak self] result in
             guard case .success(let info) = result else {
-                DispatchQueue.main.async {
-                    self?.output?.failedToLoadAlbumInfo()
-                }
+                 self?.output?.failedToLoadAlbumInfo()
                 return
             }
             self?.output?.loaded(albumExtendedInfo: info, artist: artist)

@@ -63,10 +63,11 @@ extension AlbumsScreenPresenter: AlbumsScreenViewOutput {
 extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
     func fetchedArtistId(_ id: PSObjectID?) {
         artistId = id
-        dataSource.updateArtistId(id)
-        artistIdLoaded = true
-        DispatchQueue.main.async {
-            self.hideLoadingIndicatorsIfNeeded()
+        dataSource.updateArtistId(id) { [weak self] in
+            self?.artistIdLoaded = true
+            DispatchQueue.main.async {
+                self?.hideLoadingIndicatorsIfNeeded()
+            }
         }
     }
     
@@ -95,7 +96,11 @@ extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
 
 // MARK: - AlbumsScreenRouterOutput
 extension AlbumsScreenPresenter: AlbumsScreenRouterOutput {
-    // TODO: - Cleanup
+    func dismissedAlbumInfo() {
+        artistIdLoaded = false
+        view.showLoadingIndicator()
+        interactor.fetchArtistId(artist: artist)
+    }
 }
 
 // MARK: - Private

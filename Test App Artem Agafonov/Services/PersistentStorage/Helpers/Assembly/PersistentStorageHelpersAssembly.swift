@@ -18,6 +18,7 @@ extension PersistentStorageHelpersAssembly: Assembly {
     func assemble(container: Container) {
         registerContainerProvider(in: container)
         registerAlbumsSaver(in: container)
+        registerAlbumRemover(in: container)
         registerAlbumFactory(in: container)
         registerArtistFetcher(in: container)
         registerAlbumEntityFetcher(in: container)
@@ -43,6 +44,13 @@ private extension PersistentStorageHelpersAssembly {
             return AlbumsSaverBase(backgroundTaskInvoker: backgroundTaskInvoker,
                                    artistFetcher: artistFetcher,
                                    albumFactory: albumFactory)
+        }
+    }
+    
+    func registerAlbumRemover(in container: Container) {
+        container.register(AlbumRemover.self) { resolver in
+            let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
+            return AlbumRemoverBase(backgroundTaskInvoker: backgroundTaskInvoker)
         }
     }
     

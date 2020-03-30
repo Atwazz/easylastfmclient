@@ -20,7 +20,7 @@ final class AlbumDetailsPresenter {
     private let tagsDataSource: AlbumTagsDataSource
     private let urlhandler: URLHandler
     private var model: AlbumDetailsViewModel?
-    private var albumId: PSObjectID?
+    @ThreadSafe private var albumId: PSObjectID?
     @ThreadSafe private var albumExtendedInfo: AlbumExtendedInfo?
     
     // MARK: - Init
@@ -78,18 +78,24 @@ extension AlbumDetailsPresenter: AlbumDetailsViewOutput {
 // MARK: - AlbumDetailsInteractorOutput
 extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
     func failedToSaveAlbum() {
-        router.showBasicFailureAlert()
+        DispatchQueue.main.async {
+            self.router.showBasicFailureAlert()
+        }
     }
     
     func removedAlbum() {
         albumId = nil
-        view.update(albumSaved: false)
-        router.close()
+        DispatchQueue.main.async {
+            self.view.update(albumSaved: false)
+            self.router.close()
+        }
     }
     
     func savedAlbum(id: PSObjectID) {
         albumId = id
-        view.update(albumSaved: true)
+        DispatchQueue.main.async {
+            self.view.update(albumSaved: true)
+        }
     }
     
     func failedToLoadAlbumInfo() {

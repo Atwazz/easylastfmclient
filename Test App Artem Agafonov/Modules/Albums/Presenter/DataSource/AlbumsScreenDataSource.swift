@@ -12,6 +12,7 @@ final class AlbumsScreenDataSource: NSObject {
     // MARK: - Private instance properties
     private let viewModelFactory: AlbumCellModelFactory
     private let modelFactory: AlbumModelFactory
+    private var rawrResults = [Album]()
     private var results = [AlbumModel]()
     @ThreadSafe private var artistId: PSObjectID?
     
@@ -27,12 +28,14 @@ final class AlbumsScreenDataSource: NSObject {
 extension AlbumsScreenDataSource {
     func clearResults() {
         results.removeAll()
+        rawrResults.removeAll()
     }
     
     func appendResults(_ chunk: [Album], completion: @escaping () -> Void) {
         modelFactory.models(for: chunk, artistId: artistId) { [weak self] models in
             guard let self = self else { return }
             DispatchQueue.main.async {
+                self.rawrResults.append(contentsOf: chunk)
                 self.results.append(contentsOf: models)
                 completion()
             }
@@ -47,8 +50,13 @@ extension AlbumsScreenDataSource {
         results[indexPath.row]
     }
     
-    func updateArtistId(_ newValue: PSObjectID?) {
+    func updateArtistId(_ newValue: PSObjectID?, completion: @escaping () -> Void) {
+        guard artistId?.asObjectId != newValue?.asObjectId else {
+            completion()
+            return
+        }
         artistId = newValue
+        updateResults(completion: completion)
     }
 }
 
@@ -62,5 +70,22 @@ extension AlbumsScreenDataSource: UITableViewDataSource {
         let cell = tableView.dequeueCell(of: AlbumCell.self, indexPath: indexPath)
         cell.update(with: viewModelFactory.viewModel(for: item(at: indexPath)))
         return cell
+    }
+}
+
+// MARK: - Private
+private extension AlbumsScreenDataSource {
+    func updateResults(completion: @escaping () -> Void) {
+        guard rawrResults.count > 0 else {
+            completion()
+            return
+        }
+        modelFactory.models(for: rawrResults, artistId: artistId) { [weak self] models in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.results = models
+                completion()
+            }
+        }
     }
 }

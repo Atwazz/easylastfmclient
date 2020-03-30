@@ -12,4 +12,8 @@ extension NSManagedObjectContext {
     func albumEntity(with id: PSObjectID) -> AlbumEntity? {
         entity(with: id, of: AlbumEntity.self)
     }
+    
+    func artistEntity(with id: PSObjectID) -> ArtistEntity? {
+        entity(with: id, of: ArtistEntity.self)
+    }
 }

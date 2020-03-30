@@ -112,6 +112,8 @@
 		8B7E2325242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */; };
 		8B874032242E7E0D00140F11 /* AlbumDetailsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B874031242E7E0D00140F11 /* AlbumDetailsConfiguration.swift */; };
 		8B874034242E8F4400140F11 /* ConfiguredScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B874033242E8F4400140F11 /* ConfiguredScreenFactory.swift */; };
+		8B8E9E76243247CF001A29C3 /* AlbumRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E9E75243247CF001A29C3 /* AlbumRemover.swift */; };
+		8B8E9E782432481C001A29C3 /* AlbumRemoverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E9E772432481C001A29C3 /* AlbumRemoverBase.swift */; };
 		8B952775242781F00024A89C /* MainScreenCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */; };
 		8B95277924278A6B0024A89C /* AlbumCollectionViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */; };
 		8B95277B24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */; };
@@ -365,6 +367,8 @@
 		8B7E2324242BD9EF00316602 /* NSManagedObjectContext+ObjectWithID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+ObjectWithID.swift"; sourceTree = "<group>"; };
 		8B874031242E7E0D00140F11 /* AlbumDetailsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsConfiguration.swift; sourceTree = "<group>"; };
 		8B874033242E8F4400140F11 /* ConfiguredScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguredScreenFactory.swift; sourceTree = "<group>"; };
+		8B8E9E75243247CF001A29C3 /* AlbumRemover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRemover.swift; sourceTree = "<group>"; };
+		8B8E9E772432481C001A29C3 /* AlbumRemoverBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRemoverBase.swift; sourceTree = "<group>"; };
 		8B952774242781F00024A89C /* MainScreenCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		8B95277824278A6B0024A89C /* AlbumCollectionViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactory.swift; sourceTree = "<group>"; };
 		8B95277A24278B910024A89C /* AlbumCollectionViewModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModelFactoryBase.swift; sourceTree = "<group>"; };
@@ -1251,6 +1255,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		8B8E9E74243247B3001A29C3 /* Remover */ = {
+			isa = PBXGroup;
+			children = (
+				8B8E9E75243247CF001A29C3 /* AlbumRemover.swift */,
+				8B8E9E772432481C001A29C3 /* AlbumRemoverBase.swift */,
+			);
+			path = Remover;
+			sourceTree = "<group>";
+		};
 		8B952773242781D10024A89C /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1384,6 +1397,7 @@
 				8B9BB7AA2423DC0A001E08AF /* ContainerProvider */,
 				8BB3B98D24264B9000EBB5CC /* Factories */,
 				8B9CDD8E24261F8B008CE48F /* Fetchers */,
+				8B8E9E74243247B3001A29C3 /* Remover */,
 				8B9CDD8D24261F84008CE48F /* Saver */,
 				8B33AF10242520BD004C7F59 /* StateEmitter */,
 			);
@@ -2231,7 +2245,9 @@
 				8BBDEDAD241E647F004CBD27 /* APIMethod.swift in Sources */,
 				8BF66B43243157FB00BB9296 /* AlbumCellModelFactoryBase.swift in Sources */,
 				8B9CDD6B24260665008CE48F /* ImageModelEntity+CoreDataClass.swift in Sources */,
+				8B8E9E76243247CF001A29C3 /* AlbumRemover.swift in Sources */,
 				8B7312E1241D4C2D001922F4 /* AlbumsScreenRouterInput.swift in Sources */,
+				8B8E9E782432481C001A29C3 /* AlbumRemoverBase.swift in Sources */,
 				8BD28682242690F200A3815F /* ViewWithRoundedCorners.swift in Sources */,
 				8B9BB7B62423DF05001E08AF /* PersistentStorageLoadError.swift in Sources */,
 				8B9CDD8A24261EA0008CE48F /* AlbumsSaver.swift in Sources */,
