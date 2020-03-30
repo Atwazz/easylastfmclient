@@ -38,6 +38,7 @@ final class ArtistsSearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesSearchBarWhenScrolling = false
+        tableView.deselectAllRows()
         output.viewWillAppear()
         searchController.resignFirstResponder()
     }

@@ -102,7 +102,7 @@ Please try again later.</string>
                                         <outletCollection property="gestureRecognizers" destination="OGQ-G6-mKT" appends="YES" id="Igz-zH-PkX"/>
                                     </connections>
                                 </view>
-                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Og-9W-ZPL">
+                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Album Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Og-9W-ZPL">
                                     <rect key="frame" x="0.0" y="110" width="382" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -125,7 +125,7 @@ Please try again later.</string>
                                         <outletCollection property="gestureRecognizers" destination="Hsu-y3-HWg" appends="YES" id="cfg-st-9nH"/>
                                     </connections>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Published Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-rh-sEH">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Published Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-rh-sEH">
                                     <rect key="frame" x="0.0" y="159" width="104" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="qpL-zg-Eij"/>
@@ -173,8 +173,10 @@ Please try again later.</string>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="trailing" secondItem="XB5-4a-ZLY" secondAttribute="trailing" id="dS5-NU-nlq"/>
                                 <constraint firstItem="aUc-rh-sEH" firstAttribute="top" secondItem="5Og-9W-ZPL" secondAttribute="bottom" constant="8" id="eag-qS-tSG"/>
                                 <constraint firstItem="0da-h8-7kD" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="ee2-w5-1b4"/>
+                                <constraint firstItem="5Og-9W-ZPL" firstAttribute="leading" secondItem="GpW-K8-H3d" secondAttribute="leading" id="f7K-Ct-GEu"/>
                                 <constraint firstItem="zKb-mq-usY" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="iet-1W-Una"/>
                                 <constraint firstItem="hXM-u6-pFG" firstAttribute="top" secondItem="gSc-Jm-eF5" secondAttribute="bottom" constant="16" id="jGY-UU-48Y"/>
+                                <constraint firstItem="GpW-K8-H3d" firstAttribute="trailing" secondItem="5Og-9W-ZPL" secondAttribute="trailing" id="loA-Iw-OQQ"/>
                                 <constraint firstItem="aUc-rh-sEH" firstAttribute="leading" secondItem="XB5-4a-ZLY" secondAttribute="leading" id="mty-g9-Qd2"/>
                                 <constraint firstItem="zKb-mq-usY" firstAttribute="trailing" secondItem="XB5-4a-ZLY" secondAttribute="trailing" id="oCL-kj-4dA"/>
                                 <constraint firstItem="5Og-9W-ZPL" firstAttribute="top" secondItem="xNb-ey-ADY" secondAttribute="bottom" constant="16" id="qbP-0H-oZd"/>

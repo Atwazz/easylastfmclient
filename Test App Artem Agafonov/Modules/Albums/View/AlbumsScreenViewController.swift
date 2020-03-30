@@ -31,6 +31,11 @@ final class AlbumsScreenViewController: UIViewController {
         setupTableView()
         output.viewIsReady()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.deselectAllRows()
+    }
 }
 
 // MARK: - AlbumsScreenViewInput

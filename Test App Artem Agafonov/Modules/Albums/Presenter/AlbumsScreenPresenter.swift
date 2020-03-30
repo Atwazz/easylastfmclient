@@ -104,10 +104,6 @@ private extension AlbumsScreenPresenter {
         configuration.artist
     }
     
-    func showDetails(for album: AlbumModel) {
-        // TODO:
-    }
-    
     func loadNextPage() {
         pageIndex += 1
         view.showFooterLoadingIndicator()

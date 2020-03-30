@@ -21,7 +21,7 @@ final class AlbumDetailsPresenter {
     private let urlhandler: URLHandler
     private var model: AlbumDetailsViewModel?
     private var albumId: PSObjectID?
-    private var albumExtendedInfo: AlbumExtendedInfo?
+    @ThreadSafe private var albumExtendedInfo: AlbumExtendedInfo?
     
     // MARK: - Init
     init(configuration: AlbumDetailsConfiguration,
@@ -93,12 +93,14 @@ extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
     }
     
     func failedToLoadAlbumInfo() {
+        albumExtendedInfo = nil
         DispatchQueue.main.async {
             self.view.showNoDataPlaceholder()
         }
     }
     
     func loaded(albumExtendedInfo info: AlbumExtendedInfo, artist: Artist) {
+        albumExtendedInfo = info
         let viewModel = viewModelFactory.viewModel(albumExtendedInfo: info,
                                                    artist: artist)
         DispatchQueue.main.async {
@@ -130,6 +132,7 @@ private extension AlbumDetailsPresenter {
             view.update(albumSaved: true)
             handleDetailsLoaded(viewModel: viewModelFactory.viewModel(entity: entity))
         } else {
+            view.update(albumSaved: false)
             loadAlbumInfoFromNetwork()
         }
     }
