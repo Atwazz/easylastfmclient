@@ -32,8 +32,7 @@ extension AlbumsSaverBase: AlbumsSaver {
               completion: @escaping (SaverResult) -> Void) {
         backgroundTaskInvoker.performBackgroundTask { [weak self] context in
             guard let self = self else { return }
-            let artistEntity = self.artistFetcher.fetchArtist(representing: artist) ??
-                    ArtistEntity(context: context)
+            let artistEntity = self.artistFetcher.fetchArtist(representing: artist) ?? ArtistEntity(context: context)
             artistEntity.update(with: artist, in: context)
             let ids = self.saveAlbums(models: albums, artist: artistEntity, in: context)
             self.save(context: context, ids: ids, completion: completion)
@@ -52,6 +51,7 @@ private extension AlbumsSaverBase {
     func saveAlbum(model: AlbumExtendedInfo,
                    artist: ArtistEntity,
                    in context: NSManagedObjectContext) -> PSObjectID {
+        // TODO: - Fetch with the fetcher instead
         guard artist.album(for: model) == nil else {
             assertionFailure("Trying to add already saved album: \(model.name)")
             return artist.id

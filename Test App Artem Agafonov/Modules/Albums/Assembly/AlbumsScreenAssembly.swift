@@ -23,6 +23,7 @@ extension AlbumsScreenAssembly: Assembly {
         registerInteractor(in: container)
         registerPresenter(in: container)
         registerRouter(in: container)
+        registerAlbumModelFactory(in: container)
         registerAlbumCellModelFactory(in: container)
         registerDataSource(in: container)
     }
@@ -119,18 +120,26 @@ private extension AlbumsScreenAssembly {
     }
     
     func registerAlbumCellModelFactory(in container: Container) {
-        container.register(AlbumCellModelFactory.self) { resolver in
+        container.register(AlbumCellModelFactory.self) { _ in
+            AlbumCellModelFactoryBase()
+        }
+    }
+    
+    func registerAlbumModelFactory(in container: Container) {
+        container.register(AlbumModelFactory.self) { resolver in
             let albumFetcher = resolver.resolveSafe(AlbumEntityFetcher.self)
-            let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
-            return AlbumCellModelFactoryBase(albumFetcher: albumFetcher,
-                                             viewContextProvider: viewContextProvider)
+            let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
+            return AlbumModelFactoryBase(albumFetcher: albumFetcher,
+                                         backgroundTaskInvoker: backgroundTaskInvoker)
         }
     }
     
     func registerDataSource(in container: Container) {
         container.register(AlbumsScreenDataSource.self) { resolver in
             let viewModelFactory = resolver.resolveSafe(AlbumCellModelFactory.self)
-            return AlbumsScreenDataSource(viewModelFactory: viewModelFactory)
+            let modelFactory = resolver.resolveSafe(AlbumModelFactory.self)
+            return AlbumsScreenDataSource(viewModelFactory: viewModelFactory,
+                                          modelFactory: modelFactory)
         }
     }
 }

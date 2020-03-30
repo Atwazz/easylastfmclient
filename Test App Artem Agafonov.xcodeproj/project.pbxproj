@@ -26,6 +26,9 @@
 		8B69AEFA2431EE7100B53788 /* AlbumEntityFetcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */; };
 		8B69AEFC2432050400B53788 /* UITableView+FooterLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEFB2432050400B53788 /* UITableView+FooterLoadingIndicator.swift */; };
 		8B69AEFE243209EB00B53788 /* ThreadSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEFD243209EB00B53788 /* ThreadSafe.swift */; };
+		8B69AF002432125800B53788 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AEFF2432125800B53788 /* AlbumModel.swift */; };
+		8B69AF07243212E200B53788 /* AlbumModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AF06243212E200B53788 /* AlbumModelFactory.swift */; };
+		8B69AF09243212E900B53788 /* AlbumModelFactoryBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69AF08243212E900B53788 /* AlbumModelFactoryBase.swift */; };
 		8B7311C4241CE992001922F4 /* DelayedMutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C3241CE992001922F4 /* DelayedMutable.swift */; };
 		8B7311C6241CE9B3001922F4 /* DelayedImmutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */; };
 		8B7311C9241CEA19001922F4 /* Assembler+SynchronizedResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */; };
@@ -273,6 +276,9 @@
 		8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntityFetcherBase.swift; sourceTree = "<group>"; };
 		8B69AEFB2432050400B53788 /* UITableView+FooterLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FooterLoadingIndicator.swift"; sourceTree = "<group>"; };
 		8B69AEFD243209EB00B53788 /* ThreadSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafe.swift; sourceTree = "<group>"; };
+		8B69AEFF2432125800B53788 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		8B69AF06243212E200B53788 /* AlbumModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModelFactory.swift; sourceTree = "<group>"; };
+		8B69AF08243212E900B53788 /* AlbumModelFactoryBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModelFactoryBase.swift; sourceTree = "<group>"; };
 		8B7311C3241CE992001922F4 /* DelayedMutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedMutable.swift; sourceTree = "<group>"; };
 		8B7311C5241CE9B3001922F4 /* DelayedImmutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedImmutable.swift; sourceTree = "<group>"; };
 		8B7311C8241CEA19001922F4 /* Assembler+SynchronizedResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+SynchronizedResolver.swift"; sourceTree = "<group>"; };
@@ -621,6 +627,33 @@
 				8B69AEF92431EE7100B53788 /* AlbumEntityFetcherBase.swift */,
 			);
 			path = AlbumFetcher;
+			sourceTree = "<group>";
+		};
+		8B69AF032432129F00B53788 /* AlbumModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BF66B3F243157AB00BB9296 /* Factory */,
+				8B69AEFF2432125800B53788 /* AlbumModel.swift */,
+			);
+			path = AlbumModel;
+			sourceTree = "<group>";
+		};
+		8B69AF04243212A500B53788 /* AlbumCellModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B69AF05243212B000B53788 /* Factory */,
+				8BF66B3A2431427800BB9296 /* AlbumCellModel.swift */,
+			);
+			path = AlbumCellModel;
+			sourceTree = "<group>";
+		};
+		8B69AF05243212B000B53788 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				8BF66B40243157C500BB9296 /* AlbumCellModelFactory.swift */,
+				8BF66B42243157FB00BB9296 /* AlbumCellModelFactoryBase.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		8B7311B5241CE6C1001922F4 /* Services */ = {
@@ -1157,8 +1190,8 @@
 		8B7312D8241D4C2D001922F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8BF66B3F243157AB00BB9296 /* Factory */,
-				8BF66B3A2431427800BB9296 /* AlbumCellModel.swift */,
+				8B69AF04243212A500B53788 /* AlbumCellModel */,
+				8B69AF032432129F00B53788 /* AlbumModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1826,8 +1859,8 @@
 		8BF66B3F243157AB00BB9296 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				8BF66B40243157C500BB9296 /* AlbumCellModelFactory.swift */,
-				8BF66B42243157FB00BB9296 /* AlbumCellModelFactoryBase.swift */,
+				8B69AF06243212E200B53788 /* AlbumModelFactory.swift */,
+				8B69AF08243212E900B53788 /* AlbumModelFactoryBase.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -2053,11 +2086,13 @@
 				8B73126B241D3415001922F4 /* UIServicesAssemblerProvider.swift in Sources */,
 				8B7312E7241D4C2D001922F4 /* AlbumsScreenAssembly.swift in Sources */,
 				8BB5A9CF2430DEB500267704 /* NSManagedObjectContext+Convenience.swift in Sources */,
+				8B69AF002432125800B53788 /* AlbumModel.swift in Sources */,
 				8BBDEDA5241E45C1004CBD27 /* DisposeBag.swift in Sources */,
 				8BB78E05242FA79700CB882C /* UICollectionView+DequeueCellOfType.swift in Sources */,
 				8BB78DF5242F96DA00CB882C /* AlbumsCollectionViewDelegateFlowLayout.swift in Sources */,
 				8B7312A2241D461E001922F4 /* ArtistsSearchViewInput.swift in Sources */,
 				8BB78DF7242F983200CB882C /* CollectionViewDelegateFlowLayout.swift in Sources */,
+				8B69AF09243212E900B53788 /* AlbumModelFactoryBase.swift in Sources */,
 				8BB5A9CB2430D01A00267704 /* URLHandler.swift in Sources */,
 				8B7312C2241D4C26001922F4 /* AlbumDetailsViewOutput.swift in Sources */,
 				8BF66B3424313B3B00BB9296 /* AlbumsScreenConfiguration.swift in Sources */,
@@ -2139,6 +2174,7 @@
 				8B7311E8241CF971001922F4 /* MainScreenPresenter.swift in Sources */,
 				8B73126D241D3477001922F4 /* ServicesAssemblerProvider.swift in Sources */,
 				8BB78DE2242F7C0A00CB882C /* AlbumDetailsViewModelFactoryBase.swift in Sources */,
+				8B69AF07243212E200B53788 /* AlbumModelFactory.swift in Sources */,
 				8BA702DE241F70980073E7A4 /* PaginationInfo.swift in Sources */,
 				8BA702FA241FCB080073E7A4 /* Tag.swift in Sources */,
 				8BD6E145241D7AA000223F74 /* APIKeyProviderBase.swift in Sources */,

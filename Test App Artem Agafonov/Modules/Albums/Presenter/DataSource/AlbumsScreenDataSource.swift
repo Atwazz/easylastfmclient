@@ -11,12 +11,15 @@ import UIKit.UITableView
 final class AlbumsScreenDataSource: NSObject {
     // MARK: - Private instance properties
     private let viewModelFactory: AlbumCellModelFactory
-    private var results = [Album]()
+    private let modelFactory: AlbumModelFactory
+    private var results = [AlbumModel]()
     @ThreadSafe private var artistId: PSObjectID?
     
     // MARK: - Init
-    init(viewModelFactory: AlbumCellModelFactory) {
+    init(viewModelFactory: AlbumCellModelFactory,
+         modelFactory: AlbumModelFactory) {
         self.viewModelFactory = viewModelFactory
+        self.modelFactory = modelFactory
     }
 }
 
@@ -26,15 +29,21 @@ extension AlbumsScreenDataSource {
         results.removeAll()
     }
     
-    func appendResults(_ chunk: [Album]) {
-        results.append(contentsOf: chunk)
+    func appendResults(_ chunk: [Album], completion: @escaping () -> Void) {
+        modelFactory.models(for: chunk, artistId: artistId) { [weak self] models in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.results.append(contentsOf: models)
+                completion()
+            }
+        }
     }
     
     func isItemLast(at indexpath: IndexPath) -> Bool {
        results.count == indexpath.row + 1
     }
     
-    func item(at indexPath: IndexPath) -> Album {
+    func item(at indexPath: IndexPath) -> AlbumModel {
         results[indexPath.row]
     }
     
@@ -51,8 +60,7 @@ extension AlbumsScreenDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(of: AlbumCell.self, indexPath: indexPath)
-        cell.update(with: viewModelFactory.viewModel(for: item(at: indexPath),
-                                                     artistId: artistId))
+        cell.update(with: viewModelFactory.viewModel(for: item(at: indexPath)))
         return cell
     }
 }

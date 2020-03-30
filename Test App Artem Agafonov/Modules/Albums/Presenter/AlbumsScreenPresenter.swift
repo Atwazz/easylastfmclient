@@ -46,7 +46,7 @@ extension AlbumsScreenPresenter: AlbumsScreenViewOutput {
     }
     
     func didSelectAlbum(at indexPath: IndexPath) {
-        showDetails(for: dataSource.item(at: indexPath))
+        router.showInfo(for: dataSource.item(at: indexPath), artist: artist)
     }
     
     func willShowAlbum(at indexPath: IndexPath) {
@@ -84,10 +84,11 @@ extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
         if pageIndex == 1 {
             firstPageLoaded = true
         }
-        DispatchQueue.main.async {
-            self.dataSource.appendResults(albums)
-            self.view.hideNoDataPlaceholder()
-            self.hideLoadingIndicatorsIfNeeded()
+        dataSource.appendResults(albums) { [weak self] in
+            DispatchQueue.main.async {
+                self?.view.hideNoDataPlaceholder()
+                self?.hideLoadingIndicatorsIfNeeded()
+            }
         }
     }
 }
@@ -103,7 +104,7 @@ private extension AlbumsScreenPresenter {
         configuration.artist
     }
     
-    func showDetails(for album: Album) {
+    func showDetails(for album: AlbumModel) {
         // TODO:
     }
     

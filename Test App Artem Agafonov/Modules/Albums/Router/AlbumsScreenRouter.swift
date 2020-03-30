@@ -37,26 +37,11 @@ extension AlbumsScreenRouter: AlbumsScreenRouterInput {
         }
     }
     
-    func showInfo(for album: Album, artist: Artist) {
+    func showInfo(for album: AlbumModel, artist: Artist) {
         let configuration = AlbumDetailsConfiguration(name: album.name,
                                                       mbid: album.mbid,
                                                       artist: artist,
-                                                      id: nil)
-        showAlbumDetails(configuration: configuration)
-    }
-    
-    func showInfo(for albumId: PSObjectID) {
-        let configuration = AlbumDetailsConfiguration(name: nil,
-                                                      mbid: nil,
-                                                      artist: nil,
-                                                      id: nil)
-        showAlbumDetails(configuration: configuration)
-    }
-}
-
-// MARK: - Private
-private extension AlbumsScreenRouter {
-    func showAlbumDetails(configuration: AlbumDetailsConfiguration) {
+                                                      id: album.id)
         let viewController = albumDetailsFactory.viewController(configuration: configuration)
         viewDispatcher.presentModal(viewController,
                                     wrappedInNavigationController: true,
