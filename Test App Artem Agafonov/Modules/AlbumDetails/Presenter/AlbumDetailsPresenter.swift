@@ -73,6 +73,10 @@ extension AlbumDetailsPresenter: AlbumDetailsViewOutput {
     func selectedTag(at indexPath: IndexPath) {
         open(url: tagsDataSource.url(at: indexPath))
     }
+    
+    func urlTapped(_ url: URL) {
+        open(url: url)
+    }
 }
 
 // MARK: - AlbumDetailsInteractorOutput

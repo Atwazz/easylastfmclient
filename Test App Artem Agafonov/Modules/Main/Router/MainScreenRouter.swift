@@ -9,9 +9,6 @@
 import UIKit.UIAlertController
 
 final class MainScreenRouter {
-    // MARK: - Public instance properties
-    weak var output: MainScreenRouterOutput?
-    
     // MARK: - Private instance properties
     private let viewDispatcher: ViewDispatcher
     private let searchScreenFactory: ScreenFactory

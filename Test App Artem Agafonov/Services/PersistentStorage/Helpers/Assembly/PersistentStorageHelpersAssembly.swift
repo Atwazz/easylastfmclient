@@ -40,9 +40,11 @@ private extension PersistentStorageHelpersAssembly {
         container.register(AlbumsSaver.self) { resolver in
             let backgroundTaskInvoker = resolver.resolveSafe(PSBackgroundTaskInvoker.self)
             let artistFetcher = resolver.resolveSafe(ArtistEntityFetcher.self)
+            let albumFetcher = resolver.resolveSafe(AlbumEntityFetcher.self)
             let albumFactory = resolver.resolveSafe(AlbumEntityFactory.self)
             return AlbumsSaverBase(backgroundTaskInvoker: backgroundTaskInvoker,
                                    artistFetcher: artistFetcher,
+                                   albumFetcher: albumFetcher,
                                    albumFactory: albumFactory)
         }
     }

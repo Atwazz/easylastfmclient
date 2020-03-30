@@ -72,7 +72,6 @@ extension AlbumsScreenViewController: AlbumsScreenViewInput {
     }
     
     func reloadData() {
-        // TODO: - Handle insertions
         tableView.reloadData()
     }
 }

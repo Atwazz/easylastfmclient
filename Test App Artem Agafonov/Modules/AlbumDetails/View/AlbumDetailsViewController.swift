@@ -104,6 +104,17 @@ extension AlbumDetailsViewController: AlbumDetailsViewInput {
     }
 }
 
+// MARK: - UITextViewDelegate
+extension AlbumDetailsViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView,
+                  shouldInteractWith URL: URL,
+                  in characterRange: NSRange,
+                  interaction: UITextItemInteraction) -> Bool {
+        output.urlTapped(URL)
+        return false
+    }
+}
+
 // MARK: - Private: Actions
 private extension AlbumDetailsViewController {
     @IBAction func artistInfoTapped(_ sender: Any) {
@@ -159,7 +170,7 @@ private extension AlbumDetailsViewController {
     }
     
     func updateSummary(with text: String?) {
-        albumSummaryTextView.text = text
+        albumSummaryTextView.setHTML(from: text)
         albumSummaryTextView.isHidden = text?.count == 0
     }
     

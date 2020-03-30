@@ -9,9 +9,6 @@
 import CoreData.NSFetchedResultsController
 
 final class MainScreenInteractor {
-    // MARK: - Public instance properties
-    weak var output: MainScreenInteractorOutput?
-    
     // MARK: - Private instance properties
     private let viewContextProvider: PSViewContextProvider
     

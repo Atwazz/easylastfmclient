@@ -9,9 +9,6 @@
 import UIKit.UIAlertController
 
 final class ArtistsSearchRouter {
-    // MARK: - Public instance properties
-    weak var output: ArtistsSearchRouterOutput?
-    
     // MARK: - Private instance properties
     private let viewDispatcher: ViewDispatcher
     private let albumsScreenFactory: AlbumsScreenFactory

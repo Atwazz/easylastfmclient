@@ -59,7 +59,6 @@ extension ArtistsSearchViewController: UISearchResultsUpdating {
 // MARK: - ArtistsSearchViewInput
 extension ArtistsSearchViewController: ArtistsSearchViewInput {
     func reloadData() {
-        // TODO: - Handle insertions
         tableView.reloadData()
     }
     

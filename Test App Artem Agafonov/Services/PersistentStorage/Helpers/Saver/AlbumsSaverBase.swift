@@ -13,14 +13,17 @@ final class AlbumsSaverBase {
     // MARK: - Private properties
     private let backgroundTaskInvoker: PSBackgroundTaskInvoker
     private let artistFetcher: ArtistEntityFetcher
+    private let albumFetcher: AlbumEntityFetcher
     private let albumFactory: AlbumEntityFactory
     
     // MARK: - Init
     init(backgroundTaskInvoker: PSBackgroundTaskInvoker,
          artistFetcher: ArtistEntityFetcher,
+         albumFetcher: AlbumEntityFetcher,
          albumFactory: AlbumEntityFactory) {
         self.backgroundTaskInvoker = backgroundTaskInvoker
         self.artistFetcher = artistFetcher
+        self.albumFetcher = albumFetcher
         self.albumFactory = albumFactory
     }
 }
@@ -51,10 +54,10 @@ private extension AlbumsSaverBase {
     func saveAlbum(model: AlbumExtendedInfo,
                    artist: ArtistEntity,
                    in context: NSManagedObjectContext) -> PSObjectID {
-        // TODO: - Fetch with the fetcher instead
-        guard artist.album(for: model) == nil else {
+        let existingEntity = albumFetcher.fetchAlbum(representing: model, artistId: artist.id)
+        if let existingId = existingEntity?.id {
             assertionFailure("Trying to add already saved album: \(model.name)")
-            return artist.id
+            return existingId
         }
         let entity = albumFactory.album(model: model, for: artist, in: context)
         return entity.id

@@ -95,11 +95,6 @@ extension ArtistsSearchPresenter: ArtistsSearchInteractorOutput {
     }
 }
 
-// MARK: - ArtistsSearchRouterOutput
-extension ArtistsSearchPresenter: ArtistsSearchRouterOutput {
-    
-}
-
 // MARK: - Private: Subscriptions
 private extension ArtistsSearchPresenter {    
     func subscribeToSearchTrigger() {

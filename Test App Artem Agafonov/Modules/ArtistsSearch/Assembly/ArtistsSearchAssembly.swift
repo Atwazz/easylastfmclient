@@ -60,7 +60,6 @@ private extension ArtistsSearchAssembly {
             return Presenter(dataSource: dataSource)
         }
         .implements(ArtistsSearchInteractorOutput.self)
-        .implements(ArtistsSearchRouterOutput.self)
         .initCompleted { resolver, object in
             guard let presenter = object as? Presenter else {
                 fatalError("Presenter has unexpected type: \(String(describing: object))")
@@ -77,12 +76,6 @@ private extension ArtistsSearchAssembly {
             let albumScreenFactory = resolver.resolveSafe(AlbumsScreenFactory.self)
             return Router(viewDispatcher: viewDispatcher,
                           albumsScreenFactory: albumScreenFactory)
-        }
-        .initCompleted { resolver, object in
-            guard let router = object as? Router else {
-                fatalError("Router has unexpected type: \(String(describing: object))")
-            }
-            router.output = resolver.resolveSafe(ArtistsSearchRouterOutput.self)
         }
     }
     

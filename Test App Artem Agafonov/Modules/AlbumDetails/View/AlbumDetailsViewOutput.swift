@@ -14,6 +14,7 @@ protocol AlbumDetailsViewOutput {
     func closeButtonTapped()
     func selectedTag(at indexPath: IndexPath)
     func selectedTrack(with url: URL?)
+    func urlTapped(_ url: URL)
     func artistInfoTapped()
     func albumNameTapped()
     func albumImageTapped()

@@ -52,12 +52,6 @@ private extension MainScreenAssembly {
             let viewContextProvider = resolver.resolveSafe(PSViewContextProvider.self)
             return Interactor(viewContextProvider: viewContextProvider)
         }
-        .initCompleted { resolver, object in
-            guard let interactor = object as? Interactor else {
-                fatalError("Interactor has unexpected type: \(String(describing: object))")
-            }
-            interactor.output = resolver.resolveSafe(MainScreenInteractorOutput.self)
-        }
     }
     
     func registerPresenter(in container: Container) {
@@ -67,8 +61,6 @@ private extension MainScreenAssembly {
             return Presenter(storageStateEmitter: storageStateEmitter,
                              dataSource: dataSource)
         }
-        .implements(MainScreenInteractorOutput.self)
-        .implements(MainScreenRouterOutput.self)
         .initCompleted { resolver, object in
             guard let presenter = object as? Presenter else {
                 fatalError("Presenter has unexpected type: \(String(describing: object))")
@@ -87,12 +79,6 @@ private extension MainScreenAssembly {
             return Router(viewDispatcher: viewDispatcher,
                           searchScreenFactory: searchScreenFactory,
                           albumDetailsScreenFactory: albumDetailsScreenFactory)
-        }
-        .initCompleted { resolver, object in
-            guard let router = object as? Router else {
-                fatalError("Router has unexpected type: \(String(describing: object))")
-            }
-            router.output = resolver.resolveSafe(MainScreenRouterOutput.self)
         }
     }
     

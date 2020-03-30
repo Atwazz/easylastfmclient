@@ -28,12 +28,10 @@ extension AlbumRemoverBase: AlbumRemover {
             }
             context.delete(entity)
             context.saveIfNeeded()
-            
             if artistEntity.albums?.count == 0 {
                 context.delete(artistEntity)
                 context.saveIfNeeded()
             }
-            
             completion()
         }
     }
