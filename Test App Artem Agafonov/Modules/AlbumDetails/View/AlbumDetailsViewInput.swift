@@ -13,5 +13,6 @@ protocol AlbumDetailsViewInput {
     func showNoDataPlaceholder()
     func update(with model: AlbumDetailsViewModel)
     func update(albumSaved: Bool)
+    func disableSaveButton()
     func setup(with tagsDataSource: UICollectionViewDataSource)
 }

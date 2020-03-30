@@ -51,10 +51,6 @@ extension AlbumsScreenDataSource {
     }
     
     func updateArtistId(_ newValue: PSObjectID?, completion: @escaping () -> Void) {
-        guard artistId?.asObjectId != newValue?.asObjectId else {
-            completion()
-            return
-        }
         artistId = newValue
         updateResults(completion: completion)
     }

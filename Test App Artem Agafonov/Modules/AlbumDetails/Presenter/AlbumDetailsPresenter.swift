@@ -106,6 +106,7 @@ extension AlbumDetailsPresenter: AlbumDetailsInteractorOutput {
         albumExtendedInfo = nil
         DispatchQueue.main.async {
             self.view.showNoDataPlaceholder()
+            self.view.disableSaveButton()
         }
     }
     

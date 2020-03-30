@@ -96,7 +96,7 @@ extension AlbumsScreenPresenter: AlbumsScreenInteractorOutput {
 
 // MARK: - AlbumsScreenRouterOutput
 extension AlbumsScreenPresenter: AlbumsScreenRouterOutput {
-    func dismissedAlbumInfo() {
+    func willDismissAlbumInfo() {
         artistIdLoaded = false
         view.showLoadingIndicator()
         interactor.fetchArtistId(artist: artist)

@@ -53,10 +53,10 @@ extension AlbumsScreenRouter: AlbumsScreenRouterInput {
 // MARK: - DismissListener
 extension AlbumsScreenRouter: DismissListener {
     func dismissable(didDismiss dismissable: Dismissable) {
-        output?.dismissedAlbumInfo()
+        
     }
     
     func dismissable(willBeDismissed dismissable: Dismissable) {
-        
+        output?.willDismissAlbumInfo()
     }
 }

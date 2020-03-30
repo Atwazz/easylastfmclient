@@ -7,5 +7,5 @@
 //
 
 protocol AlbumsScreenRouterOutput: class {
-    func dismissedAlbumInfo()
+    func willDismissAlbumInfo()
 }

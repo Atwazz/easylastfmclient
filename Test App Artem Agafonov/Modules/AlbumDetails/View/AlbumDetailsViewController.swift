@@ -59,6 +59,10 @@ final class AlbumDetailsViewController: UIViewController, Dismissable {
 
 // MARK: - AlbumDetailsViewInput
 extension AlbumDetailsViewController: AlbumDetailsViewInput {
+    func disableSaveButton() {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
     func update(albumSaved: Bool) {
         guard let height = navigationController?.navigationBar.bounds.size.height else {
             return

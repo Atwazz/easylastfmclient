@@ -37,8 +37,8 @@ extension AlbumsSaverBase: AlbumsSaver {
             guard let self = self else { return }
             let artistEntity = self.artistFetcher.fetchArtist(representing: artist) ?? ArtistEntity(context: context)
             artistEntity.update(with: artist, in: context)
-            let ids = self.saveAlbums(models: albums, artist: artistEntity, in: context)
-            self.save(context: context, ids: ids, completion: completion)
+            let entities = self.saveAlbums(models: albums, artist: artistEntity, in: context)
+            self.save(context: context, entities: entities, completion: completion)
         }
     }
 }
@@ -47,28 +47,29 @@ extension AlbumsSaverBase: AlbumsSaver {
 private extension AlbumsSaverBase {
     func saveAlbums(models: [AlbumExtendedInfo],
                     artist: ArtistEntity,
-                    in context: NSManagedObjectContext) -> [PSObjectID] {
+                    in context: NSManagedObjectContext) -> [AlbumEntity] {
         models.map { saveAlbum(model: $0, artist: artist, in: context) }
     }
     
     func saveAlbum(model: AlbumExtendedInfo,
                    artist: ArtistEntity,
-                   in context: NSManagedObjectContext) -> PSObjectID {
+                   in context: NSManagedObjectContext) -> AlbumEntity {
         let existingEntity = albumFetcher.fetchAlbum(representing: model, artistId: artist.id)
-        if let existingId = existingEntity?.id {
+        if let existingEntity = existingEntity {
             assertionFailure("Trying to add already saved album: \(model.name)")
-            return existingId
+            return existingEntity
         }
         let entity = albumFactory.album(model: model, for: artist, in: context)
-        return entity.id
+        return entity
     }
     
     func save(context: NSManagedObjectContext,
-              ids: [PSObjectID],
+              entities: [AlbumEntity],
               completion: (SaverResult) -> Void) {
         do {
             try context.save()
-            completion(.success(ids))
+            try context.obtainPermanentIDs(for: entities)
+            completion(.success(entities.map { $0.id }))
         } catch {
             assertionFailure("Unexpected error occured: \(error.localizedDescription)")
             completion(.failure(error))
