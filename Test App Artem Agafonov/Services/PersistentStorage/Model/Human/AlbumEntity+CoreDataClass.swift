@@ -37,7 +37,7 @@ extension AlbumEntity {
 // MARK: - SortDescriptors
 private extension AlbumEntity {
     static var defaultSortDescriptor: NSSortDescriptor {
-        NSSortDescriptor(key: #keyPath(AlbumEntity.name), ascending: false)
+        NSSortDescriptor(key: #keyPath(AlbumEntity.name), ascending: true)
     }
 }
 
