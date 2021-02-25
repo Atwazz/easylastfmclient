@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenViewController" customModule="Easy_Last_FM_Client" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="sqq-8F-BW7" id="Ubl-Mp-Alf"/>
                 <outlet property="collectionView" destination="Tiu-jk-o6H" id="aMd-k0-F71"/>
@@ -25,7 +27,7 @@
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tiu-jk-o6H">
                             <rect key="frame" x="20" y="0.0" width="374" height="852"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rdl-Cw-VOb">
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rdl-Cw-VOb">
                                 <size key="itemSize" width="180" height="180"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -33,6 +35,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="fOH-wc-BG5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Tiu-jk-o6H" firstAttribute="leading" secondItem="hgR-iK-12c" secondAttribute="leading" constant="20" symbolic="YES" id="8Cm-ia-Eho"/>
@@ -40,14 +43,14 @@
                         <constraint firstAttribute="trailing" secondItem="Tiu-jk-o6H" secondAttribute="trailing" constant="20" symbolic="YES" id="XC3-59-G4b"/>
                         <constraint firstItem="Tiu-jk-o6H" firstAttribute="top" secondItem="fOH-wc-BG5" secondAttribute="top" id="cKE-Wk-mSm"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="fOH-wc-BG5"/>
                 </view>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sqq-8F-BW7">
                     <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="sqq-8F-BW7" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4LT-L3-TO7"/>
                 <constraint firstItem="sqq-8F-BW7" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8a0-mE-X9L"/>
@@ -56,8 +59,12 @@
                 <constraint firstItem="hgR-iK-12c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OnZ-ud-3mU"/>
                 <constraint firstAttribute="bottom" secondItem="hgR-iK-12c" secondAttribute="bottom" id="vUx-YL-pb1"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumDetailsViewController" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumDetailsViewController" customModule="Easy_Last_FM_Client" customModuleProvider="target">
             <connections>
                 <outlet property="albumSummaryTextView" destination="hXM-u6-pFG" id="Jc1-wS-vc7"/>
                 <outlet property="artistImageView" destination="wjV-AS-FBK" id="Jc3-wl-hfC"/>
@@ -112,7 +112,7 @@ Please try again later.</string>
                                         <outletCollection property="gestureRecognizers" destination="3SW-Wn-GlU" appends="YES" id="s65-pQ-Tjk"/>
                                     </connections>
                                 </label>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKb-mq-usY" customClass="TagsView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKb-mq-usY" customClass="TagsView" customModule="Easy_Last_FM_Client" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="591" width="382" height="78"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -151,7 +151,7 @@ Please try again later.</string>
                                         <outlet property="delegate" destination="-1" id="WmG-Sc-js6"/>
                                     </connections>
                                 </textView>
-                                <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Jm-eF5" customClass="TracksView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+                                <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Jm-eF5" customClass="TracksView" customModule="Easy_Last_FM_Client" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="692" width="382" height="65"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TracksView" customModule="Test_App_Artem_Agafonov" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TracksView" customModule="Easy_Last_FM_Client" customModuleProvider="target">
             <connections>
                 <outlet property="stackView" destination="2qY-zD-A4g" id="vaf-4z-OPz"/>
             </connections>
