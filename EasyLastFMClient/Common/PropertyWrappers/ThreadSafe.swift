@@ -10,11 +10,11 @@ import Foundation
 
 @propertyWrapper
 final class ThreadSafe<Value> {
-	// MARK: - Private instance properties
+	// MARK: Private instance properties
 	private var _value: Value
 	private let _queue: DispatchQueue
 
-	// MARK: - Init
+	// MARK: Init
 	init(wrappedValue value: Value, queue: DispatchQueue? = nil) {
 		_value = value
 		_queue = queue ?? Self.defaultQueue
@@ -22,7 +22,7 @@ final class ThreadSafe<Value> {
 
 	var wrappedValue: Value {
 		get {
-			 _queue.sync {
+			_queue.sync {
 				return self._value
 			}
 		}
@@ -46,8 +46,10 @@ extension ThreadSafe {
 // MARK: - Private
 private extension ThreadSafe {
 	static var defaultQueue: DispatchQueue {
-		DispatchQueue(label: UUID().uuidString,
-					  qos: .userInteractive,
-					  attributes: .concurrent)
+		DispatchQueue(
+			label: UUID().uuidString,
+			qos: .userInteractive,
+			attributes: .concurrent
+		)
 	}
 }
